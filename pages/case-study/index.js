@@ -1,11 +1,11 @@
 import React from "react";
 import MainLayout from "../../components/layout/mainLayout";
-import Knowledge from "./Knowledge";
+import CaseStudy from "./CaseStudy";
 
 function Index(props) {
   return (
     <MainLayout>
-      <Knowledge />
+      <CaseStudy />
     </MainLayout>
   );
 }

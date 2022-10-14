@@ -1,9 +1,9 @@
 .mainLayout {
   margin: 68px auto 0px;
-  color: #fff;
+  color: #000;
   max-width: 1440px;
   width: 100% !important;
-  background-color: #011e46;
+  background-color: #F0EEE8;
   overflow: hidden;
 
   .children {
@@ -14,7 +14,7 @@
 @media all and (max-width: 992px) {
   .mainLayout {
     .children {
-      padding: 0px 35px;
+      padding: 0px 25px;
     }
   }
 }
@@ -22,7 +22,7 @@
 @media all and (max-width: 576px) {
   .mainLayout {
     .children {
-      padding: 0px 35px;
+      padding: 0px 15px;
     }
   }
 }
@@ -30,7 +30,7 @@
 @media all and (max-width: 480px) {
   .mainLayout {
     .children {
-      padding: 0px 35px;
+      padding: 0px 15px;
     }
   }
 }
