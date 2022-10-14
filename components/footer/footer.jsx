@@ -1,153 +1,128 @@
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import { HeaderData } from "../../utils/DataDemo/Header";
 import styles from "./footer.module.scss";
-import { MdOutlineFacebook } from "react-icons/md";
-import {
-  AiOutlineTwitter,
-  AiOutlineInstagram,
-  AiFillYoutube,
-} from "react-icons/ai";
-import { Button, Form } from "react-bootstrap";
 function Footer(props) {
-  return (
-    <footer className={styles.footer}>
-      <div className="container py-5">
-        <div className="row d-flex align-items-center justify-content-center">
-          <div
-            className={
-              "col-12 col-lg-2 col-md-3 d-flex align-items-center justify-content-center" +
-              " " +
-              styles.footer__logo
-            }
-          >
-            <Image
-              src={"/images/Footer/logo.png"}
-              width={150}
-              height={110}
-              alt="logo"
-            />
-          </div>
-          <div className={"col-12 col-lg-10 col-md-9 "}>
-            <div className={styles.ticketContainer}>
-              <div className={styles.footer__ticket + " " + "container"}>
-                <div
-                  className={
-                    styles.ticketContent +
-                    " " +
-                    "d-flex row mx-0 align-items-center justify-content-center "
-                  }
-                >
-                  <div className="col-12 col-md-7 mb-5 mb-sm-0">
-                    <div className={styles.ticketContent__left}>
-                      <h6 className={styles.ticketContent__left__title}>
-                        GOLF & CAR ENTERTAINMENT
-                      </h6>
-                      <p className={styles.ticketContent__left__address}>
-                        <span>Địa chỉ:</span> 85-87 Nguyen Co Thach, An Loi
-                        Đong, Q.2, TPHCM
-                      </p>
-                      <p className={styles.ticketContent__left__address}>
-                        <span>Điện thoại:</span> Điện thoại: 0909 33 7777
-                      </p>
-                      <p className={styles.ticketContent__left__address}>
-                        <span>Email:</span>Email: mail@lioholdings.com
-                      </p>
-                      <div className={styles.ticketContent__left__social}>
-                        <ul className="d-flex p-0">
-                          <li>
-                            {" "}
-                            <a
-                              className={
-                                styles.ticketContent__left__social__item
-                              }
-                              href=""
-                            >
-                              <MdOutlineFacebook />
-                            </a>
-                          </li>
-                          <li>
-                            {" "}
-                            <a
-                              className={
-                                styles.ticketContent__left__social__item
-                              }
-                              href=""
-                            >
-                              <AiOutlineTwitter />
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className={
-                                styles.ticketContent__left__social__item
-                              }
-                              href=""
-                            >
-                              <AiOutlineInstagram />
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className={
-                                styles.ticketContent__left__social__item
-                              }
-                              href=""
-                            >
-                              <AiFillYoutube />
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-md-5">
-                    <div className={styles.ticketContent__right}>
-                      <Form className="d-flex flex-column justify-content-center ">
-                        <h6 className={styles.ticketContent__right__title}>
-                          ĐĂNG KÝ NHẬN THÔNG TIN
-                        </h6>
-                        <p className={styles.ticketContent__right__des}>
-                          Vui lòng để lại địa chỉ email, chúng tôi sẽ cập nhật
-                          thông tin tới quý khách!
-                        </p>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                          <Form.Control
-                            className={styles.footer__input}
-                            type="text"
-                            placeholder="Họ và tên"
-                          />
-                        </Form.Group>
-
-                        <Form.Group
-                          className="mb-3"
-                          controlId="formBasicPassword"
-                        >
-                          <Form.Control
-                            className={styles.footer__input}
-                            type="email"
-                            placeholder="Email"
-                          />
-                        </Form.Group>
-                        <div className="d-flex justify-content-center align-items-center w-100">
-                          <button
-                            className={styles.main__btn + " " + "text-center"}
-                            type="submit"
-                          >
-                            GỬI
-                          </button>
-                        </div>
-                      </Form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
+	return (
+		<footer className={styles.footer}>
+			<div className={styles.box_footer + " " + "container py-5"}>
+				<div
+					className={
+						styles.box_top_tablet +
+						" " +
+						"row justify-content-sm-between justify-content-center"
+					}
+				>
+					{HeaderData.map((item, index) => {
+						return (
+							<div
+								key={index}
+								className="col-sm-3 col-5 mb-3 mb-lg-0 "
+							>
+								<span className={styles.title}>
+									{item.title}
+								</span>
+								<div>
+									{item.listTag.map((subItem, subIndex) => {
+										return (
+											<div
+												className={styles.tagList}
+												key={subIndex}
+											>
+												{subItem}
+											</div>
+										);
+									})}
+								</div>
+							</div>
+						);
+					})}
+				</div>
+				<div
+					className={
+						styles.box_top_desktop + " " + "justify-content-between"
+					}
+				>
+					{HeaderData.map((item, index) => {
+						return (
+							<div key={index}>
+								<span className={styles.title}>
+									{item.title}
+								</span>
+								<div>
+									{item.listTag.map((subItem, subIndex) => {
+										return (
+											<div
+												className={styles.tagList}
+												key={subIndex}
+											>
+												{subItem}
+											</div>
+										);
+									})}
+								</div>
+							</div>
+						);
+					})}
+				</div>
+				<div className={styles.box_bottom + " " + "row"}>
+					<div
+						className={
+							styles.bottom_left +
+							" " +
+							"col-12 col-lg-6 mb-3 mb-lg-0"
+						}
+					>
+						<h5>Liên hệ</h5>
+						<div
+							className="mb-1"
+							style={{
+								borderBottom: "0.5px solid #000000",
+								width: "5%",
+							}}
+						></div>
+						<h4>công ty cô phần fos media</h4>
+						<span>( một thành viên của aura capital )</span>
+						<h6 className="mt-2">
+							Số 1-3 đường D4, Khu Him Lam Kênh Tẻ, Phường Tân
+							Hưng, Quận 7, TPHCM
+						</h6>
+						<h6>Số điện thoại: 02 866 833 079</h6>
+						<h6>Email: ketoan@fosgroup.vn</h6>
+						<h6>Làm việc từ thứ 2 - thứ 7, 08h00 - 17h00</h6>
+					</div>
+					<div
+						className={
+							styles.box_right +
+							" " +
+							"col-12 col-lg-6 d-flex justify-content-end justify-content-lg-center mt-3 mt-lg-0"
+						}
+					>
+						<div className={styles.contain}>
+							<h4>đăng kí nhận thông tin</h4>
+							<div
+								className="mb-3"
+								style={{
+									borderBottom: "0.5px solid #000000",
+									width: "25%",
+								}}
+							></div>
+							<span>
+								Đăng kí để không bỏ lỡ những thông tin mới nhất
+								từ FOS Group
+							</span>
+							<div>
+								<input
+									type="text"
+									placeholder="Your Email (required )"
+								/>
+							</div>
+							<button>sign in</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	);
 }
 
 export default Footer;
