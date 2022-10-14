@@ -1,0 +1,35 @@
+.mainLayout {
+  margin: 68px auto 0px;
+  color: #fff;
+  max-width: 1440px;
+  width: 100% !important;
+  background-color: #011e46;
+  overflow: hidden;
+
+  .children {
+    padding: 0px 90px;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .mainLayout {
+    .children {
+      padding: 0px 45px;
+    }
+  }
+}
+
+@media all and (max-width: 576px) {
+  .mainLayout {
+    .children {
+      padding: 0px 20px;
+    }
+  }
+}
+@media all and (max-width: 480px) {
+  .mainLayout {
+    .children {
+      padding: 0px 20px;
+    }
+  }
+}
