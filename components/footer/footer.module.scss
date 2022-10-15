@@ -1,119 +1,94 @@
 .footer {
-  background: linear-gradient(rgba(1, 30, 70, 0.45), rgba(0, 0, 0, 0.7)),
-    url("/images/Footer/bg.png");
-  background-size: cover;
-  object-fit: contain;
-  background-color: #011e46;
-  color: #fff;
-  position: relative;
-  .footer__ticket {
-    display: flex;
-    margin-bottom: 30px;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: space-between;
-    .footer__ticket__title {
-      font-weight: 600;
-      margin-bottom: 10px;
-      font-style: italic;
-    }
-  }
-  // .footer__hold {
-  // }
-
-  // .footer__logo {
-  // }
-  .ticketContainer {
-    border-radius: 6px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    .ticketContent {
-      padding: 20px 30px;
-      border-radius: 10px;
-      .ticketContent__left {
-        .ticketContent__left__title {
-          font-style: normal;
-          font-weight: 800;
-          font-size: 20px;
-          line-height: 28px;
-          letter-spacing: 1.1px;
-        }
-        .ticketContent__left__address {
-          font-weight: 400;
-          font-size: 11px;
-          line-height: 167.4%;
-          font-style: normal;
-          margin: 4px 0;
-          span {
-            font-weight: 700;
-            font-size: 13px;
-            line-height: 20px;
-            letter-spacing: 0.5px;
-          }
-        }
-        .ticketContent__left__social {
-          margin-top: 10px;
-          .ticketContent__left__social__item {
-            margin-right: 10px;
-            font-size: 50px;
-            color: #fff;
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            img {
-              width: 10px;
-            }
-          }
-        }
-      }
-      .ticketContent__right {
-        .ticketContent__right__title {
-          font-style: normal;
-          font-weight: 800;
-          font-size: 20px;
-          line-height: 28px;
-          letter-spacing: 1.1px;
-        }
-        .ticketContent__right__des {
-          font-weight: 400;
-          font-size: 11px;
-          line-height: 167.4%;
-          font-style: normal;
-          margin: 4px 0;
-        }
-      }
-    }
-  }
-  .footer__input {
-    background: rgba(217, 217, 217, 0.5);
-    color: #fff;
-    font-size: 13px;
-    border: none;
-    border-radius: none;
-  }
-  .footer__input::placeholder {
-    color: #fff;
-  }
-}
-.main__btn {
-  padding: 5px 20px;
-  background: #ffffff;
-  font-weight: 700;
-  font-size: 10px;
-  color: #011e46;
-  border: none;
-  border-radius: 3px;
-  height: 33px;
-  max-height: 33px;
-  white-space: nowrap;
-  margin-right: 10px;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    margin-right: 0px;
-  }
+	background-color: #fff;
+	color: #000000;
+	.box_footer {
+		.box_top_tablet,
+		.box_top_desktop {
+			display: none;
+			margin-bottom: 40px;
+			.title {
+				font-weight: 700;
+				font-size: 12px;
+				line-height: 25px;
+				text-transform: uppercase;
+			}
+			.tagList {
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 41px;
+			}
+		}
+		@media all and (max-width: 992px) {
+			.box_top_tablet {
+				display: flex;
+			}
+		}
+		@media all and (min-width: 992px) {
+			.box_top_desktop {
+				display: flex;
+			}
+		}
+		.box_bottom {
+			.bottom_left {
+				h5 {
+					font-weight: 700;
+					font-size: 12px;
+					line-height: 25px;
+					text-transform: uppercase;
+				}
+				h4 {
+					font-weight: 700;
+					font-size: 18px;
+					line-height: 25px;
+					text-transform: uppercase;
+				}
+				span,
+				h6 {
+					font-weight: 400;
+					font-size: 15px;
+					line-height: 25px;
+				}
+			}
+			.box_right {
+				.contain {
+					h4 {
+						font-weight: 700;
+						font-size: 18px;
+						line-height: 25px;
+						text-transform: uppercase;
+					}
+					span {
+						font-weight: 400;
+						font-size: 15px;
+						line-height: 25px;
+					}
+					input {
+						background: rgba(228, 228, 228, 0.75);
+						border-radius: 50px;
+						padding: 5px 10px;
+						border: none;
+						width: 90%;
+						margin: 10px 0;
+					}
+					button {
+						color: white;
+						font-weight: 700;
+						font-size: 15px;
+						line-height: 25px;
+						text-transform: uppercase;
+						padding: 5px 20px;
+						background: #b90000;
+						border-radius: 50px;
+						border: 2px solid #b90000;
+						font-family: "Times New Roman";
+						font-style: normal;
+						&:hover {
+							background: #fff;
+							color: #b90000;
+						}
+					}
+				}
+			}
+		}
+	}
 }
