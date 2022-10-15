@@ -27,7 +27,7 @@
   }
 
   &_title_sm {
-    font-size:18px;
+    font-size: 18px;
     font-weight: 700;
     text-align: justify;
   }
@@ -50,5 +50,14 @@
     overflow-y: auto;
     border: 1px solid #000;
     padding: 12px !important;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #605959;
+    }
   }
 }
