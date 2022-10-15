@@ -6,14 +6,14 @@
   overflow: hidden;
 
   .children {
-    padding: 0px 35px;
+    padding: 180px 35px 0px 35px;
   }
 }
 
 @media all and (max-width: 992px) {
   .mainLayout {
     .children {
-      padding: 0px 25px;
+      padding: 180px 25px 0px 25px;
     }
   }
 }
@@ -21,7 +21,7 @@
 @media all and (max-width: 576px) {
   .mainLayout {
     .children {
-      padding: 0px 15px;
+      padding: 180px 15px 0px 15px;
     }
   }
 }
@@ -29,7 +29,7 @@
 @media all and (max-width: 480px) {
   .mainLayout {
     .children {
-      padding: 0px 15px;
+      padding: 180px 15px 0px 15px;
     }
   }
 }

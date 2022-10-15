@@ -46,7 +46,8 @@
   }
 
   .scroll {
-    height: 650px;
+    height: 100%;
+    max-height: 850px;
     overflow-y: auto;
     border: 1px solid #000;
     padding: 12px !important;
