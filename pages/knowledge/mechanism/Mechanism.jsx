@@ -7,6 +7,7 @@ export default function Mechanism(props) {
   return (
     <div className={styles.mechanism}>
       <p className={styles.mechanism_heading}>cơ chế vốn</p>
+      
       <section className="d-flex flex-column-reverse flex-sm-row align-items-center">
         <div className="col-12 col-sm-5">
           <p className={styles.mechanism_title}>

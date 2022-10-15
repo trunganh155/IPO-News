@@ -12,8 +12,8 @@ export default function Expert(props) {
           <Image
             alt="chuyen_gia"
             src="/images/expert/DMN.png"
-            width={452}
-            height={491}
+            width={462}
+            height={501}
           />
         </div>
 
@@ -39,8 +39,8 @@ export default function Expert(props) {
                       <Image
                         alt="chuyen_gia"
                         src="/images/gray.png"
-                        width={160}
-                        height={93}
+                        width={180}
+                        height={113}
                       />
 
                       <p className={styles.gallery_title_sm}>
