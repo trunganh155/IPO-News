@@ -151,7 +151,7 @@ function Header(props) {
 						style={{
 							paddingBottom: showMenu ? "250px" : "0",
 							transition: "all 0.5s",
-							overflow: "hidden",
+							// overflow: "hidden",
 						}}
 						className={
 							styles.menu_list +
