@@ -9,6 +9,22 @@ import Linkin from "../../public/images/icons/linkin.svg";
 
 function SignUp() {
 	const router = useRouter();
+	function showPassword() {
+		var x = document.getElementById("password");
+		if (x.type === "password") {
+			x.type = "text";
+		} else {
+			x.type = "password";
+		}
+	}
+	function showRePassword() {
+		var x = document.getElementById("repassword");
+		if (x.type === "password") {
+			x.type = "text";
+		} else {
+			x.type = "password";
+		}
+	}
 	return (
 		<div className={styles.sign_up + " " + "container"}>
 			<div className={styles.center_box}>
@@ -81,11 +97,18 @@ function SignUp() {
 									}
 								>
 									<input
+										id="password"
 										type="password"
 										aria-label="Password"
 										aria-describedby="basic-addon1"
 									/>
-									<Image src={EyeShow} alt="eye_show" />
+									<Image
+										onClick={() => {
+											showPassword();
+										}}
+										src={EyeShow}
+										alt="eye_show"
+									/>
 								</div>
 							</div>
 							<div className={styles.box_input}>
@@ -98,11 +121,18 @@ function SignUp() {
 									}
 								>
 									<input
+										id="repassword"
 										type="password"
 										aria-label="RePassword"
 										aria-describedby="basic-addon1"
 									/>
-									<Image src={EyeShow} alt="eye_show" />
+									<Image
+										onClick={() => {
+											showRePassword();
+										}}
+										src={EyeShow}
+										alt="eye_show"
+									/>
 								</div>
 							</div>
 							<div
