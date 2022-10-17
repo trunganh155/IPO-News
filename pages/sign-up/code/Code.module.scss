@@ -6,7 +6,7 @@
 	height: 100%;
 	overflow: hidden;
 	.center_box {
-		padding: 180px 35px 0px 35px;
+		padding: 80px 35px 0px 35px;
 		display: flex;
 		justify-content: center;
 		align-content: center;
@@ -62,7 +62,7 @@
 								font-weight: 400;
 								font-size: 18px;
 								line-height: 21px;
-								color: #868686;
+								color: black;
 								border-radius: 10px;
 								border: 1px solid #c1c1c1;
 								&:focus {
@@ -116,7 +116,7 @@
 @media all and (max-width: 992px) {
 	.sign_up_code {
 		.center_box {
-			padding: 180px 25px 0px 25px;
+			padding: 80p 25px 0px 25px;
 		}
 	}
 }
@@ -130,7 +130,7 @@
 @media all and (max-width: 576px) {
 	.sign_up_code {
 		.center_box {
-			padding: 180px 15px 0px 15px;
+			padding: 80px 15px 0px 15px;
 		}
 	}
 }
