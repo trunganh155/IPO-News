@@ -1,16 +1,6 @@
 .forum {
   padding: 20px 0 50px 0;
 
-  &_header {
-    position: relative;
-
-    .text {
-      position: absolute;
-      bottom: 35px;
-      left: 35px;
-    }
-  }
-
   &_heading {
     position: relative;
     font-size: 40px;
@@ -30,33 +20,26 @@
     }
   }
 
-  &_content {
-    font-size: 20px;
-    font-weight: 400;
-    text-align: justify;
-  }
-
-  &_title_lg {
-    color: #fff;
+  &_title {
     font-size: 40px;
     font-weight: 700;
   }
 
-  &_content_lg {
-    color: #fff;
+  &_content {
     font-size: 18px;
     font-weight: 400;
   }
 
-  &_title_sm {
-    font-size: 15px;
-    font-weight: 700;
-    text-align: justify;
+  &_text {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 4px !important;
   }
 
-  &_content_sm {
-    font-size: 13px;
-    font-weight: 400;
-    text-align: justify;
+  .avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
   }
 }

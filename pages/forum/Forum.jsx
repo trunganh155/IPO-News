@@ -10,106 +10,57 @@ export default function Forum(props) {
 
   return (
     <div className={styles.forum}>
-      <section className={styles.forum_header + " " + "mb-4"}>
-        <div className={styles.background + " " + "col-12"}>
-          <Image
-            alt="forum_image"
-            src="/images/grey.png"
-            width={1429}
-            height={752}
-          />
-        </div>
+      <p className={styles.forum_heading}>diễn đàn tạp chí ipo</p>
 
-        <div className={styles.text + " " + "col-8"}>
-          <p className={styles.forum_title_lg}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-
-          <p className={styles.forum_content_lg}>
-            Senectus et netus et malesuada. Nunc pulvinar sapien et ligula
-            ullamcorper malesuada proin. Neque convallis a cras semper auctor.
-          </p>
-        </div>
-      </section>
-
-      <div className="line"></div>
-
-      <section className="d-flex flex-row">
-        <div className="col-9 d-flex flex-column pe-5">
-          <div className="col-12">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: post.content,
-              }}
-            ></div>
-          </div>
-
-          <div className="col-12 d-flex flex-row justify-content-between">
-            {Array(3)
-              .fill()
-              .map((item, index) => {
-                return (
-                  <div className="col-4 px-2">
-                    <Image
-                      alt="forum_image"
-                      src="/images/black.png"
-                      width={374}
-                      height={219}
-                    />
-
-                    <p className={styles.forum_title}>
-                      Lorem ipsum dolor sit amet.
-                    </p>
-                  </div>
-                );
-              })}
-          </div>
-        </div>
-
-        <div className="col-3">
-          <Image
-            alt="forum_image"
-            src="/images/mechanism/banner.png"
-            width={355}
-            height={854}
-          />
-        </div>
-      </section>
-
-      <p className={styles.forum_heading}>TIN TỨC KHÁC</p>
-
-      <section className="d-flex flex-column">
+      <section>
         {Array(3)
           .fill()
           .map((item, index) => {
             return (
-              <div className="col-12 d-flex flex-row mb-3">
-                <div className="col-9 pe-5">
-                  <div className="px-5">
-                    <p className={styles.forum_title_sm}>
+              <div>
+                <div className="d-flex flex-row mb-4">
+                  <div className="col-4">
+                    <Image
+                      alt="forum_image"
+                      src="/images/grey.png"
+                      width={445}
+                      height={271}
+                    />
+                  </div>
+
+                  <div className="col-8 ps-3">
+                    <p className={styles.forum_title}>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Fugit cum error assumenda quo.
                     </p>
 
-                    <p className={styles.forum_content_sm}>
+                    <p className={styles.forum_content}>
                       Senectus et netus et malesuada. Nunc pulvinar sapien et
                       ligula ullamcorper malesuada proin. Neque convallis a cras
-                      semper auctor. Libero id faucibus nisl tincidunt eget. Leo
-                      a diam sollicitudin tempor id. A lacus vestibulum sed arcu
-                      non odio euismod lacinia. In tellus integer feugiat
-                      scelerisque.
+                      semper auctor.
                     </p>
+
+                    <div className="d-flex flex-row">
+                      <div className={styles.avatar}>
+                        <Image
+                          alt="forum_image"
+                          src="/images/grey.png"
+                          width={35}
+                          height={35}
+                          objectFit="cover"
+                        />
+                      </div>
+
+                      <div className="d-flex flex-column ps-3">
+                        <p className={styles.forum_text}>Tên tác giả</p>
+                        <p className={styles.forum_text}>
+                          Tên tác giả Lượt xem: 17 - Bình Luận: 5
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="col-3">
-                  <Image
-                    alt="forum_image"
-                    src="/images/black.png"
-                    width={344}
-                    height={170}
-                  />
-                </div>
+                <div className="line"></div>
               </div>
             );
           })}
