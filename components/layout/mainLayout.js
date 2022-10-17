@@ -7,24 +7,24 @@ import { useRouter } from "next/router";
 function MainLayout({ children }) {
 	const router = useRouter();
 
-	return (
-		<>
-			<div className={styles.mainLayout}>
-				<Header />
-				<div
-					className={styles.children}
-					style={{
-						backgroundColor: router.pathname.includes("/case-study")
-							? "#000"
-							: "#EAE3D4",
-					}}
-				>
-					{children}
-				</div>
-				<Footer />
-			</div>
-		</>
-	);
+  return (
+    <>
+      <div className={styles.mainLayout}>
+        <Header />
+        <div
+          className={styles.children}
+          style={{
+            backgroundColor: router.pathname.includes("/case-study")
+              ? "#000"
+              : "#F0EEE8",
+          }}
+        >
+          {children}
+        </div>
+        <Footer />
+      </div>
+    </>
+  );
 }
 
 export default MainLayout;
