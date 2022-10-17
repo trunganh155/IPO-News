@@ -16,7 +16,7 @@ function MainLayout({ children }) {
           style={{
             backgroundColor: router.pathname.includes("/case-study")
               ? "#000"
-              : "#fff",
+              : "#F0EEE8",
           }}
         >
           {children}
