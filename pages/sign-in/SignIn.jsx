@@ -9,6 +9,14 @@ import Linkin from "../../public/images/icons/linkin.svg";
 
 function SignIn() {
 	const router = useRouter();
+	function showPassword() {
+		var x = document.getElementById("password");
+		if (x.type === "password") {
+			x.type = "text";
+		} else {
+			x.type = "password";
+		}
+	}
 	return (
 		<div className={styles.sign_in + " " + "container"}>
 			<div className={styles.center_box}>
@@ -70,12 +78,19 @@ function SignIn() {
 									}
 								>
 									<input
+										id="password"
 										type="password"
 										placeholder="Mật khẩu"
 										aria-label="Password"
 										aria-describedby="basic-addon1"
 									/>
-									<Image src={EyeShow} alt="eye_show" />
+									<Image
+										onClick={() => {
+											showPassword();
+										}}
+										src={EyeShow}
+										alt="eye_show"
+									/>
 								</div>
 							</div>
 
