@@ -7,7 +7,9 @@ import Navbar from "react-bootstrap/Navbar";
 import { BiSearch } from "react-icons/bi";
 import { HeaderData } from "../../utils/DataDemo/Header";
 import styles from "./header.module.scss";
+import { useRouter } from "next/router";
 function Header(props) {
+	const router = useRouter();
 	const [showMenu, setShowMenu] = useState(false);
 	return (
 		<Navbar
@@ -161,8 +163,8 @@ function Header(props) {
 					>
 						{HeaderData.map((item, index) => {
 							return (
-								<Link key={index} href="/">
-									<a
+								<Link key={index} href={"/"}>
+									<div
 										className={[
 											styles.link,
 											styles.dropdown,
@@ -170,7 +172,11 @@ function Header(props) {
 										onMouseEnter={() => setShowMenu(true)}
 										onClick={(e) => e.preventDefault()}
 									>
-										<span>
+										<span
+											onClick={() =>
+												router.push(item.link)
+											}
+										>
 											{item.title}
 											<i className="fa fa-chevron-down"></i>
 										</span>
@@ -184,18 +190,21 @@ function Header(props) {
 																styles.dropdown_item_1
 															}
 														>
-															<Link href="/">
-																<a>
-																	{subItem}
-																	{/* <i className="fa fa-chevron-right"></i> */}
-																</a>
-															</Link>
+															<div
+																onClick={() =>
+																	router.push(
+																		subItem.link
+																	)
+																}
+															>
+																{subItem.tag}
+															</div>
 														</li>
 													);
 												}
 											)}
 										</ul>
-									</a>
+									</div>
 								</Link>
 							);
 						})}

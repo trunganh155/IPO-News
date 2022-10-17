@@ -2,10 +2,10 @@ import React from "react";
 import { HeaderData } from "../../utils/DataDemo/Header";
 import styles from "./footer.module.scss";
 import { useRouter } from "next/router";
-function Footer(props) {
+function FooterBlack(props) {
 	const router = useRouter();
 	return (
-		<footer className={styles.footer}>
+		<footer className={styles.footer_black}>
 			<div className={styles.box_footer + " " + "container py-5"}>
 				<div
 					className={
@@ -18,8 +18,8 @@ function Footer(props) {
 						return (
 							<div
 								key={index}
-								className="col-sm-3 col-5 mb-3 mb-lg-0 "
 								onClick={() => router.push(item.link)}
+								className="col-sm-3 col-5 mb-3 mb-lg-0 "
 							>
 								<span className={styles.title}>
 									{item.title}
@@ -137,4 +137,4 @@ function Footer(props) {
 	);
 }
 
-export default Footer;
+export default FooterBlack;

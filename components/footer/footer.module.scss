@@ -1,6 +1,5 @@
-.footer {
-	background-color: #fff;
-	color: #000000;
+.footer,
+.footer_black {
 	.box_footer {
 		.box_top_tablet,
 		.box_top_desktop {
@@ -70,25 +69,50 @@
 						width: 90%;
 						margin: 10px 0;
 					}
-					button {
-						color: white;
-						font-weight: 700;
-						font-size: 15px;
-						line-height: 25px;
-						text-transform: uppercase;
-						padding: 5px 20px;
-						background: #b90000;
-						border-radius: 50px;
-						border: 2px solid #b90000;
-						font-family: "Times New Roman";
-						font-style: normal;
-						&:hover {
-							background: #fff;
-							color: #b90000;
-						}
-					}
 				}
 			}
+		}
+	}
+}
+.footer {
+	background-color: #fff;
+	color: #000000;
+	button {
+		color: white;
+		font-weight: 700;
+		font-size: 15px;
+		line-height: 25px;
+		text-transform: uppercase;
+		padding: 5px 20px;
+		background: #b90000;
+		border-radius: 50px;
+		border: 2px solid #b90000;
+		font-family: "Times New Roman";
+		font-style: normal;
+		&:hover {
+			background: #fff;
+			color: #b90000;
+		}
+	}
+}
+.footer_black {
+	background-color: #000;
+	color: #fff;
+	button {
+		color: white;
+		font-weight: 700;
+		font-size: 15px;
+		line-height: 25px;
+		text-transform: uppercase;
+		padding: 5px 20px;
+		background: #008dba;
+		border-radius: 50px;
+		border: 2px solid #008dba;
+		font-family: "Times New Roman";
+		font-style: normal;
+		&:hover {
+			background: #000;
+			color: #008dba;
 		}
 	}
 }
