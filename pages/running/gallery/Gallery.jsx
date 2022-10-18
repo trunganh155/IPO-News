@@ -6,7 +6,10 @@ import styles from "./Gallery.module.scss";
 export default function Gallery(props) {
   return (
     <div className={styles.gallery}>
-      <p className={styles.gallery_heading}>Gallery</p>
+      <div className="heading">
+        <p className="text">gallery</p>
+        <p className="col decor"></p>
+      </div>
 
       <section className="d-flex flex-row">
         <div className="col-6 pe-2">

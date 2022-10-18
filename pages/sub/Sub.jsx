@@ -36,6 +36,17 @@ export default function Sub(props) {
 
       <section className="d-flex flex-row">
         <div className="col-9 d-flex flex-column pe-5">
+          <div className="col-12 d-flex flex-column my-3">
+            <div className="d-flex flex-row mb-2">
+              <i className="fab fa-facebook "></i>
+              <i className="fab fa-linkedin "></i>
+              <i className="fab fa-instagram "></i>
+              <i className="far fa-link "></i>
+            </div>
+
+            <p className={styles.timeCreate}>Ngày 29/08/2022 - 13h50 </p>
+          </div>
+
           <div className="col-12">
             <div
               dangerouslySetInnerHTML={{
@@ -76,7 +87,10 @@ export default function Sub(props) {
         </div>
       </section>
 
-      <p className={styles.sub_heading}>TIN TỨC KHÁC</p>
+      <div className="heading">
+        <p className="text">tin tức khác</p>
+        <p className="col decor"></p>
+      </div>
 
       <section className="d-flex flex-column">
         {Array(3)

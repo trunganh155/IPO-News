@@ -1,11 +1,11 @@
 import React from "react";
 import MainLayout from "../../components/layout/mainLayout";
-import Gallery from "./Gallery";
+import Running from "./Running";
 
 function Index(props) {
   return (
     <MainLayout>
-      <Gallery />
+      <Running />
     </MainLayout>
   );
 }

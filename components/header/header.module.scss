@@ -2,7 +2,8 @@
 	max-width: 1440px;
 	background-color: #f0eee8;
 	color: black;
-	padding: 0 35px;
+	padding: 0px 35px !important;
+
 	.wrapper {
 		.header_top {
 			.search {
@@ -201,5 +202,17 @@
 	/* Handle on hover */
 	::-webkit-scrollbar-thumb:hover {
 		background: #555;
+	}
+}
+
+@media all and (max-width: 992px) {
+	.header {
+		padding: 0px 25px !important;
+	}
+}
+
+@media all and (max-width: 576px) {
+	.header {
+		padding: 0px 15px !important;
 	}
 }

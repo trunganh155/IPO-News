@@ -6,7 +6,10 @@ import styles from "./Course.module.scss";
 export default function Course(props) {
   return (
     <div className={styles.course}>
-      <p className={styles.course_heading}>khóa học</p>
+      <div className="heading">
+        <p className="text">khóa học</p>
+        <p className="col decor"></p>
+      </div>
 
       <section className="d-flex flex-row">
         <div className="col-8 pe-4" style={{ borderRight: "1px solid #000" }}>
@@ -135,8 +138,8 @@ export default function Course(props) {
         <Image
           alt="khoa_hoc"
           src="/images/course/banner.png"
-          width={1332}
-          height={260}
+          width={1380}
+          height={280}
         />
       </section>
     </div>
