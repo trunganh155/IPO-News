@@ -67,21 +67,23 @@ export default function CaseStudy(props) {
 
         <div className="col-9">
           <div className={styles.scroll + " " + "d-flex flex-wrap"}>
-            {Array(15)
+            {Array(16)
               .fill()
               .map((item, index) => {
                 return (
-                  <div className="col-4">
+                  <div className="col-4 px-1">
                     <Image
                       alt="khoa_hoc"
                       src="/images/grey.png"
-                      width={305}
-                      height={167}
+                      width={315}
+                      height={177}
                     />
 
-                    <p className={styles.course_title}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
+                    <div className="px-1">
+                      <p className={styles.caseStudy_title}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      </p>
+                    </div>
                   </div>
                 );
               })}
