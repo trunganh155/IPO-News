@@ -109,7 +109,7 @@ export default function Gallery(props) {
             .fill()
             .map((item, index) => {
               return (
-                <div className="col-3">
+                <div className="col-3" key={index}>
                   <div class="ratio ratio-16x9">
                     <iframe
                       src="https://www.youtube.com/embed/Cd5Ry0E5S3w"
