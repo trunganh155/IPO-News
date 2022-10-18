@@ -17,7 +17,7 @@ function Header(props) {
       className={styles.header + "  " + "justify-content-between mx-auto"}
       fixed="top"
     >
-      <Container fluid className={styles.wrapper}>
+      <Container fluid className={styles.wrapper + " " + "p-0"}>
         <div className="w-100">
           <div className={styles.header_top + " " + "row px-2 my-3"}>
             <div
