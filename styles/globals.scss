@@ -240,9 +240,34 @@ hr {
   color: #0686d6;
 }
 
+.heading {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  .text {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 400;
+  }
+
+  .decor {
+    border-bottom: 1px solid #000;
+    height: 41px;
+    margin-left: 20px;
+  }
+}
+
 .line {
   width: 100%;
   height: 1px;
   background-color: #000;
+  margin: 0px 0px 20px 0px;
+}
+
+.lineWhite {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
   margin: 0px 0px 20px 0px;
 }

@@ -52,7 +52,7 @@ export default function CaseStudy(props) {
                     Select all
                   </Checkbox>
 
-                  <hr />
+                  <div className="lineWhite"></div>
 
                   <CheckboxGroup
                     options={plainOptions}

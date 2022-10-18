@@ -10,7 +10,10 @@ export default function Forum(props) {
 
   return (
     <div className={styles.forum}>
-      <p className={styles.forum_heading}>diễn đàn tạp chí ipo</p>
+      <div className="heading">
+        <p className="text">diễn đàn tạp chí ipo</p>
+        <p className="col decor"></p>
+      </div>
 
       <section>
         {Array(3)

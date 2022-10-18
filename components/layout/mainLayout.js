@@ -1,11 +1,12 @@
+import { useRouter } from "next/router";
 import React from "react";
 import Footer from "../footer/footer";
+import FooterDark from "../footer/footer-dark";
 import Header from "../header/header";
 import styles from "./mainLayout.module.scss";
-import { useRouter } from "next/router";
 
 function MainLayout({ children }) {
-	const router = useRouter();
+  const router = useRouter();
 
   return (
     <>
@@ -21,7 +22,7 @@ function MainLayout({ children }) {
         >
           {children}
         </div>
-        <Footer />
+        {router.pathname === "/" ? <Footer /> : <FooterDark />}
       </div>
     </>
   );

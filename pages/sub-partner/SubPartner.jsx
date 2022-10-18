@@ -36,6 +36,17 @@ export default function SubPartner(props) {
 
       <section className="d-flex flex-row">
         <div className="col-9 pe-5">
+          <div className="col-12 d-flex flex-column my-3">
+            <div className="d-flex flex-row mb-2">
+              <i className="fab fa-facebook "></i>
+              <i className="fab fa-linkedin "></i>
+              <i className="fab fa-instagram "></i>
+              <i className="far fa-link "></i>
+            </div>
+
+            <p className={styles.timeCreate}>Ngày 29/08/2022 - 13h50 </p>
+          </div>
+
           <div
             dangerouslySetInnerHTML={{
               __html: post.content,
