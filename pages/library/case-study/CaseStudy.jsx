@@ -43,7 +43,7 @@ export default function CaseStudy(props) {
             .fill()
             .map((item, index) => {
               return (
-                <div className="mb-5">
+                <div className="mb-5"  key={index}>
                   <Checkbox
                     indeterminate={indeterminate}
                     onChange={onCheckAllChange}
@@ -71,7 +71,7 @@ export default function CaseStudy(props) {
               .fill()
               .map((item, index) => {
                 return (
-                  <div className="col-4 px-1">
+                  <div className="col-4 px-1"  key={index}>
                     <Image
                       alt="khoa_hoc"
                       src="/images/grey.png"

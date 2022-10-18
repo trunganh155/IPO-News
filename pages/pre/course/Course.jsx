@@ -45,7 +45,7 @@ export default function Course(props) {
             .fill()
             .map((item, index) => {
               return (
-                <div className="d-flex flex-wrap">
+                <div className="d-flex flex-wrap"  key={index}>
                   <div className="col-12">
                     <Image
                       alt="khoa_hoc"
@@ -72,7 +72,7 @@ export default function Course(props) {
             .fill()
             .map((item, index) => {
               return (
-                <div>
+                <div  key={index}>
                   <div className="line"></div>
 
                   <div className="d-flex flex-row">
@@ -112,7 +112,7 @@ export default function Course(props) {
               .fill()
               .map((item, index) => {
                 return (
-                  <div className="d-flex flex-row">
+                  <div className="d-flex flex-row"  key={index}>
                     <div className="col-5">
                       <Image
                         alt="khoa_hoc"
