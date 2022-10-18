@@ -35,7 +35,7 @@ export default function Expert(props) {
                 .fill()
                 .map((item, index) => {
                   return (
-                    <div className="col-3">
+                    <div className="col-3" key={index}>
                       <Image
                         alt="chuyen_gia"
                         src="/images/gray.png"

@@ -60,7 +60,7 @@ export default function Sub(props) {
               .fill()
               .map((item, index) => {
                 return (
-                  <div className="col-4 px-2">
+                  <div className="col-4 px-2" key={index}>
                     <Image
                       alt="sub_image"
                       src="/images/black.png"
@@ -97,7 +97,7 @@ export default function Sub(props) {
           .fill()
           .map((item, index) => {
             return (
-              <div className="col-12 d-flex flex-row mb-3">
+              <div className="col-12 d-flex flex-row mb-3" key={index}>
                 <div className="col-9 pe-5">
                   <div className="px-5">
                     <p className={styles.sub_title_sm}>

@@ -20,7 +20,7 @@ export default function Forum(props) {
           .fill()
           .map((item, index) => {
             return (
-              <div>
+              <div key={index}>
                 <div className="d-flex flex-row mb-4">
                   <div className="col-4">
                     <Image
