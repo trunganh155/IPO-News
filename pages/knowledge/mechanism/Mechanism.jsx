@@ -73,14 +73,14 @@ export default function Mechanism(props) {
               </div>
 
               <div className="col-8 px-4">
-                <p
+                <a
                   className={styles.mechanism_title}
                   onClick={() =>
                     router.push(`/${removeAccents(item?._id || "")}`)
                   }
                 >
                   {item?.title}
-                </p>
+                </a>
 
                 <p className={styles.mechanism_content}>
                   <section
