@@ -1,4 +1,3 @@
-import thuongApi from "../TestReducer copy/test.api";
 import thuongApi from "./thuong.api";
 import { setHoa } from "./thuong.reducer";
 

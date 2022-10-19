@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
-import styles from "./Mechanism.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../../store/redux/NewsReducer/news.action";
+import { removeAccents } from "../../../utils/Function";
+import styles from "./Mechanism.module.scss";
 
 export default function Mechanism(props) {
   const limit = 300;
@@ -25,7 +26,12 @@ export default function Mechanism(props) {
 
       <section className="d-flex flex-column-reverse flex-sm-row align-items-center">
         <div className="col-12 col-sm-5">
-          <p className={styles.mechanism_title}>{news[0]?.title}</p>
+          <p
+            className={styles.mechanism_title}
+            onClick={() => router.push(`/${removeAccents(news[0]?._id || "")}`)}
+          >
+            {news[0]?.title}
+          </p>
 
           <p className={styles.mechanism_content}>
             <section
@@ -67,7 +73,14 @@ export default function Mechanism(props) {
               </div>
 
               <div className="col-8 px-4">
-                <p className={styles.mechanism_title}>{item?.title}</p>
+                <p
+                  className={styles.mechanism_title}
+                  onClick={() =>
+                    router.push(`/${removeAccents(item?._id || "")}`)
+                  }
+                >
+                  {item?.title}
+                </p>
 
                 <p className={styles.mechanism_content}>
                   <section
