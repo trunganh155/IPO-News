@@ -127,8 +127,8 @@ export default function Gallery(props) {
         <Image
           alt="khoa_hoc"
           src="/images/course/banner.png"
-          width={1358}
-          height={260}
+          width={1378}
+          height={270}
         />
       </section>
     </div>
