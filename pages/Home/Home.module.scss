@@ -64,7 +64,11 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+				background: linear-gradient(
+					180deg,
+					rgba(0, 0, 0, 0) 0%,
+					rgba(0, 0, 0, 0.5) 100%
+				);
 			}
 			@media all and (max-width: 768px) {
 				.content {
@@ -83,12 +87,15 @@
 
 			color: black;
 		}
-		h3 {
+		h1 {
 			font-family: "UTM Cafeta";
 			font-weight: 400;
 			font-size: 40px;
 			text-transform: uppercase;
 			color: #000000;
+			@media all and (max-width: 768px) {
+				font-size: 25px;
+			}
 		}
 		h4 {
 			font-weight: 400;
@@ -123,14 +130,22 @@
 
 					color: #939393;
 				}
+				@media all and (max-width: 768px) {
+					span {
+						font-size: 16px;
+					}
+				}
 			}
 		}
-		h3 {
+		h1 {
 			font-family: "UTM Cafeta";
 			font-weight: 400;
 			font-size: 40px;
 			text-transform: uppercase;
 			color: #000000;
+			@media all and (max-width: 768px) {
+				font-size: 25px;
+			}
 		}
 		h4 {
 			font-weight: 700;
@@ -147,12 +162,15 @@
 	}
 	.library {
 		margin-bottom: 20px;
-		h3 {
+		h1 {
 			font-family: "UTM Cafeta";
 			font-weight: 400;
 			font-size: 40px;
 			text-transform: uppercase;
 			color: #000000;
+			@media all and (max-width: 768px) {
+				font-size: 25px;
+			}
 		}
 		.item_libary {
 			background-color: white;
@@ -192,7 +210,6 @@
 			border-radius: 10px;
 			font-weight: 700;
 			font-size: 22px;
-
 			color: #ffffff;
 			border: 1px solid #a31925;
 			margin-top: 20px;
@@ -201,38 +218,67 @@
 				background: transparent;
 				color: #a31925;
 			}
+			@media all and (max-width: 768px) {
+				font-size: 16px;
+				padding: 10px;
+			}
 		}
 	}
 	.experts {
-		h3 {
+		.list_expert {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 16px 20px;
+			.item_expert {
+				h5,
+				h6 {
+					font-weight: 700;
+					font-size: 22px;
+					text-align: center;
+				}
+				h6 {
+					color: #000000;
+				}
+				h5 {
+					color: #a31925;
+				}
+			}
+			@media screen and (max-width: 425px) {
+				grid-template-columns: repeat(1, 1fr);
+				grid-gap: 20px;
+			}
+		}
+		h1 {
 			font-family: "UTM Cafeta";
 			font-weight: 400;
 			font-size: 40px;
 			text-transform: uppercase;
 			color: #000000;
+			@media all and (max-width: 768px) {
+				font-size: 25px;
+			}
 		}
 		margin-bottom: 20px;
-		h5,
-		h6 {
-			font-weight: 700;
-			font-size: 22px;
-			text-align: center;
-		}
-		h6 {
-			color: #000000;
-		}
-		h5 {
-			color: #a31925;
+	}
+	@media all and (max-width: 768px) {
+		.experts .list_expert .item_expert {
+			h5,
+			h6 {
+				font-size: 15px;
+			}
 		}
 	}
 	.library_ipo {
 		padding-bottom: 20px;
-		h3 {
+		h1 {
 			font-family: "UTM Cafeta";
 			font-weight: 400;
 			font-size: 40px;
 			text-transform: uppercase;
 			color: #000000;
+			@media all and (max-width: 768px) {
+				font-size: 25px;
+			}
 		}
 		.box_video {
 			height: 440px;
@@ -242,14 +288,18 @@
 			overflow-x: hidden;
 			height: 440px;
 			.item_library {
+				margin-bottom: 10px;
 				h6 {
 					font-weight: 700;
-					font-size: 18px;
+					font-size: 15px;
 					color: #000000;
 				}
 			}
 		}
-		@media all and (max-width: 992px) {
+		@media all and (max-width: 425px) {
+			.box_video {
+				height: 270px;
+			}
 		}
 	}
 }
