@@ -1,9 +1,9 @@
 import clientAxios from "../../../clientAxios";
 
-const getNews = async () => {
+const getExpert = async () => {
   try {
     const resApi = await clientAxios.get(
-      `/news?access_token=${process.env.ACCESS_TOKEN}`
+      `/experts?access_token=${process.env.ACCESS_TOKEN}`
     );
     if (resApi)
       return {
@@ -23,8 +23,8 @@ const getNews = async () => {
   }
 };
 
-const newsApi = {
-  getNews,
+const expertApi = {
+  getExpert,
 };
 
-export default newsApi;
+export default expertApi;

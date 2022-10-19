@@ -1,34 +1,47 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getNews } from "../../store/redux/NewsReducer/news.action";
+import { convertDate, removeAccents } from "../../utils/Function";
 import { post } from "../../utils/PostDemo/Post";
-import { removeAccents } from "../../utils/Function";
 import styles from "./Sub.module.scss";
 
 export default function Sub(props) {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const { news } = useSelector((state) => state.NewsReducer);
+  const newsDetail = news.find(({ _id }) => _id === router.query.sub);
+
+  const convertDateCreate = (str) => {
+    const d = new Date(str);
+
+    return `Ngày ${d.getDate()}/${d.getMonth()}/${d.getFullYear()} - ${d.getHours()}h${d.getMinutes()}`;
+  };
+
+  useEffect(() => {
+    dispatch(getNews());
+  }, [dispatch]);
 
   return (
     <div className={styles.sub}>
       <section className={styles.sub_header + " " + "mb-4"}>
         <div className={styles.background + " " + "col-12"}>
           <Image
+            loader={({ src }) =>
+              `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+            }
             alt="sub_image"
-            src="/images/grey.png"
+            src={newsDetail?.picture}
             width={1429}
             height={752}
           />
         </div>
 
         <div className={styles.text + " " + "col-8"}>
-          <p className={styles.sub_title_lg}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
+          <p className={styles.sub_title_lg}>{newsDetail?.title}</p>
 
-          <p className={styles.sub_content_lg}>
-            Senectus et netus et malesuada. Nunc pulvinar sapien et ligula
-            ullamcorper malesuada proin. Neque convallis a cras semper auctor.
-          </p>
+          <p className={styles.sub_content_lg}>{newsDetail?.mieu_ta_ngan}</p>
         </div>
       </section>
 
@@ -44,13 +57,15 @@ export default function Sub(props) {
               <i className="far fa-link "></i>
             </div>
 
-            <p className={styles.timeCreate}>Ngày 29/08/2022 - 13h50 </p>
+            <p className={styles.timeCreate}>
+              {convertDateCreate(newsDetail?.date_created)}
+            </p>
           </div>
 
           <div className="col-12">
             <div
               dangerouslySetInnerHTML={{
-                __html: post.content,
+                __html: newsDetail?.content,
               }}
             ></div>
           </div>
