@@ -1,17 +1,33 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
-import PopupVideo from "../../components/popupVideo/PopupVideo";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+// import { getExpert } from "../../store/redux/ExpertReducer/expert.action";
+import { getNews } from "../../store/redux/NewsReducer/news.action";
+
 import styles from "./Expert.module.scss";
 
 export default function Expert(props) {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  // const { expert } = useSelector((state) => state.ExpertReducer);
+  const { news } = useSelector((state) => state.NewsReducer);
+
+  useEffect(() => {
+    // dispatch(getExpert());
+    dispatch(getNews());
+  }, [dispatch]);
+
   return (
     <div className={styles.expert}>
       <div className="d-flex flex-row align-items-center">
         <div className="col-4">
           <Image
+            loader={({ src }) =>
+              `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+            }
             alt="chuyen_gia"
-            src="/images/expert/DMN.png"
+            src={news[0]?.image}
             width={462}
             height={501}
           />
