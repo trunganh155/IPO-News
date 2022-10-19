@@ -158,6 +158,16 @@ hr {
   border: none !important;
 }
 
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+
+  &:hover {
+    cursor: pointer;
+    color: rgb(14, 14, 239) !important;
+  }
+}
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
