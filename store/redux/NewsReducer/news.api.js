@@ -1,8 +1,10 @@
-import axiosClient from "../../pages/api/clientAxios";
+import clientAxios from "../../../clientAxios";
 
-const getIndex = async () => {
+const getNews = async () => {
   try {
-    const resApi = await axiosClient.get("/test/");
+    const resApi = await clientAxios.get(
+      `/experts?access_token=${process.env.ACCESS_TOKEN}`
+    );
     if (resApi)
       return {
         success: true,
@@ -20,7 +22,9 @@ const getIndex = async () => {
     };
   }
 };
-const testApi = {
-  getIndex,
+
+const newsApi = {
+  getNews,
 };
-export default testApi;
+
+export default newsApi;

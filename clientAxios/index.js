@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import queryString from "query-string";
 const clientAxios = axios.create({
-  baseURL: "",
+  baseURL:  process.env.API_URL,
   timeout: 20000,
   headers: {
     "content-type": "application/json",
