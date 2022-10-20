@@ -237,15 +237,23 @@ function Header(props) {
 							);
 						})}
 					</div>
-					{/* <div
+					<div
 						style={{
-							borderBottom: "0.3px solid #000000",
+							borderBottom: "3px solid #f0eee8",
 							position: "absolute",
-							bottom: showMenu ? "250px" : "0",
 							left: "0",
 							width: "100%",
 						}}
-					></div> */}
+					></div>
+					<div
+						style={{
+							borderBottom: "1px solid gray",
+							position: "absolute",
+							left: "3%",
+							width: "94%",
+							display: showMenu ? "none" : "block",
+						}}
+					></div>
 				</div>
 			</Container>
 		</Navbar>
