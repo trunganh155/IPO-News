@@ -48,12 +48,31 @@
 
     &::-webkit-scrollbar-thumb {
       background-color: #605959;
+      border-radius: 10px;
     }
   }
 }
 
 @media all and (max-width: 992px) {
+  .course {
+    padding: 50px 0 25px 0;
+
+    .scroll {
+      max-height: 510px;
+    }
+  }
 }
 
 @media all and (max-width: 576px) {
+  .course {
+    padding: 0 0 20px 0;
+
+    .bdRight {
+      border-right: none;
+    }
+
+    .scroll {
+      max-height: 510px;
+    }
+  }
 }
