@@ -24,7 +24,7 @@ export default function Course(props) {
       </div>
 
       <section className="d-flex flex-row">
-        <div className="col-8 pe-4" style={{ borderRight: "1px solid #000" }}>
+        <div className={styles.bdRight + " " + "col-8 pe-4"}>
           <div className="d-flex flex-wrap">
             <div className="col-12">
               <Image
@@ -72,7 +72,7 @@ export default function Course(props) {
       </section>
 
       <section className="d-flex flex-row pb-5">
-        <div className="col-8 pe-4" style={{ borderRight: "1px solid #000" }}>
+        <div className={styles.bdRight + " " + "col-8 pe-4"}>
           {news.slice(3, 6).map((item, index) => {
             return (
               <div key={index}>

@@ -21,15 +21,15 @@
 @media all and (max-width: 576px) {
   .mainLayout {
     .children {
-      padding: 180px 15px 0px 15px;
+      padding: 160px 15px 0px 15px;
     }
   }
 }
 
-@media all and (max-width: 480px) {
-  .mainLayout {
-    .children {
-      padding: 180px 15px 0px 15px;
-    }
-  }
-}
+// @media all and (max-width: 480px) {
+//   .mainLayout {
+//     .children {
+//       padding: 180px 15px 0px 15px;
+//     }
+//   }
+// }
