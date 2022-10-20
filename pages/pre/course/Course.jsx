@@ -63,9 +63,7 @@ export default function Course(props) {
                 </div>
 
                 <div className="col-12">
-                  <p className={styles.course_title}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
+                  <p className={styles.course_title}>{item.title}</p>
                 </div>
               </div>
             );
