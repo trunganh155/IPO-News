@@ -84,7 +84,7 @@
 		span {
 			font-weight: 400;
 			font-size: 25px;
-
+			font-weight: 700;
 			color: black;
 		}
 		h1 {
@@ -100,13 +100,12 @@
 		h4 {
 			font-weight: 400;
 			font-size: 22px;
-
+			font-weight: 700;
 			color: black;
 		}
 		h5 {
 			font-weight: 400;
 			font-size: 15px;
-
 			color: #939393;
 		}
 	}
@@ -114,6 +113,9 @@
 		margin-bottom: 20px;
 		.box_image_news {
 			position: relative;
+			span {
+				position: initial !important;
+			}
 			.content {
 				position: absolute;
 				bottom: 5%;
@@ -280,26 +282,51 @@
 				font-size: 25px;
 			}
 		}
-		.box_video {
-			height: 440px;
-		}
-		.list_library {
-			overflow-y: auto;
-			overflow-x: hidden;
-			height: 440px;
-			.item_library {
-				margin-bottom: 10px;
-				h6 {
-					font-weight: 700;
-					font-size: 15px;
-					color: #000000;
+		.box_media {
+			.list_library {
+				overflow-y: auto;
+				overflow-x: hidden;
+				height: 500px;
+				.item_library {
+					margin-bottom: 10px;
+					h6 {
+						font-weight: 700;
+						font-size: 15px;
+						color: #000000;
+					}
 				}
 			}
 		}
 		@media all and (max-width: 425px) {
-			.box_video {
-				height: 270px;
+			.box_media .list_library .item_library {
+				display: block;
+				.video {
+					width: 100%;
+				}
+				.title {
+					width: 100%;
+				}
 			}
 		}
+	}
+	/* width */
+	::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: #555;
+		border-radius: 10px;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: black;
 	}
 }
