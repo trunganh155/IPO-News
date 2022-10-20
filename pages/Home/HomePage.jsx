@@ -94,23 +94,17 @@ function HomePage(props) {
 				</div>
 				<div className={styles.knowledge}>
 					<div className="d-flex justify-content-between mb-2 align-items-baseline">
-						<h1>KIẾN THỨC IPO</h1>
-						<hr
-							style={{
-								width: "calc(100% - 350px)",
-								alignItems: "flex-end",
-								marginBottom: "0px",
-							}}
-						/>
+						<div className="heading">
+							<p className="text">KIẾN THỨC IPO</p>
+							<p className="col decor"></p>
+						</div>
 					</div>
 					<div className="row">
 						<div
 							className="col-12 col-lg-6 p-1 p-md-4 mb-3 d-flex flex-column mb-lg-0 flex-lg-none"
-							style={
-								{
-									// borderBottomLeftRadius: "0.5px solid #000000",
-								}
-							}
+							style={{
+								borderRight: "0.5px solid #000000",
+							}}
 						>
 							<Image
 								height={321}
@@ -124,6 +118,7 @@ function HomePage(props) {
 							<span>{news[0]?.cate_name}</span>
 							<h5>{news[0]?.mieu_ta_ngan}</h5>
 						</div>
+
 						<div className="col-12 col-lg-6 p-md-4 p-1">
 							{news.length > 0 &&
 								[news[0], news[0], news[0], news[0]]?.map(
@@ -133,7 +128,9 @@ function HomePage(props) {
 												{item.title}
 											</h4>
 											<h5>{item.mieu_ta_ngan}</h5>
-											<hr className="my-3" />
+											{index < 3 && (
+												<hr className="my-3" />
+											)}
 										</div>
 									)
 								)}
@@ -142,42 +139,45 @@ function HomePage(props) {
 				</div>
 				<div className={styles.news_ipo}>
 					<div className="d-flex justify-content-between mb-3 align-items-baseline">
-						<h1>TIN TỨC IPO</h1>
-						<hr
-							style={{
-								width: "calc(100% - 350px)",
-								alignItems: "flex-end",
-								marginBottom: "0px",
-							}}
-						/>
+						<div className="heading">
+							<p className="text">TIN TỨC IPO</p>
+							<p className="col decor"></p>
+						</div>
 					</div>
 					<div className="row">
-						<div className={"col-10" + " " + styles.box_image_news}>
-							<Image
-								width={1007}
-								height={614}
-								loader={({ src }) =>
-									`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-								}
-								src={news[0]?.picture}
-								alt={news[0]?.cate_name}
-							/>
-							<div className={styles.content}>
-								<span>{news[0]?.title}</span>
-								<h5 className="d-none d-md-block">
-									{news[0]?.mieu_ta_ngan}
-								</h5>
+						<div
+							className={"col-10"}
+							style={{ borderRight: "1px solid #000" }}
+						>
+							<div className={styles.box_image_news}>
+								<Image
+									width={1007}
+									height={614}
+									loader={({ src }) =>
+										`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+									}
+									src={news[0]?.picture}
+									alt={news[0]?.cate_name}
+								/>
+								<div className={styles.content}>
+									<span>{news[0]?.title}</span>
+									<h5 className="d-none d-md-block">
+										{news[0]?.mieu_ta_ngan}
+									</h5>
+								</div>
 							</div>
 						</div>
 						<div className="col-2">
 							<Image
+								width={244}
+								height={713}
 								src={BannerRight}
 								alt="banner"
-								style={{ height: "100% !important" }}
+								// style={{ height: "100% !important" }}
 							/>
 						</div>
 					</div>
-					<hr />
+					<hr className="my-4" />
 					{news.length > 0 &&
 						news.slice(0, 2).map((item, index) => (
 							<div key={index} className="row">
@@ -198,27 +198,31 @@ function HomePage(props) {
 										alt={item.cate_name}
 									/>
 								</div>
-								{/* <hr className="my-2" /> */}
+								{index < 1 && (
+									<hr
+										className="my-4"
+										style={{
+											width: "98%",
+											marginLeft: "1%",
+										}}
+									/>
+								)}
 							</div>
 						))}
 				</div>
 				<div className={styles.library}>
 					<div className="d-flex justify-content-between mb-3 align-items-baseline">
-						<h1>THƯ VIỆN</h1>
-						<hr
-							style={{
-								width: "calc(100% - 350px)",
-								alignItems: "flex-end",
-								marginBottom: "0px",
-							}}
-						/>
+						<div className="heading">
+							<p className="text">THƯ VIỆN</p>
+							<p className="col decor"></p>
+						</div>
 					</div>
 					<div className="row justify-content-center justify-content-lg-space-around">
 						{news.length > 0 &&
 							news.slice(0, 3).map((item, index) => (
 								<div
 									key={index}
-									className="col-12 col-sm-8 col-lg-4"
+									className="col-12 col-md-8 col-lg-4"
 								>
 									<span>CASE STUDY AURA CAPITAL</span>
 									<hr className="my-0 mx-5" />
@@ -251,14 +255,10 @@ function HomePage(props) {
 				</div>
 				<div className={styles.experts}>
 					<div className="d-flex justify-content-between mb-3 align-items-baseline">
-						<h1>CHUYÊN GIA IPO</h1>
-						<hr
-							style={{
-								width: "calc(100% - 350px)",
-								alignItems: "flex-end",
-								marginBottom: "0px",
-							}}
-						/>
+						<div className="heading">
+							<p className="text">CHUYÊN GIA IPO</p>
+							<p className="col decor"></p>
+						</div>
 					</div>
 					<div className="row justify-content-center justify-content-lg-space-around">
 						<div className={styles.list_expert}>
@@ -282,52 +282,66 @@ function HomePage(props) {
 				</div>
 				<div className={styles.library_ipo}>
 					<div className="d-flex justify-content-between mb-3 align-items-baseline">
-						<h1>THƯ VIỆN IPO</h1>
-						<hr
-							style={{
-								width: "calc(100% - 350px)",
-								alignItems: "flex-end",
-								marginBottom: "0px",
-							}}
-						/>
+						<div className="heading">
+							<p className="text">THƯ VIỆN IPO</p>
+							<p className="col decor"></p>
+						</div>
 					</div>
 					<div className="row">
 						<div
 							className={
 								styles.box_video +
 								" " +
-								"col-12 mb-3 mb-lg-0 col-lg-8"
+								"col-12 mb-3 mb-lg-0 col-lg-8 p-0 pe-md-2"
 							}
 						>
-							<iframe
-								width="100%"
-								height="100%"
-								src={gallery[0]?.url}
-							></iframe>
+							<div class="ratio ratio-16x9">
+								<iframe
+									width="100%"
+									height="100%"
+									src={gallery[0]?.url}
+								></iframe>
+							</div>
 						</div>
-						<div className="col-12 col-lg-4">
-							<div className={styles.list_library}>
-								{gallery.slice(1, 5).map((item, index) => (
-									<div key={index}>
-										<div
-											className={
-												styles.item_library +
-												" " +
-												"row"
-											}
-										>
-											<div className="p-0 col-12 col-sm-6">
-												<iframe
-													className="w-100 h-100 w-lg-100 h-lg-80"
-													src={item.url}
-												></iframe>
-											</div>
-											<div className="col-12 col-sm-6 pe-0">
-												<h6>{item.title}</h6>
+						<div className="col-12 col-lg-4 p-0">
+							<div className={styles.box_media}>
+								<div className={styles.list_library}>
+									{gallery.slice(1, 5).map((item, index) => (
+										<div key={index}>
+											<div
+												className={
+													styles.item_library +
+													" " +
+													"row"
+												}
+											>
+												<div
+													className={
+														styles.video +
+														" " +
+														"p-0 col-6"
+													}
+												>
+													<div class="ratio ratio-16x9">
+														<iframe
+															className="w-100 h-100 w-lg-100 h-lg-80"
+															src={item.url}
+														></iframe>
+													</div>
+												</div>
+												<div
+													className={
+														styles.title +
+														" " +
+														"col-6"
+													}
+												>
+													<h6>{item.title}</h6>
+												</div>
 											</div>
 										</div>
-									</div>
-								))}
+									))}
+								</div>
 							</div>
 						</div>
 					</div>
