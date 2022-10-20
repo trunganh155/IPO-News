@@ -1,10 +1,11 @@
-import Image from "next/image";
-import { useRouter } from "next/router";
-import React, { useState } from "react";
-import PopupVideo from "../../../components/popupVideo/PopupVideo";
-import styles from "./CaseStudy.module.scss";
 import { Checkbox } from "antd";
 import "antd/dist/antd.css";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getNews } from "../../../store/redux/NewsReducer/news.action";
+import styles from "./CaseStudy.module.scss";
 
 const CheckboxGroup = Checkbox.Group;
 const plainOptions = [
@@ -17,9 +18,18 @@ const plainOptions = [
 ];
 
 export default function CaseStudy(props) {
+  const limit = 300;
+  const limit2 = 100;
+  const router = useRouter();
   const [checkedList, setCheckedList] = useState();
   const [indeterminate, setIndeterminate] = useState(true);
   const [checkAll, setCheckAll] = useState(false);
+  const dispatch = useDispatch();
+  const { news } = useSelector((state) => state.NewsReducer);
+
+  useEffect(() => {
+    dispatch(getNews());
+  }, [dispatch]);
 
   const onChange = (list) => {
     setCheckedList(list);
@@ -43,7 +53,7 @@ export default function CaseStudy(props) {
             .fill()
             .map((item, index) => {
               return (
-                <div className="mb-5"  key={index}>
+                <div className="mb-5" key={index}>
                   <Checkbox
                     indeterminate={indeterminate}
                     onChange={onCheckAllChange}
@@ -67,26 +77,25 @@ export default function CaseStudy(props) {
 
         <div className="col-9">
           <div className={styles.scroll + " " + "d-flex flex-wrap"}>
-            {Array(16)
-              .fill()
-              .map((item, index) => {
-                return (
-                  <div className="col-4 px-1"  key={index}>
-                    <Image
-                      alt="khoa_hoc"
-                      src="/images/grey.png"
-                      width={315}
-                      height={177}
-                    />
+            {news.map((item, index) => {
+              return (
+                <div className="col-4 px-1" key={index}>
+                  <Image
+                    loader={({ src }) =>
+                      `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                    }
+                    alt="khoa_hoc"
+                    src={item.picture}
+                    width={315}
+                    height={177}
+                  />
 
-                    <div className="px-1">
-                      <p className={styles.caseStudy_title}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      </p>
-                    </div>
+                  <div className="px-1">
+                    <p className={styles.caseStudy_title}>{item.title}</p>
                   </div>
-                );
-              })}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
