@@ -53,3 +53,15 @@
     text-align: justify;
   }
 }
+
+@media all and (max-width: 992px) {
+  .sub {
+    padding: 50px 0 25px 0;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .sub {
+    padding: 50px 0 10px 0;
+  }
+}
