@@ -81,7 +81,7 @@ function Footer(props) {
 						className={
 							styles.bottom_left +
 							" " +
-							"col-12 col-lg-6 mb-3 mb-lg-0"
+							"col-12 col-md-6 mb-3 mb-lg-0"
 						}
 					>
 						<h5>Liên hệ</h5>
@@ -106,7 +106,7 @@ function Footer(props) {
 						className={
 							styles.box_right +
 							" " +
-							"col-12 col-lg-6 d-flex justify-content-end justify-content-lg-center mt-3 mt-lg-0"
+							"col-12 col-md-6 mt-3 mt-lg-0"
 						}
 					>
 						<div className={styles.contain}>

@@ -3,7 +3,7 @@ export const HeaderData = [
 		id: 1,
 		title: "TRANG CHỦ",
 		listTag: [""],
-		link: "#",
+		link: "/",
 	},
 	{
 		id: 2,
