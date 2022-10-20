@@ -145,10 +145,7 @@ function HomePage(props) {
 						</div>
 					</div>
 					<div className="row">
-						<div
-							className={"col-10"}
-							style={{ borderRight: "1px solid #000" }}
-						>
+						<div className={"col-md-10 col-12"}>
 							<div className={styles.box_image_news}>
 								<Image
 									width={1007}
@@ -167,13 +164,15 @@ function HomePage(props) {
 								</div>
 							</div>
 						</div>
-						<div className="col-2">
+						<div
+							className="col-2 d-md-block d-none"
+							style={{ borderLeft: "1px solid #000" }}
+						>
 							<Image
 								width={244}
 								height={713}
 								src={BannerRight}
 								alt="banner"
-								// style={{ height: "100% !important" }}
 							/>
 						</div>
 					</div>
