@@ -174,7 +174,7 @@ function Header(props) {
 						style={{
 							paddingBottom: showMenu
 								? `${isHeightHeader}px`
-								: "5px",
+								: "15px",
 							transition: "all 0.5s",
 							// overflow: "hidden",
 						}}
@@ -239,19 +239,11 @@ function Header(props) {
 					</div>
 					<div
 						style={{
-							borderBottom: "10px solid #f0eee8",
-							position: "absolute",
-							left: "0",
-							width: "100%",
-						}}
-					></div>
-					<div
-						style={{
-							borderBottom: "1px solid gray",
+							borderBottom: !showMenu ? "1px solid gray" : "none",
 							position: "absolute",
 							left: "3%",
 							width: "94%",
-							display: showMenu ? "none" : "block",
+							bottom: "3%",
 						}}
 					></div>
 				</div>
