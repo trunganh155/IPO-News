@@ -110,7 +110,10 @@ export default function Mechanism(props) {
           style={{ backgroundColor: "#606060" }}
         >
           {news.slice(4, 7).map((item, index) => (
-            <div className="col-12 col-sm-4 px-2 px-lg-4 mb-3 mb-sm-0" key={index}>
+            <div
+              className="col-12 col-sm-4 px-2 px-lg-4 mb-3 mb-sm-0"
+              key={index}
+            >
               <Image
                 loader={({ src }) =>
                   `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
@@ -136,7 +139,7 @@ export default function Mechanism(props) {
             alt="co_che_von"
             src="/images/mechanism/banner.png"
             width={244}
-            height={414}
+            height={584}
           />
         </div>
       </section>
