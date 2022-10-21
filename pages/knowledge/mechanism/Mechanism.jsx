@@ -106,19 +106,19 @@ export default function Mechanism(props) {
 
       <section className="d-flex flex-row">
         <div
-          className="col-12 col-sm-9 col-lg-10 d-flex flex-wrap justify-content-around px-3 py-4"
+          className="col-12 col-sm-9 col-lg-10 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
           {news.slice(4, 7).map((item, index) => (
-            <div className="col-12 col-sm-3" key={index}>
+            <div className="col-12 col-sm-4 px-2 px-lg-4 mb-3 mb-sm-0" key={index}>
               <Image
                 loader={({ src }) =>
                   `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={283}
-                height={221}
+                width={353}
+                height={241}
               />
               <p className={styles.mechanism_title_white}>
                 <section

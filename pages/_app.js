@@ -51,8 +51,8 @@ function MyApp({ Component, pageProps }) {
           <meta name="og:image" content="assets/images/Logo/favicon.png"></meta> */}
           <meta name="og:description" content=""></meta>
           {/* logo favicon */}
-          <link href="/images/Header/logo.png" rel="icon" />
-          <link href="/images/Header/logo.png" rel="apple-touch-icon"></link>
+          <link href="/images/logo.png" rel="icon" />
+          <link href="/images/logo.png" rel="apple-touch-icon"></link>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"

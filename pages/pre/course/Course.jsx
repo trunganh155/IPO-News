@@ -104,20 +104,20 @@ export default function Course(props) {
           <div className={styles.scroll + " " + "d-flex flex-column"}>
             {news.map((item, index) => {
               return (
-                <div className="d-flex flex-row" key={index}>
-                  <div className="col-5">
+                <div className="d-flex flex-wrap p-2" key={index}>
+                  <div className="col-5 col-sm-12 col-lg-5">
                     <Image
                       loader={({ src }) =>
                         `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
                       }
                       alt="khoa_hoc"
                       src={item.picture}
-                      width={166}
-                      height={110}
+                      width={216}
+                      height={160}
                     />
                   </div>
 
-                  <div className="col-7 ps-2">
+                  <div className="col-7 col-sm-12 col-lg-7 ps-2 ps-sm-0 ps-lg-2">
                     <p className={styles.course_title_sm}>{item.title}</p>
                   </div>
                 </div>

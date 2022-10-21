@@ -13,7 +13,7 @@ export const HeaderData = [
       { tag: "Quỹ Đầu Tư", link: "#" },
       { tag: "Thuật Ngữ", link: "#" },
     ],
-    link: "/knowledge",
+    link: "#",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const HeaderData = [
       { tag: "Hồ sơ gọi vốn", link: "#" },
       { tag: "Hồ sơ thương hiệu", link: "#" },
     ],
-    link: "/pre",
+    link: "#",
   },
   {
     id: 4,
