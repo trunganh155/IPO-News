@@ -6,8 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getGallery } from "../../../store/redux/GalleryReducer/gallery.action";
 
 export default function Gallery(props) {
-  const limit = 300;
-  const limit2 = 100;
   const router = useRouter();
   const dispatch = useDispatch();
   const { gallery } = useSelector((state) => state.GalleryReducer);
@@ -23,8 +21,8 @@ export default function Gallery(props) {
         <p className="col decor"></p>
       </div>
 
-      <section className="d-flex flex-row">
-        <div className="col-6 pe-2">
+      <section className="d-flex flex-wrap">
+        <div className="col-12 col-md-6 pe-0 pe-md-2">
           <div class="ratio ratio-16x9">
             <iframe
               src={gallery[0]?.url}
@@ -36,7 +34,7 @@ export default function Gallery(props) {
           <p className={styles.gallery_title}>{gallery[0]?.title}</p>
         </div>
 
-        <div className="col-6 ps-2">
+        <div className="col-12 col-md-6 ps-0 ps-md-2">
           <div class="ratio ratio-16x9">
             <iframe
               src={gallery[1]?.url}
@@ -49,9 +47,9 @@ export default function Gallery(props) {
         </div>
       </section>
 
-      <section className="d-flex flex-row mt-4">
-        <div className="col-6 d-flex flex-row pe-2">
-          <div className="col-6 pe-1">
+      <section className="d-flex flex-wrap mt-2 mt-md-4">
+        <div className="col-12 col-md-6 d-flex flex-wrap pe-0 pe-md-2">
+          <div className="col-12 col-sm-6 pe-0 pe-sm-1">
             <div class="ratio ratio-16x9">
               <iframe
                 src={gallery[0]?.url}
@@ -63,7 +61,7 @@ export default function Gallery(props) {
             <p className={styles.gallery_title_sm}>{gallery[0]?.title}</p>
           </div>
 
-          <div className="col-6 ps-1">
+          <div className="col-12 col-sm-6 ps-0 ps-sm-1">
             <div class="ratio ratio-16x9">
               <iframe
                 src={gallery[1]?.url}
@@ -76,8 +74,8 @@ export default function Gallery(props) {
           </div>
         </div>
 
-        <div className="col-6 d-flex flex-row ps-2">
-          <div className="col-6 pe-1">
+        <div className="col-12 col-md-6 d-flex flex-wrap ps-0 ps-md-2">
+          <div className="col-12 col-sm-6 pe-0 pe-sm-1">
             <div class="ratio ratio-16x9">
               <iframe
                 src={gallery[2]?.url}
@@ -89,7 +87,7 @@ export default function Gallery(props) {
             <p className={styles.gallery_title_sm}>{gallery[2]?.title}</p>
           </div>
 
-          <div className="col-6 ps-1">
+          <div className="col-12 col-sm-6 ps-0 ps-sm-1">
             <div class="ratio ratio-16x9">
               <iframe
                 src={gallery[3]?.url}
@@ -103,11 +101,11 @@ export default function Gallery(props) {
         </div>
       </section>
 
-      <section className="mt-4">
+      <section className="mt-2 mt-md-4">
         <div className={styles.scroll + " " + "d-flex flex-row"}>
           {gallery.map((item, index) => {
             return (
-              <div className="col-3" key={index}>
+              <div className="col-6 col-sm-4 col-md-3 px-2 py-2" key={index}>
                 <div class="ratio ratio-16x9">
                   <iframe
                     src={item.url}
@@ -123,7 +121,7 @@ export default function Gallery(props) {
         </div>
       </section>
 
-      <section className="mt-4">
+      <section className="mt-2 mt-md-4">
         <Image
           alt="khoa_hoc"
           src="/images/course/banner.png"

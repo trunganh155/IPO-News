@@ -6,8 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../../store/redux/NewsReducer/news.action";
 
 export default function Course(props) {
-  const limit = 300;
-  const limit2 = 100;
   const router = useRouter();
   const dispatch = useDispatch();
   const { news } = useSelector((state) => state.NewsReducer);
@@ -23,8 +21,8 @@ export default function Course(props) {
         <p className="col decor"></p>
       </div>
 
-      <section className="d-flex flex-row">
-        <div className="col-8 pe-4" style={{ borderRight: "1px solid #000" }}>
+      <section className="d-flex flex-wrap">
+        <div className={styles.bdRight + " " + "col-12 col-sm-8 pe-0 pe-sm-4"}>
           <div className="d-flex flex-wrap">
             <div className="col-12">
               <Image
@@ -46,10 +44,10 @@ export default function Course(props) {
           </div>
         </div>
 
-        <div className="col-4 ps-4 pb-4">
+        <div className="col-12 col-sm-4 ps-0 ps-sm-4 pb-4">
           {news.slice(1, 3).map((item, index) => {
             return (
-              <div className="d-flex flex-wrap" key={index}>
+              <div className="col-12 d-flex flex-column" key={index}>
                 <div className="col-12">
                   <Image
                     loader={({ src }) =>
@@ -63,9 +61,7 @@ export default function Course(props) {
                 </div>
 
                 <div className="col-12">
-                  <p className={styles.course_title}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
+                  <p className={styles.course_title}>{item.title}</p>
                 </div>
               </div>
             );
@@ -73,8 +69,8 @@ export default function Course(props) {
         </div>
       </section>
 
-      <section className="d-flex flex-row pb-5">
-        <div className="col-8 pe-4" style={{ borderRight: "1px solid #000" }}>
+      <section className="d-flex flex-wrap pb-3 pb-sm-5 ">
+        <div className={styles.bdRight + " " + "col-12 col-sm-8 pe-0 pe-sm-4"}>
           {news.slice(3, 6).map((item, index) => {
             return (
               <div key={index}>
@@ -104,7 +100,7 @@ export default function Course(props) {
           })}
         </div>
 
-        <div className="col-4 ps-4">
+        <div className="col-12 col-sm-4 ps-0 ps-sm-4 mt-3 mt-sm-0">
           <div className={styles.scroll + " " + "d-flex flex-column"}>
             {news.map((item, index) => {
               return (

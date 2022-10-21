@@ -57,10 +57,10 @@ export default function Mechanism(props) {
       <hr />
 
       <section className="d-flex flex-row mb-4">
-        <div className="col-10" style={{ borderRight: "1px solid #000" }}>
+        <div className={styles.bdRight + " " + "col-12 col-sm-9 col-lg-10"}>
           {news.slice(1, 4).map((item, index) => (
             <div className="d-flex flex-row mb-3" key={index}>
-              <div className="col-4">
+              <div className="col-5 col-sm-4">
                 <Image
                   loader={({ src }) =>
                     `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
@@ -72,7 +72,7 @@ export default function Mechanism(props) {
                 />
               </div>
 
-              <div className="col-8 px-4">
+              <div className="col-7 col-sm-8 ps-3 ps-sm-4 pe-0 pe-sm-4">
                 <a
                   className={styles.mechanism_title}
                   onClick={() =>
@@ -94,7 +94,7 @@ export default function Mechanism(props) {
           ))}
         </div>
 
-        <div className="col-2 ps-3">
+        <div className="col col-sm-3 col-lg-2 ps-3 d-none d-sm-block">
           <Image
             alt="co_che_von"
             src="/images/mechanism/banner.png"
@@ -106,11 +106,11 @@ export default function Mechanism(props) {
 
       <section className="d-flex flex-row">
         <div
-          className="col-10 d-flex flex-row justify-content-around px-3 py-4"
+          className="col-12 col-sm-9 col-lg-10 d-flex flex-wrap justify-content-around px-3 py-4"
           style={{ backgroundColor: "#606060" }}
         >
           {news.slice(4, 7).map((item, index) => (
-            <div className="col-3" key={index}>
+            <div className="col-12 col-sm-3" key={index}>
               <Image
                 loader={({ src }) =>
                   `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
@@ -131,7 +131,7 @@ export default function Mechanism(props) {
           ))}
         </div>
 
-        <div className="col-2 ps-3">
+        <div className="col col-sm-3 col-lg-2 d-none d-sm-block ps-3">
           <Image
             alt="co_che_von"
             src="/images/mechanism/banner.png"
