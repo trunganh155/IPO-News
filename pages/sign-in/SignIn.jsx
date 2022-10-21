@@ -1,20 +1,58 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./SignIn.module.scss";
 import { useRouter } from "next/router";
-import EyeShow from "../../public/images/icons/show_pass.svg";
+import EyeShow from "../../public/images/icons/eyeShow.svg";
+import EyeHidden from "../../public/images/icons/eyeHidden.svg";
 import FaceBook from "../../public/images/icons/facebook.svg";
 import Google from "../../public/images/icons/google.svg";
 import Linkin from "../../public/images/icons/linkin.svg";
+import { useForm } from "react-hook-form";
+import { getTokenUserAction } from "../../store/redux/AccountReducer/account.api";
+import Swal from "sweetalert2";
+import { useDispatch, useSelector } from "react-redux";
 
 function SignIn() {
+	const dispatch = useDispatch();
+	const [isShowPassword, setIsShowPassword] = useState(false);
 	const router = useRouter();
+	const {
+		register,
+		handleSubmit,
+		watch,
+		formState: { errors },
+	} = useForm();
+	const onSubmit = async (data) => {
+		try {
+			await dispatch(getTokenUserAction(data));
+			Swal.fire({
+				position: "center",
+				icon: "success",
+				title: "Đăng nhập thành công",
+				showConfirmButton: false,
+				timer: 1500,
+			});
+			router.push("/");
+		} catch (err) {
+			console.log(err);
+
+			Swal.fire({
+				position: "center",
+				icon: "error",
+				title: "Đăng nhập thất bại",
+				showConfirmButton: false,
+				timer: 1500,
+			});
+		}
+	};
 	function showPassword() {
 		var x = document.getElementById("password");
 		if (x.type === "password") {
+			setIsShowPassword(true);
 			x.type = "text";
 		} else {
 			x.type = "password";
+			setIsShowPassword(false);
 		}
 	}
 	return (
@@ -57,48 +95,95 @@ function SignIn() {
 					>
 						<div className={styles.w_box_content}>
 							<span>Đăng nhập với email</span>
-
-							<div className={styles.box_input}>
-								<div className={styles.box_input_text}>
-									<input
-										type="text"
-										placeholder="Email"
-										className="form-control"
-										aria-label="Email"
-										aria-describedby="basic-addon1"
-									/>
+							<form onSubmit={handleSubmit(onSubmit)}>
+								<div className={styles.box_input}>
+									<div className={styles.box_input_text}>
+										<input
+											type="text"
+											placeholder="Email"
+											className="form-control"
+											aria-label="Email"
+											aria-describedby="basic-addon1"
+											{...register("username", {
+												required: true,
+											})}
+										/>
+										{errors.username &&
+											errors.username.type ===
+												"required" && (
+												<span
+													className="d-flex justify-content-start"
+													style={{
+														fontSize: "13px",
+														color: "red",
+													}}
+												>
+													Tên đăng nhập không được để
+													trống
+												</span>
+											)}
+									</div>
 								</div>
-							</div>
-							<div className={styles.box_input}>
+								<div className={styles.box_input}>
+									<div
+										className={
+											styles.box_input_pass +
+											" " +
+											"d-flex justify-content-evenly"
+										}
+									>
+										<input
+											id="password"
+											type="password"
+											placeholder="Mật khẩu"
+											aria-label="Password"
+											aria-describedby="basic-addon1"
+											{...register("password", {
+												required: true,
+											})}
+										/>
+										<Image
+											onClick={() => {
+												showPassword();
+											}}
+											src={
+												isShowPassword
+													? EyeShow
+													: EyeHidden
+											}
+											alt="eye_show"
+											width={24}
+											height={24}
+										/>
+									</div>
+									{errors.password &&
+										errors.password.type === "required" && (
+											<span
+												className="d-flex justify-content-start"
+												style={{
+													fontSize: "13px",
+													color: "red",
+												}}
+											>
+												Mật khẩu không được để trống
+											</span>
+										)}
+								</div>
 								<div
 									className={
-										styles.box_input_pass +
-										" " +
-										"d-flex justify-content-evenly"
+										styles.button_next + " " + "col-12"
 									}
 								>
-									<input
-										id="password"
-										type="password"
-										placeholder="Mật khẩu"
-										aria-label="Password"
-										aria-describedby="basic-addon1"
-									/>
-									<Image
+									<button
+										type="submit"
 										onClick={() => {
-											showPassword();
+											onSubmit;
 										}}
-										src={EyeShow}
-										alt="eye_show"
-									/>
+									>
+										Đăng nhập
+									</button>
 								</div>
-							</div>
-
-							<div
-								className={styles.button_next + " " + "col-12"}
-							>
-								<button>Đăng nhập</button>
-							</div>
+							</form>
 							<div className={styles.link_fog_pass}>
 								<span>Quên mật khẩu</span>
 							</div>
@@ -125,7 +210,7 @@ function SignIn() {
 									<Image
 										style={{ marginRight: "10px" }}
 										src={FaceBook}
-										alt="eye_show"
+										alt="facebook"
 									/>
 									Đăng nhập với FaceBook
 								</button>
@@ -139,7 +224,7 @@ function SignIn() {
 									<Image
 										style={{ marginRight: "10px" }}
 										src={Google}
-										alt="eye_show"
+										alt="google"
 									/>
 									Đăng nhập với Google
 								</button>
@@ -153,7 +238,7 @@ function SignIn() {
 									<Image
 										style={{ marginRight: "10px" }}
 										src={Linkin}
-										alt="eye_show"
+										alt="linkin"
 									/>
 									Đăng nhập với Linkin
 								</button>
