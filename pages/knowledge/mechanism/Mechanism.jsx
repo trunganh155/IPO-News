@@ -109,7 +109,7 @@ export default function Mechanism(props) {
           className="col-12 col-sm-9 col-lg-10 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
-          {news.slice(4, 7).map((item, index) => (
+          {news.slice(0, 3).map((item, index) => (
             <div
               className="col-12 col-sm-4 px-2 px-lg-4 mb-3 mb-sm-0"
               key={index}
@@ -123,12 +123,13 @@ export default function Mechanism(props) {
                 width={353}
                 height={241}
               />
-              <p className={styles.mechanism_title_white}>
-                <section
-                  dangerouslySetInnerHTML={{
-                    __html: item?.content.slice(0, limit2),
-                  }}
-                />
+              <p
+                className={styles.mechanism_title_white}
+                onClick={() =>
+                  router.push(`/${removeAccents(item?._id || "")}`)
+                }
+              >
+                {item.title}
               </p>
             </div>
           ))}
@@ -139,7 +140,7 @@ export default function Mechanism(props) {
             alt="co_che_von"
             src="/images/mechanism/banner.png"
             width={244}
-            height={584}
+            height={414}
           />
         </div>
       </section>

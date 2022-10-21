@@ -13,24 +13,27 @@
     font-size: 20px;
     font-weight: 700;
     text-align: justify;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(14, 14, 239);
+    }
   }
 
   &_title_sm {
     font-size: 18px;
     font-weight: 700;
     text-align: justify;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(14, 14, 239);
+    }
   }
 
   &_content {
     font-size: 15px;
     font-weight: 400;
-    text-align: justify;
-  }
-
-  &_title_white {
-    font-size: 20px;
-    font-weight: 700;
-    color: #fff;
     text-align: justify;
   }
 

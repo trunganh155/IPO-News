@@ -1,26 +1,18 @@
-import React, { useState, useEffect } from "react";
-import styles from "./Home.module.scss";
 import Image from "next/image";
-import Link from "next/link";
-import MainLayout from "../../components/layout/mainLayout";
 import { useRouter } from "next/router";
-import Slider from "react-slick";
-import Banner from "../../public/images/home/banner_home.png";
-import Banner1 from "../../public/images/home/banner_1.png";
-import Banner2 from "../../public/images/home/banner_2.png";
-import Banner3 from "../../public/images/home/banner_3.png";
-import BannerLeft from "../../public/images/home/banner_left.png";
-import BannerRight from "../../public/images/home/banner_right.png";
-import Maxresdefault1 from "../../public/images/home/maxresdefault_1.png";
-import Maxresdefault2 from "../../public/images/home/maxresdefault_2.png";
-import Maxresdefault3 from "../../public/images/home/maxresdefault_3.png";
-import Experts from "../../public/images/home/experts.png";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Slider from "react-slick";
+import { removeAccents } from "../../utils/Function";
+import MainLayout from "../../components/layout/mainLayout";
+import BannerRight from "../../public/images/home/banner_right.png";
 import { getExpert } from "../../store/redux/ExpertReducer/expert.action";
-import { getNews } from "../../store/redux/NewsReducer/news.action";
 import { getGallery } from "../../store/redux/GalleryReducer/gallery.action";
+import { getNews } from "../../store/redux/NewsReducer/news.action";
+import styles from "./Home.module.scss";
 
 function HomePage(props) {
+  const router = useRouter();
   const dispatch = useDispatch();
   const expert = useSelector((state) => state.ExpertReducer.expert);
   const news = useSelector((state) => state.NewsReducer.news);
@@ -56,35 +48,48 @@ function HomePage(props) {
           </div>
           <div className={styles.slider}>
             <Slider {...settings}>
-              {news.length > 0 &&
-                news.slice(0, 5).map((item, index) => (
+              {news.slice(0, 5).map((item, index) => (
+                <div
+                  key={index}
+                  className={
+                    styles.box_image_content +
+                    " " +
+                    (slideIndex === index
+                      ? styles.active + styles.slide
+                      : styles.slide)
+                  }
+                >
                   <div
-                    key={index}
                     className={
-                      styles.box_image_content +
-                      " " +
-                      (slideIndex === index
-                        ? styles.active + styles.slide
-                        : styles.slide)
+                      styles.images + " " + "d-flex justify-content-center"
                     }
                   >
-                    <div
-                      className={
-                        styles.images + " " + "d-flex justify-content-center"
+                    <Image
+                      loader={({ src }) =>
+                        `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                      }
+                      src={item.picture}
+                      width={520}
+                      height={350}
+                      alt="banner"
+                    />
+                  </div>
+                  <div className={styles.content}>
+                    <div>
+                      <h3>{item.cate_name}</h3>
+                    </div>
+                    <h5 className="my-2">{item.title}</h5>
+                    <button
+                      onClick={() =>
+                        router.push(`/${removeAccents(item?._id || "")}`)
                       }
                     >
-                      <Image src={Banner} alt="banner" />
-                    </div>
-                    <div className={styles.content}>
-                      <div>
-                        <h3>{item.cate_name}</h3>
-                      </div>
-                      <h5 className="my-2">{item.title}</h5>
-                      <button>Xem thêm</button>
-                    </div>
-                    <div className={styles.box_bg}></div>
+                      Xem thêm
+                    </button>
                   </div>
-                ))}
+                  <div className={styles.box_bg}></div>
+                </div>
+              ))}
             </Slider>
           </div>
         </div>
@@ -111,14 +116,27 @@ function HomePage(props) {
                 src={news[0]?.picture}
                 alt={news[0]?.title}
               />
-              <span>{news[0]?.title}</span>
+              <span
+                onClick={() =>
+                  router.push(`/${removeAccents(news[0]?._id || "")}`)
+                }
+              >
+                {news[0]?.title}
+              </span>
               <h5>{news[0]?.mieu_ta_ngan}</h5>
             </div>
 
             <div className="col-12 col-lg-5 p-md-4 p-1">
               {news.slice(1, 5).map((item, index) => (
                 <div key={index}>
-                  <h4 className="mb-2">{item.title}</h4>
+                  <h4
+                    className="mb-2"
+                    onClick={() =>
+                      router.push(`/${removeAccents(item?._id || "")}`)
+                    }
+                  >
+                    {item.title}
+                  </h4>
                   <h5>{item.mieu_ta_ngan}</h5>
                   {index < 3 && <hr className="my-3" />}
                 </div>
@@ -146,7 +164,13 @@ function HomePage(props) {
                   alt={news[0]?.cate_name}
                 />
                 <div className={styles.content}>
-                  <span>{news[0]?.title}</span>
+                  <span
+                    onClick={() =>
+                      router.push(`/${removeAccents(news[0]?._id || "")}`)
+                    }
+                  >
+                    {news[0]?.title}
+                  </span>
                   <h5 className="d-none d-md-block">{news[0]?.mieu_ta_ngan}</h5>
                 </div>
               </div>
@@ -164,7 +188,14 @@ function HomePage(props) {
               <div key={index} className="row">
                 <div className="col-12 col-md-7 col-lg-9">
                   <div className="text-align-center p-md-3 p-0">
-                    <h4 className="mb-2">{item.title}</h4>
+                    <h4
+                      className="mb-2"
+                      onClick={() =>
+                        router.push(`/${removeAccents(item?._id || "")}`)
+                      }
+                    >
+                      {item.title}
+                    </h4>
                     <h5>{item.mieu_ta_ngan}</h5>
                   </div>
                 </div>
