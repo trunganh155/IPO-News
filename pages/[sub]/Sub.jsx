@@ -3,8 +3,6 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../store/redux/NewsReducer/news.action";
-import { convertDate, removeAccents } from "../../utils/Function";
-import { post } from "../../utils/PostDemo/Post";
 import styles from "./Sub.module.scss";
 
 export default function Sub(props) {

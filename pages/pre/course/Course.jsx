@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
-import styles from "./Course.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../../store/redux/NewsReducer/news.action";
+import { removeAccents } from "../../../utils/Function";
+import styles from "./Course.module.scss";
 
 export default function Course(props) {
   const router = useRouter();
@@ -37,7 +38,14 @@ export default function Course(props) {
             </div>
 
             <div className="col-12">
-              <p className={styles.course_title}>{news[0]?.title}</p>
+              <p
+                className={styles.course_title}
+                onClick={() =>
+                  router.push(`/${removeAccents(news[0]?._id || "")}`)
+                }
+              >
+                {news[0]?.title}
+              </p>
 
               <p className={styles.course_content}>{news[0]?.mieu_ta_ngan}</p>
             </div>
@@ -61,7 +69,14 @@ export default function Course(props) {
                 </div>
 
                 <div className="col-12">
-                  <p className={styles.course_title}>{item.title}</p>
+                  <p
+                    className={styles.course_title}
+                    onClick={() =>
+                      router.push(`/${removeAccents(item?._id || "")}`)
+                    }
+                  >
+                    {item.title}
+                  </p>
                 </div>
               </div>
             );
@@ -78,7 +93,14 @@ export default function Course(props) {
 
                 <div className="d-flex flex-row">
                   <div className="col-7 px-4">
-                    <p className={styles.course_title}>{item.title}</p>
+                    <p
+                      className={styles.course_title}
+                      onClick={() =>
+                        router.push(`/${removeAccents(item?._id || "")}`)
+                      }
+                    >
+                      {item.title}
+                    </p>
 
                     <p className={styles.course_content}>{item.mieu_ta_ngan}</p>
                   </div>
@@ -118,7 +140,14 @@ export default function Course(props) {
                   </div>
 
                   <div className="col-7 col-sm-12 col-lg-7 ps-2 ps-sm-0 ps-lg-2">
-                    <p className={styles.course_title_sm}>{item.title}</p>
+                    <p
+                      className={styles.course_title_sm}
+                      onClick={() =>
+                        router.push(`/${removeAccents(item?._id || "")}`)
+                      }
+                    >
+                      {item.title}
+                    </p>
                   </div>
                 </div>
               );
