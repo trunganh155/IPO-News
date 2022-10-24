@@ -13,12 +13,22 @@
     font-size: 20px;
     font-weight: 700;
     text-align: justify;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(14, 14, 239);
+    }
   }
 
   &_title_sm {
     font-size: 18px;
     font-weight: 700;
     text-align: justify;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(14, 14, 239);
+    }
   }
 
   &_content {
@@ -27,19 +37,12 @@
     text-align: justify;
   }
 
-  &_title_white {
-    font-size: 20px;
-    font-weight: 700;
-    color: #fff;
-    text-align: justify;
-  }
-
   .scroll {
     height: 100%;
     max-height: 850px;
     overflow-y: auto;
     border: 1px solid #000;
-    padding: 12px !important;
+    // padding: 12px !important;
 
     &::-webkit-scrollbar {
       width: 5px;
@@ -55,7 +58,7 @@
 
 @media all and (max-width: 992px) {
   .course {
-    padding: 50px 0 25px 0;
+    padding: 70px 0 25px 0;
 
     .scroll {
       max-height: 510px;
@@ -63,9 +66,15 @@
   }
 }
 
+@media all and (min-width: 576px) and (max-width: 768px) {
+  .course {
+    padding: 0px 0 25px 0;
+  }
+}
+
 @media all and (max-width: 576px) {
   .course {
-    padding: 0 0 20px 0;
+    padding: 10px 0 25px 0;
 
     .bdRight {
       border-right: none;

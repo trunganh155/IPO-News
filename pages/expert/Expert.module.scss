@@ -44,12 +44,18 @@
 
 @media all and (max-width: 992px) {
   .expert {
-    padding: 60px 0 25px 0;
+    padding: 70px 0 25px 0;
+  }
+}
+
+@media all and (min-width: 576px) and (max-width: 768px) {
+  .expert {
+    padding: 0px 0 25px 0;
   }
 }
 
 @media all and (max-width: 576px) {
   .expert {
-    padding: 0 0 15px 0;
+    padding: 10px 0 15px 0;
   }
 }

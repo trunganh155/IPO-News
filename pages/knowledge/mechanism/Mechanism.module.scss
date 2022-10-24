@@ -31,12 +31,17 @@
     font-weight: 700;
     color: #fff;
     text-align: justify;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(14, 14, 239);
+    }
   }
 }
 
 @media all and (max-width: 992px) {
   .mechanism {
-    padding: 50px 0 25px 0;
+    padding: 70px 0 25px 0;
 
     &_title {
       font-size: 18px;
@@ -52,9 +57,15 @@
   }
 }
 
+@media all and (min-width: 576px) and (max-width: 768px) {
+  .mechanism {
+    padding: 0px 0 25px 0;
+  }
+}
+
 @media all and (max-width: 576px) {
   .mechanism {
-    padding: 0 0 25px 0;
+    padding: 10px 0 25px 0;
 
     .bdRight {
       border-right: none;
