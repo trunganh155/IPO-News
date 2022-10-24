@@ -130,6 +130,10 @@
 				color: black !important;
 				border-bottom: 3px solid #920000;
 			}
+			.active {
+				color: black !important;
+				border-bottom: 3px solid #920000;
+			}
 			.dropdown {
 				position: relative;
 				i {
@@ -166,7 +170,11 @@
 					@for $num from 1 through 5 {
 						.dropdown_item_#{$num} {
 							transform-origin: top center;
-							animation: slideDown 300ms ($num * 60ms) ease-in-out forwards;
+							animation: slideDown
+								300ms
+								($num * 60ms)
+								ease-in-out
+								forwards;
 						}
 					}
 				}
