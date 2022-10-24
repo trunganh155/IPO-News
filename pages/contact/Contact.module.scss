@@ -1,0 +1,172 @@
+.intro_contact {
+	color: #000;
+	max-width: 1440px;
+	// background-color: burlywood;
+	background-image: url("../../public/images/home/banner_1.png");
+	width: 100% !important;
+	height: 100%;
+	overflow: hidden;
+	.box_intro_contact {
+		padding: 50px 35px 0px 35px;
+		.title_box {
+			.text_logo {
+				width: calc(100%);
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				font-size: 100px;
+			}
+			.box_border {
+				border-bottom: 3px solid #fff;
+			}
+		}
+		.content_box {
+			text-align: center;
+			margin-top: 10%;
+			padding-bottom: 50%;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			.center_box {
+				width: 85%;
+				background-color: #fff;
+				padding: 100px 30px;
+				border-radius: 30px;
+				hr {
+					width: 50%;
+				}
+				.box_bottom {
+					.bottom_left {
+						h5 {
+							font-weight: 700;
+							font-size: 12px;
+							line-height: 25px;
+							text-transform: uppercase;
+						}
+						h4 {
+							font-weight: 700;
+							font-size: 18px;
+							line-height: 25px;
+							text-transform: uppercase;
+						}
+						span,
+						h6 {
+							font-weight: 400;
+							font-size: 15px;
+							line-height: 25px;
+						}
+						span {
+							font-family: "Times New Roman";
+							font-style: italic;
+						}
+					}
+					.box_right {
+						.contain {
+							h4 {
+								font-weight: 700;
+								font-size: 18px;
+								line-height: 25px;
+								text-transform: uppercase;
+							}
+							span {
+								font-weight: 400;
+								font-size: 15px;
+								line-height: 25px;
+								font-family: "Times New Roman";
+								font-style: italic;
+							}
+							input {
+								background: rgba(228, 228, 228, 0.75);
+								border-radius: 50px;
+								padding: 5px 10px;
+								border: none;
+								width: 370px;
+								margin: 10px 0;
+							}
+							@media all and (max-width: 1024px) {
+								input {
+									width: 470px;
+								}
+							}
+							@media all and (max-width: 620px) {
+								input {
+									width: 100%;
+								}
+							}
+						}
+					}
+					button {
+						color: white;
+						font-weight: 700;
+						font-size: 15px;
+						line-height: 25px;
+						text-transform: uppercase;
+						padding: 5px 20px;
+						background: #b90000;
+						border-radius: 50px;
+						border: 2px solid #b90000;
+						font-family: "Times New Roman";
+						font-style: normal;
+						&:hover {
+							background: #fff;
+							color: #b90000;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media all and (max-width: 1200px) {
+	.intro_contact .box_intro_contact .content_box .center_box .title {
+		font-size: 35px;
+	}
+}
+
+@media all and (max-width: 1024px) {
+	.intro_contact .box_intro_contact .content_box .center_box {
+		width: 100%;
+		.title {
+			font-size: 30px;
+		}
+		.box_left {
+			padding: 40px 2px 50px;
+		}
+	}
+}
+
+@media all and (max-width: 992px) {
+	.intro_contact {
+		.box_intro_contact {
+			padding: 30px 25px 0px 25px;
+		}
+		.content_box .center_box {
+			.box_left {
+				margin-right: 0 !important;
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+
+@media all and (max-width: 768px) {
+	.intro_contact .box_intro_contact .content_box .center_box .title {
+		font-size: 25px;
+	}
+}
+
+@media all and (max-width: 576px) {
+	.intro_contact {
+		.box_intro_contact {
+			padding: 30px 15px 0px 15px;
+		}
+	}
+}
+
+@media all and (max-width: 480px) {
+	.intro_contact {
+		.box_intro_contact {
+			padding: 30px 15px 0px 15px;
+		}
+	}
+}

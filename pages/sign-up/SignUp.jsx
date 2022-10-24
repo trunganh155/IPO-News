@@ -1,30 +1,79 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "./SignUp.module.scss";
-import EyeShow from "../../public/images/icons/show_pass.svg";
+import EyeShow from "../../public/images/icons/eyeShow.svg";
+import EyeHidden from "../../public/images/icons/eyeHidden.svg";
 import FaceBook from "../../public/images/icons/facebook.svg";
 import Google from "../../public/images/icons/google.svg";
 import Linkin from "../../public/images/icons/linkin.svg";
+import { useForm } from "react-hook-form";
+import { registerUserAction } from "../../store/redux/AccountReducer/account.api";
+import Swal from "sweetalert2";
+import { useDispatch, useSelector } from "react-redux";
 
 function SignUp() {
+	const dispatch = useDispatch();
+	const [isShowPassword, setIsShowPassword] = useState(false);
+	const [isShowRePassword, setIsShowRePassword] = useState(false);
 	const router = useRouter();
+	const {
+		register,
+		handleSubmit,
+		watch,
+		formState: { errors },
+	} = useForm({
+		defaultValues: {
+			email: "",
+			name: "",
+			password: "",
+			rePassword: "",
+		},
+	});
+
 	function showPassword() {
 		var x = document.getElementById("password");
 		if (x.type === "password") {
 			x.type = "text";
+			setIsShowPassword(true);
 		} else {
 			x.type = "password";
+			setIsShowPassword(false);
 		}
 	}
 	function showRePassword() {
 		var x = document.getElementById("repassword");
 		if (x.type === "password") {
 			x.type = "text";
+			setIsShowRePassword(true);
 		} else {
 			x.type = "password";
+			setIsShowRePassword(false);
 		}
 	}
+	const onSubmit = async (data) => {
+		try {
+			await dispatch(registerUserAction(data));
+
+			Swal.fire({
+				position: "center",
+				icon: "success",
+				title: "Đăng ký thành công",
+				showConfirmButton: false,
+				timer: 1500,
+			});
+		} catch (err) {
+			console.log(err);
+
+			Swal.fire({
+				position: "center",
+				icon: "error",
+				title: "Đăng ký thất bại",
+				showConfirmButton: false,
+				timer: 1500,
+			});
+		}
+	};
 	return (
 		<div className={styles.sign_up + " " + "container"}>
 			<div className={styles.center_box}>
@@ -64,86 +113,148 @@ function SignUp() {
 						}
 					>
 						<div className={styles.w_box_content}>
-							<span>Đăng ký tài khoản</span>
-							<div className={styles.box_input}>
-								<h6>Họ và Tên</h6>
-								<div className={styles.box_input_text}>
-									<input
-										type="text"
-										className="form-control"
-										aria-label="Username"
-										aria-describedby="basic-addon1"
-									/>
+							<form onSubmit={handleSubmit(onSubmit)}>
+								<span>Đăng ký tài khoản</span>
+								<div className={styles.box_input}>
+									<h6>Họ và Tên</h6>
+									<div className={styles.box_input_text}>
+										<input
+											type="text"
+											className="form-control"
+											aria-label="Username"
+											aria-describedby="basic-addon1"
+											{...register("name", {
+												required: true,
+											})}
+										/>
+										{errors.name &&
+											errors.name.type === "required" && (
+												<span>
+													Tên không được để trống
+												</span>
+											)}
+									</div>
 								</div>
-							</div>
-							<div className={styles.box_input}>
-								<h6>Email</h6>
-								<div className={styles.box_input_text}>
-									<input
-										type="text"
-										className="form-control"
-										aria-label="Email"
-										aria-describedby="basic-addon1"
-									/>
+								<div className={styles.box_input}>
+									<h6>Email</h6>
+									<div className={styles.box_input_text}>
+										<input
+											type="email"
+											className="form-control"
+											aria-label="Email"
+											aria-describedby="basic-addon1"
+											{...register("email", {
+												required: true,
+											})}
+										/>
+										{errors.email &&
+											errors.email.type ===
+												"required" && (
+												<span>
+													Email không được để trống
+												</span>
+											)}
+									</div>
 								</div>
-							</div>
-							<div className={styles.box_input}>
-								<h6>Mật khẩu</h6>
+								<div className={styles.box_input}>
+									<h6>Mật khẩu</h6>
+									<div
+										className={
+											styles.box_input_pass +
+											" " +
+											"d-flex justify-content-evenly"
+										}
+									>
+										<input
+											id="password"
+											type="password"
+											aria-label="Password"
+											aria-describedby="basic-addon1"
+											{...register("password", {
+												required: true,
+											})}
+										/>
+										<Image
+											onClick={() => {
+												showPassword();
+											}}
+											src={
+												isShowPassword
+													? EyeShow
+													: EyeHidden
+											}
+											alt="eye_show"
+											width={24}
+											height={24}
+										/>
+									</div>
+								</div>
+								<div className={styles.box_input}>
+									<h6>Xác nhận mật khẩu</h6>
+									<div
+										className={
+											styles.box_input_pass +
+											" " +
+											"d-flex justify-content-evenly"
+										}
+									>
+										<input
+											id="repassword"
+											type="password"
+											aria-label="RePassword"
+											aria-describedby="basic-addon1"
+											{...register("rePassword", {
+												required: true,
+												validate: (val) => {
+													if (
+														watch("password") != val
+													) {
+														return "Mật khẩu không khớp";
+													}
+												},
+											})}
+										/>
+										<Image
+											onClick={() => {
+												showRePassword();
+											}}
+											src={
+												isShowRePassword
+													? EyeShow
+													: EyeHidden
+											}
+											alt="eye_show"
+											width={24}
+											height={24}
+										/>
+									</div>
+									{errors.rePassword && (
+										<span
+											className="d-flex justify-content-start"
+											style={{
+												fontSize: "13px",
+												color: "red",
+											}}
+										>
+											{errors.rePassword.message}
+										</span>
+									)}
+								</div>
 								<div
 									className={
-										styles.box_input_pass +
-										" " +
-										"d-flex justify-content-evenly"
+										styles.button_next + " " + "col-12"
 									}
 								>
-									<input
-										id="password"
-										type="password"
-										aria-label="Password"
-										aria-describedby="basic-addon1"
-									/>
-									<Image
+									<button
+										type="submit"
 										onClick={() => {
-											showPassword();
+											onSubmit;
 										}}
-										src={EyeShow}
-										alt="eye_show"
-									/>
+									>
+										Tiếp tục
+									</button>
 								</div>
-							</div>
-							<div className={styles.box_input}>
-								<h6>Xác nhận mật khẩu</h6>
-								<div
-									className={
-										styles.box_input_pass +
-										" " +
-										"d-flex justify-content-evenly"
-									}
-								>
-									<input
-										id="repassword"
-										type="password"
-										aria-label="RePassword"
-										aria-describedby="basic-addon1"
-									/>
-									<Image
-										onClick={() => {
-											showRePassword();
-										}}
-										src={EyeShow}
-										alt="eye_show"
-									/>
-								</div>
-							</div>
-							<div
-								className={styles.button_next + " " + "col-12"}
-							>
-								<button
-									onClick={() => router.push("/sign-up/code")}
-								>
-									Tiếp tục
-								</button>
-							</div>
+							</form>
 							<div
 								style={{ color: "#767676" }}
 								className="d-flex justify-content-between"

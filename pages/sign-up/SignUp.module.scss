@@ -73,6 +73,12 @@
 									border: 1px solid black;
 								}
 							}
+							span {
+								font-size: 13px;
+								color: red;
+								display: flex;
+								justify-content: flex-start;
+							}
 						}
 						.box_input_pass {
 							border: 1px solid #c1c1c1;

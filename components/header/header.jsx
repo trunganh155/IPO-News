@@ -1,18 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import { BiSearch } from "react-icons/bi";
 import { HeaderData } from "../../utils/DataDemo/Header";
+import IconHome from "../../public/images/icons/icon_home.svg";
 import styles from "./header.module.scss";
 import { useRouter } from "next/router";
 function Header(props) {
 	const router = useRouter();
+	const { asPath } = useRouter();
 	const [showMenu, setShowMenu] = useState(false);
 	const [showLogo, setShowLogo] = useState(true);
 	const [isHeightHeader, setIsHeightHeader] = useState(0);
+	const [isAsPath, setIsAsPath] = useState("/");
 	window.addEventListener("scroll", callbackFunc);
 	function callbackFunc() {
 		var y = window.pageYOffset;
@@ -22,6 +25,21 @@ function Header(props) {
 			setShowLogo(true);
 		}
 	}
+	useEffect(() => {
+		if (asPath === "/") {
+			setIsAsPath("/");
+		} else {
+			setIsAsPath(asPath.replace(/[^\w\s]/gi, ""));
+		}
+	}, [asPath]);
+
+	const checkActive = (link) => {
+		if (link.length === 1) {
+			return link || "";
+		} else {
+			return link.replace(/[^\w\s]/gi, "");
+		}
+	};
 	return (
 		<Navbar
 			expand="lg"
@@ -201,12 +219,34 @@ function Header(props) {
 										onClick={(e) => e.preventDefault()}
 									>
 										<span
+											className={
+												isAsPath.includes(
+													checkActive(item.link)
+												)
+													? styles.active +
+													  " " +
+													  "d-flex"
+													: "d-flex"
+											}
 											onClick={() =>
 												router.push(item.link)
 											}
 										>
+											{item.title === "TRANG CHỦ" && (
+												<div
+													className="mr-2"
+													style={{ width: "15px" }}
+												>
+													<Image
+														src={IconHome}
+														alt="icon"
+														width={15}
+														height={15}
+													/>
+												</div>
+											)}
 											{item.title}
-											<i className="fa fa-chevron-down"></i>
+											<i className="fa fa-chevron-down d-flex align-items-center"></i>
 										</span>
 										<ul className={styles.dropdown_menu}>
 											{item.listTag.map(

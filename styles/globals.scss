@@ -1,22 +1,22 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 * {
-  user-select: none;
+	user-select: none;
 }
 
-@font-face {
-  font-family: "UMT Cafeta";
-  src: url("../public/fonts/UTM Cafeta.ttf");
-}
 
-// @font-face {
-//   font-family: "Times New Roman";
-//   src: url("../public/fonts/times.ttf");
-// }
 
 *:focus {
-  outline: none;
+	outline: none;
+}
+@font-face {
+	font-family: "times";
+	src: url("../public/fonts/times.ttf");
+	src: url("../public/fonts/timesbd.ttf");
+	src: url("../public/fonts/timesbi.ttf");
+	src: url("../public/fonts/timesi.ttf");
+	src: url("../public/fonts/UTM Cafeta.ttf");
 }
 span,
 applet,
@@ -90,12 +90,12 @@ time,
 mark,
 audio,
 video {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -109,46 +109,46 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+	display: block;
 }
 body {
-  line-height: 1;
+	line-height: 1;
 }
 ol,
 ul {
-  list-style: none;
+	list-style: none;
 }
 blockquote,
 q {
-  quotes: none;
+	quotes: none;
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
-  content: none;
+	content: "";
+	content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 a {
-  text-decoration: none;
-  &:hover,
-  &:hover span {
-    color: rgba(248, 171, 12, 1) !important;
-  }
+	text-decoration: none;
+	&:hover,
+	&:hover span {
+		color: rgba(248, 171, 12, 1) !important;
+	}
 }
 ul {
-  list-style: none;
+	list-style: none;
 }
 a,
 p,
 span,
 button,
 div {
-  font-family: "UTM Cafeta", sans-serif;
+	font-family: "Times New Roman";
 }
 h1,
 h2,
@@ -156,66 +156,66 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "UTM Cafeta", sans-serif;
+	font-family: "Times New Roman";
 }
 button {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 hr {
-  color: #000 !important;
-  opacity: 1 !important;
-  border: none !important;
+	color: #000 !important;
+	opacity: 1 !important;
+	border: none !important;
 }
 
 a {
-  text-decoration: none !important;
-  color: inherit !important;
+	text-decoration: none !important;
+	color: inherit !important;
 
-  &:hover {
-    cursor: pointer;
-    color: rgb(14, 14, 239) !important;
-  }
+	&:hover {
+		cursor: pointer;
+		color: rgb(14, 14, 239) !important;
+	}
 }
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
+	[data-aos-delay] {
+		transition-delay: 0 !important;
+	}
 }
 
 #feed_page {
-  .nav-item {
-    &:nth-child(2) {
-      padding-left: 10px !important;
-      padding-right: 10px !important;
-    }
-    @media screen and (max-width: 480px) {
-      width: 100%;
-    }
-  }
-  .nav-pills .nav-link {
-    background: #a4a4a4;
-    color: #60748e;
-    text-transform: uppercase;
-    border-radius: 0;
-    padding: 11px 33px;
-    font-size: 18px;
-    font-weight: 600;
-    @media screen and (max-width: 768px) {
-      padding: 12px;
-      width: 100%;
-      height: 100%;
-      font-size: 14px;
-    }
-  }
-  .nav-pills .nav-link.active {
-    background: #ffffff;
-    color: #011e46;
-  }
+	.nav-item {
+		&:nth-child(2) {
+			padding-left: 10px !important;
+			padding-right: 10px !important;
+		}
+		@media screen and (max-width: 480px) {
+			width: 100%;
+		}
+	}
+	.nav-pills .nav-link {
+		background: #a4a4a4;
+		color: #60748e;
+		text-transform: uppercase;
+		border-radius: 0;
+		padding: 11px 33px;
+		font-size: 18px;
+		font-weight: 600;
+		@media screen and (max-width: 768px) {
+			padding: 12px;
+			width: 100%;
+			height: 100%;
+			font-size: 14px;
+		}
+	}
+	.nav-pills .nav-link.active {
+		background: #ffffff;
+		color: #011e46;
+	}
 }
 
 // OVERRIDE CSS TAB START
@@ -320,100 +320,100 @@ a {
 // Slider CSS End
 
 .ticket_standard {
-  color: #f8ab0c;
+	color: #f8ab0c;
 
-  input[type="radio"] {
-    &:checked {
-      background-color: #f8ab0c !important;
-      border: 2px solid #f8ab0c !important;
-      box-shadow: 0px 0px 10px #f8ab0c !important;
-    }
+	input[type="radio"] {
+		&:checked {
+			background-color: #f8ab0c !important;
+			border: 2px solid #f8ab0c !important;
+			box-shadow: 0px 0px 10px #f8ab0c !important;
+		}
 
-    &:hover {
-      box-shadow: 0px 0px 10px #f8ab0c !important;
-      border: 2px solid #f8ab0c !important;
-    }
-  }
+		&:hover {
+			box-shadow: 0px 0px 10px #f8ab0c !important;
+			border: 2px solid #f8ab0c !important;
+		}
+	}
 }
 
 .ticket_deluxe {
-  color: #44b148;
+	color: #44b148;
 
-  input[type="radio"] {
-    &:checked {
-      background-color: #44b148 !important;
-      border: 2px solid #44b148 !important;
-      box-shadow: 0px 0px 10px #44b148 !important;
-    }
+	input[type="radio"] {
+		&:checked {
+			background-color: #44b148 !important;
+			border: 2px solid #44b148 !important;
+			box-shadow: 0px 0px 10px #44b148 !important;
+		}
 
-    &:hover {
-      box-shadow: 0px 0px 10px #44b148 !important;
-      border: 2px solid #44b148 !important;
-    }
-  }
+		&:hover {
+			box-shadow: 0px 0px 10px #44b148 !important;
+			border: 2px solid #44b148 !important;
+		}
+	}
 }
 
 .ticket_ga {
-  color: #cb0202;
+	color: #cb0202;
 }
 
 .ticket_family {
-  color: #0686d6;
+	color: #0686d6;
 }
 
 .heading {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
 
-  .text {
-    font-family: "UTM Cafeta" sans-serif;
-    text-transform: uppercase;
-    font-size: 40px;
-    font-weight: 400;
-  }
+	.text {
+		font-family: "Times New Roman";
+		text-transform: uppercase;
+		font-size: 40px;
+		font-weight: 400;
+	}
 
-  .decor {
-    border-bottom: 1px solid #000;
-    height: 41px;
-    margin-left: 20px;
-  }
+	.decor {
+		border-bottom: 1px solid #000;
+		height: 41px;
+		margin-left: 20px;
+	}
 }
 
 .line {
-  width: 100%;
-  height: 1px;
-  background-color: #000;
-  margin: 0px 0px 20px 0px;
+	width: 100%;
+	height: 1px;
+	background-color: #000;
+	margin: 0px 0px 20px 0px;
 }
 
 .lineWhite {
-  width: 100%;
-  height: 1px;
-  background-color: #fff;
-  margin: 0px 0px 20px 0px;
+	width: 100%;
+	height: 1px;
+	background-color: #fff;
+	margin: 0px 0px 20px 0px;
 }
 
 @media all and (max-width: 992px) {
-  .heading {
-    .text {
-      font-size: 35px;
-    }
+	.heading {
+		.text {
+			font-size: 35px;
+		}
 
-    .decor {
-      height: 36px;
-    }
-  }
+		.decor {
+			height: 36px;
+		}
+	}
 }
 
 @media all and (max-width: 576px) {
-  .heading {
-    .text {
-      font-size: 30px;
-    }
+	.heading {
+		.text {
+			font-size: 30px;
+		}
 
-    .decor {
-      height: 31px;
-    }
-  }
+		.decor {
+			height: 31px;
+		}
+	}
 }
