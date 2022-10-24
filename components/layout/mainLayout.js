@@ -31,7 +31,7 @@ function MainLayout({ children }) {
           className={styles.children}
           style={{
             backgroundColor: router.pathname.includes("/case-study")
-              ? "#000"
+              ? "#F4ECDB"
               : "#F0EEE8",
           }}
         >

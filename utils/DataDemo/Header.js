@@ -11,7 +11,7 @@ export const HeaderData = [
     listTag: [
       { tag: "Cơ Chế Vốn", link: "/knowledge/mechanism" },
       { tag: "Quỹ Đầu Tư", link: "#" },
-      { tag: "Thuật Ngữ", link: "#" },
+      { tag: "Thuật Ngữ", link: "/knowledge/dictionary" },
     ],
     link: "#",
   },

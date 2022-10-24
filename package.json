@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "antd": "^4.23.5",
+    "@reduxjs/toolkit": "^1.8.5",
+    "antd": "^4.23.6",
     "aos": "^2.3.4",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
@@ -30,8 +31,7 @@
     "sass": "^1.54.5",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.4.29",
-    "swiper": "^8.3.2",
-    "@reduxjs/toolkit": "^1.8.5"
+    "swiper": "^8.3.2"
   },
   "devDependencies": {
     "eslint": "8.25.0",
