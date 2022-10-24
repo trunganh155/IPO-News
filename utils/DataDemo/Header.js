@@ -13,7 +13,7 @@ export const HeaderData = [
 			{ tag: "Quỹ Đầu Tư", link: "/knowledge/mechanism" },
 			{ tag: "Thuật Ngữ", link: "/knowledge/mechanism" },
 		],
-		link: "/knowledge",
+		link: "#",
 	},
 	{
 		id: 3,
@@ -24,7 +24,7 @@ export const HeaderData = [
 			{ tag: "Hồ sơ gọi vốn", link: "/pre/course" },
 			{ tag: "Hồ sơ thương hiệu", link: "/pre/course" },
 		],
-		link: "/pre",
+		link: "#",
 	},
 	{
 		id: 4,
@@ -33,7 +33,7 @@ export const HeaderData = [
 			{ tag: "Gallery", link: "/running/gallery" },
 			{ tag: "Theo dòng sự kiện", link: "/running/gallery" },
 		],
-		link: "/running",
+		link: "#",
 	},
 	{
 		id: 5,
@@ -42,7 +42,7 @@ export const HeaderData = [
 			{ tag: "Phỏng vấn chuyên gia", link: "/expert" },
 			{ tag: "Chân dung nhân vật", link: "/expert" },
 		],
-		link: "/expert",
+		link: "#",
 	},
 	{
 		id: 6,
@@ -54,7 +54,7 @@ export const HeaderData = [
 			{ tag: "Phỏng vấn chuyên gia", link: "/news" },
 			{ tag: "Chân dung nhân vật", link: "/news" },
 		],
-		link: "/news",
+		link: "#",
 	},
 	{
 		id: 7,
@@ -64,7 +64,7 @@ export const HeaderData = [
 			{ tag: "Case Study Aura Capital", link: "/library/case-study" },
 			{ tag: "Tài liệu IPO", link: "#" },
 		],
-		link: "/library",
+		link: "#",
 	},
 	{
 		id: 8,

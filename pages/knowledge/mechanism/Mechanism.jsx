@@ -6,12 +6,41 @@ import { getNews } from "../../../store/redux/NewsReducer/news.action";
 import { removeAccents } from "../../../utils/Function";
 import styles from "./Mechanism.module.scss";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+
 export default function Mechanism(props) {
   const limit = 300;
-  const limit2 = 100;
   const router = useRouter();
   const dispatch = useDispatch();
   const { news } = useSelector((state) => state.NewsReducer);
+
+  const settings = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 500,
+    arrows: true,
+    infinite: true,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   useEffect(() => {
     dispatch(getNews());
@@ -24,7 +53,27 @@ export default function Mechanism(props) {
         <p className="col decor"></p>
       </div>
 
-      <section className="d-flex flex-column-reverse flex-sm-row align-items-center">
+      <section className={styles.mechanism_header + " " + "mb-4"}>
+        <div className={styles.background + " " + "col-12"}>
+          <Image
+            loader={({ src }) =>
+              `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+            }
+            alt="co_che_von"
+            src={news[0]?.picture}
+            width={1429}
+            height={752}
+          />
+        </div>
+
+        <div className={styles.text + " " + "col-11"}>
+          <p className={styles.mechanism_title_lg}>{news[0]?.title}</p>
+
+          <p className={styles.mechanism_content_lg}>{news[0]?.mieu_ta_ngan}</p>
+        </div>
+      </section>
+
+      {/* <section className="d-flex flex-column-reverse flex-sm-row align-items-center">
         <div className="col-12 col-sm-5">
           <p
             className={styles.mechanism_title}
@@ -53,12 +102,12 @@ export default function Mechanism(props) {
             height={498}
           />
         </div>
-      </section>
+      </section> */}
       <hr />
 
       <section className="d-flex flex-row mb-4">
         <div className={styles.bdRight + " " + "col-12 col-sm-9 col-lg-10"}>
-          {news.slice(1, 4).map((item, index) => (
+          {news.slice(1, 7).map((item, index) => (
             <div className="d-flex flex-row mb-3" key={index}>
               <div className="col-5 col-sm-4">
                 <Image
@@ -101,11 +150,17 @@ export default function Mechanism(props) {
             width={244}
             height={713}
           />
+          <Image
+            alt="co_che_von"
+            src="/images/mechanism/banner.png"
+            width={244}
+            height={713}
+          />
         </div>
       </section>
 
       <section className="d-flex flex-row">
-        <div
+        {/* <div
           className="col-12 col-sm-9 col-lg-10 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
@@ -133,6 +188,34 @@ export default function Mechanism(props) {
               </p>
             </div>
           ))}
+        </div> */}
+        <div
+          className="col-12 col-sm-9 col-lg-10"
+          style={{ backgroundColor: "#606060" }}
+        >
+          <Slider {...settings} className={styles.mechanism_slider}>
+            {news.slice(0, 5).map((item, index) => (
+              <div className="col px-3" key={index}>
+                <Image
+                  loader={({ src }) =>
+                    `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                  }
+                  alt="co_che_von"
+                  src={item.picture}
+                  width={353}
+                  height={241}
+                />
+                <p
+                  className={styles.mechanism_title_white}
+                  onClick={() =>
+                    router.push(`/${removeAccents(item?._id || "")}`)
+                  }
+                >
+                  {item.title}
+                </p>
+              </div>
+            ))}
+          </Slider>
         </div>
 
         <div className="col col-sm-3 col-lg-2 d-none d-sm-block ps-3">

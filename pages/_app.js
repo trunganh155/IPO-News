@@ -4,7 +4,7 @@ import Head from "next/head";
 import Script from "next/script";
 import "../styles/globals.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import 'antd/dist/antd.css';
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";

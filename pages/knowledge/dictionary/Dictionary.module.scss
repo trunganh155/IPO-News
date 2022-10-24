@@ -1,0 +1,21 @@
+.dictionary {
+  padding: 20px 0 50px 0;
+}
+
+@media all and (max-width: 992px) {
+  .dictionary {
+    padding: 70px 0 25px 0;
+  }
+}
+
+@media all and (min-width: 576px) and (max-width: 768px) {
+  .dictionary {
+    padding: 0px 0 25px 0;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .dictionary {
+    padding: 10px 0 25px 0;
+  }
+}

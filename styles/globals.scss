@@ -5,6 +5,8 @@
 	user-select: none;
 }
 
+
+
 *:focus {
 	outline: none;
 }
@@ -215,6 +217,107 @@ a {
 		color: #011e46;
 	}
 }
+
+// OVERRIDE CSS TAB START
+.ant-tabs-nav-list {
+  color: red !important;
+}
+
+.ant-tabs-nav-wrap {
+  height: 55px;
+}
+
+.ant-tabs-tab + .ant-tabs-tab {
+  margin: 0 10px !important;
+}
+
+.ant-tabs-tab-btn {
+  color: #000 !important;
+  opacity: 0.5;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Lora", sans-serif !important;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.ant-tabs-tab.ant-tabs-tab-active {
+  .ant-tabs-tab-btn {
+    color: #000 !important;
+    opacity: 1;
+    font-size: 34px;
+    transition: 0.1s all ease !important;
+    margin-bottom: 6px;
+  }
+}
+
+.ant-tabs-ink-bar {
+  background-color: #a31925 !important;
+  top: 42px;
+}
+
+.ant-tabs-tab {
+  padding: 0 10px !important;
+}
+
+// OVERRIDE CSS TAB END
+
+// Slider CSS Start
+
+.slick-arrow {
+  position: absolute;
+  // bottom: -40px;
+  // left: 50%;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  background: transparent;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  &.slick-prev {
+    // transform: translateX(-50%) translateX(-30px);
+    position: absolute;
+    left: 20px;
+    z-index: 10;
+    &:after {
+      // position: absolute;
+      border: 2px solid;
+      border-color: #fff transparent transparent #fff;
+      height: 20px;
+      width: 20px;
+      transform: rotate(-45deg);
+    }
+  }
+  &.slick-next {
+    // transform: translateX(-50%) translateX(30px);
+    position: absolute;
+    right: 35px;
+    z-index: 10;
+    &:after {
+      // position: absolute;
+      border: 2px solid;
+      border-color: #fff transparent transparent #fff;
+      height: 20px;
+      width: 20px;
+      transform: rotate(135deg);
+    }
+  }
+}
+// Slider CSS End
 
 .ticket_standard {
 	color: #f8ab0c;
