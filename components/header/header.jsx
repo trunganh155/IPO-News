@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
@@ -10,9 +10,11 @@ import styles from "./header.module.scss";
 import { useRouter } from "next/router";
 function Header(props) {
 	const router = useRouter();
+	const { asPath } = useRouter();
 	const [showMenu, setShowMenu] = useState(false);
 	const [showLogo, setShowLogo] = useState(true);
 	const [isHeightHeader, setIsHeightHeader] = useState(0);
+	const [isAsPath, setIsAsPath] = useState("/");
 	window.addEventListener("scroll", callbackFunc);
 	function callbackFunc() {
 		var y = window.pageYOffset;
@@ -22,6 +24,21 @@ function Header(props) {
 			setShowLogo(true);
 		}
 	}
+	useEffect(() => {
+		if (asPath === "/") {
+			setIsAsPath("/");
+		} else {
+			setIsAsPath(asPath.replace(/[^\w\s]/gi, ""));
+		}
+	}, [asPath]);
+
+	const checkActive = (link) => {
+		if (link.length === 1) {
+			return link || "";
+		} else {
+			return link.replace(/[^\w\s]/gi, "");
+		}
+	};
 	return (
 		<Navbar
 			expand="lg"
@@ -201,6 +218,13 @@ function Header(props) {
 										onClick={(e) => e.preventDefault()}
 									>
 										<span
+											className={
+												isAsPath.includes(
+													checkActive(item.link)
+												)
+													? styles.active
+													: ""
+											}
 											onClick={() =>
 												router.push(item.link)
 											}
