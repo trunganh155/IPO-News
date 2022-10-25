@@ -1,13 +1,15 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import styles from "./Gallery.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { getGallery } from "../../../store/redux/GalleryReducer/gallery.action";
-import { getNews } from "../../../store/redux/NewsReducer/news.action";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import { getGallery } from "../../../store/redux/GalleryReducer/gallery.action";
+import { getNews } from "../../../store/redux/NewsReducer/news.action";
+import ArrowLeft from "../../../public/images/icons/arrow_left.svg";
+import ArrowRight from "../../../public/images/icons/arrow_right.svg";
+import styles from "./Gallery.module.scss";
 
 export default function Gallery(props) {
   const router = useRouter();
@@ -15,14 +17,46 @@ export default function Gallery(props) {
   const { gallery } = useSelector((state) => state.GalleryReducer);
   const { news } = useSelector((state) => state.NewsReducer);
 
+  const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+    <div className={styles.arrow_left}>
+      <Image
+        src={ArrowLeft}
+        alt="prevArrow"
+        width={24}
+        height={44}
+        {...props}
+      />
+    </div>
+  );
+
+  const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+    <div className={styles.arrow_right}>
+      <Image src={ArrowRight} alt="nextArrow" layout="fill" {...props} />
+    </div>
+  );
+
+  const [slideIndex, setSlideIndex] = useState(0);
   const settings = {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 500,
+    speed: 800,
     arrows: true,
     infinite: true,
     dots: false,
+    centerMode: true,
+    centerPadding: "0px",
+    prevArrow: (
+      <button type="button" class="slick-prev" style={{ height: "42px" }}>
+        <SlickArrowLeft />
+      </button>
+    ),
+    nextArrow: (
+      <button style={{ height: "42px" }} type="button" class="slick-prev">
+        <SlickArrowRight />
+      </button>
+    ),
+    beforeChange: (current, next) => setSlideIndex(next),
     responsive: [
       {
         breakpoint: 992,
@@ -43,6 +77,7 @@ export default function Gallery(props) {
 
   useEffect(() => {
     dispatch(getGallery());
+    dispatch(getNews());
   }, [dispatch]);
 
   return (
@@ -167,30 +202,46 @@ export default function Gallery(props) {
       </section>
 
       <section>
-        <div className="col-12 mt-4" style={{ backgroundColor: "#606060" }}>
-          <Slider {...settings} className={styles.gallery_slider}>
-            {news.slice(0, 5).map((item, index) => (
-              <div className="col px-3" key={index}>
-                <Image
-                  loader={({ src }) =>
-                    `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-                  }
-                  alt="gallery"
-                  src={item.picture}
-                  width={353}
-                  height={241}
-                />
-                <p
-                  className={styles.gallery_title}
-                  onClick={() =>
-                    router.push(`/${removeAccents(item?._id || "")}`)
-                  }
-                >
-                  {item.title}
-                </p>
-              </div>
-            ))}
-          </Slider>
+        <div className="col-12 my-5">
+          <div className={styles.slide_bottom}>
+            <Slider {...settings}>
+              {news.slice(1, 8).map((item, index) => (
+                <div>
+                  <div
+                    key={index}
+                    className={
+                      slideIndex === index
+                        ? styles.active + styles.slide
+                        : styles.slide
+                    }
+                  >
+                    <Image
+                      loader={({ src }) =>
+                        `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                      }
+                      src={item.picture}
+                      width={552}
+                      height={309}
+                      alt="banner"
+                      className="rounded_20"
+                    />
+                  </div>
+
+                  <div
+                    className={styles.content_active}
+                    style={{
+                      visibility: slideIndex === index ? "visible" : "hidden",
+                    }}
+                  >
+                    <p className={styles.gallery_title_slider}>{item.title}</p>
+                    <p className={styles.gallery_content_slider}>
+                      {item.mieu_ta_ngan}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
       </section>
 
@@ -200,6 +251,7 @@ export default function Gallery(props) {
           src="/images/course/banner.png"
           width={1578}
           height={300}
+          className="w-100"
         />
       </section>
     </div>
