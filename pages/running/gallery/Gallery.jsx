@@ -206,9 +206,8 @@ export default function Gallery(props) {
           <div className={styles.slide_bottom}>
             <Slider {...settings}>
               {news.slice(1, 8).map((item, index) => (
-                <div>
+                <div key={index}>
                   <div
-                    key={index}
                     className={
                       slideIndex === index
                         ? styles.active + styles.slide
