@@ -4,11 +4,42 @@ import React, { useEffect, useState } from "react";
 import styles from "./Gallery.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getGallery } from "../../../store/redux/GalleryReducer/gallery.action";
+import { getNews } from "../../../store/redux/NewsReducer/news.action";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 export default function Gallery(props) {
   const router = useRouter();
   const dispatch = useDispatch();
   const { gallery } = useSelector((state) => state.GalleryReducer);
+  const { news } = useSelector((state) => state.NewsReducer);
+
+  const settings = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 500,
+    arrows: true,
+    infinite: true,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   useEffect(() => {
     dispatch(getGallery());
@@ -132,6 +163,34 @@ export default function Gallery(props) {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section>
+        <div className="col-12 mt-4" style={{ backgroundColor: "#606060" }}>
+          <Slider {...settings} className={styles.gallery_slider}>
+            {news.slice(0, 5).map((item, index) => (
+              <div className="col px-3" key={index}>
+                <Image
+                  loader={({ src }) =>
+                    `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                  }
+                  alt="gallery"
+                  src={item.picture}
+                  width={353}
+                  height={241}
+                />
+                <p
+                  className={styles.gallery_title}
+                  onClick={() =>
+                    router.push(`/${removeAccents(item?._id || "")}`)
+                  }
+                >
+                  {item.title}
+                </p>
+              </div>
+            ))}
+          </Slider>
         </div>
       </section>
 
