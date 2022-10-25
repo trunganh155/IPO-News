@@ -115,7 +115,7 @@ export default function Gallery(props) {
         </div>
       </section>
 
-      <section className="mt-2 mt-md-4">
+      <section className="mt-2 mt-md-5">
         <div className={styles.scroll + " " + "d-flex flex-row"}>
           {gallery.map((item, index) => {
             return (
