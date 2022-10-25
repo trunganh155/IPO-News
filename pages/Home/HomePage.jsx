@@ -15,103 +15,96 @@ import { getNews } from "../../store/redux/NewsReducer/news.action";
 import styles from "./Home.module.scss";
 
 function HomePage(props) {
-	const router = useRouter();
-	const dispatch = useDispatch();
-	const expert = useSelector((state) => state.ExpertReducer.expert);
-	const news = useSelector((state) => state.NewsReducer.news);
-	const gallery = useSelector((state) => state.GalleryReducer.gallery);
-	const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-		<div className={styles.arrow_left}>
-			<Image
-				src={ArrowLeft}
-				alt="prevArrow"
-				width={24}
-				height={44}
-				{...props}
-			/>
-		</div>
-	);
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const expert = useSelector((state) => state.ExpertReducer.expert);
+  const news = useSelector((state) => state.NewsReducer.news);
+  const gallery = useSelector((state) => state.GalleryReducer.gallery);
+  const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+    <div className={styles.arrow_left}>
+      <Image
+        src={ArrowLeft}
+        alt="prevArrow"
+        width={24}
+        height={44}
+        {...props}
+      />
+    </div>
+  );
 
-	const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-		<div className={styles.arrow_right}>
-			<Image src={ArrowRight} alt="nextArrow" layout="fill" {...props} />
-		</div>
-	);
-	useEffect(() => {
-		dispatch(getExpert());
-		dispatch(getNews());
-		dispatch(getGallery());
-	}, [dispatch]);
+  const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+    <div className={styles.arrow_right}>
+      <Image src={ArrowRight} alt="nextArrow" layout="fill" {...props} />
+    </div>
+  );
+  useEffect(() => {
+    dispatch(getExpert());
+    dispatch(getNews());
+    dispatch(getGallery());
+  }, [dispatch]);
 
-	var x = window.matchMedia("(max-width: 980px)");
-	const [slideIndex, setSlideIndex] = useState(0);
-	const settings = {
-		dots: false,
-		infinite: true,
-		speed: 500,
-		slidesToShow: x.matches ? 1 : 3,
-		slidesToScroll: 1,
-		arrows: true,
-		autoplay: false,
-		centerMode: true,
-		prevArrow: (
-			<button type="button" class="slick-prev" style={{ height: "42px" }}>
-				<SlickArrowLeft />
-			</button>
-		),
-		nextArrow: (
-			<button style={{ height: "42px" }} type="button" class="slick-prev">
-				<SlickArrowRight />
-			</button>
-		),
+  var x = window.matchMedia("(max-width: 980px)");
+  const [slideIndex, setSlideIndex] = useState(0);
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: x.matches ? 1 : 3,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: false,
+    centerMode: true,
+    prevArrow: (
+      <button type="button" class="slick-prev" style={{ height: "42px" }}>
+        <SlickArrowLeft />
+      </button>
+    ),
+    nextArrow: (
+      <button style={{ height: "42px" }} type="button" class="slick-prev">
+        <SlickArrowRight />
+      </button>
+    ),
 
-		beforeChange: (current, next) => setSlideIndex(next),
-	};
-	return (
-		<MainLayout>
-			<div className={styles.homepage}>
-				<div className={styles.banner}>
-					<Image
-						src={BannerTop}
-						alt="banner"
-						height={523}
-						width={1920}
-					/>
-				</div>
-				<div className={styles.knowledge}>
-					<div className="d-flex justify-content-between mb-2 align-items-baseline">
-						<div className="heading">
-							<p className="text">KIẾN THỨC IPO</p>
-							<p className="col decor"></p>
-						</div>
-					</div>
-					<div className="row">
-						<div
-							className="col-12 col-lg-7 p-1 p-md-4 mb-3 d-flex flex-column mb-lg-0 flex-lg-none"
-							style={{
-								borderRight: "0.5px solid #000000",
-							}}
-						>
-							<Image
-								height={321}
-								width={717}
-								loader={({ src }) =>
-									`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-								}
-								src={news[0]?.picture}
-								alt={news[0]?.title}
-							/>
-							<span
-								onClick={() =>
-									router.push(
-										`/${removeAccents(news[0]?._id || "")}`
-									)
-								}
-							>
-								{news[0]?.title}
-							</span>
-							<h5>{news[0]?.mieu_ta_ngan}</h5>
-						</div>
+    beforeChange: (current, next) => setSlideIndex(next),
+  };
+  return (
+    <MainLayout>
+      <div className={styles.homepage}>
+        <div className={styles.banner}>
+          <Image src={BannerTop} alt="banner" height={523} width={1920} />
+        </div>
+        <div className={styles.knowledge}>
+          <div className="d-flex justify-content-between mb-2 align-items-baseline">
+            <div className="heading">
+              <p className="text">KIẾN THỨC IPO</p>
+              <p className="col decor"></p>
+            </div>
+          </div>
+          <div className="row">
+            <div
+              className="col-12 col-lg-7 p-1 p-md-4 mb-3 d-flex flex-column mb-lg-0 flex-lg-none"
+              style={{
+                borderRight: "0.5px solid #000000",
+              }}
+            >
+              <Image
+                height={321}
+                width={717}
+                loader={({ src }) =>
+                  `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                }
+                src={news[0]?.picture}
+                alt={news[0]?.title}
+              />
+              <span
+                onClick={() =>
+                  router.push(`/${removeAccents(news[0]?._id || "")}`)
+                }
+              >
+                {news[0]?.title}
+              </span>
+              <h5>{news[0]?.mieu_ta_ngan}</h5>
+            </div>
 
 						<div className="col-12 col-lg-5 p-md-4 p-1">
 							{news.slice(1, 5).map((item, index) => (

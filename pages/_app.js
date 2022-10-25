@@ -4,7 +4,7 @@ import Head from "next/head";
 import Script from "next/script";
 import "../styles/globals.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import 'antd/dist/antd.css';
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -59,7 +59,6 @@ function MyApp({ Component, pageProps }) {
             href="https://fonts.gstatic.com"
             crossOrigin="true"
           />
-
           {/*css bootstrap*/}
           <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"

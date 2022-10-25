@@ -1,17 +1,83 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import styles from "./Gallery.module.scss";
 import { useDispatch, useSelector } from "react-redux";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import { getGallery } from "../../../store/redux/GalleryReducer/gallery.action";
+import { getNews } from "../../../store/redux/NewsReducer/news.action";
+import ArrowLeft from "../../../public/images/icons/arrow_left.svg";
+import ArrowRight from "../../../public/images/icons/arrow_right.svg";
+import styles from "./Gallery.module.scss";
 
 export default function Gallery(props) {
   const router = useRouter();
   const dispatch = useDispatch();
   const { gallery } = useSelector((state) => state.GalleryReducer);
+  const { news } = useSelector((state) => state.NewsReducer);
+
+  const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+    <div className={styles.arrow_left}>
+      <Image
+        src={ArrowLeft}
+        alt="prevArrow"
+        width={24}
+        height={44}
+        {...props}
+      />
+    </div>
+  );
+
+  const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+    <div className={styles.arrow_right}>
+      <Image src={ArrowRight} alt="nextArrow" layout="fill" {...props} />
+    </div>
+  );
+
+  const [slideIndex, setSlideIndex] = useState(0);
+  const settings = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 800,
+    arrows: true,
+    infinite: true,
+    dots: false,
+    centerMode: true,
+    centerPadding: "0px",
+    prevArrow: (
+      <button type="button" class="slick-prev" style={{ height: "42px" }}>
+        <SlickArrowLeft />
+      </button>
+    ),
+    nextArrow: (
+      <button style={{ height: "42px" }} type="button" class="slick-prev">
+        <SlickArrowRight />
+      </button>
+    ),
+    beforeChange: (current, next) => setSlideIndex(next),
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   useEffect(() => {
     dispatch(getGallery());
+    dispatch(getNews());
   }, [dispatch]);
 
   return (
@@ -21,7 +87,7 @@ export default function Gallery(props) {
         <p className="col decor"></p>
       </div>
 
-      <section className="d-flex flex-wrap">
+      {/* <section className="d-flex flex-wrap">
         <div className="col-12 col-md-6 pe-0 pe-md-2">
           <div class="ratio ratio-16x9">
             <iframe
@@ -99,9 +165,23 @@ export default function Gallery(props) {
             <p className={styles.gallery_title_sm}>{gallery[3]?.title}</p>
           </div>
         </div>
+      </section> */}
+
+      <section>
+        <div className="col-12">
+          <div class="ratio ratio-21x9">
+            <iframe
+              src={gallery[1]?.url}
+              title="YouTube video"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <p className={styles.gallery_title}>{gallery[1]?.title}</p>
+        </div>
       </section>
 
-      <section className="mt-2 mt-md-4">
+      <section className="mt-2 mt-md-5">
         <div className={styles.scroll + " " + "d-flex flex-row"}>
           {gallery.map((item, index) => {
             return (
@@ -121,12 +201,56 @@ export default function Gallery(props) {
         </div>
       </section>
 
+      <section>
+        <div className="col-12 my-5">
+          <div className={styles.slide_bottom}>
+            <Slider {...settings}>
+              {news.slice(1, 8).map((item, index) => (
+                <div key={index}>
+                  <div
+                    className={
+                      slideIndex === index
+                        ? styles.active + styles.slide
+                        : styles.slide
+                    }
+                  >
+                    <Image
+                      loader={({ src }) =>
+                        `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                      }
+                      src={item.picture}
+                      width={552}
+                      height={309}
+                      alt="banner"
+                      className="rounded_20"
+                    />
+                  </div>
+
+                  <div
+                    className={styles.content_active}
+                    style={{
+                      visibility: slideIndex === index ? "visible" : "hidden",
+                    }}
+                  >
+                    <p className={styles.gallery_title_slider}>{item.title}</p>
+                    <p className={styles.gallery_content_slider}>
+                      {item.mieu_ta_ngan}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+      </section>
+
       <section className="mt-2 mt-md-4">
         <Image
           alt="khoa_hoc"
           src="/images/course/banner.png"
-          width={1378}
-          height={270}
+          width={1578}
+          height={300}
+          className="w-100"
         />
       </section>
     </div>

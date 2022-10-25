@@ -8,14 +8,19 @@
 *:focus {
 	outline: none;
 }
+// @font-face {
+// 	font-family: "times";
+// 	src: url("../public/fonts/times.ttf");
+// 	src: url("../public/fonts/timesbd.ttf");
+// 	src: url("../public/fonts/timesbi.ttf");
+// 	src: url("../public/fonts/timesi.ttf");
+// }
+
 @font-face {
-	font-family: "times";
-	src: url("../public/fonts/times.ttf");
-	src: url("../public/fonts/timesbd.ttf");
-	src: url("../public/fonts/timesbi.ttf");
-	src: url("../public/fonts/timesi.ttf");
-	src: url("../public/fonts/UTM Cafeta.ttf");
+	font-family: "UTC";
+	src: url("../public/fonts/UTM-Cafeta.ttf");
 }
+
 span,
 applet,
 object,
@@ -216,6 +221,144 @@ a {
 	}
 }
 
+// OVERRIDE CSS TAB START
+.ant-tabs-nav-list {
+	color: red !important;
+}
+
+.ant-tabs-nav-wrap {
+	height: 55px;
+}
+
+.ant-tabs-tab + .ant-tabs-tab {
+	margin: 0 10px !important;
+}
+
+.ant-tabs-tab-btn {
+	color: #000 !important;
+	opacity: 0.5;
+	font-size: 20px;
+	font-weight: 500;
+	font-family: "Times New Roman", Times, serif !important;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.ant-tabs-tab.ant-tabs-tab-active {
+	.ant-tabs-tab-btn {
+		color: #000 !important;
+		opacity: 1;
+		font-size: 34px;
+		transition: 0.1s all ease !important;
+		margin-bottom: 6px;
+	}
+}
+
+.ant-tabs-ink-bar {
+	background-color: #a31925 !important;
+	top: 42px;
+}
+
+.ant-tabs-tab {
+	padding: 0 10px !important;
+}
+
+// OVERRIDE CSS TAB END
+
+// Slider CSS Start
+
+// .slick-arrow {
+// 	position: absolute;
+// 	// bottom: -40px;
+// 	// left: 50%;
+// 	width: 25px;
+// 	height: 25px;
+// 	padding: 0;
+// 	text-indent: -9999px;
+// 	background-repeat: no-repeat;
+// 	background: transparent;
+
+// 	&:after {
+// 		content: "";
+// 		position: absolute;
+// 		top: 50%;
+// 		left: 50%;
+// 		z-index: 2;
+// 		display: inline-block;
+// 		width: 0;
+// 		height: 0;
+// 		border-style: solid;
+// 	}
+// 	&.slick-prev {
+// 		// transform: translateX(-50%) translateX(-30px);
+// 		position: absolute;
+// 		left: 20px;
+// 		z-index: 10;
+// 		&:after {
+// 			// position: absolute;
+// 			border: 2px solid;
+// 			border-color: #fff transparent transparent #fff;
+// 			height: 20px;
+// 			width: 20px;
+// 			transform: rotate(-45deg);
+// 		}
+// 	}
+// 	&.slick-next {
+// 		// transform: translateX(-50%) translateX(30px);
+// 		position: absolute;
+// 		right: 35px;
+// 		z-index: 10;
+// 		&:after {
+// 			// position: absolute;
+// 			border: 2px solid;
+// 			border-color: #fff transparent transparent #fff;
+// 			height: 20px;
+// 			width: 20px;
+// 			transform: rotate(135deg);
+// 		}
+// 	}
+// }
+// Slider CSS End
+
+// Pagination Start
+.pagination {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	font-family: "Times New Roman", Times, serif;
+
+	.page-num {
+		padding: 10px 13px;
+		cursor: pointer;
+		font-size: 20px;
+		font-weight: 500;
+		opacity: 0.5;
+		color: #000;
+
+		&:hover {
+			color: #000 !important;
+			opacity: 1;
+		}
+	}
+}
+
+.pagination .active {
+	opacity: 1;
+}
+// Pagination End
+
+.rounded_20 {
+	border-radius: 20px;
+}
+
 .ticket_standard {
 	color: #f8ab0c;
 
@@ -264,14 +407,34 @@ a {
 	width: 100%;
 
 	.text {
-		font-family: "Times New Roman";
+		font-family: "UTC", sans-serif;
 		text-transform: uppercase;
 		font-size: 40px;
-		font-weight: 400;
+		font-weight: 700;
 	}
 
 	.decor {
 		border-bottom: 1px solid #000;
+		height: 41px;
+		margin-left: 20px;
+	}
+}
+
+.heading_white {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	color: #fff;
+
+	.text {
+		font-family: "UTC", sans-serif;
+		text-transform: uppercase;
+		font-size: 40px;
+		font-weight: 700;
+	}
+
+	.decor {
+		border-bottom: 1px solid #fff;
 		height: 41px;
 		margin-left: 20px;
 	}

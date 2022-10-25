@@ -176,11 +176,7 @@
 					@for $num from 1 through 5 {
 						.dropdown_item_#{$num} {
 							transform-origin: top center;
-							animation: slideDown
-								300ms
-								($num * 60ms)
-								ease-in-out
-								forwards;
+							animation: slideDown 300ms ($num * 60ms) ease-in-out forwards;
 						}
 					}
 				}
