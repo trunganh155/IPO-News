@@ -7,10 +7,6 @@
 		padding: 0;
 	}
 	li {
-		font-family: "UTC", sans-serif;
-		font-weight: 700;
-		font-size: 20px;
-		line-height: 25px;
 		color: #aeaeae;
 		display: flex;
 		align-items: center;
@@ -19,8 +15,12 @@
 		position: relative;
 	}
 	span {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 25px;
+		font-family: "UTC", sans-serif;
 		cursor: pointer;
-		color: gray;
+		color: #aeaeae;
 		padding: 0;
 		text-transform: uppercase;
 		border-bottom: 2px solid transparent;
@@ -50,6 +50,9 @@
 			margin-bottom: 15px;
 			font-size: 16px;
 			z-index: 99;
+			color: #aeaeae;
+			font-family: "UTC", sans-serif;
+			cursor: pointer;
 		}
 		li:hover {
 			color: black;
