@@ -12,12 +12,10 @@ function MainLayout({ children }) {
 
   const renderHeader = () => {
     if (
-      router.pathname.includes("/sub") ||
+      router.pathname.includes("/[sub]") ||
       router.pathname.includes("/forum")
     ) {
       return <HeaderOnlyW />;
-    } else if (router.pathname.includes("/case-study")) {
-      return <HeaderOnlyB />;
     }
 
     return <Header />;
@@ -27,10 +25,9 @@ function MainLayout({ children }) {
     <>
       <div className={styles.mainLayout}>
         {renderHeader()}
-
-        {children}
-
-        {router.pathname === "/" ? <Footer /> : <FooterDark />}
+        <div className={styles.children}>{children}</div>
+        {/* {router.pathname === "/" ? <Footer /> : <FooterDark />} */}
+        <Footer />
       </div>
     </>
   );
