@@ -27,16 +27,9 @@ function MainLayout({ children }) {
     <>
       <div className={styles.mainLayout}>
         {renderHeader()}
-        <div
-          className={styles.children}
-          style={{
-            backgroundColor: router.pathname.includes("/case-study")
-              ? "#F4ECDB"
-              : "#F0EEE8",
-          }}
-        >
-          {children}
-        </div>
+
+        {children}
+
         {router.pathname === "/" ? <Footer /> : <FooterDark />}
       </div>
     </>
