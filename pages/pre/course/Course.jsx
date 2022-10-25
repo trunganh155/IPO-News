@@ -114,8 +114,8 @@ export default function Course(props) {
                     }
                     alt="khoa_hoc"
                     src={item.picture}
-                    width={430}
-                    height={250}
+                    width={490}
+                    height={280}
                   />
                 </div>
 
