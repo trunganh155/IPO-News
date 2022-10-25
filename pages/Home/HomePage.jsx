@@ -189,6 +189,7 @@ function HomePage(props) {
 										alt={news[0]?.cate_name}
 									/>
 								</div>
+								<div className={styles.bg}></div>
 								<div className={styles.content}>
 									<span
 										onClick={() =>
@@ -382,7 +383,7 @@ function HomePage(props) {
 							className={
 								styles.box_video +
 								" " +
-								"col-12 mb-3 mb-lg-0 col-lg-8 pe-md-2"
+								"col-12 mb-3 mb-lg-0 col-lg-8 pe-md-2 h-100"
 							}
 						>
 							<div className="ratio ratio-16x9">
