@@ -6,25 +6,25 @@
   overflow: hidden;
   background-color: #f4ecdb;
 
-  .children {
-    padding: 180px 35px 0px 35px;
-  }
+	.children {
+		padding: 180px 35px 0px 35px;
+	}
 }
 
 @media all and (max-width: 992px) {
-  .mainLayout {
-    .children {
-      padding: 180px 25px 0px 25px;
-    }
-  }
+	.mainLayout {
+		.children {
+			padding: 180px 25px 0px 25px;
+		}
+	}
 }
 
 @media all and (max-width: 576px) {
-  .mainLayout {
-    .children {
-      padding: 160px 15px 0px 15px;
-    }
-  }
+	.mainLayout {
+		.children {
+			padding: 160px 15px 0px 15px;
+		}
+	}
 }
 
 // @media all and (max-width: 480px) {

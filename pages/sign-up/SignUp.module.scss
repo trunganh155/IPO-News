@@ -1,7 +1,7 @@
 .sign_up {
 	color: #000;
-	max-width: 1440px;
-	background-color: burlywood;
+	max-width: 1920px;
+	background-image: url("../../public/images/home/banner_1.png");
 	width: 100% !important;
 	height: 100%;
 	overflow: hidden;
@@ -19,15 +19,16 @@
 			.group_button {
 				.button_sign_up,
 				.button_sign_in {
-					font-family: "Times New Roman";
-					font-style: normal;
 					font-weight: 400;
 					font-size: 20px;
 					line-height: 23px;
 					color: #9e9e9e;
+					display: flex;
+					align-items: center;
 				}
 				.active {
 					color: #000000;
+					font-size: 20px;
 				}
 				.border_bottom {
 					height: 2px;
@@ -45,8 +46,6 @@
 				.w_box_content {
 					width: 90%;
 					span {
-						font-family: "Times New Roman";
-						font-style: normal;
 						font-weight: 400;
 						font-size: 25px;
 						line-height: 29px;
@@ -104,8 +103,6 @@
 							}
 						}
 						h6 {
-							font-family: "Times New Roman";
-							font-style: normal;
 							font-weight: 400;
 							font-size: 15px;
 							line-height: 25px;
@@ -122,8 +119,6 @@
 							align-items: center;
 							border-radius: 10px;
 							width: 100%;
-							font-family: "Times New Roman";
-							font-style: normal;
 							font-weight: 400;
 							font-size: 20px;
 							line-height: 23px;
