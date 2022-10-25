@@ -13,7 +13,7 @@ function HeaderOnlyW(props) {
       expand="lg"
       className={styles.header + "  " + "justify-content-between mx-auto"}
       fixed="top"
-      style={{ backgroundColor: "#F0EEE8" }}
+      style={{ backgroundColor: "#F4ECDB" }}
     >
       <Container fluid className={styles.wrapper + " " + "p-0"}>
         <div className="w-100">

@@ -9,6 +9,29 @@
     }
   }
 
+  &_header {
+    position: relative;
+
+    .text {
+      position: absolute;
+      bottom: 35px;
+      left: 35px;
+    }
+  }
+
+  &_title_lg {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 0 !important;
+  }
+
+  &_content_lg {
+    color: #939393;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
   &_title {
     font-size: 20px;
     font-weight: 700;
@@ -24,6 +47,7 @@
     font-size: 15px;
     font-weight: 400;
     text-align: justify;
+    color: #939393;
   }
 
   &_title_white {
@@ -36,6 +60,17 @@
       cursor: pointer;
       color: rgb(14, 14, 239);
     }
+  }
+
+  &_slider {
+    padding: 50px 50px 10px 50px;
+  }
+
+  .btn_prev {
+    background-color: red !important;
+    color: aqua !important;
+    height: 50px !important;
+    width: 50px !important;
   }
 }
 

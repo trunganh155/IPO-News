@@ -21,7 +21,7 @@ export default function Gallery(props) {
         <p className="col decor"></p>
       </div>
 
-      <section className="d-flex flex-wrap">
+      {/* <section className="d-flex flex-wrap">
         <div className="col-12 col-md-6 pe-0 pe-md-2">
           <div class="ratio ratio-16x9">
             <iframe
@@ -99,6 +99,20 @@ export default function Gallery(props) {
             <p className={styles.gallery_title_sm}>{gallery[3]?.title}</p>
           </div>
         </div>
+      </section> */}
+
+      <section>
+        <div className="col-12">
+          <div class="ratio ratio-21x9">
+            <iframe
+              src={gallery[1]?.url}
+              title="YouTube video"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <p className={styles.gallery_title}>{gallery[1]?.title}</p>
+        </div>
       </section>
 
       <section className="mt-2 mt-md-4">
@@ -125,8 +139,8 @@ export default function Gallery(props) {
         <Image
           alt="khoa_hoc"
           src="/images/course/banner.png"
-          width={1378}
-          height={270}
+          width={1578}
+          height={300}
         />
       </section>
     </div>

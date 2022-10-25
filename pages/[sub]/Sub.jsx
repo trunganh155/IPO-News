@@ -31,7 +31,7 @@ export default function Sub(props) {
             }
             alt="sub_image"
             src={newsDetail?.picture}
-            width={1429}
+            width={1459}
             height={752}
           />
         </div>
@@ -94,7 +94,7 @@ export default function Sub(props) {
           <Image
             alt="sub_image"
             src="/images/mechanism/banner.png"
-            width={355}
+            width={375}
             height={854}
           />
         </div>
@@ -105,37 +105,35 @@ export default function Sub(props) {
         <p className="col decor"></p>
       </div>
 
-      <section className="d-flex flex-column">
-        {Array(3)
+      <section className="d-flex flex-wrap">
+        {Array(4)
           .fill()
           .map((item, index) => {
             return (
-              <div className="col-12 d-flex flex-row mb-3" key={index}>
-                <div className="col-9 pe-5">
-                  <div className="px-5">
-                    <p className={styles.sub_title_sm}>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Fugit cum error assumenda quo.
-                    </p>
-
-                    <p className={styles.sub_content_sm}>
-                      Senectus et netus et malesuada. Nunc pulvinar sapien et
-                      ligula ullamcorper malesuada proin. Neque convallis a cras
-                      semper auctor. Libero id faucibus nisl tincidunt eget. Leo
-                      a diam sollicitudin tempor id. A lacus vestibulum sed arcu
-                      non odio euismod lacinia. In tellus integer feugiat
-                      scelerisque.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-3">
+              <div
+                className="col-12 col-sm-6 d-flex flex-row pe-4 mb-4"
+                key={index}
+              >
+                <div className="col-6">
                   <Image
                     alt="sub_image"
                     src="/images/black.png"
-                    width={344}
-                    height={170}
+                    width={422}
+                    height={230}
                   />
+                </div>
+
+                <div className="col-6 px-3">
+                  <div className="">
+                    <p className={styles.sub_title_md}>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    </p>
+
+                    <p className={styles.sub_content_md}>
+                      Senectus et netus et malesuada. Nunc pulvinar sapien et
+                      ligula ullamcorper malesuada proin
+                    </p>
+                  </div>
                 </div>
               </div>
             );

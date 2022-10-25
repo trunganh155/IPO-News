@@ -1,25 +1,7 @@
 .caseStudy {
-  padding: 0 0 50px 0 !important;
-  margin-top: -90px;
-  background-color: #000;
-  color: #fff;
-
-  label {
-    span {
-      color: #fff !important;
-      font-size: 16px !important;
-      font-weight: 400 !important;
-    }
-  }
-
-  span {
-    margin: 0 4px !important;
-  }
-
-  &_group {
-    display: flex !important;
-    flex-direction: column !important;
-  }
+  padding: 150px 0 50px 0 !important;
+  background-color: #f4ecdb;
+  color: #000;
 
   &_title {
     font-size: 15px;
@@ -28,24 +10,66 @@
   }
 
   &_filter {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 400;
-    text-align: justify;
+    text-transform: uppercase;
+    font-family: "UTM Cafeta", sans-serif;
+    margin-bottom: 0px !important;
+  }
+
+  .check_lable {
+    cursor: pointer;
+  }
+
+  .check_span {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"] + span:before {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #000;
+    content: "";
+    display: inline-block;
+    margin: 0 10px 0 0;
+    padding: 0;
+    vertical-align: baseline;
+    border-radius: 50%;
+  }
+
+  input[type="checkbox"]:checked + span:before {
+    background: #1460c8;
+    border: 1.5px solid #1460c8;
+    box-shadow: inset 0px 0px 0px 1px #fff;
+    color: #333;
+    content: "";
+    text-align: center;
+    border-radius: 50%;
+  }
+
+  input[type="checkbox"]:focus + span::before {
+    outline: 0;
   }
 
   .scroll {
     height: 85vh;
     overflow-y: auto;
-    border: 1px solid #fff;
+    border: 1px solid #000;
     padding: 15px !important;
 
     &::-webkit-scrollbar {
       width: 5px;
-      background-color: #605959;
+      background-color: #ccc;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: #fff;
+      background-color: #000;
     }
   }
 }

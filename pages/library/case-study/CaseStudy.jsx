@@ -8,13 +8,13 @@ import { getNews } from "../../../store/redux/NewsReducer/news.action";
 import styles from "./CaseStudy.module.scss";
 
 const CheckboxGroup = Checkbox.Group;
-const plainOptions = [
-  "select 1",
-  "select 2",
-  "select 3",
-  "select 4",
-  "select 5",
-  "select 6",
+const filter = [
+  "Healthcare",
+  "Fitness",
+  "Mỹ Phẩm",
+  "Công nghệ",
+  "Thực phẩm",
+  "...",
 ];
 
 export default function CaseStudy(props) {
@@ -47,9 +47,7 @@ export default function CaseStudy(props) {
     <div className={styles.caseStudy}>
       <div className="d-flex flex-row">
         <div className="col-3 pe-4 d-flex flex-column">
-          <p className={styles.caseStudy_filter}>Filter</p>
-
-          {Array(2)
+          {/* {Array(2)
             .fill()
             .map((item, index) => {
               return (
@@ -72,7 +70,60 @@ export default function CaseStudy(props) {
                   />
                 </div>
               );
+            })} */}
+          <div className="mb-4">
+            <p className={styles.caseStudy_filter}>Case Study Doanh Nghiệp</p>
+            {filter.map((item, index) => {
+              return (
+                <div key={index}>
+                  <label className={styles.check_label}>
+                    <input
+                      className={styles.check_input}
+                      type="checkbox"
+                      onChange={() => {}}
+                    />
+                    <span className={styles.check_span}>{item}</span>
+                  </label>
+                </div>
+              );
             })}
+          </div>
+
+          <div className="mb-4">
+            <p className={styles.caseStudy_filter}>Case Study Aura Capital</p>
+            {filter.map((item, index) => {
+              return (
+                <div key={index}>
+                  <label className={styles.check_label}>
+                    <input
+                      className={styles.check_input}
+                      type="checkbox"
+                      onChange={() => {}}
+                    />
+                    <span className={styles.check_span}>{item}</span>
+                  </label>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mb-4">
+            <p className={styles.caseStudy_filter}>Tài Liệu IPO</p>
+            {filter.map((item, index) => {
+              return (
+                <div key={index}>
+                  <label className={styles.check_label}>
+                    <input
+                      className={styles.check_input}
+                      type="checkbox"
+                      onChange={() => {}}
+                    />
+                    <span className={styles.check_span}>{item}</span>
+                  </label>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="col-9">
