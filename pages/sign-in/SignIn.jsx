@@ -80,10 +80,15 @@ function SignIn() {
 					</div>
 					<div
 						className={
-							styles.title + " " + "d-flex justify-content-center"
+							styles.title + " " + "d-flex justify-content-center mt-3"
 						}
 					>
-						TẠP CHÍ PIO
+						<Image
+							src="/images/logo_black.png"
+							alt="logo"
+							width={318}
+							height={63}
+						/>
 					</div>
 					<hr />
 					<div

@@ -7,69 +7,15 @@ function IntroMagazine() {
 		<div className={styles.intro_magazine + " " + "container"}>
 			<div className={styles.box_intro_magazine}>
 				<div className={styles.title_box + " " + "row"}>
-					<div className="col-5 d-flex justify-content-evenly">
-						<div className={styles.text_logo}>
-							<Image
-								src="/images/Test/T_w.svg"
-								alt="logo"
-								width={45}
-								height={55}
-							></Image>
-							<Image
-								src="/images/Test/A_w.svg"
-								alt="logo"
-								width={45}
-								height={55}
-							></Image>
-							<Image
-								src="/images/Test/P_w.svg"
-								alt="logo"
-								width={45}
-								height={55}
-							></Image>
-						</div>
-						<div className={styles.text_logo}>
-							<Image
-								src="/images/Test/C_w.svg"
-								alt="logo"
-								width={45}
-								height={55}
-							></Image>
-							<Image
-								src="/images/Test/H_w.svg"
-								alt="logo"
-								width={45}
-								height={55}
-							></Image>
-							<Image
-								src="/images/Test/I_w.svg"
-								alt="logo"
-								width={45}
-								height={55}
-							></Image>
-						</div>
-						<div className={styles.text_logo}>
-							<Image
-								src="/images/Test/I_w.svg"
-								alt="logo"
-								width={45}
-								height={55}
-							></Image>
-							<Image
-								src="/images/Test/P_w.svg"
-								alt="logo"
-								width={45}
-								height={55}
-							></Image>
-							<Image
-								src="/images/Test/O_w.svg"
-								alt="logo"
-								width={45}
-								height={55}
-							></Image>
-						</div>
+					<div className="col-4 d-flex justify-content-start">
+						<Image
+							src="/images/logo_white.png"
+							alt="logo"
+							width={400}
+							height={80}
+						/>
 					</div>
-					<div className={styles.box_border + " " + "col-7"}></div>
+					<div className={styles.box_border + " " + "col-8"}></div>
 				</div>
 				<div className={styles.content_box}>
 					<div className={styles.center_box}>

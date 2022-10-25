@@ -1,29 +1,29 @@
 .mainLayout {
-  margin: 68px auto 0px;
-  color: #000;
-  max-width: 1440px;
-  width: 100% !important;
-  overflow: hidden;
+	margin: 68px auto 0px;
+	color: #000;
+	max-width: 1920px;
+	width: 100% !important;
+	overflow: hidden;
 
-  .children {
-    padding: 180px 35px 0px 35px;
-  }
+	.children {
+		padding: 180px 35px 0px 35px;
+	}
 }
 
 @media all and (max-width: 992px) {
-  .mainLayout {
-    .children {
-      padding: 180px 25px 0px 25px;
-    }
-  }
+	.mainLayout {
+		.children {
+			padding: 180px 25px 0px 25px;
+		}
+	}
 }
 
 @media all and (max-width: 576px) {
-  .mainLayout {
-    .children {
-      padding: 160px 15px 0px 15px;
-    }
-  }
+	.mainLayout {
+		.children {
+			padding: 160px 15px 0px 15px;
+		}
+	}
 }
 
 // @media all and (max-width: 480px) {

@@ -7,6 +7,8 @@ import { removeAccents } from "../../utils/Function";
 import MainLayout from "../../components/layout/mainLayout";
 import BannerRight from "../../public/images/home/banner_right.png";
 import BannerTop from "../../public/images/home/banner_home_1.png";
+import ArrowLeft from "../../public/images/icons/arrow_left.svg";
+import ArrowRight from "../../public/images/icons/arrow_right.svg";
 import { getExpert } from "../../store/redux/ExpertReducer/expert.action";
 import { getGallery } from "../../store/redux/GalleryReducer/gallery.action";
 import { getNews } from "../../store/redux/NewsReducer/news.action";
@@ -18,13 +20,30 @@ function HomePage(props) {
 	const expert = useSelector((state) => state.ExpertReducer.expert);
 	const news = useSelector((state) => state.NewsReducer.news);
 	const gallery = useSelector((state) => state.GalleryReducer.gallery);
+	const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+		<div className={styles.arrow_left}>
+			<Image
+				src={ArrowLeft}
+				alt="prevArrow"
+				width={24}
+				height={44}
+				{...props}
+			/>
+		</div>
+	);
+
+	const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+		<div className={styles.arrow_right}>
+			<Image src={ArrowRight} alt="nextArrow" layout="fill" {...props} />
+		</div>
+	);
 	useEffect(() => {
 		dispatch(getExpert());
 		dispatch(getNews());
 		dispatch(getGallery());
 	}, [dispatch]);
 
-	var x = window.matchMedia("(max-width: 768px)");
+	var x = window.matchMedia("(max-width: 980px)");
 	const [slideIndex, setSlideIndex] = useState(0);
 	const settings = {
 		dots: false,
@@ -32,72 +51,31 @@ function HomePage(props) {
 		speed: 500,
 		slidesToShow: x.matches ? 1 : 3,
 		slidesToScroll: 1,
-		arrows: false,
-		autoplay: true,
+		arrows: true,
+		autoplay: false,
 		centerMode: true,
+		prevArrow: (
+			<button type="button" class="slick-prev" style={{ height: "42px" }}>
+				<SlickArrowLeft />
+			</button>
+		),
+		nextArrow: (
+			<button style={{ height: "42px" }} type="button" class="slick-prev">
+				<SlickArrowRight />
+			</button>
+		),
+
 		beforeChange: (current, next) => setSlideIndex(next),
 	};
 	return (
 		<MainLayout>
 			<div className={styles.homepage}>
 				<div className={styles.banner}>
-					{/* <div className="row justify-content-center">
-            <div className="col-10 col-lg-6 text-center mb-5 pt-0 px-0 pt-sm-5 px-sm-5">
-              <h3>{news[0]?.cate_name}</h3>
-              <h5>{news[0]?.mieu_ta_ngan}</h5>
-            </div>
-          </div>
-          <div className={styles.slider}>
-            <Slider {...settings}>
-              {news.slice(0, 5).map((item, index) => (
-                <div
-                  key={index}
-                  className={
-                    styles.box_image_content +
-                    " " +
-                    (slideIndex === index
-                      ? styles.active + styles.slide
-                      : styles.slide)
-                  }
-                >
-                  <div
-                    className={
-                      styles.images + " " + "d-flex justify-content-center"
-                    }
-                  >
-                    <Image
-                      loader={({ src }) =>
-                        `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-                      }
-                      src={item.picture}
-                      width={520}
-                      height={350}
-                      alt="banner"
-                    />
-                  </div>
-                  <div className={styles.content}>
-                    <div>
-                      <h3>{item.cate_name}</h3>
-                    </div>
-                    <h5 className="my-2">{item.title}</h5>
-                    <button
-                      onClick={() =>
-                        router.push(`/${removeAccents(item?._id || "")}`)
-                      }
-                    >
-                      Xem thêm
-                    </button>
-                  </div>
-                  <div className={styles.box_bg}></div>
-                </div>
-              ))}
-            </Slider>
-          </div> */}
 					<Image
 						src={BannerTop}
 						alt="banner"
 						height={523}
-						width={1440}
+						width={1920}
 					/>
 				</div>
 				<div className={styles.knowledge}>
@@ -156,6 +134,39 @@ function HomePage(props) {
 							))}
 						</div>
 					</div>
+					<hr />
+					<div
+						className="d-flex justify-content-between"
+						style={{ overflowY: "auto" }}
+					>
+						{news.slice(1, 6).map((item, index) => (
+							<div
+								key={index}
+								style={{
+									whiteSpace: "nowrap",
+									marginRight: "5px",
+									marginBottom: "5px",
+								}}
+							>
+								<div
+									style={{ width: "352px", height: "265px" }}
+								>
+									<Image
+										loader={({ src }) =>
+											`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+										}
+										src={item.picture}
+										alt={item.title}
+										height={265}
+										width={357}
+									/>
+								</div>
+								<span style={{ fontSize: "16px" }}>
+									{item.title}
+								</span>
+							</div>
+						))}
+					</div>
 				</div>
 				<div className={styles.news_ipo}>
 					<div className="d-flex justify-content-between mb-3 align-items-baseline">
@@ -165,17 +176,19 @@ function HomePage(props) {
 						</div>
 					</div>
 					<div className="row">
-						<div className={"col-md-10 col-12"}>
+						<div className={"col-md-9 col-lg-10 col-12"}>
 							<div className={styles.box_image_news}>
-								<Image
-									width={1007}
-									height={614}
-									loader={({ src }) =>
-										`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-									}
-									src={news[0]?.picture}
-									alt={news[0]?.cate_name}
-								/>
+								<div className={styles.box_image}>
+									<Image
+										width={1008}
+										height={713}
+										loader={({ src }) =>
+											`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+										}
+										src={news[0]?.picture}
+										alt={news[0]?.cate_name}
+									/>
+								</div>
 								<div className={styles.content}>
 									<span
 										onClick={() =>
@@ -195,7 +208,11 @@ function HomePage(props) {
 							</div>
 						</div>
 						<div
-							className="col-2 d-md-block d-none"
+							className={
+								styles.box_image +
+								" " +
+								"col-3 col-lg-2 d-md-block d-none"
+							}
 							style={{ borderLeft: "1px solid #000" }}
 						>
 							<Image
@@ -207,48 +224,77 @@ function HomePage(props) {
 						</div>
 					</div>
 					<hr className="my-4" />
-					{news.length > 0 &&
-						news.slice(0, 2).map((item, index) => (
-							<div key={index} className="row">
-								<div className="col-12 col-md-7 col-lg-9">
-									<div className="text-align-center p-md-3 p-0">
-										<h4
-											className="mb-2"
-											onClick={() =>
-												router.push(
-													`/${removeAccents(
-														item?._id || ""
-													)}`
-												)
-											}
-										>
-											{item.title}
-										</h4>
-										<h5>{item.mieu_ta_ngan}</h5>
+					<div className="row">
+						<div className="col-12 col-sm-9 col-lg-10">
+							{news.length > 0 &&
+								news.slice(0, 7).map((item, index) => (
+									<div key={index} className="row">
+										<div className="col-12 col-md-7 col-lg-9">
+											<div className="text-align-center p-md-3 p-0">
+												<h4
+													style={{ fontSize: "20px" }}
+													className="mb-2"
+													onClick={() =>
+														router.push(
+															`/${removeAccents(
+																item?._id || ""
+															)}`
+														)
+													}
+												>
+													{item.title}
+												</h4>
+												<h5>{item.mieu_ta_ngan}</h5>
+											</div>
+										</div>
+										<div className="col-12 col-md-5 col-lg-3 d-flex flex-column align-items-center mb-3 mb-lg-0 flex-lg-none">
+											<Image
+												width={418}
+												height={229}
+												loader={({ src }) =>
+													`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+												}
+												src={item.picture}
+												alt={item.cate_name}
+											/>
+										</div>
+										{index < 6 && (
+											<hr
+												className="my-4"
+												style={{
+													width: "98%",
+													marginLeft: "1%",
+												}}
+											/>
+										)}
 									</div>
-								</div>
-								<div className="col-12 col-md-5 col-lg-3 d-flex flex-column align-items-center mb-3 mb-lg-0 flex-lg-none">
-									<Image
-										width={418}
-										height={229}
-										loader={({ src }) =>
-											`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-										}
-										src={item.picture}
-										alt={item.cate_name}
-									/>
-								</div>
-								{index < 1 && (
-									<hr
-										className="my-4"
-										style={{
-											width: "98%",
-											marginLeft: "1%",
-										}}
-									/>
-								)}
+								))}
+						</div>
+						<div className="col-3 col-lg-2 d-none d-md-block">
+							<div
+								className={styles.box_image_right}
+								style={{ height: "50%" }}
+							>
+								<Image
+									width={244}
+									height={840}
+									src={BannerRight}
+									alt="banner"
+								/>
 							</div>
-						))}
+							<div
+								className={styles.box_image_right}
+								style={{ height: "50%" }}
+							>
+								<Image
+									width={244}
+									height={840}
+									src={BannerRight}
+									alt="banner"
+								/>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div className={styles.library}>
 					<div className="d-flex justify-content-between mb-3 align-items-baseline">
@@ -270,18 +316,20 @@ function HomePage(props) {
 										className={
 											styles.item_libary +
 											" " +
-											"d-flex flex-column text-align-left mb-3 mb-lg-0 flex-lg-none"
+											"d-flex flex-column text-align-left mb-3 mb-lg-0 flex-lg-none gap-2"
 										}
 									>
-										<Image
-											height={220}
-											width={390}
-											loader={({ src }) =>
-												`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-											}
-											src={item.picture}
-											alt={item.cate_name}
-										/>
+										<div className="d-flex justify-content-center">
+											<Image
+												height={220}
+												width={390}
+												loader={({ src }) =>
+													`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+												}
+												src={item.picture}
+												alt={item.cate_name}
+											/>
+										</div>
 										<h6>#AuraCaseStudy 36:</h6>
 										<h3>{item.cate_name}</h3>
 										<h5>{item.mieu_ta_ngan}</h5>
@@ -304,15 +352,17 @@ function HomePage(props) {
 						<div className={styles.list_expert}>
 							{expert.slice(0, 3).map((item, index) => (
 								<div key={index} className={styles.item_expert}>
-									<Image
-										loader={({ src }) =>
-											`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-										}
-										src={item.image}
-										height={461}
-										width={438}
-										alt={item.name}
-									/>
+									<div className="d-flex justify-content-center">
+										<Image
+											loader={({ src }) =>
+												`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+											}
+											src={item.image}
+											height={461}
+											width={438}
+											alt={item.name}
+										/>
+									</div>
 									<h5>{item.name}</h5>
 									<h6>{item.position}</h6>
 								</div>
@@ -332,10 +382,10 @@ function HomePage(props) {
 							className={
 								styles.box_video +
 								" " +
-								"col-12 mb-3 mb-lg-0 col-lg-8 p-0 pe-md-2"
+								"col-12 mb-3 mb-lg-0 col-lg-8 pe-md-2"
 							}
 						>
-							<div class="ratio ratio-16x9">
+							<div className="ratio ratio-16x9">
 								<iframe
 									width="100%"
 									height="100%"
@@ -383,6 +433,70 @@ function HomePage(props) {
 									))}
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<hr />
+				<div className={styles.slide_bottom}>
+					<div className={styles.slider}>
+						<Slider {...settings} styles={{ width: "1440px" }}>
+							{news.slice(0, 5).map((item, index) => (
+								<div
+									key={index}
+									className={
+										styles.box_image_content +
+										" " +
+										(slideIndex === index
+											? styles.active + styles.slide
+											: styles.slide)
+									}
+								>
+									<div
+										// style={{
+										// 	width: "calc(100vw - 10px)",
+										// }}
+										className={
+											styles.images +
+											" " +
+											"d-flex justify-content-center"
+										}
+									>
+										<Image
+											loader={({ src }) =>
+												`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+											}
+											src={item.picture}
+											width={542}
+											height={309}
+											alt="banner"
+										/>
+									</div>
+									<div className={styles.content}>
+										<div>
+											<h3>{item.cate_name}</h3>
+										</div>
+										<h5 className="my-2">{item.title}</h5>
+										<button
+											onClick={() =>
+												router.push(
+													`/${removeAccents(
+														item?._id || ""
+													)}`
+												)
+											}
+										>
+											Xem thêm
+										</button>
+									</div>
+									<div className={styles.box_bg}></div>
+								</div>
+							))}
+						</Slider>
+					</div>
+					<div className="row justify-content-center">
+						<div className="col-10 col-lg-4 text-center mb-5 pt-0 ">
+							<h3>{news[0]?.cate_name}</h3>
+							<h5>{news[0]?.mieu_ta_ngan}</h5>
 						</div>
 					</div>
 				</div>
