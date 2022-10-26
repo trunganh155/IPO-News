@@ -87,7 +87,11 @@ function HomePage(props) {
 				</div>
 				<div className={styles.knowledge}>
 					<div className="d-flex justify-content-between align-items-baseline">
-						<div className="heading" data-aos-duration="2000" data-aos="fade-left">
+						<div
+							className="heading"
+							data-aos-duration="2000"
+							data-aos="fade-left"
+						>
 							<p className="text m-0">KIẾN THỨC IPO</p>
 							<p className="col decor"></p>
 						</div>
@@ -98,7 +102,8 @@ function HomePage(props) {
 							style={{
 								borderRight: "0.5px solid #000000",
 							}}
-							data-aos="fade-right" data-aos-duration="2000"
+							data-aos="fade-right"
+							data-aos-duration="2000"
 						>
 							<Image
 								height={321}
@@ -123,7 +128,11 @@ function HomePage(props) {
 
 						<div className="col-12 col-lg-5 p-md-4 p-1">
 							{news.slice(1, 5).map((item, index) => (
-								<div key={index} data-aos="fade-up" data-aos-duration="2000">
+								<div
+									key={index}
+									data-aos="fade-up"
+									data-aos-duration="2000"
+								>
 									<h4
 										className="mb-2"
 										onClick={() =>
@@ -180,13 +189,20 @@ function HomePage(props) {
 				</div>
 				<div className={styles.news_ipo}>
 					<div className="d-flex justify-content-between align-items-baseline">
-						<div className="heading" data-aos-duration="2000" data-aos="fade-left">
+						<div
+							className="heading"
+							data-aos-duration="2000"
+							data-aos="fade-left"
+						>
 							<p className="text m-0">TIN TỨC IPO</p>
 							<p className="col decor"></p>
 						</div>
 					</div>
 					<div className="row">
-						<div className={"col-md-9 col-lg-10 col-12"} data-aos="fade-right">
+						<div
+							className={"col-md-9 col-lg-10 col-12"}
+							data-aos="fade-right"
+						>
 							<div className={styles.box_image_news}>
 								<div className={styles.box_image}>
 									<Image
@@ -219,7 +235,7 @@ function HomePage(props) {
 							</div>
 						</div>
 						<div
-						data-aos="fade-left"
+							data-aos="fade-left"
 							className={
 								styles.box_image +
 								" " +
@@ -236,11 +252,15 @@ function HomePage(props) {
 						</div>
 					</div>
 					<hr className="my-4" />
-					<div className="row d-flex justify-content-center" >
+					<div className="row d-flex justify-content-center">
 						<div className="col-12 col-sm-9 col-lg-10">
 							{news.length > 0 &&
 								news.slice(0, 7).map((item, index) => (
-									<div key={index} className="row" data-aos="fade-up">
+									<div
+										key={index}
+										className="row"
+										data-aos="fade-up"
+									>
 										<div className="col-12 col-md-7 col-lg-9">
 											<div className="text-align-center p-md-3 p-0">
 												<h4
@@ -282,7 +302,10 @@ function HomePage(props) {
 									</div>
 								))}
 						</div>
-						<div className="col-3 col-lg-2 d-none d-md-block" data-aos="fade-left">
+						<div
+							className="col-3 col-lg-2 d-none d-md-block"
+							data-aos="fade-left"
+						>
 							<div
 								className={styles.box_image_right}
 								style={{ height: "50%" }}
@@ -310,7 +333,11 @@ function HomePage(props) {
 				</div>
 				<div className={styles.library}>
 					<div className="d-flex justify-content-between mb-3 align-items-baseline">
-						<div className="heading" data-aos-duration="2000" data-aos="fade-left">
+						<div
+							className="heading"
+							data-aos-duration="2000"
+							data-aos="fade-left"
+						>
 							<p className="text m-0">THƯ VIỆN</p>
 							<p className="col decor"></p>
 						</div>
@@ -357,13 +384,22 @@ function HomePage(props) {
 								</div>
 							))}
 					</div>
-					<div className="d-flex justify-content-center" data-aos="fade-up">
-						<button>ĐĂNG KÝ GÓI THÀNH VIÊN</button>
+					<div
+						className="d-flex justify-content-center"
+						data-aos="fade-up"
+					>
+						<button onClick={() => router.push("/intro-magazine")}>
+							ĐĂNG KÝ GÓI THÀNH VIÊN
+						</button>
 					</div>
 				</div>
 				<div className={styles.experts}>
 					<div className="d-flex justify-content-between mb-3 align-items-baseline">
-						<div className="heading" data-aos-duration="2000" data-aos="fade-left">
+						<div
+							className="heading"
+							data-aos-duration="2000"
+							data-aos="fade-left"
+						>
 							<p className="text m-0">CHUYÊN GIA IPO</p>
 							<p className="col decor"></p>
 						</div>
@@ -371,7 +407,11 @@ function HomePage(props) {
 					<div className="row justify-content-center justify-content-lg-space-around">
 						<div className={styles.list_expert}>
 							{expert.slice(0, 3).map((item, index) => (
-								<div key={index} className={styles.item_expert} data-aos="zoom-in-up">
+								<div
+									key={index}
+									className={styles.item_expert}
+									data-aos="zoom-in-up"
+								>
 									<div className="d-flex justify-content-center">
 										<Image
 											loader={({ src }) =>
@@ -392,7 +432,11 @@ function HomePage(props) {
 				</div>
 				<div className={styles.library_ipo}>
 					<div className="d-flex justify-content-between mb-3 align-items-baseline">
-						<div className="heading" data-aos-duration="2000" data-aos="fade-left">
+						<div
+							className="heading"
+							data-aos-duration="2000"
+							data-aos="fade-left"
+						>
 							<p className="text m-0">THƯ VIỆN IPO</p>
 							<p className="col decor"></p>
 						</div>
