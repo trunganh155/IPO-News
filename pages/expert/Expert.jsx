@@ -28,12 +28,12 @@ export default function Expert(props) {
               }
               alt="chuyen_gia"
               src={expert[0]?.image}
-              width={462}
-              height={501}
+              width={432}
+              height={656}
             />
           </div>
 
-          <div className="col-6  d-none d-sm-block d-lg-none text-dark ps-3">
+          <div className="col-6 d-none d-sm-block d-lg-none text-dark ps-3">
             <p className={styles.expert_title}>{expert[0]?.name}</p>
             <p className={styles.expert_title}>{expert[0]?.company}</p>
 
@@ -59,6 +59,29 @@ export default function Expert(props) {
             </div>
 
             <div className={styles.scroll + " " + "d-flex flex-row w-100"}>
+              {news.map((item, index) => {
+                return (
+                  <div
+                    className="col-6 col-sm-4 col-md-3 px-2 py-2"
+                    key={index}
+                  >
+                    <Image
+                      loader={({ src }) =>
+                        `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                      }
+                      alt="chuyen_gia"
+                      src={item.picture}
+                      width={180}
+                      height={113}
+                    />
+
+                    <p className={styles.gallery_title_sm}>{item.title}</p>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className={styles.scroll + " " + "d-flex flex-row w-100 mt-3"}>
               {news.map((item, index) => {
                 return (
                   <div

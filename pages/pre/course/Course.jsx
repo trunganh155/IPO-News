@@ -247,8 +247,8 @@ export default function Course(props) {
 
           <ReactPaginate
             breakLabel="..."
-            nextLabel=">"
-            previousLabel=" < "
+            nextLabel=""
+            previousLabel=""  
             onPageChange={handlePageClick}
             pageRangeDisplayed={2}
             pageCount={pageCount}

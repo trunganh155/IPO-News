@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../../store/redux/NewsReducer/news.action";
 import { removeAccents } from "../../../utils/Function";
 import styles from "./Mechanism.module.scss";
+import ArrowLeft from "../../../public/images/icons/arrow_left.svg";
+import ArrowRight from "../../../public/images/icons/arrow_right.svg";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
@@ -21,6 +23,30 @@ export default function Mechanism(props) {
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
+
+  const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+    <div className={styles.arrow_left}>
+      <Image
+        src={ArrowLeft}
+        alt="prevArrow"
+        width={24}
+        height={44}
+        {...props}
+      />
+    </div>
+  );
+
+  const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+    <div className={styles.arrow_right}>
+      <Image
+        src={ArrowRight}
+        alt="nextArrow"
+        width={24}
+        height={44}
+        {...props}
+      />
+    </div>
+  );
 
   const settings = {
     slidesToShow: 3,
@@ -125,10 +151,18 @@ export default function Mechanism(props) {
           />
         </div>
 
-        <div className={styles.text + " " + "col-11"}>
-          <p className={styles.mechanism_title_lg}>{news[0]?.title}</p>
+        <div
+          className={styles.text + " " + "col-12 d-flex flex-wrap px-4 py-3"}
+        >
+          <div className="col-7">
+            <p className={styles.mechanism_title_lg}>{news[0]?.title}</p>
+          </div>
 
-          <p className={styles.mechanism_content_lg}>{news[0]?.mieu_ta_ngan}</p>
+          <div className="col-12">
+            <p className={styles.mechanism_content_lg}>
+              {news[0]?.mieu_ta_ngan}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -206,8 +240,8 @@ export default function Mechanism(props) {
 
             <ReactPaginate
               breakLabel="..."
-              nextLabel=">"
-              previousLabel=" < "
+              nextLabel=""
+              previousLabel=""
               onPageChange={handlePageClick}
               pageRangeDisplayed={2}
               pageCount={pageCount}
@@ -221,29 +255,36 @@ export default function Mechanism(props) {
           </div>
         </div>
 
-        <div className="col col-sm-3 col-lg-2 ps-3 d-none d-sm-block">
-          <Image
-            alt="co_che_von"
-            src="/images/mechanism/banner.png"
-            width={294}
-            height={763}
-          />
-          <Image
-            alt="co_che_von"
-            src="/images/mechanism/banner.png"
-            width={294}
-            height={763}
-          />
+        <div
+          className="col col-sm-3 col-lg-2 ps-3  d-flex flex-column justify-content-between"
+          style={{ gap: "20px" }}
+        >
+          <div className="height_50">
+            <Image
+              alt="co_che_von"
+              src="/images/mechanism/banner.png"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+          <div className="height_50">
+            <Image
+              alt="co_che_von"
+              src="/images/mechanism/banner.png"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
       </section>
 
       <section className="d-flex flex-row">
         <div
-          className="col-12 col-sm-9 col-lg-10 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
+          className="col-12 col-sm-9 col-lg-10 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 h-100"
           style={{ backgroundColor: "#606060" }}
         >
           <div className="heading_white px-2 px-lg-4">
-            <p className="text">cơ chế vốn</p>
+            <p className="text">quỹ đầu tư</p>
             <p className="col decor"></p>
           </div>
 
@@ -303,12 +344,21 @@ export default function Mechanism(props) {
         </div> */}
 
         <div className="col col-sm-3 col-lg-2 d-none d-sm-block ps-3">
-          <Image
+          {/* <Image
             alt="co_che_von"
             src="/images/mechanism/banner.png"
             width={244}
             height={504}
-          />
+          /> */}
+
+          <div className="height_100">
+            <Image
+              alt="co_che_von"
+              src="/images/mechanism/banner.png"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
       </section>
     </div>
