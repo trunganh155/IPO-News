@@ -25,7 +25,7 @@ function Footer(props) {
 									{item.title}
 								</span>
 								<div>
-									{item.listTag.map((subItem, subIndex) => {
+									{item.listTag && item.listTag.map((subItem, subIndex) => {
 										return (
 											<div
 												onClick={() =>
@@ -58,7 +58,7 @@ function Footer(props) {
 									{item.title}
 								</span>
 								<div>
-									{item.listTag.map((subItem, subIndex) => {
+									{item.listTag && item.listTag.map((subItem, subIndex) => {
 										return (
 											<div
 												onClick={() =>

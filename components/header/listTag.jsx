@@ -9,6 +9,7 @@ function ListTag(props) {
 	const router = useRouter();
 	const { asPath } = useRouter();
 	const [showMenu, setShowMenu] = useState(false);
+	const [isActive, setIsActive] = useState(false);
 	const [isHeightHeader, setIsHeightHeader] = useState(0);
 	const [isAsPath, setIsAsPath] = useState("/");
 	useEffect(() => {
@@ -44,16 +45,16 @@ function ListTag(props) {
 							<li
 								key={index}
 								onMouseEnter={() => {
-									setShowMenu(true);
-									setIsHeightHeader(item.listTag.length * 50);
+									setShowMenu(
+										item.listTag &&  true 
+									);
+									setIsHeightHeader(item.listTag && item.listTag.length * 50);
 								}}
 								className="p-0"
 							>
 								<span
 									className={
-										isAsPath.includes(
-											checkActive(item.link)
-										)
+										isAsPath.includes(checkActive(item.tag))
 											? styles.active +
 											  " " +
 											  "d-flex gap-2"
@@ -90,7 +91,7 @@ function ListTag(props) {
 									}}
 								>
 									<ul className="text-left">
-										{item.listTag.map(
+										{item.listTag && item.listTag.map(
 											(subItem, subIndex) => {
 												return (
 													<li
@@ -101,17 +102,19 @@ function ListTag(props) {
 																	subItem.link
 																)
 															)
-																? styles.active +
-																  styles.dropdown_item_1 +
+																? [
+																		styles.active,
+																		styles.dropdown_item_1,
+																  ].join(" ") +
 																  " " +
 																  "gap-1 p-0"
 																: "gap-1 p-0"
 														}
-														onClick={() =>
+														onClick={() => {
 															router.push(
 																subItem.link
-															)
-														}
+															);
+														}}
 													>
 														{subItem.tag}
 														{subItem.tag && (

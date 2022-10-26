@@ -26,7 +26,7 @@ export default function FooterDark(props) {
 									{item.title}
 								</span>
 								<div>
-									{item.listTag.map((subItem, subIndex) => {
+									{item.listTag && item.listTag.map((subItem, subIndex) => {
 										return (
 											<div
 												onClick={() =>
@@ -59,7 +59,7 @@ export default function FooterDark(props) {
 									{item.title}
 								</span>
 								<div>
-									{item.listTag.map((subItem, subIndex) => {
+									{item.listTag && item.listTag.map((subItem, subIndex) => {
 										return (
 											<div
 												onClick={() =>
