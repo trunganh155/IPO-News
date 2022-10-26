@@ -128,8 +128,15 @@ export default function Mechanism(props) {
         <div
           className={styles.text + " " + "col-12 d-flex flex-wrap px-4 py-3"}
         >
-          <div className="col-7">
-            <p className={styles.mechanism_title_lg}>{news[0]?.title}</p>
+          <div className="col-12 col-sm-7">
+            <p
+              className={styles.mechanism_title_lg}
+              onClick={() =>
+                router.push(`/${removeAccents(news[0]?._id || "")}`)
+              }
+            >
+              {news[0]?.title}
+            </p>
           </div>
 
           <div className="col-12">

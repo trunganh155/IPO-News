@@ -24,8 +24,14 @@
   &_title_lg {
     color: #fff;
     font-size: 30px;
+    line-height: 35px;
     font-weight: 700;
     margin-bottom: 0 !important;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(14, 14, 239);
+    }
   }
 
   &_content_lg {
@@ -99,6 +105,14 @@
 
     .bdRight {
       border-right: none;
+    }
+
+    &_title_lg {
+      font-size: 20px;
+    }
+
+    &_content_lg {
+      font-size: 14px;
     }
 
     &_title {

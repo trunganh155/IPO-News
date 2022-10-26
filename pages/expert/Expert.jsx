@@ -27,7 +27,7 @@ export default function Expert(props) {
                 `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
               }
               alt="chuyen_gia"
-              src={expert[0]?.image}
+              src={expert[2]?.image}
               width={492}
               height={806}
             />
@@ -38,7 +38,7 @@ export default function Expert(props) {
                   `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
                 }
                 alt="chuyen_gia"
-                src={expert[0]?.image}
+                src={expert[2]?.image}
                 layout="fill"
                 objectFit="cover"
               />
@@ -46,12 +46,12 @@ export default function Expert(props) {
           </div>
 
           <div className="col-6 d-none d-sm-block d-lg-none text-dark ps-3">
-            <p className={styles.expert_title}>{expert[0]?.name}</p>
-            <p className={styles.expert_title}>{expert[0]?.company}</p>
+            <p className={styles.expert_name}>{expert[2]?.name}</p>
+            <p className={styles.expert_company}>{expert[2]?.company}</p>
 
             <p className={styles.expert_content}>
               <section
-                dangerouslySetInnerHTML={{ __html: expert[0]?.description }}
+                dangerouslySetInnerHTML={{ __html: expert[2]?.description }}
               />
             </p>
           </div>
@@ -60,12 +60,12 @@ export default function Expert(props) {
         <div className="col-12 col-lg-8 h-100">
           <div className={styles.expert_black}>
             <div className="d-block d-sm-none d-lg-block">
-              <p className={styles.expert_title}>{expert[0]?.name}</p>
-              <p className={styles.expert_title}>{expert[0]?.company}</p>
+              <p className={styles.expert_name}>{expert[2]?.name}</p>
+              <p className={styles.expert_company}>{expert[2]?.company}</p>
 
               <p className={styles.expert_content}>
                 <section
-                  dangerouslySetInnerHTML={{ __html: expert[0]?.description }}
+                  dangerouslySetInnerHTML={{ __html: expert[2]?.description }}
                 />
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function Expert(props) {
                       height={113}
                     />
 
-                    <p className={styles.gallery_title_sm}>{item.title}</p>
+                    <p className={styles.expert_title_sm}>{item.title}</p>
                   </div>
                 );
               })}
@@ -110,7 +110,7 @@ export default function Expert(props) {
                       height={113}
                     />
 
-                    <p className={styles.gallery_title_sm}>{item.title}</p>
+                    <p className={styles.expert_title_sm}>{item.title}</p>
                   </div>
                 );
               })}
