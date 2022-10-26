@@ -34,6 +34,9 @@ function IntroMagazine() {
 											<div className="col-2 d-flex justify-content-center align-items-center">
 												<input
 													type="radio"
+													style={{
+														cursor: "pointer",
+													}}
 													class="form-check-input"
 													id="radio1"
 													name="optradio"
@@ -59,6 +62,9 @@ function IntroMagazine() {
 											<div className="col-2 d-flex justify-content-center align-items-center">
 												<input
 													type="radio"
+													style={{
+														cursor: "pointer",
+													}}
 													class="form-check-input"
 													id="radio2"
 													name="optradio"
@@ -84,6 +90,9 @@ function IntroMagazine() {
 											<div className="col-2 d-flex justify-content-center align-items-center">
 												<input
 													type="radio"
+													style={{
+														cursor: "pointer",
+													}}
 													class="form-check-input"
 													id="radio3"
 													name="optradio"
@@ -109,6 +118,9 @@ function IntroMagazine() {
 											<div className="col-2 d-flex justify-content-center align-items-center">
 												<input
 													type="radio"
+													style={{
+														cursor: "pointer",
+													}}
 													class="form-check-input"
 													id="radio4"
 													name="optradio"

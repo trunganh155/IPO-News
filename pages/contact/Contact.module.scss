@@ -2,7 +2,7 @@
 	color: #000;
 	max-width: 1920px;
 	// background-color: burlywood;
-	background-image: url("../../public/images/home/banner_1.png");
+	background-image: url("../../public/images/home/banner1.png");
 	width: 100% !important;
 	height: 100%;
 	overflow: hidden;
@@ -39,48 +39,44 @@
 					.bottom_left {
 						h5 {
 							font-weight: 700;
-							font-size: 12px;
+							font-size: 20px;
 							line-height: 25px;
 							text-transform: uppercase;
-							font-family: "Times New Roman";
-							font-style: normal;
+							margin-bottom: 41px !important;
 						}
 						h4 {
 							font-weight: 700;
-							font-size: 18px;
+							font-size: 30px;
 							line-height: 25px;
 							text-transform: uppercase;
-							font-family: "Times New Roman";
-							font-style: normal;
+							margin-bottom: 6px !important;
 						}
-						span,
 						h6 {
+							font-weight: 400;
+							font-size: 20px;
+							line-height: 25px;
+							margin-bottom: 10px !important;
+						}
+						span {
+							font-style: italic;
 							font-weight: 400;
 							font-size: 15px;
 							line-height: 25px;
-							font-family: "Times New Roman";
-							font-style: normal;
-						}
-						span {
-							font-family: "Times New Roman";
-							font-style: italic;
 						}
 					}
 					.box_right {
 						.contain {
 							h4 {
 								font-weight: 700;
-								font-size: 18px;
+								font-size: 20px;
 								line-height: 25px;
 								text-transform: uppercase;
-								font-family: "Times New Roman";
-								font-style: normal;
+								margin-bottom: 8px !important;
 							}
 							span {
 								font-weight: 400;
 								font-size: 15px;
 								line-height: 25px;
-								font-family: "Times New Roman";
 								font-style: italic;
 							}
 							input {
@@ -89,9 +85,7 @@
 								padding: 5px 10px;
 								border: none;
 								width: 370px;
-								margin: 10px 0;
-								font-family: "Times New Roman";
-								font-style: normal;
+								margin: 16px 0;
 							}
 							.btn_social {
 								cursor: pointer;
@@ -114,6 +108,7 @@
 						}
 					}
 					button {
+						box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 						color: white;
 						font-weight: 700;
 						font-size: 15px;
@@ -123,8 +118,6 @@
 						background: #b90000;
 						border-radius: 50px;
 						border: 2px solid #b90000;
-						font-family: "Times New Roman";
-						font-style: normal;
 						&:hover {
 							background: #fff;
 							color: #b90000;
