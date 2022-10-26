@@ -30,11 +30,12 @@ function Success() {
 							className={styles.button_sign_in}
 						>
 							Đăng nhập
+							<div className={styles.border_bottom_n}></div>
 						</div>
 					</div>
 					<div
 						className={
-							styles.title + " " + "d-flex justify-content-center mt-3"
+							styles.title + " " + "d-flex justify-content-center"
 						}
 					>
 						<Image
@@ -44,7 +45,7 @@ function Success() {
 							height={63}
 						/>
 					</div>
-					<hr />
+					<hr style={{margin:"20px 0 26px 0"}}/>
 					<div
 						className={
 							styles.box_content +

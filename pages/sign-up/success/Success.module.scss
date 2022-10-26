@@ -1,19 +1,19 @@
 .sign_up_success {
 	color: #000;
 	max-width: 1920px;
-	background-image: url("../../../public/images/home/banner_1.png");
+	background-image: url("../../../public/images/home/banner1.png");
 	width: 100% !important;
 	height: 100%;
 	overflow: hidden;
+	min-height: 1248px;
 	.center_box {
 		padding: 80px 35px 0px 35px;
 		display: flex;
 		justify-content: center;
 		align-content: center;
-		margin-bottom: 50%;
 		.w_box {
 			width: 50%;
-			background: #ffffff;
+			background: #F3EEE1;
 			border-radius: 30px;
 			padding: 20px 50px 70px;
 			.group_button {
@@ -30,6 +30,11 @@
 					color: #000000;
 					font-size: 20px;
 				}
+				.border_bottom_n{
+					height: 2px;
+					background: transparent;
+					border-radius: 5px 5px 0px 0px;
+				}
 				.border_bottom {
 					height: 2px;
 					background: #a31925;
@@ -39,6 +44,9 @@
 					border-left: 1px solid #000;
 					margin: 0 15px;
 				}
+			}
+			.title {
+				margin-top: 25px;
 			}
 			.box_content {
 				.w_box_content {

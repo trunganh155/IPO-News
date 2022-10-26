@@ -71,6 +71,7 @@ function SignIn() {
 							className={styles.button_sign_up}
 						>
 							Đăng ký
+							<div className={styles.border_bottom_n}></div>
 						</div>
 						<div className={styles.border_left}></div>
 						<div className={(styles.button_sign_in, styles.active)}>
@@ -80,7 +81,7 @@ function SignIn() {
 					</div>
 					<div
 						className={
-							styles.title + " " + "d-flex justify-content-center mt-3"
+							styles.title + " " + "d-flex justify-content-center"
 						}
 					>
 						<Image
@@ -90,7 +91,7 @@ function SignIn() {
 							height={63}
 						/>
 					</div>
-					<hr />
+					<hr style={{ margin: "20px 0 26px 0" }} />
 					<div
 						className={
 							styles.box_content +
@@ -100,7 +101,10 @@ function SignIn() {
 					>
 						<div className={styles.w_box_content}>
 							<span>Đăng nhập với email</span>
-							<form onSubmit={handleSubmit(onSubmit)}>
+							<form
+								style={{ marginTop: "28px" }}
+								onSubmit={handleSubmit(onSubmit)}
+							>
 								<div className={styles.box_input}>
 									<div className={styles.box_input_text}>
 										<input
@@ -192,19 +196,17 @@ function SignIn() {
 							<div className={styles.link_fog_pass}>
 								<span>Quên mật khẩu</span>
 							</div>
-							<div
-								style={{ color: "#767676" }}
-								className="d-flex justify-content-between"
-							>
+							<div className="d-flex justify-content-between">
 								<hr style={{ width: "35%" }} />
 								<span
 									style={{
-										fontSize: "15px",
+										fontSize: "16px",
+										color: "#767676",
 									}}
 								>
 									Đăng nhập với
 								</span>
-								<hr style={{ width: "35%" }} />
+								<hr style={{ width: "35%", background:"#767676" }} />
 							</div>
 							<div
 								className={

@@ -6,6 +6,7 @@
 	width: 100% !important;
 	height: 100%;
 	overflow: hidden;
+	min-height: 1248px;
 	.box_intro_contact {
 		padding: 50px 35px 0px 35px;
 		.title_box {
@@ -23,7 +24,6 @@
 		.content_box {
 			text-align: center;
 			margin-top: 7%;
-			padding-bottom: 50%;
 			display: flex;
 			justify-content: center;
 			align-content: center;

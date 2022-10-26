@@ -302,11 +302,11 @@ function HomePage(props) {
 						</div>
 						<div
 							className="col-3 col-lg-2 d-none d-md-block"
-							data-aos="fade-left"
 						>
 							<div
 								className={styles.box_image_right}
 								style={{ height: "50%" }}
+								data-aos="zoom-in-up"
 							>
 								<Image
 									width={244}
@@ -318,6 +318,7 @@ function HomePage(props) {
 							<div
 								className={styles.box_image_right}
 								style={{ height: "50%" }}
+								data-aos="zoom-in-up"
 							>
 								<Image
 									width={244}
@@ -353,7 +354,7 @@ function HomePage(props) {
 										<div
 											style={{
 												borderBottom: "1px solid black",
-												width: "50%",
+												width: "30%",
 											}}
 										></div>
 									</div>
@@ -364,7 +365,13 @@ function HomePage(props) {
 											"d-flex flex-column text-align-left mb-3 mb-lg-0 flex-lg-none gap-2"
 										}
 									>
-										<div className="d-flex justify-content-center">
+										<div
+											className={
+												styles.box_image +
+												" " +
+												"d-flex justify-content-center"
+											}
+										>
 											<Image
 												height={220}
 												width={390}
@@ -458,10 +465,10 @@ function HomePage(props) {
 							</div>
 						</div>
 						<div className="col-12 col-lg-4 p-0">
-							<div className={styles.box_media}>
+							<div className={styles.box_media} data-aos="fade-up">
 								<div className={styles.list_library}>
 									{gallery.slice(1, 5).map((item, index) => (
-										<div key={index} data-aos="fade-up">
+										<div key={index} >
 											<div
 												className={
 													styles.item_library +
@@ -570,10 +577,10 @@ function HomePage(props) {
 										<div
 											className={
 												slideIndex === index
-													? styles.active +
-													  styles.slide
+													? styles.active 
 													: styles.slide
 											}
+											style={{display:"flex",justifyContent:"center"}}
 										>
 											<Image
 												loader={({ src }) =>
