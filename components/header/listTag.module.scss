@@ -82,3 +82,23 @@
 	display: block;
 	// transition: all 0.3s;
 }
+@media all and (max-width: 1270px) {
+	.menu_list {
+		.line_left{
+			margin: 0 15px;
+		}
+		span{
+			font-size: 18px;
+		}
+	}
+}
+@media all and (max-width: 1075px) {
+	.menu_list {
+		.line_left{
+			margin: 0 10px;
+		}
+		span{
+			font-size: 16px;
+		}
+	}
+}
