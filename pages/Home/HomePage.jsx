@@ -96,7 +96,7 @@ function HomePage(props) {
 					</div>
 					<div className="row">
 						<div
-							className="col-12 col-lg-7 p-1 p-md-4 mb-3 d-flex flex-column mb-lg-0 flex-lg-none"
+							className="col-12 col-lg-7 p-1 p-md-4 ps-lg-5 mb-3 d-flex flex-column mb-lg-0 flex-lg-none"
 							style={{
 								borderRight: "0.5px solid #000000",
 							}}
@@ -153,8 +153,6 @@ function HomePage(props) {
 					<div
 						className="d-flex justify-content-between"
 						style={{ overflowY: "auto" }}
-						data-aos="fade-up"
-						data-aos-duration="2000"
 					>
 						{news.slice(1, 6).map((item, index) => (
 							<div
@@ -164,6 +162,8 @@ function HomePage(props) {
 									marginRight: "5px",
 									marginBottom: "5px",
 								}}
+								data-aos="fade-left"
+								data-aos-duration="2000"
 							>
 								<div
 									style={{ width: "352px", height: "265px" }}
@@ -199,7 +199,8 @@ function HomePage(props) {
 					<div className="row">
 						<div
 							className={"col-md-9 col-lg-10 col-12"}
-							data-aos="fade-right"
+							data-aos="zoom-in-up"
+							data-aos-duration="3000"
 						>
 							<div className={styles.box_image_news}>
 								<div className={styles.box_image}>
@@ -300,9 +301,7 @@ function HomePage(props) {
 									</div>
 								))}
 						</div>
-						<div
-							className="col-3 col-lg-2 d-none d-md-block"
-						>
+						<div className="col-3 col-lg-2 d-none d-md-block">
 							<div
 								className={styles.box_image_right}
 								style={{ height: "50%" }}
@@ -347,7 +346,8 @@ function HomePage(props) {
 								<div
 									key={index}
 									className="col-12 col-md-8 col-lg-4"
-									data-aos="zoom-out-up"
+									data-aos="flip-left"
+									data-aos-duration="3000"
 								>
 									<div className="d-flex flex-column align-items-center">
 										<span>CASE STUDY AURA CAPITAL</span>
@@ -415,7 +415,8 @@ function HomePage(props) {
 								<div
 									key={index}
 									className={styles.item_expert}
-									data-aos="zoom-in-up"
+									data-aos="fade-up"
+									data-aos-duration="1000"
 								>
 									<div className="d-flex justify-content-center">
 										<Image
@@ -465,10 +466,13 @@ function HomePage(props) {
 							</div>
 						</div>
 						<div className="col-12 col-lg-4 p-0">
-							<div className={styles.box_media} data-aos="fade-up">
+							<div
+								className={styles.box_media}
+								data-aos="fade-up"
+							>
 								<div className={styles.list_library}>
 									{gallery.slice(1, 5).map((item, index) => (
-										<div key={index} >
+										<div key={index}>
 											<div
 												className={
 													styles.item_library +
@@ -577,10 +581,13 @@ function HomePage(props) {
 										<div
 											className={
 												slideIndex === index
-													? styles.active 
+													? styles.active
 													: styles.slide
 											}
-											style={{display:"flex",justifyContent:"center"}}
+											style={{
+												display: "flex",
+												justifyContent: "center",
+											}}
 										>
 											<Image
 												loader={({ src }) =>

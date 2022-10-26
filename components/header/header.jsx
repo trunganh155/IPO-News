@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
@@ -8,6 +8,38 @@ import { BiSearch } from "react-icons/bi";
 import styles from "./header.module.scss";
 import ListTag from "./listTag";
 function Header(props) {
+	const [isDate, setIsDate] = useState("");
+	const [isTime, setIsTime] = useState("");
+	const [isLoop, setIsLoop] = useState(1);
+	useEffect(() => {
+		const day = [
+			"Thứ hai",
+			"Thứ ba",
+			"Thứ tư",
+			"Thứ năm",
+			"Thứ sáu",
+			"Thứ bảy",
+			"Chủ nhật",
+		];
+		var today = new Date();
+		setIsDate(
+			day[today.getDay()] +
+				", ngày " +
+				today.getDate() +
+				"/" +
+				(today.getMonth() + 1) +
+				"/" +
+				today.getFullYear()
+		);
+		if (today.getHours() < 12) {
+			setIsTime(today.getHours() + ":" + today.getMinutes() + " " + "AM");
+		} else {
+			setIsTime(today.getHours() + ":" + today.getMinutes() + " " + "PM");
+		}
+		setTimeout(() => {
+			setIsLoop(isLoop + 1);
+		}, 1000);
+	}, [isLoop]);
 	const [showLogo, setShowLogo] = useState(true);
 	window.addEventListener("scroll", callbackFunc);
 	function callbackFunc() {
@@ -109,10 +141,8 @@ function Header(props) {
 								"col-12 col-md-3 d-flex justify-content-center justify-content-md-end flex-md-column align-items-end mt-3 mt-md-0 mb-3 mb-md-0"
 							}
 						>
-							<span className="text-right">
-								Thứ năm, ngày 18/08/2022
-							</span>
-							<span className={styles.border_text}>14:30 PM</span>
+							<span className="text-right">{isDate}</span>
+							<span className={styles.border_text}>{isTime}</span>
 						</div>
 					</div>
 					<ListTag />
