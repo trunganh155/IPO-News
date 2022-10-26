@@ -267,7 +267,7 @@ export default function Course(props) {
           className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
-          <div className="heading_white px-3 px-lg-5">
+          <div className="heading_white px-3">
             <p className="text">phương thức</p>
             <p className="col decor"></p>
           </div>
@@ -301,7 +301,7 @@ export default function Course(props) {
           className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
-          <div className="heading_white px-3 px-lg-5">
+          <div className="heading_white px-3">
             <p className="text">HỒ SƠ GỌI VỐN</p>
             <p className="col decor"></p>
           </div>
@@ -335,7 +335,7 @@ export default function Course(props) {
           className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
-          <div className="heading_white px-3 px-lg-5">
+          <div className="heading_white px-3">
             <p className="text">HỒ SƠ THƯƠNG HIỆU</p>
             <p className="col decor"></p>
           </div>

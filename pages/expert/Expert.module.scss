@@ -1,5 +1,5 @@
 .expert {
-  padding: 50px 0 50px 0;
+  padding: 90px 0 50px 0;
   color: #fff;
 
   &_black {
@@ -50,12 +50,12 @@
 
 @media all and (min-width: 576px) and (max-width: 768px) {
   .expert {
-    padding: 0px 0 25px 0;
+    padding: 80px 0 25px 0;
   }
 }
 
 @media all and (max-width: 576px) {
   .expert {
-    padding: 10px 0 15px 0;
+    padding: 70px 0 15px 0;
   }
 }
