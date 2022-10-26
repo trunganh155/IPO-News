@@ -1,0 +1,87 @@
+export const fakeDictionary = [
+  {
+    character: "A",
+    words: [
+      "Aorem ipsum dolor sit amet",
+      "Aorem ipsum dolor sit amet",
+      "Aorem ipsum dolor sit amet",
+      "Aorem ipsum dolor sit amet",
+      "Aorem ipsum dolor sit amet",
+      "Aorem ipsum dolor sit amet",
+      "Aorem ipsum dolor sit amet",
+      "Aorem ipsum dolor sit amet",
+    ],
+  },
+  {
+    character: "B",
+    words: [
+      "Borem ipsum dolor sit amet",
+      "Borem ipsum dolor sit amet",
+      "Borem ipsum dolor sit amet",
+      "Borem ipsum dolor sit amet",
+      "Borem ipsum dolor sit amet",
+      "Borem ipsum dolor sit amet",
+      "Borem ipsum dolor sit amet",
+    ],
+  },
+  {
+    character: "C",
+    words: [
+      "Corem ipsum dolor sit amet",
+      "Corem ipsum dolor sit amet",
+      "Corem ipsum dolor sit amet",
+      "Corem ipsum dolor sit amet",
+      "Corem ipsum dolor sit amet",
+      "Corem ipsum dolor sit amet",
+      "Corem ipsum dolor sit amet",
+    ],
+  },
+  {
+    character: "D",
+    words: [
+      "Dorem ipsum dolor sit amet",
+      "Dorem ipsum dolor sit amet",
+      "Dorem ipsum dolor sit amet",
+      "Dorem ipsum dolor sit amet",
+      "Dorem ipsum dolor sit amet",
+      "Dorem ipsum dolor sit amet",
+      "Dorem ipsum dolor sit amet",
+    ],
+  },
+  {
+    character: "E",
+    words: [
+      "Eorem ipsum dolor sit amet",
+      "Eorem ipsum dolor sit amet",
+      "Eorem ipsum dolor sit amet",
+      "Eorem ipsum dolor sit amet",
+      "Eorem ipsum dolor sit amet",
+      "Eorem ipsum dolor sit amet",
+      "Eorem ipsum dolor sit amet",
+    ],
+  },
+  {
+    character: "F",
+    words: [
+      "Forem ipsum dolor sit amet",
+      "Forem ipsum dolor sit amet",
+      "Forem ipsum dolor sit amet",
+      "Forem ipsum dolor sit amet",
+      "Forem ipsum dolor sit amet",
+      "Forem ipsum dolor sit amet",
+      "Forem ipsum dolor sit amet",
+    ],
+  },
+  {
+    character: "G",
+    words: [
+      "Gorem ipsum dolor sit amet",
+      "Gorem ipsum dolor sit amet",
+      "Gorem ipsum dolor sit amet",
+      "Gorem ipsum dolor sit amet",
+      "Gorem ipsum dolor sit amet",
+      "Gorem ipsum dolor sit amet",
+      "Gorem ipsum dolor sit amet",
+    ],
+  },
+];
