@@ -43,6 +43,7 @@ function HomePage(props) {
 		dispatch(getGallery());
 	}, [dispatch]);
 
+
 	var x = window.matchMedia("(max-width: 980px)");
 	const [slideIndex, setSlideIndex] = useState(0);
 	const settings = {
@@ -65,6 +66,7 @@ function HomePage(props) {
 				<SlickArrowRight />
 			</button>
 		),
+
 
 		beforeChange: (current, next) => setSlideIndex(next),
 	};

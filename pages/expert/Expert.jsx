@@ -20,17 +20,29 @@ export default function Expert(props) {
   return (
     <div className={styles.expert}>
       <div className="d-flex flex-wrap align-items-center">
-        <div className="col-12 col-lg-4 d-flex mx-auto">
-          <div className="col-12 col-sm-6">
+        <div className="col-12 col-lg-4 d-flex mx-auto h-100">
+          <div className="col-12 col-sm-6 col-lg-12">
             <Image
               loader={({ src }) =>
                 `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
               }
               alt="chuyen_gia"
               src={expert[0]?.image}
-              width={432}
-              height={656}
+              width={492}
+              height={806}
             />
+
+            {/* <div className="height_expert">
+              <Image
+                loader={({ src }) =>
+                  `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                }
+                alt="chuyen_gia"
+                src={expert[0]?.image}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div> */}
           </div>
 
           <div className="col-6 d-none d-sm-block d-lg-none text-dark ps-3">
@@ -45,7 +57,7 @@ export default function Expert(props) {
           </div>
         </div>
 
-        <div className="col-12 col-lg-8">
+        <div className="col-12 col-lg-8 h-100">
           <div className={styles.expert_black}>
             <div className="d-block d-sm-none d-lg-block">
               <p className={styles.expert_title}>{expert[0]?.name}</p>
