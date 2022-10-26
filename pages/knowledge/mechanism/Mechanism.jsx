@@ -6,8 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../../store/redux/NewsReducer/news.action";
 import { removeAccents } from "../../../utils/Function";
 import styles from "./Mechanism.module.scss";
-import ArrowLeft from "../../../public/images/icons/arrow_left.svg";
-import ArrowRight from "../../../public/images/icons/arrow_right.svg";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
@@ -23,30 +21,6 @@ export default function Mechanism(props) {
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-
-  const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-    <div className={styles.arrow_left}>
-      <Image
-        src={ArrowLeft}
-        alt="prevArrow"
-        width={24}
-        height={44}
-        {...props}
-      />
-    </div>
-  );
-
-  const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-    <div className={styles.arrow_right}>
-      <Image
-        src={ArrowRight}
-        alt="nextArrow"
-        width={24}
-        height={44}
-        {...props}
-      />
-    </div>
-  );
 
   const settings = {
     slidesToShow: 3,
