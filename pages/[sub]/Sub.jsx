@@ -81,7 +81,7 @@ export default function Sub(props) {
                       height={219}
                     />
 
-                    <p className={styles.sub_title}>
+                    <p className={styles.sub_title_sm}>
                       Lorem ipsum dolor sit amet.
                     </p>
                   </div>
@@ -91,12 +91,14 @@ export default function Sub(props) {
         </div>
 
         <div className="col-3">
-          <Image
-            alt="sub_image"
-            src="/images/mechanism/banner.png"
-            width={375}
-            height={854}
-          />
+          <div className="height_100">
+            <Image
+              alt="sub_image"
+              src="/images/mechanism/banner.png"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
       </section>
 
