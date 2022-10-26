@@ -54,6 +54,7 @@ function HomePage(props) {
     arrows: true,
     autoplay: false,
     centerMode: true,
+    centerPadding: "0px",
     prevArrow: (
       <button type="button" class="slick-prev" style={{ height: "42px" }}>
         <SlickArrowLeft />
