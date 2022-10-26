@@ -4,6 +4,7 @@
   .word {
     position: relative;
     font-size: 40px;
+    line-height: 48px;
     font-weight: 400;
     font-family: "UTM Cafeta", sans-serif;
     text-transform: uppercase;
@@ -13,10 +14,10 @@
       position: absolute;
       top: 50%;
       left: 0;
-      transform: translateY(-50%);
+      transform: translateY(-48%);
 
       content: "";
-      height: 76%;
+      height: 82%;
       width: 3px;
       background-color: #a31925;
     }
