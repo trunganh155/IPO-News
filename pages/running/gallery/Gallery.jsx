@@ -175,7 +175,15 @@ export default function Gallery(props) {
 
       <section>
         <div className="col-12">
-          <div class="ratio ratio-21x9">
+          <div class="ratio ratio-21x9 d-none d-sm-block">
+            <iframe
+              src={gallery[1]?.url}
+              title="YouTube video"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="ratio ratio-16x9 d-block d-sm-none">
             <iframe
               src={gallery[1]?.url}
               title="YouTube video"
