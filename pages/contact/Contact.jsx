@@ -81,7 +81,7 @@ function Contact() {
 											/>
 										</div>
 									</div>
-									<button onClick={() => router.push("/sign-in")}>sign up</button>
+									<button onClick={() => router.push("/sign-up")}>sign up</button>
 								</div>
 							</div>
 						</div>

@@ -1,8 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./IntroMagazine.module.scss";
+import { useRouter } from "next/router";
 
 function IntroMagazine() {
+	const router = useRouter();
 	return (
 		<div className={styles.intro_magazine + " " + "container"}>
 			<div className={styles.box_intro_magazine}>
@@ -228,7 +230,7 @@ function IntroMagazine() {
 							</div>
 						</div>
 						<div className="col-10 col-sm-5 p-0">
-							<button>Đăng kí ngay</button>
+							<button onClick={() => router.push("/sign-up")}>Đăng kí ngay</button>
 						</div>
 					</div>
 				</div>

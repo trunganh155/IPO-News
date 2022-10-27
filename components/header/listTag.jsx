@@ -48,7 +48,8 @@ function ListTag(props) {
 									setShowMenu(
 										item.listTag &&  true 
 									);
-									setIsHeightHeader(item.listTag && item.listTag.length * 50);
+									setIsHeightHeader(item.listTag === undefined ? 0 : item.listTag.length > 3 ? item.listTag.length * 60 : item.listTag.length * 80);
+									// && item.listTag.length > 2 ?  item.listTag.length * 60 : item.listTag.length * 80
 								}}
 								className="p-0"
 							>
@@ -103,7 +104,7 @@ function ListTag(props) {
 																)
 															)
 																? [
-																		styles.active,
+																		styles.active1,
 																		styles.dropdown_item_1,
 																  ].join(" ") +
 																  " " +
@@ -118,12 +119,7 @@ function ListTag(props) {
 													>
 														{subItem.tag}
 														{subItem.tag && (
-															<Image
-																src={IconTag}
-																alt="icon"
-																width={10}
-																height={10}
-															/>
+															<i class="fa fa-chevron-right d-flex align-items-center"></i>
 														)}
 													</li>
 												);
