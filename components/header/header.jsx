@@ -8,48 +8,64 @@ import { BiSearch } from "react-icons/bi";
 import styles from "./header.module.scss";
 import ListTag from "./listTag";
 function Header(props) {
-  const [isDate, setIsDate] = useState("");
-  const [isTime, setIsTime] = useState("");
-  const [isLoop, setIsLoop] = useState(1);
-  useEffect(() => {
-    const day = [
-      "Thứ hai",
-      "Thứ ba",
-      "Thứ tư",
-      "Thứ năm",
-      "Thứ sáu",
-      "Thứ bảy",
-      "Chủ nhật",
-    ];
-    var today = new Date();
-    setIsDate(
-      day[today.getDay()] +
-        ", ngày " +
-        today.getDate() +
-        "/" +
-        (today.getMonth() + 1) +
-        "/" +
-        today.getFullYear()
-    );
-    if (today.getHours() < 12) {
-      setIsTime(today.getHours() + ":" + today.getMinutes() + " " + "AM");
-    } else {
-      setIsTime(today.getHours() + ":" + today.getMinutes() + " " + "PM");
-    }
-    setTimeout(() => {
-      setIsLoop(isLoop + 1);
-    }, 1000);
-  }, [isLoop]);
-  const [showLogo, setShowLogo] = useState(true);
-  window.addEventListener("scroll", callbackFunc);
-  function callbackFunc() {
-    var y = window.pageYOffset;
-    if (y > 150) {
-      setShowLogo(false);
-    } else {
-      setShowLogo(true);
-    }
-  }
+	const [isDate, setIsDate] = useState("");
+	const [isTime, setIsTime] = useState("");
+	const [isLoop, setIsLoop] = useState(1);
+	useEffect(() => {
+		const day = [
+			"Thứ hai",
+			"Thứ ba",
+			"Thứ tư",
+			"Thứ năm",
+			"Thứ sáu",
+			"Thứ bảy",
+			"Chủ nhật",
+		];
+		var today = new Date();
+		setIsDate(
+			day[today.getDay()] +
+				", ngày " +
+				today.getDate() +
+				"/" +
+				(today.getMonth() + 1) +
+				"/" +
+				today.getFullYear()
+		);
+		if (today.getHours() < 12) {
+			if (today.getMinutes() < 10) {
+				setIsTime(
+					today.getHours() + ":0" + today.getMinutes() + " " + "AM"
+				);
+			} else {
+				setIsTime(
+					today.getHours() + ":" + today.getMinutes() + " " + "AM"
+				);
+			}
+		} else {
+			if (today.getMinutes() < 10) {
+				setIsTime(
+					today.getHours() + ":0" + today.getMinutes() + " " + "PM"
+				);
+			} else {
+				setIsTime(
+					today.getHours() + ":" + today.getMinutes() + " " + "PM"
+				);
+			}
+		}
+		setTimeout(() => {
+			setIsLoop(isLoop + 1);
+		}, 1000);
+	}, [isLoop]);
+	const [showLogo, setShowLogo] = useState(true);
+	window.addEventListener("scroll", callbackFunc);
+	function callbackFunc() {
+		var y = window.pageYOffset;
+		if (y > 150) {
+			setShowLogo(false);
+		} else {
+			setShowLogo(true);
+		}
+	}
 
 	return (
 		<Navbar

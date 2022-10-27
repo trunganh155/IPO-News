@@ -55,7 +55,7 @@
 			}
 		}
 		.header_mid {
-			padding: 0 35px;
+			padding: 10px 38px !important;
 			.text_logo {
 				width: calc(100%);
 				align-items: center;
@@ -73,6 +73,12 @@
 					border-bottom: 1px solid #a31925;
 					width: fit-content;
 					margin-left: 10px !important;
+				}
+			}
+			.search {
+				input {
+					height: 52px;
+					font-size: 18px;
 				}
 			}
 		}

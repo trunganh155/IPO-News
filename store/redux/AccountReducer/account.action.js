@@ -2,8 +2,10 @@ import callApi from "../../../utils/callApi";
 import { Buffer } from "buffer";
 import { getTokenUser, getDetailUser, registerUser } from "./account.reducer";
 
-export const getTokenUserAction = (username, password) => {
-	var credentials = Buffer.from(username + ":" + password).toString("base64");
+export const getTokenUserAction = (data) => {
+	var credentials = Buffer.from(data.username + ":" + data.password).toString(
+		"base64"
+	);
 	var basicAuth = "Basic " + credentials;
 	const add = async (dispatch) => {
 		try {
@@ -16,7 +18,6 @@ export const getTokenUserAction = (username, password) => {
 				}
 			);
 			if (res.data) {
-				console.log(res.data);
 				await dispatch(getTokenUser(res.data.token));
 				const detailUser = await callApi(
 					`api/profile?access_token=${res.data.token}`,
@@ -30,6 +31,7 @@ export const getTokenUserAction = (username, password) => {
 			}
 		} catch (err) {
 			// console.log(err);
+			return "Đăng nhập thất bại";
 		}
 	};
 	return add;
@@ -71,7 +73,11 @@ export const registerUserAction = (data) => {
 		try {
 			const res = await callApi(`signup`, "POST", data);
 			await dispatch(registerUser(res));
-			return res.data;
+			if (res.success) {
+				return res;
+			} else {
+				return res;
+			}
 		} catch (err) {
 			// console.log("true");
 		}

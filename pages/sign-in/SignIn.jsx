@@ -24,25 +24,28 @@ function SignIn() {
 	} = useForm();
 	const onSubmit = async (data) => {
 		try {
-			await dispatch(getTokenUserAction(data));
-			Swal.fire({
-				position: "center",
-				icon: "success",
-				title: "Đăng nhập thành công",
-				showConfirmButton: false,
-				timer: 1500,
-			});
-			router.push("/");
+			const dataSignIn = await dispatch(getTokenUserAction(data));
+			// console.log(dataSignIn);
+			if (dataSignIn.token) {
+				Swal.fire({
+					position: "center",
+					icon: "success",
+					title: "Đăng nhập thành công",
+					showConfirmButton: false,
+					timer: 1500,
+				});
+				router.push("/");
+			} else {
+				Swal.fire({
+					position: "center",
+					icon: "error",
+					title: "Đăng nhập thất bại",
+					showConfirmButton: false,
+					timer: 1500,
+				});
+			}
 		} catch (err) {
 			console.log(err);
-
-			Swal.fire({
-				position: "center",
-				icon: "error",
-				title: "Đăng nhập thất bại",
-				showConfirmButton: false,
-				timer: 1500,
-			});
 		}
 	};
 	function showPassword() {
