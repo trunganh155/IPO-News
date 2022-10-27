@@ -5,6 +5,7 @@ import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../../store/redux/NewsReducer/news.action";
 import { removeAccents } from "../../../utils/Function";
+import { limitWord } from "../../../utils/Function";
 import styles from "./Mechanism.module.scss";
 
 import Slider from "react-slick";
@@ -12,7 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 export default function Mechanism(props) {
-  const limit = 300;
+  const limit = 30;
   const router = useRouter();
   const dispatch = useDispatch();
   const { news } = useSelector((state) => state.NewsReducer);
@@ -62,8 +63,12 @@ export default function Mechanism(props) {
     return (
       <div style={{ marginBottom: "80px" }}>
         {currentItems?.map((item, index) => (
-          <div className="d-flex flex-row mb-3" key={index}>
-            <div className="col-5 col-sm-4">
+          <div className="d-flex flex-wrap mb-3" key={index}>
+            <div className="col-12 d-block d-sm-none">
+              <p className={styles.mechanism_title}>{item.title}</p>
+            </div>
+
+            <div className="col-6 col-sm-4">
               <Image
                 loader={({ src }) =>
                   `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
@@ -75,9 +80,9 @@ export default function Mechanism(props) {
               />
             </div>
 
-            <div className="col-7 col-sm-8 ps-3 ps-sm-4 pe-0 pe-sm-4">
+            <div className="col-6 col-sm-8 ps-3 ps-sm-4 pe-0 pe-sm-4">
               <a
-                className={styles.mechanism_title}
+                className={styles.mechanism_title + " " + "d-none d-sm-block"}
                 onClick={() =>
                   router.push(`/${removeAccents(item?._id || "")}`)
                 }
@@ -88,7 +93,7 @@ export default function Mechanism(props) {
               <p className={styles.mechanism_content}>
                 <section
                   dangerouslySetInnerHTML={{
-                    __html: item?.content.slice(0, limit),
+                    __html: limitWord(item?.content, limit),
                   }}
                 />
               </p>
@@ -125,10 +130,29 @@ export default function Mechanism(props) {
           />
         </div>
 
-        <div className={styles.text + " " + "col-11"}>
-          <p className={styles.mechanism_title_lg}>{news[0]?.title}</p>
+        <div
+          className={
+            styles.text +
+            " " +
+            "col-12 d-flex flex-wrap px-1 px-sm-4 py-1 py-sm-3"
+          }
+        >
+          <div className="col-12 col-sm-7">
+            <p
+              className={styles.mechanism_title_lg}
+              onClick={() =>
+                router.push(`/${removeAccents(news[0]?._id || "")}`)
+              }
+            >
+              {news[0]?.title}
+            </p>
+          </div>
 
-          <p className={styles.mechanism_content_lg}>{news[0]?.mieu_ta_ngan}</p>
+          <div className="col-12">
+            <p className={styles.mechanism_content_lg}>
+              {news[0]?.mieu_ta_ngan}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -144,7 +168,7 @@ export default function Mechanism(props) {
           <p className={styles.mechanism_content}>
             <section
               dangerouslySetInnerHTML={{
-                __html: news[0]?.mieu_ta_ngan.slice(0, limit),
+                __html: news[0]?.mieu_ta_ngan.slice(0, limWord),
               }}
             />
           </p>
@@ -165,7 +189,7 @@ export default function Mechanism(props) {
       <hr />
 
       <section className="d-flex flex-row mb-4">
-        <div className={styles.bdRight + " " + "col-12 col-sm-9 col-lg-10"}>
+        <div className="col-12 col-sm-9 col-lg-10">
           {/* {news.slice(1, 7).map((item, index) => (
             <div className="d-flex flex-row mb-3" key={index}>
               <div className="col-5 col-sm-4">
@@ -193,7 +217,7 @@ export default function Mechanism(props) {
                 <p className={styles.mechanism_content}>
                   <section
                     dangerouslySetInnerHTML={{
-                      __html: item?.content.slice(0, limit),
+                      __html: item?.content.slice(0, limWord),
                     }}
                   />
                 </p>
@@ -206,44 +230,55 @@ export default function Mechanism(props) {
 
             <ReactPaginate
               breakLabel="..."
-              nextLabel=">"
-              previousLabel=" < "
+              nextLabel=""
+              previousLabel=""
               onPageChange={handlePageClick}
               pageRangeDisplayed={2}
               pageCount={pageCount}
               renderOnZeroPageCount={null}
               containerClassName="pagination"
               pageLinkClassName="page-num"
-              previousLinkClassName="page-num"
-              nextLinkClassName="page-num"
+              previousLinkClassName="page-btn"
+              nextLinkClassName="page-btn"
               activeLinkClassName="active"
             />
           </div>
         </div>
 
-        <div className="col col-sm-3 col-lg-2 ps-3 d-none d-sm-block">
-          <Image
-            alt="co_che_von"
-            src="/images/mechanism/banner.png"
-            width={294}
-            height={763}
-          />
-          <Image
-            alt="co_che_von"
-            src="/images/mechanism/banner.png"
-            width={294}
-            height={763}
-          />
+        <div
+          className="col col-sm-3 col-lg-2 d-flex flex-column justify-content-between"
+          style={{ gap: "20px" }}
+        >
+          <div className={styles.bdLeft + " " + "ps-4 h-100"}>
+            <div className="height_100">
+              <Image
+                alt="co_che_von"
+                src="/images/mechanism/banner.png"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          </div>
+          <div className="ps-4 h-100">
+            <div className="height_100">
+              <Image
+                alt="co_che_von"
+                src="/images/mechanism/banner.png"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="d-flex flex-row">
         <div
-          className="col-12 col-sm-9 col-lg-10 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
+          className="col-12 col-sm-9 col-lg-10 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 h-100"
           style={{ backgroundColor: "#606060" }}
         >
           <div className="heading_white px-2 px-lg-4">
-            <p className="text">cơ chế vốn</p>
+            <p className="text">quỹ đầu tư</p>
             <p className="col decor"></p>
           </div>
 
@@ -258,8 +293,8 @@ export default function Mechanism(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={353}
-                height={241}
+                width={343}
+                height={281}
               />
               <p
                 className={styles.mechanism_title_white}
@@ -303,12 +338,21 @@ export default function Mechanism(props) {
         </div> */}
 
         <div className="col col-sm-3 col-lg-2 d-none d-sm-block ps-3">
-          <Image
+          {/* <Image
             alt="co_che_von"
             src="/images/mechanism/banner.png"
             width={244}
             height={504}
-          />
+          /> */}
+
+          <div className="height_100">
+            <Image
+              alt="co_che_von"
+              src="/images/mechanism/banner.png"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
       </section>
     </div>

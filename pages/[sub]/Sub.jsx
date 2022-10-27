@@ -3,9 +3,11 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../store/redux/NewsReducer/news.action";
+import { limitWord } from "../../utils/Function";
 import styles from "./Sub.module.scss";
 
 export default function Sub(props) {
+  const limit = 40;
   const router = useRouter();
   const dispatch = useDispatch();
   const { news } = useSelector((state) => state.NewsReducer);
@@ -14,7 +16,10 @@ export default function Sub(props) {
   const convertDateCreate = (str) => {
     const d = new Date(str);
 
-    return `Ngày ${d.getDate()}/${d.getMonth()}/${d.getFullYear()} - ${d.getHours()}h${d.getMinutes()}`;
+    return (
+      `Ngày ${d.getDate()}/${d.getMonth()}/${d.getFullYear()} - ${d.getHours()}h` +
+      (d.getMinutes() < 10 ? `0${d.getMinutes()}` : `${d.getMinutes()}`)
+    );
   };
 
   useEffect(() => {
@@ -36,7 +41,9 @@ export default function Sub(props) {
           />
         </div>
 
-        <div className={styles.text + " " + "col-8"}>
+        <div
+          className={styles.text + " " + "col-12 col-lg-8 px-0 px-lg-5 py-2"}
+        >
           <p className={styles.sub_title_lg}>{newsDetail?.title}</p>
 
           <p className={styles.sub_content_lg}>{newsDetail?.mieu_ta_ngan}</p>
@@ -46,7 +53,7 @@ export default function Sub(props) {
       <div className="line"></div>
 
       <section className="d-flex flex-row">
-        <div className="col-9 d-flex flex-column pe-5">
+        <div className="col-12 col-sm-9 d-flex flex-column pe-2 pe-sm-5 ps-2 px-sm-0">
           <div className="col-12 d-flex flex-column my-3">
             <div className="d-flex flex-row mb-2">
               <i className="fab fa-facebook "></i>
@@ -69,34 +76,35 @@ export default function Sub(props) {
           </div>
 
           <div className="col-12 d-flex flex-row justify-content-between">
-            {Array(3)
-              .fill()
-              .map((item, index) => {
-                return (
-                  <div className="col-4 px-2" key={index}>
-                    <Image
-                      alt="sub_image"
-                      src="/images/black.png"
-                      width={374}
-                      height={219}
-                    />
+            {news.slice(2, 5).map((item, index) => {
+              return (
+                <div className="col-4 px-2" key={index}>
+                  <Image
+                    loader={({ src }) =>
+                      `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                    }
+                    alt="sub_image"
+                    src={item.picture}
+                    width={374}
+                    height={219}
+                  />
 
-                    <p className={styles.sub_title}>
-                      Lorem ipsum dolor sit amet.
-                    </p>
-                  </div>
-                );
-              })}
+                  <p className={styles.sub_title_sm}>{item.title}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        <div className="col-3">
-          <Image
-            alt="sub_image"
-            src="/images/mechanism/banner.png"
-            width={375}
-            height={854}
-          />
+        <div className="col-3 d-none d-sm-block">
+          <div className="height_100">
+            <Image
+              alt="sub_image"
+              src="/images/mechanism/banner.png"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -106,38 +114,44 @@ export default function Sub(props) {
       </div>
 
       <section className="d-flex flex-wrap">
-        {Array(4)
-          .fill()
-          .map((item, index) => {
-            return (
-              <div
-                className="col-12 col-sm-6 d-flex flex-row pe-4 mb-4"
-                key={index}
-              >
-                <div className="col-6">
-                  <Image
-                    alt="sub_image"
-                    src="/images/black.png"
-                    width={422}
-                    height={230}
-                  />
-                </div>
+        {news.slice(1, 5).map((item, index) => {
+          return (
+            <div
+              className="col-12 col-sm-6 d-flex flex-wrap ps-0 ps-sm-3 pe-0 pe-sm-4 mb-4 "
+              key={index}
+            >
+              <div className="col-12 d-block d-sm-none">
+                <p className={styles.sub_title_md}>{item.title}</p>
+              </div>
 
-                <div className="col-6 px-3">
-                  <div className="">
-                    <p className={styles.sub_title_md}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </p>
+              <div className="col-6">
+                <Image
+                  loader={({ src }) =>
+                    `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                  }
+                  alt="sub_image"
+                  src={item.picture}
+                  width={422}
+                  height={230}
+                />
+              </div>
 
-                    <p className={styles.sub_content_md}>
-                      Senectus et netus et malesuada. Nunc pulvinar sapien et
-                      ligula ullamcorper malesuada proin
-                    </p>
-                  </div>
+              <div className="col-6 px-3">
+                <div>
+                  <p
+                    className={styles.sub_title_md + " " + "d-none d-sm-block"}
+                  >
+                    {item.title}
+                  </p>
+
+                  <p className={styles.sub_content_md}>
+                    {limitWord(item.mieu_ta_ngan, limit)}
+                  </p>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          );
+        })}
       </section>
     </div>
   );

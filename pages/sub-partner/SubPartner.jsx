@@ -20,7 +20,7 @@ export default function SubPartner(props) {
           />
         </div>
 
-        <div className={styles.text + " " + "col-8"}>
+        <div className={styles.text + " " + "col-9 col-lg-8"}>
           <p className={styles.subPartner_title_lg}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>

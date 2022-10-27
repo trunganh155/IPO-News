@@ -130,15 +130,15 @@ export default function CaseStudy(props) {
           <div className={styles.scroll + " " + "d-flex flex-wrap"}>
             {news.map((item, index) => {
               return (
-                <div className="col-4 px-1" key={index}>
+                <div className="col-4 px-2" key={index}>
                   <Image
                     loader={({ src }) =>
                       `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
                     }
                     alt="khoa_hoc"
                     src={item.picture}
-                    width={315}
-                    height={177}
+                    width={345}
+                    height={187}
                   />
 
                   <div className="px-1">

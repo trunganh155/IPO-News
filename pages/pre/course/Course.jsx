@@ -31,7 +31,10 @@ export default function Course(props) {
     return (
       <div className="d-flex flex-wrap">
         {currentItems?.map((item, index) => (
-          <div className="col-12 col-sm-6 d-flex flex-wrap pe-5" key={index}>
+          <div
+            className="col-12 col-sm-6 d-flex flex-wrap ps-0 ps-sm-3 pe-0 pe-sm-5 pb-3"
+            key={index}
+          >
             <div className="col-6">
               <Image
                 loader={({ src }) =>
@@ -39,11 +42,11 @@ export default function Course(props) {
                 }
                 alt="khoa_hoc"
                 src={item.picture}
-                width={430}
-                height={250}
+                width={362}
+                height={290}
               />
             </div>
-            <div className="col-6 px-3">
+            <div className="col-6 px-3 pe-0 pe-sm-3">
               <p
                 className={styles.course_title}
                 onClick={() =>
@@ -83,12 +86,12 @@ export default function Course(props) {
                 }
                 alt="khoa_hoc"
                 src={news[0]?.picture}
-                width={1200}
-                height={535}
+                width={1071}
+                height={578}
               />
             </div>
 
-            <div className="col-12">
+            <div className="col-12 px-0 px-sm-3">
               <p
                 className={styles.course_title}
                 onClick={() =>
@@ -247,16 +250,16 @@ export default function Course(props) {
 
           <ReactPaginate
             breakLabel="..."
-            nextLabel=">"
-            previousLabel=" < "
+            nextLabel=""
+            previousLabel=""
             onPageChange={handlePageClick}
             pageRangeDisplayed={2}
             pageCount={pageCount}
             renderOnZeroPageCount={null}
             containerClassName="pagination"
             pageLinkClassName="page-num"
-            previousLinkClassName="page-num"
-            nextLinkClassName="page-num"
+            previousLinkClassName="page-btn"
+            nextLinkClassName="page-btn"
             activeLinkClassName="active"
           />
         </div>
@@ -267,7 +270,7 @@ export default function Course(props) {
           className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
-          <div className="heading_white px-3 px-lg-5">
+          <div className="heading_white px-3">
             <p className="text">phương thức</p>
             <p className="col decor"></p>
           </div>
@@ -280,8 +283,8 @@ export default function Course(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={440}
-                height={250}
+                width={436}
+                height={281}
               />
               <p
                 className={styles.course_title_white}
@@ -301,7 +304,7 @@ export default function Course(props) {
           className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
-          <div className="heading_white px-3 px-lg-5">
+          <div className="heading_white px-3">
             <p className="text">HỒ SƠ GỌI VỐN</p>
             <p className="col decor"></p>
           </div>
@@ -314,8 +317,8 @@ export default function Course(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={440}
-                height={250}
+                width={436}
+                height={281}
               />
               <p
                 className={styles.course_title_white}
@@ -335,7 +338,7 @@ export default function Course(props) {
           className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
-          <div className="heading_white px-3 px-lg-5">
+          <div className="heading_white px-3">
             <p className="text">HỒ SƠ THƯƠNG HIỆU</p>
             <p className="col decor"></p>
           </div>
@@ -348,8 +351,8 @@ export default function Course(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={440}
-                height={250}
+                width={436}
+                height={281}
               />
               <p
                 className={styles.course_title_white}

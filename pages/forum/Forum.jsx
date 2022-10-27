@@ -46,7 +46,7 @@ export default function Forum(props) {
                       <div className={styles.avatar}>
                         <Image
                           alt="forum_image"
-                          src="/images/grey.png"
+                          src="/images/expert/DMN.png"
                           width={35}
                           height={35}
                           objectFit="cover"

@@ -1,0 +1,49 @@
+.detail {
+  padding: 100px 0 50px 0;
+
+  .word {
+    position: relative;
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 400;
+    font-family: "UTM Cafeta", sans-serif;
+    text-transform: uppercase;
+    padding-left: 12px;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-48%);
+
+      content: "";
+      height: 82%;
+      width: 3px;
+      background-color: #a31925;
+    }
+  }
+
+  .meaning {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: justify;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .detail {
+    padding: 80px 0 25px 0;
+  }
+}
+
+@media all and (min-width: 576px) and (max-width: 768px) {
+  .detail {
+    padding: 100px 0 25px 0;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .detail {
+    padding: 100px 0 25px 0;
+  }
+}
