@@ -1,5 +1,5 @@
 .caseStudy {
-  padding: 150px 0 50px 0 !important;
+  padding: 100px 0 50px 0 ;
   background-color: #f4ecdb;
   color: #000;
 
@@ -71,5 +71,23 @@
     &::-webkit-scrollbar-thumb {
       background-color: #000;
     }
+  }
+}
+
+@media all and (max-width: 992px) {
+  .caseStudy {
+    padding: 60px 0 25px 0;
+  }
+}
+
+@media all and (min-width: 576px) and (max-width: 768px) {
+  .caseStudy {
+    padding: 80px 0 25px 0;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .caseStudy {
+    padding: 70px 0 25px 0;
   }
 }

@@ -31,7 +31,13 @@ export default function Gallery(props) {
 
   const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
     <div className={styles.arrow_right}>
-      <Image src={ArrowRight} alt="nextArrow" layout="fill" {...props} />
+      <Image
+        src={ArrowRight}
+        alt="nextArrow"
+        width={24}
+        height={44}
+        {...props}
+      />
     </div>
   );
 
@@ -47,12 +53,12 @@ export default function Gallery(props) {
     centerMode: true,
     centerPadding: "0px",
     prevArrow: (
-      <button type="button" class="slick-prev" style={{ height: "42px" }}>
+      <button type="button" class="slick-prev">
         <SlickArrowLeft />
       </button>
     ),
     nextArrow: (
-      <button style={{ height: "42px" }} type="button" class="slick-prev">
+      <button type="button" class="slick-next">
         <SlickArrowRight />
       </button>
     ),

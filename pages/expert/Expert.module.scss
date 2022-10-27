@@ -1,5 +1,5 @@
 .expert {
-  padding: 50px 0 50px 0;
+  padding: 90px 0 50px 0;
   color: #fff;
 
   &_black {
@@ -7,7 +7,15 @@
     padding: 15px 40px;
   }
 
-  &_title {
+  &_name {
+    font-size: 45px;
+    line-height: 50px;
+    font-weight: 700;
+    text-align: justify;
+    margin-bottom: 0px !important;
+  }
+
+  &_company {
     font-size: 18px;
     font-weight: 700;
     text-align: justify;
@@ -15,6 +23,7 @@
 
   &_title_sm {
     font-size: 10px;
+    line-height: 17px;
     font-weight: 400;
     text-align: justify;
   }
@@ -45,17 +54,51 @@
 @media all and (max-width: 992px) {
   .expert {
     padding: 70px 0 25px 0;
+
+    &_name {
+      font-size: 40px;
+      line-height: 45px;
+    }
+
+    &_company {
+      font-size: 16px;
+    }
+
+    &_title_sm {
+      font-size: 10px;
+    }
+
+    &_content {
+      font-size: 14px;
+    }
   }
 }
 
 @media all and (min-width: 576px) and (max-width: 768px) {
   .expert {
-    padding: 0px 0 25px 0;
+    padding: 80px 0 25px 0;
   }
 }
 
 @media all and (max-width: 576px) {
   .expert {
-    padding: 10px 0 15px 0;
+    padding: 70px 0 15px 0;
+
+    &_name {
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    &_company {
+      font-size: 15px;
+    }
+
+    &_title_sm {
+      font-size: 10px;
+    }
+
+    &_content {
+      font-size: 13px;
+    }
   }
 }

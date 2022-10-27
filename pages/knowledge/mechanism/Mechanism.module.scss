@@ -1,5 +1,5 @@
 .mechanism {
-  padding: 20px 0 50px 0;
+  padding: 50px 0 50px 0;
 
   .bdRight {
     border-right: 1px solid #000;
@@ -14,16 +14,24 @@
 
     .text {
       position: absolute;
-      bottom: 35px;
-      left: 35px;
+      bottom: 0;
+      left: 0;
+
+      // background-color: rgba(0, 0, 0, 0.5);
     }
   }
 
   &_title_lg {
     color: #fff;
     font-size: 30px;
+    line-height: 35px;
     font-weight: 700;
     margin-bottom: 0 !important;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(14, 14, 239);
+    }
   }
 
   &_content_lg {
@@ -65,12 +73,11 @@
   &_slider {
     padding: 50px 50px 10px 50px;
   }
-
 }
 
 @media all and (max-width: 992px) {
   .mechanism {
-    padding: 70px 0 25px 0;
+    padding: 30px 0 25px 0;
 
     &_title {
       font-size: 18px;
@@ -88,16 +95,24 @@
 
 @media all and (min-width: 576px) and (max-width: 768px) {
   .mechanism {
-    padding: 0px 0 25px 0;
+    padding: 50px 0 25px 0;
   }
 }
 
 @media all and (max-width: 576px) {
   .mechanism {
-    padding: 10px 0 25px 0;
+    padding: 50px 0 25px 0;
 
     .bdRight {
       border-right: none;
+    }
+
+    &_title_lg {
+      font-size: 20px;
+    }
+
+    &_content_lg {
+      font-size: 14px;
     }
 
     &_title {
