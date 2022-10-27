@@ -209,7 +209,10 @@ function HomePage(props) {
 						<div className={"col-md-9 col-lg-10 col-12"}>
 							<div
 								className={styles.box_image_news}
-								style={{ marginRight: "22px" }}
+								style={{
+									marginRight: "22px",
+									marginLeft: "35px",
+								}}
 							>
 								<div className={styles.box_image}>
 									<Image
@@ -245,7 +248,7 @@ function HomePage(props) {
 							className={
 								styles.box_image +
 								" " +
-								"col-3 col-lg-2 d-md-flex d-none align-items-center p-0"
+								"col-3 col-lg-2 d-md-flex d-none align-items-center ps-0"
 							}
 						>
 							<div
@@ -264,7 +267,13 @@ function HomePage(props) {
 							/>
 						</div>
 					</div>
-					<hr style={{ margin: "30px 0 15px 0", height: "0.5px" }} />
+					<hr
+						style={{
+							width: "calc(100% - 80px)",
+							margin: "30px 0 15px 35px",
+							height: "0.5px",
+						}}
+					/>
 					<div className="row d-flex justify-content-center">
 						<div className="col-12 col-sm-9 col-lg-10">
 							{news.length > 0 &&
@@ -313,9 +322,8 @@ function HomePage(props) {
 										{index < 5 && (
 											<hr
 												style={{
-													width: "calc(100% - 70px)",
-													margin: "18px 0",
-													marginLeft: "12px",
+													width: "calc(100% - 105px)",
+													margin: "18px 0px 18px 45px",
 													height: "0.5px",
 												}}
 											/>
