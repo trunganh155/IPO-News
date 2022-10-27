@@ -3,6 +3,15 @@
   background-color: #f4ecdb;
   color: #000;
 
+  // .btnFilter {
+  //   display: none;
+  // }
+
+  // .modalFilter {
+  //   display: block;
+  //   position: relative;
+  // }
+
   &_title {
     font-size: 15px;
     font-weight: 700;
@@ -77,6 +86,20 @@
 @media all and (max-width: 992px) {
   .caseStudy {
     padding: 60px 0 25px 0;
+
+    // .btnFilter {
+    //   display: block;
+    // }
+
+    // .modalFilter {
+    //   display: none;
+    //   position: absolute;
+    //   // height: 100vh;
+    //   background-color: #ccc;
+    //   z-index: 100;
+    //   top: 350px;
+    //   left: 0;
+    // }
   }
 }
 

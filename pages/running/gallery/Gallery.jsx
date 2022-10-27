@@ -68,7 +68,7 @@ export default function Gallery(props) {
         breakpoint: 992,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
         },
       },
       {
@@ -175,7 +175,15 @@ export default function Gallery(props) {
 
       <section>
         <div className="col-12">
-          <div class="ratio ratio-21x9">
+          <div class="ratio ratio-21x9 d-none d-sm-block">
+            <iframe
+              src={gallery[1]?.url}
+              title="YouTube video"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="ratio ratio-16x9 d-block d-sm-none">
             <iframe
               src={gallery[1]?.url}
               title="YouTube video"
@@ -215,9 +223,7 @@ export default function Gallery(props) {
                 <div key={index}>
                   <div
                     className={
-                      slideIndex === index
-                        ? styles.active + styles.slide
-                        : styles.slide
+                      slideIndex === index ? styles.active : styles.slide
                     }
                   >
                     <Image
