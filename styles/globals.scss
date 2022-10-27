@@ -326,6 +326,11 @@ p {
 // }
 // Slider CSS End
 
+.slick-prev,
+.slick-next {
+	top: 35%;
+}
+
 // Pagination Start
 .pagination {
 	position: absolute;
@@ -557,6 +562,18 @@ button.slick-arrow.slick-next {
 			height: 36px;
 		}
 	}
+
+	.slick-prev,
+	.slick-next {
+		top: 31%;
+	}
+}
+
+@media all and (min-width: 576px) and (max-width: 768px) {
+	.slick-prev,
+	.slick-next {
+		top: 28%;
+	}
 }
 
 @media all and (max-width: 576px) {
@@ -568,5 +585,10 @@ button.slick-arrow.slick-next {
 		.decor {
 			height: 31px;
 		}
+	}
+
+	.slick-prev,
+	.slick-next {
+		top: 30%;
 	}
 }

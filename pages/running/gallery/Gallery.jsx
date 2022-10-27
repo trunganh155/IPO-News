@@ -68,7 +68,7 @@ export default function Gallery(props) {
         breakpoint: 992,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
         },
       },
       {
@@ -215,9 +215,7 @@ export default function Gallery(props) {
                 <div key={index}>
                   <div
                     className={
-                      slideIndex === index
-                        ? styles.active + styles.slide
-                        : styles.slide
+                      slideIndex === index ? styles.active : styles.slide
                     }
                   >
                     <Image
