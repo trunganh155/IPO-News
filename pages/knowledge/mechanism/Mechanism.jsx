@@ -289,8 +289,8 @@ export default function Mechanism(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={353}
-                height={241}
+                width={343}
+                height={281}
               />
               <p
                 className={styles.mechanism_title_white}
