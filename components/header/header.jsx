@@ -32,7 +32,7 @@ function Header(props) {
 				today.getFullYear()
 		);
 		if (today.getHours() < 12) {
-			if (today.getMinutes() > 9) {
+			if (today.getMinutes() < 10) {
 				setIsTime(
 					today.getHours() + ":0" + today.getMinutes() + " " + "AM"
 				);
@@ -42,7 +42,7 @@ function Header(props) {
 				);
 			}
 		} else {
-			if (today.getMinutes() < 9) {
+			if (today.getMinutes() < 10) {
 				setIsTime(
 					today.getHours() + ":0" + today.getMinutes() + " " + "PM"
 				);
