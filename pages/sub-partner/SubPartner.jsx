@@ -59,8 +59,8 @@ export default function SubPartner(props) {
             <Image
               alt="subPartner_image"
               src="/images/grey.png"
-              width={346}
-              height={370}
+              width={466}
+              height={490}
             />
           </div>
 
@@ -79,10 +79,10 @@ export default function SubPartner(props) {
                 </div>
 
                 <div className="d-flex flex-column justify-content-center px-2">
-                  <p className={styles.label}>
+                  <p className={styles.label_lg}>
                     Số lượng bài đăng: <b>7</b>{" "}
                   </p>
-                  <p className={styles.label}>
+                  <p className={styles.label_lg}>
                     Lượt like của bài đăng: <b>23</b>
                   </p>
                 </div>
