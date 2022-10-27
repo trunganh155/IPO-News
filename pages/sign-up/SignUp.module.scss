@@ -1,19 +1,19 @@
 .sign_up {
 	color: #000;
 	max-width: 1920px;
-	background-image: url("../../public/images/home/banner_1.png");
+	background-image: url("../../public/images/home/banner1.png");
 	width: 100% !important;
 	height: 100%;
 	overflow: hidden;
+	min-height: 1248px;
 	.center_box {
 		padding: 80px 35px 0px 35px;
 		display: flex;
 		justify-content: center;
 		align-content: center;
-		margin-bottom: 50%;
 		.w_box {
 			width: 50%;
-			background: #ffffff;
+			background: #F3EEE1;
 			border-radius: 30px;
 			padding: 20px 50px 70px;
 			.group_button {
@@ -30,6 +30,11 @@
 					color: #000000;
 					font-size: 20px;
 				}
+				.border_bottom_n{
+					height: 2px;
+					background: transparent;
+					border-radius: 5px 5px 0px 0px;
+				}
 				.border_bottom {
 					height: 2px;
 					background: #a31925;
@@ -40,8 +45,9 @@
 					margin: 0 15px;
 				}
 			}
-			// .title {
-			// }
+			.title {
+				margin-top: 25px;
+			}
 			.box_content {
 				.w_box_content {
 					width: 90%;
@@ -58,6 +64,7 @@
 						margin-bottom: 10px;
 						.box_input_text {
 							input {
+								background: #F3EEE1;
 								height: 60px;
 								width: 100%;
 								font-weight: 400;
@@ -83,6 +90,7 @@
 							border: 1px solid #c1c1c1;
 							border-radius: 10px;
 							input {
+								background: #F3EEE1;
 								height: 60px;
 								width: 90%;
 								font-weight: 400;

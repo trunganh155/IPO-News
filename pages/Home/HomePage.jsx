@@ -87,18 +87,23 @@ function HomePage(props) {
 				</div>
 				<div className={styles.knowledge}>
 					<div className="d-flex justify-content-between align-items-baseline">
-						<div className="heading" data-aos-duration="2000" data-aos="fade-left">
+						<div
+							className="heading"
+							data-aos-duration="2000"
+							data-aos="fade-left"
+						>
 							<p className="text m-0">KIẾN THỨC IPO</p>
 							<p className="col decor"></p>
 						</div>
 					</div>
 					<div className="row">
 						<div
-							className="col-12 col-lg-7 p-1 p-md-4 mb-3 d-flex flex-column mb-lg-0 flex-lg-none"
+							className="col-12 col-lg-7 p-1 p-md-4 ps-lg-5 mb-3 d-flex flex-column mb-lg-0 flex-lg-none"
 							style={{
 								borderRight: "0.5px solid #000000",
 							}}
-							data-aos="fade-right" data-aos-duration="2000"
+							data-aos="fade-right"
+							data-aos-duration="2000"
 						>
 							<Image
 								height={321}
@@ -123,7 +128,11 @@ function HomePage(props) {
 
 						<div className="col-12 col-lg-5 p-md-4 p-1">
 							{news.slice(1, 5).map((item, index) => (
-								<div key={index} data-aos="fade-up" data-aos-duration="2000">
+								<div
+									key={index}
+									data-aos="fade-up"
+									data-aos-duration="2000"
+								>
 									<h4
 										className="mb-2"
 										onClick={() =>
@@ -146,8 +155,6 @@ function HomePage(props) {
 					<div
 						className="d-flex justify-content-between"
 						style={{ overflowY: "auto" }}
-						data-aos="fade-up"
-						data-aos-duration="2000"
 					>
 						{news.slice(1, 6).map((item, index) => (
 							<div
@@ -157,6 +164,8 @@ function HomePage(props) {
 									marginRight: "5px",
 									marginBottom: "5px",
 								}}
+								data-aos="fade-left"
+								data-aos-duration="2000"
 							>
 								<div
 									style={{ width: "352px", height: "265px" }}
@@ -180,13 +189,21 @@ function HomePage(props) {
 				</div>
 				<div className={styles.news_ipo}>
 					<div className="d-flex justify-content-between align-items-baseline">
-						<div className="heading" data-aos-duration="2000" data-aos="fade-left">
+						<div
+							className="heading"
+							data-aos-duration="2000"
+							data-aos="fade-left"
+						>
 							<p className="text m-0">TIN TỨC IPO</p>
 							<p className="col decor"></p>
 						</div>
 					</div>
 					<div className="row">
-						<div className={"col-md-9 col-lg-10 col-12"} data-aos="fade-right">
+						<div
+							className={"col-md-9 col-lg-10 col-12"}
+							data-aos="zoom-in-up"
+							data-aos-duration="3000"
+						>
 							<div className={styles.box_image_news}>
 								<div className={styles.box_image}>
 									<Image
@@ -219,7 +236,7 @@ function HomePage(props) {
 							</div>
 						</div>
 						<div
-						data-aos="fade-left"
+							data-aos="fade-left"
 							className={
 								styles.box_image +
 								" " +
@@ -236,11 +253,15 @@ function HomePage(props) {
 						</div>
 					</div>
 					<hr className="my-4" />
-					<div className="row d-flex justify-content-center" >
+					<div className="row d-flex justify-content-center">
 						<div className="col-12 col-sm-9 col-lg-10">
 							{news.length > 0 &&
 								news.slice(0, 7).map((item, index) => (
-									<div key={index} className="row" data-aos="fade-up">
+									<div
+										key={index}
+										className="row"
+										data-aos="fade-up"
+									>
 										<div className="col-12 col-md-7 col-lg-9">
 											<div className="text-align-center p-md-3 p-0">
 												<h4
@@ -282,10 +303,11 @@ function HomePage(props) {
 									</div>
 								))}
 						</div>
-						<div className="col-3 col-lg-2 d-none d-md-block" data-aos="fade-left">
+						<div className="col-3 col-lg-2 d-none d-md-block">
 							<div
 								className={styles.box_image_right}
 								style={{ height: "50%" }}
+								data-aos="zoom-in-up"
 							>
 								<Image
 									width={244}
@@ -297,6 +319,7 @@ function HomePage(props) {
 							<div
 								className={styles.box_image_right}
 								style={{ height: "50%" }}
+								data-aos="zoom-in-up"
 							>
 								<Image
 									width={244}
@@ -310,7 +333,11 @@ function HomePage(props) {
 				</div>
 				<div className={styles.library}>
 					<div className="d-flex justify-content-between mb-3 align-items-baseline">
-						<div className="heading" data-aos-duration="2000" data-aos="fade-left">
+						<div
+							className="heading"
+							data-aos-duration="2000"
+							data-aos="fade-left"
+						>
 							<p className="text m-0">THƯ VIỆN</p>
 							<p className="col decor"></p>
 						</div>
@@ -321,14 +348,15 @@ function HomePage(props) {
 								<div
 									key={index}
 									className="col-12 col-md-8 col-lg-4"
-									data-aos="zoom-out-up"
+									data-aos="flip-left"
+									data-aos-duration="3000"
 								>
 									<div className="d-flex flex-column align-items-center">
 										<span>CASE STUDY AURA CAPITAL</span>
 										<div
 											style={{
 												borderBottom: "1px solid black",
-												width: "50%",
+												width: "30%",
 											}}
 										></div>
 									</div>
@@ -339,7 +367,13 @@ function HomePage(props) {
 											"d-flex flex-column text-align-left mb-3 mb-lg-0 flex-lg-none gap-2"
 										}
 									>
-										<div className="d-flex justify-content-center">
+										<div
+											className={
+												styles.box_image +
+												" " +
+												"d-flex justify-content-center"
+											}
+										>
 											<Image
 												height={220}
 												width={390}
@@ -357,13 +391,22 @@ function HomePage(props) {
 								</div>
 							))}
 					</div>
-					<div className="d-flex justify-content-center" data-aos="fade-up">
-						<button>ĐĂNG KÝ GÓI THÀNH VIÊN</button>
+					<div
+						className="d-flex justify-content-center"
+						data-aos="fade-up"
+					>
+						<button onClick={() => router.push("/intro-magazine")}>
+							ĐĂNG KÝ GÓI THÀNH VIÊN
+						</button>
 					</div>
 				</div>
 				<div className={styles.experts}>
 					<div className="d-flex justify-content-between mb-3 align-items-baseline">
-						<div className="heading" data-aos-duration="2000" data-aos="fade-left">
+						<div
+							className="heading"
+							data-aos-duration="2000"
+							data-aos="fade-left"
+						>
 							<p className="text m-0">CHUYÊN GIA IPO</p>
 							<p className="col decor"></p>
 						</div>
@@ -371,7 +414,12 @@ function HomePage(props) {
 					<div className="row justify-content-center justify-content-lg-space-around">
 						<div className={styles.list_expert}>
 							{expert.slice(0, 3).map((item, index) => (
-								<div key={index} className={styles.item_expert} data-aos="zoom-in-up">
+								<div
+									key={index}
+									className={styles.item_expert}
+									data-aos="fade-up"
+									data-aos-duration="1000"
+								>
 									<div className="d-flex justify-content-center">
 										<Image
 											loader={({ src }) =>
@@ -392,7 +440,11 @@ function HomePage(props) {
 				</div>
 				<div className={styles.library_ipo}>
 					<div className="d-flex justify-content-between mb-3 align-items-baseline">
-						<div className="heading" data-aos-duration="2000" data-aos="fade-left">
+						<div
+							className="heading"
+							data-aos-duration="2000"
+							data-aos="fade-left"
+						>
 							<p className="text m-0">THƯ VIỆN IPO</p>
 							<p className="col decor"></p>
 						</div>
@@ -416,10 +468,13 @@ function HomePage(props) {
 							</div>
 						</div>
 						<div className="col-12 col-lg-4 p-0">
-							<div className={styles.box_media}>
+							<div
+								className={styles.box_media}
+								data-aos="fade-up"
+							>
 								<div className={styles.list_library}>
 									{gallery.slice(1, 5).map((item, index) => (
-										<div key={index} data-aos="fade-up">
+										<div key={index}>
 											<div
 												className={
 													styles.item_library +
@@ -528,10 +583,13 @@ function HomePage(props) {
 										<div
 											className={
 												slideIndex === index
-													? styles.active +
-													  styles.slide
+													? styles.active
 													: styles.slide
 											}
+											style={{
+												display: "flex",
+												justifyContent: "center",
+											}}
 										>
 											<Image
 												loader={({ src }) =>

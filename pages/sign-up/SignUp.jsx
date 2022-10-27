@@ -95,11 +95,12 @@ function SignUp() {
 							className={styles.button_sign_in}
 						>
 							Đăng nhập
+							<div className={styles.border_bottom_n}></div>
 						</div>
 					</div>
 					<div
 						className={
-							styles.title + " " + "d-flex justify-content-center mt-3"
+							styles.title + " " + "d-flex justify-content-center"
 						}
 					>
 						<Image
@@ -109,7 +110,7 @@ function SignUp() {
 							height={63}
 						/>
 					</div>
-					<hr />
+					<hr style={{ margin: "20px 0 26px 0" }} />
 					<div
 						className={
 							styles.box_content +
@@ -260,19 +261,17 @@ function SignUp() {
 									</button>
 								</div>
 							</form>
-							<div
-								style={{ color: "#767676" }}
-								className="d-flex justify-content-between"
-							>
+							<div className="d-flex justify-content-between">
 								<hr style={{ width: "45%" }} />
 								<span
 									style={{
-										fontSize: "15px",
+										fontSize: "16px",
+										color: "#767676",
 									}}
 								>
 									hoặc
 								</span>
-								<hr style={{ width: "45%" }} />
+								<hr style={{ width: "45%", background:"#767676" }} />
 							</div>
 							<div
 								className={

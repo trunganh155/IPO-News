@@ -1,8 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./Contact.module.scss";
+import { useRouter } from "next/router";
 
 function Contact() {
+	const router = useRouter();
 	return (
 		<div className={styles.intro_contact + " " + "container"}>
 			<div className={styles.box_intro_contact}>
@@ -26,7 +28,10 @@ function Contact() {
 								<h5>Liên hệ</h5>
 								<h4>công ty cô phần fos media</h4>
 								<span>( một thành viên của aura capital )</span>
-								<div className="d-flex justify-content-center">
+								<div
+									className="d-flex justify-content-center"
+									style={{ margin: "12px 0 4px 0" }}
+								>
 									<hr />
 								</div>
 								<h6 className="mt-2">
@@ -39,7 +44,10 @@ function Contact() {
 									Làm việc từ thứ 2 - thứ 7, 08h00 - 17h00
 								</h6>
 							</div>
-							<div className="d-flex justify-content-center">
+							<div
+								className="d-flex justify-content-center"
+								style={{ margin: "12px 0 4px 0" }}
+							>
 								<hr />
 							</div>
 							<div className={styles.box_right}>
@@ -73,7 +81,7 @@ function Contact() {
 											/>
 										</div>
 									</div>
-									<button>sign in</button>
+									<button onClick={() => router.push("/sign-in")}>sign in</button>
 								</div>
 							</div>
 						</div>
