@@ -28,15 +28,15 @@ function HeaderOnlyW(props) {
 							className={
 								styles.header_mid +
 								" " +
-								"row px-2 my-2 my-md-5 d-flex justify-content-center align-items-end"
+								"row px-2 d-flex justify-content-center align-items-end"
 							}
 						>
-							<div className="col-10 col-md-5 col-xl-4 d-flex justify-content-between">
+							<div className="col-10 col-md-5 col-xl-4 d-flex justify-content-between align-self-center">
 								<Image
 									src="/images/logo_black.png"
 									alt="logo"
-									width={556}
-									height={111}
+									width={460}
+									height={92}
 								/>
 							</div>
 							<div className={"col-md-2 col-xl-4"}></div>
@@ -44,11 +44,13 @@ function HeaderOnlyW(props) {
 								className={
 									styles.search +
 									" " +
-									"d-flex col-8 col-md-5 col-xl-4 my-3 my-md-2"
+									"d-flex col-8 col-md-5 col-xl-4 my-3 my-md-2 align-self-center"
 								}
-                style={{maxHeight: "50px"}}
 							>
-								<Form className="d-flex justify-content-center align-items-center w-100">
+								<Form
+									style={{ padding: "0 17px 0 79px" }}
+									className="d-flex justify-content-center align-items-center w-100"
+								>
 									<Form.Control
 										type="search"
 										placeholder="Tìm kiếm"
@@ -57,7 +59,7 @@ function HeaderOnlyW(props) {
 										}
 										aria-label="Tìm kiếm"
 									/>
-									<BiSearch size={25} />
+									<BiSearch size={35} color={"#B5B5B5"} />
 								</Form>
 							</div>
 						</div>

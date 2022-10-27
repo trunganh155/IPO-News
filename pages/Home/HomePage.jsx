@@ -43,7 +43,6 @@ function HomePage(props) {
 		dispatch(getGallery());
 	}, [dispatch]);
 
-
 	var x = window.matchMedia("(max-width: 980px)");
 	const [slideIndex, setSlideIndex] = useState(0);
 	const settingsNew = {
@@ -76,7 +75,6 @@ function HomePage(props) {
 			</button>
 		),
 
-
 		beforeChange: (current, next) => setSlideIndex(next),
 	};
 	return (
@@ -96,7 +94,10 @@ function HomePage(props) {
 							<p className="text m-0">KIẾN THỨC IPO</p>
 							<p
 								className="col decor"
-								style={{ marginTop: "7px" }}
+								style={{
+									marginTop: "7px",
+									borderBottom: "0.5px solid black",
+								}}
 							></p>
 						</div>
 					</div>
@@ -155,12 +156,17 @@ function HomePage(props) {
 										{item.title}
 									</h4>
 									<h5>{item.mieu_ta_ngan}</h5>
-									{index < 3 && <hr className="my-3" />}
+									{index < 3 && (
+										<hr
+											className="my-3"
+											style={{ height: "0.5px" }}
+										/>
+									)}
 								</div>
 							))}
 						</div>
 					</div>
-					<hr />
+					<hr style={{ height: "0.5px" }} />
 					<Slider {...settingsNew}>
 						{news.slice(1, 8).map((item, index) => (
 							<div key={index}>
@@ -192,7 +198,10 @@ function HomePage(props) {
 							<p className="text m-0">TIN TỨC IPO</p>
 							<p
 								className="col decor"
-								style={{ marginTop: "7px" }}
+								style={{
+									marginTop: "7px",
+									borderBottom: "0.5px solid black",
+								}}
 							></p>
 						</div>
 					</div>
@@ -255,7 +264,7 @@ function HomePage(props) {
 							/>
 						</div>
 					</div>
-					<hr style={{ margin: "30px 0 15px 0" }} />
+					<hr style={{ margin: "30px 0 15px 0", height: "0.5px" }} />
 					<div className="row d-flex justify-content-center">
 						<div className="col-12 col-sm-9 col-lg-10">
 							{news.length > 0 &&
@@ -307,6 +316,7 @@ function HomePage(props) {
 													width: "calc(100% - 70px)",
 													margin: "18px 0",
 													marginLeft: "12px",
+													height: "0.5px",
 												}}
 											/>
 										)}
@@ -342,7 +352,10 @@ function HomePage(props) {
 							<p className="text m-0">THƯ VIỆN</p>
 							<p
 								className="col decor"
-								style={{ marginTop: "7px" }}
+								style={{
+									marginTop: "7px",
+									borderBottom: "0.5px solid black",
+								}}
 							></p>
 						</div>
 					</div>
@@ -411,7 +424,10 @@ function HomePage(props) {
 							<p className="text m-0">CHUYÊN GIA IPO</p>
 							<p
 								className="col decor"
-								style={{ marginTop: "7px" }}
+								style={{
+									marginTop: "7px",
+									borderBottom: "0.5px solid black",
+								}}
 							></p>
 						</div>
 					</div>
@@ -422,7 +438,10 @@ function HomePage(props) {
 						>
 							{expert.slice(0, 3).map((item, index) => (
 								<div key={index} className={styles.item_expert}>
-									<div className="d-flex justify-content-center" style={{marginBottom:"10px"}}>
+									<div
+										className="d-flex justify-content-center"
+										style={{ marginBottom: "10px" }}
+									>
 										<Image
 											loader={({ src }) =>
 												`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
@@ -446,7 +465,10 @@ function HomePage(props) {
 							<p className="text m-0">THƯ VIỆN IPO</p>
 							<p
 								className="col decor"
-								style={{ marginTop: "7px" }}
+								style={{
+									marginTop: "7px",
+									borderBottom: "0.5px solid black",
+								}}
 							></p>
 						</div>
 					</div>
@@ -515,7 +537,7 @@ function HomePage(props) {
 						</div>
 					</div>
 				</div>
-				<hr />
+				<hr style={{ height: "0.5px" }} />
 				{/* <div className={styles.slide_bottom}>
 					<div className={styles.slider}>
 						<Slider {...settings} styles={{ width: "1440px" }}>

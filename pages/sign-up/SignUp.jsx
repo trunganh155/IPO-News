@@ -53,25 +53,28 @@ function SignUp() {
 	}
 	const onSubmit = async (data) => {
 		try {
-			await dispatch(registerUserAction(data));
-			Swal.fire({
-				position: "center",
-				icon: "success",
-				title: "Đăng kí thành công",
-				showConfirmButton: false,
-				timer: 1500,
-			});
-			router.push("/sign-in");
+			const dataSignUp = await dispatch(registerUserAction(data));
+			// console.log(dataSignUp);
+			if (dataSignUp.success) {
+				Swal.fire({
+					position: "center",
+					icon: "success",
+					title: dataSignUp.data,
+					showConfirmButton: false,
+					timer: 1500,
+				});
+				router.push("/sign-in");
+			} else {
+				Swal.fire({
+					position: "center",
+					icon: "error",
+					title: dataSignUp,
+					showConfirmButton: false,
+					timer: 1500,
+				});
+			}
 		} catch (err) {
 			console.log(err);
-
-			Swal.fire({
-				position: "center",
-				icon: "error",
-				title: "Đăng kí thất bại",
-				showConfirmButton: false,
-				timer: 1500,
-			});
 		}
 	};
 	return (
