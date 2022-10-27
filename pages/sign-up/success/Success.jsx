@@ -21,13 +21,13 @@ function Success() {
 							onClick={() => router.push("/sign-up")}
 							className={(styles.button_sign_up, styles.active)}
 						>
-							Đăng ký
+							Đăng kí
 							<div className={styles.border_bottom}></div>
 						</div>
 						<div className={styles.border_left}></div>
 						<div
 							onClick={() => router.push("/sign-in")}
-							className={styles.button_sign_in}
+							className={(styles.button_sign_in, styles.active_n)}
 						>
 							Đăng nhập
 							<div className={styles.border_bottom_n}></div>

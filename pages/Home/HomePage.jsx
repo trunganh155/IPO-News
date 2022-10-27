@@ -394,7 +394,7 @@ function HomePage(props) {
 						data-aos="fade-up"
 					>
 						<button onClick={() => router.push("/intro-magazine")}>
-							ĐĂNG KÝ GÓI THÀNH VIÊN
+							ĐĂNG KÍ GÓI THÀNH VIÊN
 						</button>
 					</div>
 				</div>

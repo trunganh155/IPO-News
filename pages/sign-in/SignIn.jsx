@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 function SignIn() {
 	const dispatch = useDispatch();
-	const [isShowPassword, setIsShowPassword] = useState(false);
+	const [isShowPassword, setIsShowPassword] = useState(true);
 	const router = useRouter();
 	const {
 		register,
@@ -68,9 +68,9 @@ function SignIn() {
 					>
 						<div
 							onClick={() => router.push("/sign-up")}
-							className={styles.button_sign_up}
+							className={(styles.button_sign_in, styles.active_n)}
 						>
-							Đăng ký
+							Đăng kí
 							<div className={styles.border_bottom_n}></div>
 						</div>
 						<div className={styles.border_left}></div>
@@ -206,7 +206,12 @@ function SignIn() {
 								>
 									Đăng nhập với
 								</span>
-								<hr style={{ width: "35%", background:"#767676" }} />
+								<hr
+									style={{
+										width: "35%",
+										background: "#767676",
+									}}
+								/>
 							</div>
 							<div
 								className={
@@ -214,11 +219,13 @@ function SignIn() {
 								}
 							>
 								<button>
-									<Image
-										style={{ marginRight: "10px" }}
-										src={FaceBook}
-										alt="facebook"
-									/>
+									<div className="me-2 d-flex align-items-center">
+										<Image
+											style={{ marginRight: "10px" }}
+											src={FaceBook}
+											alt="facebook"
+										/>
+									</div>
 									Đăng nhập với FaceBook
 								</button>
 							</div>
@@ -228,11 +235,13 @@ function SignIn() {
 								}
 							>
 								<button>
-									<Image
-										style={{ marginRight: "10px" }}
-										src={Google}
-										alt="google"
-									/>
+									<div className="me-2 d-flex align-items-center">
+										<Image
+											style={{ marginRight: "10px" }}
+											src={Google}
+											alt="google"
+										/>
+									</div>
 									Đăng nhập với Google
 								</button>
 							</div>
@@ -242,12 +251,14 @@ function SignIn() {
 								}
 							>
 								<button>
-									<Image
-										style={{ marginRight: "10px" }}
-										src={Linkin}
-										alt="linkin"
-									/>
-									Đăng nhập với Linkin
+									<div className="me-2 d-flex align-items-center">
+										<Image
+											style={{ marginRight: "10px" }}
+											src={Linkin}
+											alt="linkin"
+										/>
+									</div>
+									Đăng nhập với Linkedin
 								</button>
 							</div>
 						</div>

@@ -14,8 +14,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 function SignUp() {
 	const dispatch = useDispatch();
-	const [isShowPassword, setIsShowPassword] = useState(false);
-	const [isShowRePassword, setIsShowRePassword] = useState(false);
+	const [isShowPassword, setIsShowPassword] = useState(true);
+	const [isShowRePassword, setIsShowRePassword] = useState(true);
 	const router = useRouter();
 	const {
 		register,
@@ -58,7 +58,7 @@ function SignUp() {
 			Swal.fire({
 				position: "center",
 				icon: "success",
-				title: "Đăng ký thành công",
+				title: "Đăng kí thành công",
 				showConfirmButton: false,
 				timer: 1500,
 			});
@@ -68,7 +68,7 @@ function SignUp() {
 			Swal.fire({
 				position: "center",
 				icon: "error",
-				title: "Đăng ký thất bại",
+				title: "Đăng kí thất bại",
 				showConfirmButton: false,
 				timer: 1500,
 			});
@@ -86,13 +86,13 @@ function SignUp() {
 						}
 					>
 						<div className={(styles.button_sign_up, styles.active)}>
-							Đăng ký
+							Đăng kí
 							<div className={styles.border_bottom}></div>
 						</div>
 						<div className={styles.border_left}></div>
 						<div
 							onClick={() => router.push("/sign-in")}
-							className={styles.button_sign_in}
+							className={(styles.button_sign_in, styles.active_n)}
 						>
 							Đăng nhập
 							<div className={styles.border_bottom_n}></div>
@@ -120,7 +120,7 @@ function SignUp() {
 					>
 						<div className={styles.w_box_content}>
 							<form onSubmit={handleSubmit(onSubmit)}>
-								<span>Đăng ký tài khoản</span>
+								<span>Đăng kí tài khoản</span>
 								<div className={styles.box_input}>
 									<h6>Họ và Tên</h6>
 									<div className={styles.box_input_text}>
@@ -271,7 +271,12 @@ function SignUp() {
 								>
 									hoặc
 								</span>
-								<hr style={{ width: "45%", background:"#767676" }} />
+								<hr
+									style={{
+										width: "45%",
+										background: "#767676",
+									}}
+								/>
 							</div>
 							<div
 								className={
@@ -279,11 +284,13 @@ function SignUp() {
 								}
 							>
 								<button>
-									<Image
-										style={{ marginRight: "10px" }}
-										src={FaceBook}
-										alt="eye_show"
-									/>
+									<div className="me-2 d-flex align-items-center">
+										<Image
+											style={{ marginRight: "10px" }}
+											src={FaceBook}
+											alt="eye_show"
+										/>
+									</div>
 									Đăng nhập với FaceBook
 								</button>
 							</div>
@@ -293,11 +300,13 @@ function SignUp() {
 								}
 							>
 								<button>
-									<Image
-										style={{ marginRight: "10px" }}
-										src={Google}
-										alt="eye_show"
-									/>
+									<div className="me-2 d-flex align-items-center">
+										<Image
+											style={{ marginRight: "10px" }}
+											src={Google}
+											alt="eye_show"
+										/>
+									</div>
 									Đăng nhập với Google
 								</button>
 							</div>
@@ -307,12 +316,14 @@ function SignUp() {
 								}
 							>
 								<button>
-									<Image
-										style={{ marginRight: "10px" }}
-										src={Linkin}
-										alt="eye_show"
-									/>
-									Đăng nhập với Linkin
+									<div className="me-2 d-flex align-items-center">
+										<Image
+											style={{ marginRight: "10px" }}
+											src={Linkin}
+											alt="eye_show"
+										/>
+									</div>
+									Đăng nhập với Linkedin
 								</button>
 							</div>
 						</div>

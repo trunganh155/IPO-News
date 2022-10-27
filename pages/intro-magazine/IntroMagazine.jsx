@@ -228,7 +228,7 @@ function IntroMagazine() {
 							</div>
 						</div>
 						<div className="col-10 col-sm-5 p-0">
-							<button>Đăng ký ngay</button>
+							<button>Đăng kí ngay</button>
 						</div>
 					</div>
 				</div>
