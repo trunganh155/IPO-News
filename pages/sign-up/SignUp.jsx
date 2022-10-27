@@ -294,7 +294,7 @@ function SignUp() {
 											alt="eye_show"
 										/>
 									</div>
-									Đăng nhập với FaceBook
+									Đăng nhập với Facebook
 								</button>
 							</div>
 							<div
