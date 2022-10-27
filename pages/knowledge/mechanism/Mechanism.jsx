@@ -5,6 +5,7 @@ import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../../store/redux/NewsReducer/news.action";
 import { removeAccents } from "../../../utils/Function";
+import { limitWord } from "../../../utils/Function";
 import styles from "./Mechanism.module.scss";
 
 import Slider from "react-slick";
@@ -12,7 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 export default function Mechanism(props) {
-  const limit = 300;
+  const limit = 30;
   const router = useRouter();
   const dispatch = useDispatch();
   const { news } = useSelector((state) => state.NewsReducer);
@@ -62,8 +63,12 @@ export default function Mechanism(props) {
     return (
       <div style={{ marginBottom: "80px" }}>
         {currentItems?.map((item, index) => (
-          <div className="d-flex flex-row mb-3" key={index}>
-            <div className="col-5 col-sm-4">
+          <div className="d-flex flex-wrap mb-3" key={index}>
+            <div className="col-12 d-block d-sm-none">
+              <p className={styles.mechanism_title}>{item.title}</p>
+            </div>
+
+            <div className="col-6 col-sm-4">
               <Image
                 loader={({ src }) =>
                   `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
@@ -75,9 +80,9 @@ export default function Mechanism(props) {
               />
             </div>
 
-            <div className="col-7 col-sm-8 ps-3 ps-sm-4 pe-0 pe-sm-4">
+            <div className="col-6 col-sm-8 ps-3 ps-sm-4 pe-0 pe-sm-4">
               <a
-                className={styles.mechanism_title}
+                className={styles.mechanism_title + " " + "d-none d-sm-block"}
                 onClick={() =>
                   router.push(`/${removeAccents(item?._id || "")}`)
                 }
@@ -88,7 +93,7 @@ export default function Mechanism(props) {
               <p className={styles.mechanism_content}>
                 <section
                   dangerouslySetInnerHTML={{
-                    __html: item?.content.slice(0, limit),
+                    __html: limitWord(item?.content, limit),
                   }}
                 />
               </p>
@@ -126,7 +131,11 @@ export default function Mechanism(props) {
         </div>
 
         <div
-          className={styles.text + " " + "col-12 d-flex flex-wrap px-4 py-3"}
+          className={
+            styles.text +
+            " " +
+            "col-12 d-flex flex-wrap px-1 px-sm-4 py-1 py-sm-3"
+          }
         >
           <div className="col-12 col-sm-7">
             <p
@@ -159,7 +168,7 @@ export default function Mechanism(props) {
           <p className={styles.mechanism_content}>
             <section
               dangerouslySetInnerHTML={{
-                __html: news[0]?.mieu_ta_ngan.slice(0, limit),
+                __html: news[0]?.mieu_ta_ngan.slice(0, limWord),
               }}
             />
           </p>
@@ -208,7 +217,7 @@ export default function Mechanism(props) {
                 <p className={styles.mechanism_content}>
                   <section
                     dangerouslySetInnerHTML={{
-                      __html: item?.content.slice(0, limit),
+                      __html: item?.content.slice(0, limWord),
                     }}
                   />
                 </p>
