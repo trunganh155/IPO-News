@@ -128,7 +128,7 @@ function Footer(props) {
 									placeholder="Your Email (required )"
 								/>
 							</div>
-							<button>sign in</button>
+							<button>sign up</button>
 						</div>
 					</div>
 				</div>

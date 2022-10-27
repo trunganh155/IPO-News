@@ -69,17 +69,21 @@ function Header(props) {
 						>
 							<Link href="/sign-in">
 								<button
-									className={
-										(styles.btn_signin_up,
-										styles.active_button)
-									}
+									className={[
+										styles.btn_signin_up,
+										styles.active_button,
+									].join(" ")}
 								>
-									<span>Đăng nhập</span>
+									<span style={{ fontSize: "18px" }}>
+										Đăng nhập
+									</span>
 								</button>
 							</Link>
 							<Link href="/sign-up">
 								<button className={styles.btn_signin_up}>
-									<span>Đăng kí tài khoản</span>
+									<span style={{ fontSize: "18px" }}>
+										Đăng kí tài khoản
+									</span>
 								</button>
 							</Link>
 						</div>
@@ -90,7 +94,11 @@ function Header(props) {
 								"justify-content-end col-2 col-md-2 col-xl-6 d-flex justify-content-md-center align-items-center"
 							}
 						>
-							<div className={styles.vie_eng + styles.active}>
+							<div
+								className={[styles.vie_eng, styles.active].join(
+									" "
+								)}
+							>
 								<span>Viet</span>
 							</div>
 							<span className="d-flex fs-5">/</span>

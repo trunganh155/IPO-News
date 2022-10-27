@@ -45,6 +45,15 @@ function HomePage(props) {
 
 	var x = window.matchMedia("(max-width: 980px)");
 	const [slideIndex, setSlideIndex] = useState(0);
+	const settingsNew = {
+		dots: false,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		arrows: false,
+		autoplay: false,
+	};
 	const settings = {
 		dots: false,
 		infinite: true,
@@ -71,11 +80,7 @@ function HomePage(props) {
 	return (
 		<MainLayout>
 			<div className={styles.homepage}>
-				<div
-					className={styles.banner}
-					data-aos="fade-down"
-					data-aos-duration="2000"
-				>
+				<div className={styles.banner}>
 					<Image
 						src={BannerTop}
 						alt="banner"
@@ -85,13 +90,12 @@ function HomePage(props) {
 				</div>
 				<div className={styles.knowledge}>
 					<div className="d-flex justify-content-between align-items-baseline">
-						<div
-							className="heading"
-							data-aos-duration="2000"
-							data-aos="fade-left"
-						>
+						<div className="heading">
 							<p className="text m-0">KIẾN THỨC IPO</p>
-							<p className="col decor"></p>
+							<p
+								className="col decor"
+								style={{ marginTop: "7px" }}
+							></p>
 						</div>
 					</div>
 					<div className="row">
@@ -100,8 +104,6 @@ function HomePage(props) {
 							style={{
 								borderRight: "0.5px solid #000000",
 							}}
-							data-aos="fade-right"
-							data-aos-duration="2000"
 						>
 							<Image
 								height={321}
@@ -112,25 +114,32 @@ function HomePage(props) {
 								src={news[0]?.picture}
 								alt={news[0]?.title}
 							/>
-							<span
-								onClick={() =>
-									router.push(
-										`/${removeAccents(news[0]?._id || "")}`
-									)
-								}
+							<div
+								style={{
+									marginTop: "12px",
+								}}
 							>
-								{news[0]?.title}
-							</span>
-							<h5>{news[0]?.mieu_ta_ngan}</h5>
+								<span
+									onClick={() =>
+										router.push(
+											`/${removeAccents(
+												news[0]?._id || ""
+											)}`
+										)
+									}
+								>
+									{news[0]?.title}
+								</span>
+								<h5>{news[0]?.mieu_ta_ngan}</h5>
+							</div>
 						</div>
 
-						<div className="col-12 col-lg-5 p-md-4 p-1">
+						<div
+							className="col-12 col-lg-5 p-md-4 p-1"
+							style={{ paddingLeft: "30px !important" }}
+						>
 							{news.slice(1, 5).map((item, index) => (
-								<div
-									key={index}
-									data-aos="fade-up"
-									data-aos-duration="2000"
-								>
+								<div key={index}>
 									<h4
 										className="mb-2"
 										onClick={() =>
@@ -150,23 +159,13 @@ function HomePage(props) {
 						</div>
 					</div>
 					<hr />
-					<div
-						className="d-flex justify-content-between"
-						style={{ overflowY: "auto" }}
-					>
-						{news.slice(1, 6).map((item, index) => (
-							<div
-								key={index}
-								style={{
-									whiteSpace: "nowrap",
-									marginRight: "5px",
-									marginBottom: "5px",
-								}}
-								data-aos="fade-left"
-								data-aos-duration="2000"
-							>
+					<Slider {...settingsNew}>
+						{news.slice(1, 8).map((item, index) => (
+							<div key={index}>
 								<div
-									style={{ width: "352px", height: "265px" }}
+									style={{
+										marginRight: "5px",
+									}}
 								>
 									<Image
 										loader={({ src }) =>
@@ -183,26 +182,24 @@ function HomePage(props) {
 								</span>
 							</div>
 						))}
-					</div>
+					</Slider>
 				</div>
 				<div className={styles.news_ipo}>
 					<div className="d-flex justify-content-between align-items-baseline">
-						<div
-							className="heading"
-							data-aos-duration="2000"
-							data-aos="fade-left"
-						>
+						<div className="heading">
 							<p className="text m-0">TIN TỨC IPO</p>
-							<p className="col decor"></p>
+							<p
+								className="col decor"
+								style={{ marginTop: "7px" }}
+							></p>
 						</div>
 					</div>
-					<div className="row">
-						<div
-							className={"col-md-9 col-lg-10 col-12"}
-							data-aos="zoom-in-up"
-							data-aos-duration="3000"
-						>
-							<div className={styles.box_image_news}>
+					<div className="row" style={{ marginTop: "20px" }}>
+						<div className={"col-md-9 col-lg-10 col-12"}>
+							<div
+								className={styles.box_image_news}
+								style={{ marginRight: "22px" }}
+							>
 								<div className={styles.box_image}>
 									<Image
 										width={1008}
@@ -234,14 +231,20 @@ function HomePage(props) {
 							</div>
 						</div>
 						<div
-							data-aos="fade-left"
 							className={
 								styles.box_image +
 								" " +
-								"col-3 col-lg-2 d-md-block d-none"
+								"col-3 col-lg-2 d-md-flex d-none align-items-center p-0"
 							}
-							style={{ borderLeft: "1px solid #000" }}
 						>
+							<div
+								style={{
+									background: "black",
+									height: "103%",
+									width: "1px",
+									marginRight: "12px",
+								}}
+							></div>
 							<Image
 								width={244}
 								height={713}
@@ -250,18 +253,20 @@ function HomePage(props) {
 							/>
 						</div>
 					</div>
-					<hr className="my-4" />
+					<hr style={{ margin: "30px 0 15px 0" }} />
 					<div className="row d-flex justify-content-center">
 						<div className="col-12 col-sm-9 col-lg-10">
 							{news.length > 0 &&
-								news.slice(0, 7).map((item, index) => (
-									<div
-										key={index}
-										className="row"
-										data-aos="fade-up"
-									>
-										<div className="col-12 col-md-7 col-lg-9">
-											<div className="text-align-center p-md-3 p-0">
+								news.slice(0, 6).map((item, index) => (
+									<div key={index} className="row">
+										<div className="col-12 col-md-7 col-lg-8">
+											<div
+												className="text-align-center"
+												style={{
+													padding:
+														"40px 10px 10px 40px",
+												}}
+											>
 												<h4
 													style={{ fontSize: "20px" }}
 													className="mb-2"
@@ -278,23 +283,28 @@ function HomePage(props) {
 												<h5>{item.mieu_ta_ngan}</h5>
 											</div>
 										</div>
-										<div className="col-12 col-md-5 col-lg-3 d-flex flex-column align-items-center mb-3 mb-lg-0 flex-lg-none">
-											<Image
-												width={418}
-												height={229}
-												loader={({ src }) =>
-													`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-												}
-												src={item.picture}
-												alt={item.cate_name}
-											/>
+										<div className="col-12 col-md-5 col-lg-4 d-flex flex-md-row flex-column align-items-center mb-3 mb-lg-0 flex-lg-none justify-content-end">
+											<div
+												style={{ marginRight: "22px" }}
+												className="d-flex"
+											>
+												<Image
+													width={418}
+													height={229}
+													loader={({ src }) =>
+														`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+													}
+													src={item.picture}
+													alt={item.cate_name}
+												/>
+											</div>
 										</div>
-										{index < 6 && (
+										{index < 5 && (
 											<hr
-												className="my-4"
 												style={{
-													width: "98%",
-													marginLeft: "1%",
+													width: "calc(100% - 70px)",
+													margin: "18px 0",
+													marginLeft: "12px",
 												}}
 											/>
 										)}
@@ -304,24 +314,19 @@ function HomePage(props) {
 						<div className="col-3 col-lg-2 d-none d-md-block">
 							<div
 								className={styles.box_image_right}
-								style={{ height: "50%" }}
-								data-aos="zoom-in-up"
+								style={{ marginBottom: "15px" }}
 							>
 								<Image
 									width={244}
-									height={825}
+									height={768}
 									src={BannerRight}
 									alt="banner"
 								/>
 							</div>
-							<div
-								className={styles.box_image_right}
-								style={{ height: "50%" }}
-								data-aos="zoom-in-up"
-							>
+							<div className={styles.box_image_right} style={{}}>
 								<Image
 									width={244}
-									height={825}
+									height={768}
 									src={BannerRight}
 									alt="banner"
 								/>
@@ -331,30 +336,30 @@ function HomePage(props) {
 				</div>
 				<div className={styles.library}>
 					<div className="d-flex justify-content-between mb-3 align-items-baseline">
-						<div
-							className="heading"
-							data-aos-duration="2000"
-							data-aos="fade-left"
-						>
+						<div className="heading">
 							<p className="text m-0">THƯ VIỆN</p>
-							<p className="col decor"></p>
+							<p
+								className="col decor"
+								style={{ marginTop: "7px" }}
+							></p>
 						</div>
 					</div>
-					<div className="row justify-content-center justify-content-lg-space-around">
+					<div
+						className="row justify-content-center justify-content-lg-space-around"
+						style={{ padding: "0 36px" }}
+					>
 						{news.length > 0 &&
 							news.slice(0, 3).map((item, index) => (
 								<div
 									key={index}
-									className="col-12 col-md-8 col-lg-4"
-									data-aos="flip-left"
-									data-aos-duration="3000"
+									className="col-12 col-md-8 col-lg-4 d-flex flex-column align-items-center"
 								>
 									<div className="d-flex flex-column align-items-center">
 										<span>CASE STUDY AURA CAPITAL</span>
 										<div
 											style={{
 												borderBottom: "1px solid black",
-												width: "30%",
+												width: "55%",
 											}}
 										></div>
 									</div>
@@ -373,8 +378,8 @@ function HomePage(props) {
 											}
 										>
 											<Image
-												height={220}
-												width={390}
+												height={300}
+												width={530}
 												loader={({ src }) =>
 													`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
 												}
@@ -389,43 +394,40 @@ function HomePage(props) {
 								</div>
 							))}
 					</div>
-					<div
-						className="d-flex justify-content-center"
-						data-aos="fade-up"
-					>
+					<div className="d-flex justify-content-center">
 						<button onClick={() => router.push("/intro-magazine")}>
 							ĐĂNG KÍ GÓI THÀNH VIÊN
 						</button>
 					</div>
 				</div>
 				<div className={styles.experts}>
-					<div className="d-flex justify-content-between mb-3 align-items-baseline">
-						<div
-							className="heading"
-							data-aos-duration="2000"
-							data-aos="fade-left"
-						>
+					<div
+						className="d-flex justify-content-between align-items-baseline"
+						style={{ marginBottom: "16px" }}
+					>
+						<div className="heading">
 							<p className="text m-0">CHUYÊN GIA IPO</p>
-							<p className="col decor"></p>
+							<p
+								className="col decor"
+								style={{ marginTop: "7px" }}
+							></p>
 						</div>
 					</div>
 					<div className="row justify-content-center justify-content-lg-space-around">
-						<div className={styles.list_expert}>
+						<div
+							className={styles.list_expert}
+							style={{ padding: "0 20px" }}
+						>
 							{expert.slice(0, 3).map((item, index) => (
-								<div
-									key={index}
-									className={styles.item_expert}
-									data-aos="fade-up"
-									data-aos-duration="1000"
-								>
-									<div className="d-flex justify-content-center">
+								<div key={index} className={styles.item_expert}>
+									<div className="d-flex justify-content-center" style={{marginBottom:"10px"}}>
 										<Image
 											loader={({ src }) =>
 												`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
 											}
 											src={item.image}
-											height={461}
-											width={438}
+											height={561}
+											width={595}
 											alt={item.name}
 										/>
 									</div>
@@ -437,14 +439,13 @@ function HomePage(props) {
 					</div>
 				</div>
 				<div className={styles.library_ipo}>
-					<div className="d-flex justify-content-between mb-3 align-items-baseline">
-						<div
-							className="heading"
-							data-aos-duration="2000"
-							data-aos="fade-left"
-						>
+					<div className="d-flex justify-content-between mb-4 align-items-baseline">
+						<div className="heading">
 							<p className="text m-0">THƯ VIỆN IPO</p>
-							<p className="col decor"></p>
+							<p
+								className="col decor"
+								style={{ marginTop: "7px" }}
+							></p>
 						</div>
 					</div>
 					<div className="row">
@@ -454,8 +455,6 @@ function HomePage(props) {
 								" " +
 								"col-12 mb-3 mb-lg-0 col-lg-8 pe-md-2 h-100"
 							}
-							data-aos="zoom-in"
-							data-aos-duration="2000"
 						>
 							<div className="ratio ratio-16x9">
 								<iframe
@@ -466,10 +465,7 @@ function HomePage(props) {
 							</div>
 						</div>
 						<div className="col-12 col-lg-4 p-0">
-							<div
-								className={styles.box_media}
-								data-aos="fade-up"
-							>
+							<div className={styles.box_media}>
 								<div className={styles.list_library}>
 									{gallery.slice(1, 5).map((item, index) => (
 										<div key={index}>
@@ -501,7 +497,13 @@ function HomePage(props) {
 														"col-6"
 													}
 												>
-													<h6>{item.title}</h6>
+													<h6
+														style={{
+															fontSize: "18px",
+														}}
+													>
+														{item.title}
+													</h6>
 												</div>
 											</div>
 										</div>
@@ -573,11 +575,11 @@ function HomePage(props) {
 					</div>
 				</div> */}
 				<section>
-					<div className="col-12 my-5">
+					<div className="col-12 my-3">
 						<div className={styles.slide_bottom}>
 							<Slider {...settings}>
 								{news.slice(1, 8).map((item, index) => (
-									<div key={index} data-aos="zoom-in-up">
+									<div key={index}>
 										<div
 											className={
 												slideIndex === index
@@ -594,7 +596,7 @@ function HomePage(props) {
 													`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
 												}
 												src={item.picture}
-												width={552}
+												width={542}
 												height={309}
 												alt="banner"
 												className="rounded_20"
