@@ -98,7 +98,7 @@
 		margin-bottom: 20px;
 		span {
 			font-weight: 400;
-			font-size: 25px;
+			font-size: 22px;
 			font-weight: 700;
 			color: black;
 		}
@@ -125,7 +125,6 @@
 		}
 	}
 	.news_ipo {
-		margin-bottom: 20px;
 		.box_image_news {
 			position: relative;
 			height: 100%;
@@ -178,9 +177,9 @@
 			}
 		}
 		.box_image_right {
-			margin-bottom: 15px;
+			// margin-bottom: 15px;
 			span {
-				height: 100% !important;
+				// height: 100% !important;
 			}
 		}
 		h1 {
@@ -225,8 +224,8 @@
 			background-color: white;
 			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 			padding: 20px;
-			margin-top: 20px;
-			min-height: 485px;
+			margin-top: 10px;
+			min-height: 640px;
 			.box_image {
 				span {
 					width: 100% !important;
@@ -281,7 +280,7 @@
 		.list_expert {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
-			grid-gap: 16px 20px;
+			grid-gap: 16px 15px;
 			.item_expert {
 				h5,
 				h6 {
