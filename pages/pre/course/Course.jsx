@@ -32,7 +32,7 @@ export default function Course(props) {
       <div className="d-flex flex-wrap">
         {currentItems?.map((item, index) => (
           <div
-            className="col-12 col-sm-6 d-flex flex-wrap pe-0 pe-sm-5"
+            className="col-12 col-sm-6 d-flex flex-wrap ps-0 ps-sm-3 pe-0 pe-sm-5 pb-3"
             key={index}
           >
             <div className="col-6">
@@ -42,8 +42,8 @@ export default function Course(props) {
                 }
                 alt="khoa_hoc"
                 src={item.picture}
-                width={430}
-                height={250}
+                width={362}
+                height={290}
               />
             </div>
             <div className="col-6 px-3 pe-0 pe-sm-3">
@@ -86,12 +86,12 @@ export default function Course(props) {
                 }
                 alt="khoa_hoc"
                 src={news[0]?.picture}
-                width={1200}
-                height={535}
+                width={1071}
+                height={578}
               />
             </div>
 
-            <div className="col-12">
+            <div className="col-12 px-0 px-sm-3">
               <p
                 className={styles.course_title}
                 onClick={() =>
@@ -283,8 +283,8 @@ export default function Course(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={440}
-                height={250}
+                width={436}
+                height={281}
               />
               <p
                 className={styles.course_title_white}
@@ -317,8 +317,8 @@ export default function Course(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={440}
-                height={250}
+                width={436}
+                height={281}
               />
               <p
                 className={styles.course_title_white}
@@ -351,8 +351,8 @@ export default function Course(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={440}
-                height={250}
+                width={436}
+                height={281}
               />
               <p
                 className={styles.course_title_white}
