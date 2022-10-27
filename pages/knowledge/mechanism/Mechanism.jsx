@@ -229,8 +229,8 @@ export default function Mechanism(props) {
               renderOnZeroPageCount={null}
               containerClassName="pagination"
               pageLinkClassName="page-num"
-              previousLinkClassName="page-num"
-              nextLinkClassName="page-num"
+              previousLinkClassName="page-btn"
+              nextLinkClassName="page-btn"
               activeLinkClassName="active"
             />
           </div>

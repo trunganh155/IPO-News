@@ -14,7 +14,10 @@ export default function Sub(props) {
   const convertDateCreate = (str) => {
     const d = new Date(str);
 
-    return `Ngày ${d.getDate()}/${d.getMonth()}/${d.getFullYear()} - ${d.getHours()}h${d.getMinutes()}`;
+    return (
+      `Ngày ${d.getDate()}/${d.getMonth()}/${d.getFullYear()} - ${d.getHours()}h` +
+      (d.getMinutes() < 10 ? `0${d.getMinutes()}` : `${d.getMinutes()}`)
+    );
   };
 
   useEffect(() => {
@@ -37,7 +40,7 @@ export default function Sub(props) {
         </div>
 
         <div
-          className={styles.text + " " + "col-12 col-sm-8 px-2 px-sm-5 py-2"}
+          className={styles.text + " " + "col-12 col-lg-8 px-0 px-lg-5 py-2"}
         >
           <p className={styles.sub_title_lg}>{newsDetail?.title}</p>
 
@@ -115,9 +118,15 @@ export default function Sub(props) {
           .map((item, index) => {
             return (
               <div
-                className="col-12 col-sm-6 d-flex flex-row pe-4 mb-4"
+                className="col-12 col-sm-6 d-flex flex-wrap ps-0 ps-sm-3 pe-0 pe-sm-4 mb-4 "
                 key={index}
               >
+                <div className="col-12 d-block d-sm-none">
+                  <p className={styles.sub_title_md}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+
                 <div className="col-6">
                   <Image
                     alt="sub_image"
@@ -128,8 +137,8 @@ export default function Sub(props) {
                 </div>
 
                 <div className="col-6 px-3">
-                  <div className="">
-                    <p className={styles.sub_title_md}>
+                  <div>
+                    <p className={styles.sub_title_md + " " + "d-none d-sm-block"}>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     </p>
 
