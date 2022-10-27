@@ -229,7 +229,7 @@ function SignIn() {
 											alt="facebook"
 										/>
 									</div>
-									Đăng nhập với FaceBook
+									Đăng nhập với Facebook
 								</button>
 							</div>
 							<div

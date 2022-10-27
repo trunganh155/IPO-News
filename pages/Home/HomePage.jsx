@@ -167,7 +167,7 @@ function HomePage(props) {
 						</div>
 					</div>
 					<hr style={{ height: "0.5px" }} />
-					<Slider {...settingsNew}>
+					<Slider {...settingsNew} className={styles.box_slide}>
 						{news.slice(1, 8).map((item, index) => (
 							<div key={index}>
 								<div
@@ -281,11 +281,7 @@ function HomePage(props) {
 									<div key={index} className="row">
 										<div className="col-12 col-md-7 col-lg-8">
 											<div
-												className="text-align-center"
-												style={{
-													padding:
-														"40px 10px 10px 40px",
-												}}
+												className={styles.box_content_news +" "+"text-align-center"}
 											>
 												<h4
 													style={{ fontSize: "20px" }}

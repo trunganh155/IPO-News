@@ -96,6 +96,9 @@
 	}
 	.knowledge {
 		margin-bottom: 20px;
+		.box_slide{
+			margin-left: 35px;
+		}
 		span {
 			font-weight: 400;
 			font-size: 22px;
@@ -125,6 +128,12 @@
 		}
 	}
 	.news_ipo {
+		.box_content_news {
+			padding: 37px 10px 10px 75px;
+			@media all and (max-width: 768px) {
+				padding: 37px 10px 10px 10px;
+			}
+		}
 		.box_image_news {
 			position: relative;
 			height: 100%;
@@ -209,7 +218,7 @@
 		}
 	}
 	.library {
-		margin-bottom: 20px;
+		margin-bottom: -20px;
 		h1 {
 			font-family: "UTM Cafeta";
 			font-weight: 400;
@@ -310,7 +319,7 @@
 				font-size: 25px;
 			}
 		}
-		margin-bottom: 20px;
+		margin-bottom: 45px;
 	}
 	@media all and (max-width: 768px) {
 		.experts .list_expert .item_expert {
@@ -321,7 +330,7 @@
 		}
 	}
 	.library_ipo {
-		padding-bottom: 20px;
+		padding-bottom: 14px;
 		h1 {
 			font-family: "UTM Cafeta";
 			font-weight: 400;
@@ -333,7 +342,7 @@
 			}
 		}
 		.box_video {
-			padding-left: 20px !important;
+			padding-left: 45px !important;
 		}
 		@media all and (max-width: 992px) {
 			.box_video {
@@ -344,7 +353,7 @@
 			.list_library {
 				overflow-y: auto;
 				overflow-x: hidden;
-				height: 680px;
+				height: 670px;
 				.item_library {
 					margin-bottom: 20px;
 					h6 {
