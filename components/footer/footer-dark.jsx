@@ -129,7 +129,7 @@ export default function FooterDark(props) {
 									placeholder="Your Email (required )"
 								/>
 							</div>
-							<button>sign up</button>
+							<button onClick={() => router.push("/sign-up")}>sign up</button>
 						</div>
 					</div>
 				</div>

@@ -1,10 +1,6 @@
-import callApi from "../../utils/callApi";
+import callApi from "../../../utils/callApi";
 import { Buffer } from "buffer";
-import {
-	getTokenUser,
-	getDetailUser,
-	registerUser,
-} from "../reducers/user.reducers";
+import { getTokenUser, getDetailUser, registerUser } from "./account.reducer";
 
 export const getTokenUserAction = (username, password) => {
 	var credentials = Buffer.from(username + ":" + password).toString("base64");
@@ -12,7 +8,7 @@ export const getTokenUserAction = (username, password) => {
 	const add = async (dispatch) => {
 		try {
 			const res = await callApi(
-				`auth/local?group_id=60939745ac969b40784883ed&id_app=62de1bd5fcc56b09934ee278`,
+				`auth/local?group_id=60939745ac969b40784883ed&id_app=60939744ac969b4078488026`,
 				"GET",
 				"",
 				{
@@ -20,6 +16,7 @@ export const getTokenUserAction = (username, password) => {
 				}
 			);
 			if (res.data) {
+				console.log(res.data);
 				await dispatch(getTokenUser(res.data.token));
 				const detailUser = await callApi(
 					`api/profile?access_token=${res.data.token}`,
@@ -68,6 +65,8 @@ export const getDetailUserAction = (token) => {
 };
 
 export const registerUserAction = (data) => {
+	data.group_id = "60939745ac969b40784883ed";
+	data.id_app = "60939744ac969b4078488026";
 	const add = async (dispatch) => {
 		try {
 			const res = await callApi(`signup`, "POST", data);

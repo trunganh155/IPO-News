@@ -53,11 +53,11 @@ export const HeaderData = [
     id: 6,
     title: "TIN TỨC IPO",
     listTag: [
-      { tag: "Thế giới", link: "/news" },
-      { tag: "Trong nước", link: "#" },
-      { tag: "Sự kiện", link: "#" },
-      { tag: "Phỏng vấn chuyên gia", link: "#" },
-      { tag: "Chân dung nhân vật", link: "#" },
+      { tag: "Thế Giới", link: "/news" },
+      { tag: "Trong Nước", link: "#" },
+      { tag: "Sự Kiện", link: "#" },
+      { tag: "Thông Tin Thị Trường", link: "#" },
+      { tag: "Thông Tin Doanh nghiệp", link: "#" },
     ],
     link: "#",
     tag:"news"
@@ -67,8 +67,8 @@ export const HeaderData = [
     title: "THƯ VIỆN IPO",
     listTag: [
       { tag: "Case Study Doanh Nghiệp", link: "/library/case-study" },
-      { tag: "Case Study Aura Capital", link: "#" },
-      { tag: "Tài liệu IPO", link: "#" },
+      { tag: "Case Study", link: "#" },
+      { tag: "Aura Capital", link: "#" },
     ],
     link: "#",
     tag:"library"

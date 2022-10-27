@@ -11,7 +11,7 @@
 		display: flex;
 		align-items: center;
 		padding: 0 13px;
-		white-space: nowrap;
+		// white-space: nowrap;
 		position: relative;
 	}
 	span {
@@ -25,7 +25,7 @@
 		padding: 0;
 		text-transform: uppercase;
 		border-bottom: 2px solid transparent;
-		white-space: nowrap;
+		// white-space: nowrap;
 	}
 	.line_left {
 		border-left: 0.5px solid #959595;
@@ -44,7 +44,7 @@
 		top: 100%;
 		max-width: 100%;
 		box-sizing: border-box;
-		white-space: nowrap;
+		// white-space: nowrap;
 		padding-top: 25px;
 		color: white;
 		min-height: 250px;
@@ -58,9 +58,15 @@
 			font-weight: 400;
 			line-height: 25px;
 			cursor: pointer;
+			width: 85px;
+			display: flex;
+			justify-content: space-between;
 		}
 		li:hover {
 			color: black;
+			i {
+				color: #920000;
+			}
 		}
 	}
 	span:hover {
@@ -72,6 +78,13 @@
 		color: black !important;
 		border-bottom: 2px solid #920000;
 		width: fit-content;
+	}
+	.active1 {
+		color: black !important;
+		width: fit-content;
+		i {
+			color: #920000;
+		}
 	}
 	li:hover .dropdown {
 		display: block;
@@ -142,4 +155,3 @@
 		}
 	}
 }
-

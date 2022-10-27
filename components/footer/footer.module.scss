@@ -10,11 +10,15 @@
 				font-size: 12px;
 				line-height: 25px;
 				text-transform: uppercase;
+				cursor: pointer;
 			}
 			.tagList {
 				font-weight: 400;
 				font-size: 12px;
-				line-height: 41px;
+				line-height: 25px;
+				margin-top: 15px;
+				cursor: pointer;
+				width: 75px;
 			}
 		}
 		@media all and (max-width: 992px) {

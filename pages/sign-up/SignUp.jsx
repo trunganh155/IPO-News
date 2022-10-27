@@ -8,14 +8,14 @@ import FaceBook from "../../public/images/icons/facebook.svg";
 import Google from "../../public/images/icons/google.svg";
 import Linkin from "../../public/images/icons/linkin.svg";
 import { useForm } from "react-hook-form";
-import { registerUserAction } from "../../store/redux/AccountReducer/account.api";
+import { registerUserAction } from "../../store/redux/AccountReducer/account.action";
 import Swal from "sweetalert2";
 import { useDispatch, useSelector } from "react-redux";
 
 function SignUp() {
 	const dispatch = useDispatch();
-	const [isShowPassword, setIsShowPassword] = useState(true);
-	const [isShowRePassword, setIsShowRePassword] = useState(true);
+	const [isShowPassword, setIsShowPassword] = useState(false);
+	const [isShowRePassword, setIsShowRePassword] = useState(false);
 	const router = useRouter();
 	const {
 		register,
@@ -52,6 +52,7 @@ function SignUp() {
 		}
 	}
 	const onSubmit = async (data) => {
+		console.log(data)
 		try {
 			await dispatch(registerUserAction(data));
 

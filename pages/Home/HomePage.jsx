@@ -244,7 +244,7 @@ function HomePage(props) {
 									background: "black",
 									height: "103%",
 									width: "1px",
-									marginRight: "12px",
+									marginRight: "11px",
 								}}
 							></div>
 							<Image
