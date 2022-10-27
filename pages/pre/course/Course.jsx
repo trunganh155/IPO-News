@@ -31,7 +31,10 @@ export default function Course(props) {
     return (
       <div className="d-flex flex-wrap">
         {currentItems?.map((item, index) => (
-          <div className="col-12 col-sm-6 d-flex flex-wrap pe-5" key={index}>
+          <div
+            className="col-12 col-sm-6 d-flex flex-wrap pe-0 pe-sm-5"
+            key={index}
+          >
             <div className="col-6">
               <Image
                 loader={({ src }) =>
@@ -43,7 +46,7 @@ export default function Course(props) {
                 height={250}
               />
             </div>
-            <div className="col-6 px-3">
+            <div className="col-6 px-3 pe-0 pe-sm-3">
               <p
                 className={styles.course_title}
                 onClick={() =>
@@ -248,15 +251,15 @@ export default function Course(props) {
           <ReactPaginate
             breakLabel="..."
             nextLabel=""
-            previousLabel=""  
+            previousLabel=""
             onPageChange={handlePageClick}
             pageRangeDisplayed={2}
             pageCount={pageCount}
             renderOnZeroPageCount={null}
             containerClassName="pagination"
             pageLinkClassName="page-num"
-            previousLinkClassName="page-num"
-            nextLinkClassName="page-num"
+            previousLinkClassName="page-btn"
+            nextLinkClassName="page-btn"
             activeLinkClassName="active"
           />
         </div>
