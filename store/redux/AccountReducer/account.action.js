@@ -2,8 +2,8 @@ import callApi from "../../../utils/callApi";
 import { Buffer } from "buffer";
 import { getTokenUser, getDetailUser, registerUser } from "./account.reducer";
 
-export const getTokenUserAction = (username, password) => {
-	var credentials = Buffer.from(username + ":" + password).toString("base64");
+export const getTokenUserAction = (data) => {
+	var credentials = Buffer.from(data.username + ":" + data.password).toString("base64");
 	var basicAuth = "Basic " + credentials;
 	const add = async (dispatch) => {
 		try {

@@ -52,10 +52,8 @@ function SignUp() {
 		}
 	}
 	const onSubmit = async (data) => {
-		console.log(data)
 		try {
 			await dispatch(registerUserAction(data));
-
 			Swal.fire({
 				position: "center",
 				icon: "success",
@@ -63,6 +61,7 @@ function SignUp() {
 				showConfirmButton: false,
 				timer: 1500,
 			});
+			router.push("/sign-in");
 		} catch (err) {
 			console.log(err);
 

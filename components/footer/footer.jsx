@@ -112,7 +112,7 @@ function Footer(props) {
 						<div className={styles.contain}>
 							<h4>đăng kí nhận thông tin</h4>
 							<div
-								className="mb-3"
+								className="mb-2"
 								style={{
 									borderBottom: "0.5px solid #000000",
 									width: "25%",
