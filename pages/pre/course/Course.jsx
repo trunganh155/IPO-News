@@ -4,10 +4,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../../store/redux/NewsReducer/news.action";
 import { removeAccents } from "../../../utils/Function";
+import { limitWord } from "../../../utils/Function";
 import styles from "./Course.module.scss";
 import ReactPaginate from "react-paginate";
 
 export default function Course(props) {
+  const limit = 30;
   const itemsPerPage = 6;
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
@@ -35,6 +37,10 @@ export default function Course(props) {
             className="col-12 col-sm-6 d-flex flex-wrap ps-0 ps-sm-3 pe-0 pe-sm-5 pb-3"
             key={index}
           >
+            <div className="col-12 d-block d-sm-none">
+              <p className={styles.course_title}>{item.title}</p>
+            </div>
+
             <div className="col-6">
               <Image
                 loader={({ src }) =>
@@ -48,14 +54,16 @@ export default function Course(props) {
             </div>
             <div className="col-6 px-3 pe-0 pe-sm-3">
               <p
-                className={styles.course_title}
+                className={styles.course_title + " " + "d-none d-sm-block"}
                 onClick={() =>
                   router.push(`/${removeAccents(item?._id || "")}`)
                 }
               >
                 {item.title}
               </p>
-              <p className={styles.course_content}>{item.mieu_ta_ngan}</p>
+              <p className={styles.course_content}>
+                {limitWord(item.mieu_ta_ngan, limit)}
+              </p>
             </div>
           </div>
         ))}
@@ -265,7 +273,7 @@ export default function Course(props) {
         </div>
       </section>
 
-      <section className="d-flex flex-row mb-4">
+      <section className="d-flex flex-row mb-4 px-0 px-sm-3">
         <div
           className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
@@ -299,7 +307,7 @@ export default function Course(props) {
         </div>
       </section>
 
-      <section className="d-flex flex-row mb-4">
+      <section className="d-flex flex-row mb-4 px-0 px-sm-3">
         <div
           className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
@@ -333,7 +341,7 @@ export default function Course(props) {
         </div>
       </section>
 
-      <section className="d-flex flex-row mb-4">
+      <section className="d-flex flex-row mb-4 px-0 px-sm-3">
         <div
           className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
