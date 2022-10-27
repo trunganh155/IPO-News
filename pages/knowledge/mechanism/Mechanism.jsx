@@ -189,7 +189,7 @@ export default function Mechanism(props) {
       <hr />
 
       <section className="d-flex flex-row mb-4">
-        <div className={styles.bdRight + " " + "col-12 col-sm-9 col-lg-10"}>
+        <div className="col-12 col-sm-9 col-lg-10">
           {/* {news.slice(1, 7).map((item, index) => (
             <div className="d-flex flex-row mb-3" key={index}>
               <div className="col-5 col-sm-4">
@@ -246,24 +246,28 @@ export default function Mechanism(props) {
         </div>
 
         <div
-          className="col col-sm-3 col-lg-2 ps-3  d-flex flex-column justify-content-between"
+          className="col col-sm-3 col-lg-2 d-flex flex-column justify-content-between"
           style={{ gap: "20px" }}
         >
-          <div className="height_50">
-            <Image
-              alt="co_che_von"
-              src="/images/mechanism/banner.png"
-              layout="fill"
-              objectFit="cover"
-            />
+          <div className={styles.bdLeft + " " + "ps-4 h-100"}>
+            <div className="height_100">
+              <Image
+                alt="co_che_von"
+                src="/images/mechanism/banner.png"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
           </div>
-          <div className="height_50">
-            <Image
-              alt="co_che_von"
-              src="/images/mechanism/banner.png"
-              layout="fill"
-              objectFit="cover"
-            />
+          <div className="ps-4 h-100">
+            <div className="height_100">
+              <Image
+                alt="co_che_von"
+                src="/images/mechanism/banner.png"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
           </div>
         </div>
       </section>
