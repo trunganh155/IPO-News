@@ -13,6 +13,7 @@ function MainLayout({ children }) {
   const renderHeader = () => {
     if (
       router.pathname.includes("/[sub]") ||
+      router.pathname.includes("/sub-partner") ||
       router.pathname.includes("/forum")
     ) {
       return <HeaderOnlyW />;
