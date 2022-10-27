@@ -41,9 +41,9 @@
   }
 
   &_title {
-    font-size: 20px;
-    font-weight: 700;
-    text-align: justify;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    text-align: justify !important;
 
     &:hover {
       cursor: pointer;
@@ -52,10 +52,10 @@
   }
 
   &_content {
-    font-size: 15px;
-    font-weight: 400;
-    text-align: justify;
-    color: #939393;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    text-align: justify !important;
+    color: #939393 !important;
   }
 
   &_title_white {
@@ -103,16 +103,28 @@
   .mechanism {
     padding: 50px 0 25px 0;
 
+    &_header {
+      position: relative;
+
+      .text {
+        position: relative;
+      }
+    }
+
     .bdRight {
       border-right: none;
     }
 
     &_title_lg {
-      font-size: 20px;
+      color: #000;
+      font-size: 25px;
+      line-height: 30px;
     }
 
     &_content_lg {
-      font-size: 14px;
+      color: #929292;
+      font-size: 16px;
+      font-weight: 400;
     }
 
     &_title {
@@ -120,7 +132,8 @@
     }
 
     &_content {
-      font-size: 13px;
+      font-size: 13px !important;
+      line-height: 15px !important;
     }
 
     &_title_white {

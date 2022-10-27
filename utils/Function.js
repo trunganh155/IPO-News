@@ -7,6 +7,7 @@ export function convertParamsToTitle(string) {
   });
   return result.join(" ");
 }
+
 export const convertDate = (date) => {
   const weekday = [
     "Sunday",
@@ -66,6 +67,7 @@ export const convertDate = (date) => {
     getFullYearInDate,
   };
 };
+
 export const getDateArray = function (start, end) {
   var arr = new Array();
   var dt = new Date(start);
@@ -76,6 +78,7 @@ export const getDateArray = function (start, end) {
   arr.push(new Date(end));
   return arr;
 };
+
 export const removeAccents = (str) => {
   str = str.toLowerCase();
   str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
@@ -114,4 +117,9 @@ export const removeAccents = (str) => {
   str = str.replaceAll("-–-", "-");
   str = str.replaceAll("---", "-");
   return str.charAt(0).toLowerCase() + str.slice(1);
+};
+
+
+export const limitWord = (str, lim) => {
+  return str.split(" ").slice(0, lim).join(" ") + " ...";
 };

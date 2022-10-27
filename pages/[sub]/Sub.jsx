@@ -3,9 +3,11 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../store/redux/NewsReducer/news.action";
+import { limitWord } from "../../utils/Function";
 import styles from "./Sub.module.scss";
 
 export default function Sub(props) {
+  const limit = 40;
   const router = useRouter();
   const dispatch = useDispatch();
   const { news } = useSelector((state) => state.NewsReducer);
@@ -74,24 +76,23 @@ export default function Sub(props) {
           </div>
 
           <div className="col-12 d-flex flex-row justify-content-between">
-            {Array(3)
-              .fill()
-              .map((item, index) => {
-                return (
-                  <div className="col-4 px-2" key={index}>
-                    <Image
-                      alt="sub_image"
-                      src="/images/black.png"
-                      width={374}
-                      height={219}
-                    />
+            {news.slice(2, 5).map((item, index) => {
+              return (
+                <div className="col-4 px-2" key={index}>
+                  <Image
+                    loader={({ src }) =>
+                      `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                    }
+                    alt="sub_image"
+                    src={item.picture}
+                    width={374}
+                    height={219}
+                  />
 
-                    <p className={styles.sub_title_sm}>
-                      Lorem ipsum dolor sit amet.
-                    </p>
-                  </div>
-                );
-              })}
+                  <p className={styles.sub_title_sm}>{item.title}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -113,44 +114,44 @@ export default function Sub(props) {
       </div>
 
       <section className="d-flex flex-wrap">
-        {Array(4)
-          .fill()
-          .map((item, index) => {
-            return (
-              <div
-                className="col-12 col-sm-6 d-flex flex-wrap ps-0 ps-sm-3 pe-0 pe-sm-4 mb-4 "
-                key={index}
-              >
-                <div className="col-12 d-block d-sm-none">
-                  <p className={styles.sub_title_md}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        {news.slice(1, 5).map((item, index) => {
+          return (
+            <div
+              className="col-12 col-sm-6 d-flex flex-wrap ps-0 ps-sm-3 pe-0 pe-sm-4 mb-4 "
+              key={index}
+            >
+              <div className="col-12 d-block d-sm-none">
+                <p className={styles.sub_title_md}>{item.title}</p>
+              </div>
+
+              <div className="col-6">
+                <Image
+                  loader={({ src }) =>
+                    `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                  }
+                  alt="sub_image"
+                  src={item.picture}
+                  width={422}
+                  height={230}
+                />
+              </div>
+
+              <div className="col-6 px-3">
+                <div>
+                  <p
+                    className={styles.sub_title_md + " " + "d-none d-sm-block"}
+                  >
+                    {item.title}
+                  </p>
+
+                  <p className={styles.sub_content_md}>
+                    {limitWord(item.mieu_ta_ngan, limit)}
                   </p>
                 </div>
-
-                <div className="col-6">
-                  <Image
-                    alt="sub_image"
-                    src="/images/black.png"
-                    width={422}
-                    height={230}
-                  />
-                </div>
-
-                <div className="col-6 px-3">
-                  <div>
-                    <p className={styles.sub_title_md + " " + "d-none d-sm-block"}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </p>
-
-                    <p className={styles.sub_content_md}>
-                      Senectus et netus et malesuada. Nunc pulvinar sapien et
-                      ligula ullamcorper malesuada proin
-                    </p>
-                  </div>
-                </div>
               </div>
-            );
-          })}
+            </div>
+          );
+        })}
       </section>
     </div>
   );
