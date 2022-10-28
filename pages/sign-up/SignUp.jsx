@@ -2,8 +2,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "./SignUp.module.scss";
-import EyeShow from "../../public/images/icons/eyeShow.svg";
-import EyeHidden from "../../public/images/icons/eyeHidden.svg";
+import EyeShow from "../../public/images/icons/eyeShow.png";
+import EyeHidden from "../../public/images/icons/eyeHidden.png";
 import FaceBook from "../../public/images/icons/facebook.svg";
 import Google from "../../public/images/icons/google.svg";
 import Linkin from "../../public/images/icons/linkin.svg";
@@ -183,19 +183,22 @@ function SignUp() {
 												required: true,
 											})}
 										/>
-										<Image
-											onClick={() => {
-												showPassword();
-											}}
-											src={
-												isShowPassword
-													? EyeShow
-													: EyeHidden
-											}
-											alt="eye_show"
-											width={24}
-											height={24}
-										/>
+										<div className="d-flex align-self-center">
+											<Image
+												style={{ cursor: "pointer" }}
+												onClick={() => {
+													showPassword();
+												}}
+												src={
+													isShowPassword
+														? EyeShow
+														: EyeHidden
+												}
+												alt="eye_show"
+												width={26}
+												height={16}
+											/>
+										</div>
 									</div>
 								</div>
 								<div className={styles.box_input}>
@@ -223,19 +226,22 @@ function SignUp() {
 												},
 											})}
 										/>
-										<Image
-											onClick={() => {
-												showRePassword();
-											}}
-											src={
-												isShowRePassword
-													? EyeShow
-													: EyeHidden
-											}
-											alt="eye_show"
-											width={24}
-											height={24}
-										/>
+										<div className="d-flex align-self-center">
+											<Image
+												style={{ cursor: "pointer" }}
+												onClick={() => {
+													showRePassword();
+												}}
+												src={
+													isShowRePassword
+														? EyeShow
+														: EyeHidden
+												}
+												alt="eye_show"
+												width={26}
+												height={16}
+											/>
+										</div>
 									</div>
 									{errors.rePassword && (
 										<span
