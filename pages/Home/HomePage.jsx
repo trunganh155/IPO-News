@@ -624,8 +624,8 @@ function HomePage(props) {
 													`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
 												}
 												src={item.picture}
-												width={542}
-												height={309}
+												width={642}
+												height={409}
 												alt="banner"
 												className="rounded_20"
 											/>

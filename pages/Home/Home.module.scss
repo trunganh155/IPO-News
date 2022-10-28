@@ -522,6 +522,9 @@
 
 		.content_active {
 			transition: all 0.09s ease-in-out;
+			.homepage_title_slider{
+				margin: 12px 0 10px;
+			}
 		}
 	}
 	/* width */
