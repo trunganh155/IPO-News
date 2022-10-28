@@ -185,12 +185,12 @@
 				height: 100% !important;
 			}
 		}
-		.box_image_right {
-			// margin-bottom: 15px;
-			span {
-				// height: 100% !important;
-			}
-		}
+		// .box_image_right {
+		// 	margin-bottom: 15px;
+		// 	span {
+		// 		height: 100% !important;
+		// 	}
+		// }
 		h1 {
 			font-family: "UTM Cafeta";
 			font-weight: 400;
@@ -522,6 +522,9 @@
 
 		.content_active {
 			transition: all 0.09s ease-in-out;
+			.homepage_title_slider{
+				margin: 12px 0 10px;
+			}
 		}
 	}
 	/* width */
