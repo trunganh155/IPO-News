@@ -281,7 +281,11 @@ function HomePage(props) {
 									<div key={index} className="row">
 										<div className="col-12 col-md-7 col-lg-8">
 											<div
-												className={styles.box_content_news +" "+"text-align-center"}
+												className={
+													styles.box_content_news +
+													" " +
+													"text-align-center"
+												}
 											>
 												<h4
 													style={{ fontSize: "20px" }}
@@ -476,15 +480,15 @@ function HomePage(props) {
 							></p>
 						</div>
 					</div>
-					<div className="row">
+					<div className={styles.box_content + " " + "row"}>
 						<div
 							className={
 								styles.box_video +
 								" " +
-								"col-12 mb-3 mb-lg-0 col-lg-8 pe-md-2 h-100"
+								"col-12 mb-3 mb-lg-0 col-lg-8 pe-md-2"
 							}
 						>
-							<div className="ratio ratio-16x9">
+							<div className="h-100">
 								<iframe
 									width="100%"
 									height="100%"
@@ -492,10 +496,17 @@ function HomePage(props) {
 								></iframe>
 							</div>
 						</div>
-						<div className="col-12 col-lg-4 p-0">
+						<div
+							className={
+								styles.box_content_media +
+								" " +
+								"col-12 col-lg-4 p-0"
+							}
+							style={{ overflowY: "auto", overflowX: "hidden" }}
+						>
 							<div className={styles.box_media}>
 								<div className={styles.list_library}>
-									{gallery.slice(1, 5).map((item, index) => (
+									{news.slice(1, 8).map((item, index) => (
 										<div key={index}>
 											<div
 												className={
@@ -511,12 +522,15 @@ function HomePage(props) {
 														"p-0 col-6"
 													}
 												>
-													<div class="ratio ratio-16x9">
-														<iframe
-															className="w-100 h-100 w-lg-100 h-lg-80"
-															src={item.url}
-														></iframe>
-													</div>
+													<Image
+														loader={({ src }) =>
+															`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+														}
+														src={item.picture}
+														height={200}
+														width={321}
+														alt={item.name}
+													/>
 												</div>
 												<div
 													className={
