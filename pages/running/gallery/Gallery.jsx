@@ -74,6 +74,7 @@ export default function Gallery(props) {
       {
         breakpoint: 576,
         settings: {
+          centerMode: false,
           slidesToShow: 1,
           slidesToScroll: 1,
         },
@@ -239,7 +240,9 @@ export default function Gallery(props) {
                   </div>
 
                   <div
-                    className={styles.content_active}
+                    className={
+                      styles.content_active + " " + "px-4 px-sm-5 px-lg-0"
+                    }
                     style={{
                       visibility: slideIndex === index ? "visible" : "hidden",
                     }}
