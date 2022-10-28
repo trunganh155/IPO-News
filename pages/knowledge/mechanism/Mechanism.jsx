@@ -13,12 +13,12 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 export default function Mechanism(props) {
-  const limit = 60;
+  const limit = 40;
+  const itemsPerPage = 1;
   const router = useRouter();
   const dispatch = useDispatch();
   const { news } = useSelector((state) => state.NewsReducer);
 
-  const itemsPerPage = 6;
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
@@ -241,6 +241,7 @@ export default function Mechanism(props) {
               previousLinkClassName="page-btn"
               nextLinkClassName="page-btn"
               activeLinkClassName="active"
+              forcePage={0}
             />
           </div>
         </div>
