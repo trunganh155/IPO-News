@@ -52,7 +52,7 @@ function HomePage(props) {
 		slidesToShow: 5,
 		slidesToScroll: 1,
 		arrows: false,
-		autoplay: false,
+		autoplay: true,
 	};
 	const settings = {
 		dots: false,
@@ -61,7 +61,7 @@ function HomePage(props) {
 		slidesToShow: x.matches ? 2 : 3,
 		slidesToScroll: 1,
 		arrows: true,
-		autoplay: false,
+		autoplay: true,
 		centerMode: true,
 		centerPadding: "0px",
 		prevArrow: (
