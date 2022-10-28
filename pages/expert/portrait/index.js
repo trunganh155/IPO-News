@@ -1,11 +1,11 @@
 import React from "react";
-import MainLayout from "../../components/layout/mainLayout";
-import Expert from "./Expert";
+import MainLayout from "../../../components/layout/mainLayout";
+import Portrait from "./Portrait";
 
 function Index(props) {
   return (
     <MainLayout>
-      <Expert />
+      <Portrait />
     </MainLayout>
   );
 }

@@ -2,11 +2,11 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getExpert } from "../../store/redux/ExpertReducer/expert.action";
-import { getNews } from "../../store/redux/NewsReducer/news.action";
-import styles from "./Expert.module.scss";
+import { getExpert } from "../../../store/redux/ExpertReducer/expert.action";
+import { getNews } from "../../../store/redux/NewsReducer/news.action";
+import styles from "./Portrait.module.scss";
 
-export default function Expert(props) {
+export default function Portrait(props) {
   const router = useRouter();
   const dispatch = useDispatch();
   const { expert } = useSelector((state) => state.ExpertReducer);
