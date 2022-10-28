@@ -1,5 +1,5 @@
 .course {
-  padding: 50px 0 50px 0;
+  padding: 80px 0 50px 0;
 
   .bdRight {
     border-right: 1px solid #000;
@@ -81,13 +81,13 @@
 
 @media all and (min-width: 576px) and (max-width: 768px) {
   .course {
-    padding: 50px 0 25px 0;
+    padding: 70px 0 25px 0;
   }
 }
 
 @media all and (max-width: 576px) {
   .course {
-    padding: 50px 0 25px 0;
+    padding: 80px 0 25px 0;
 
     .bdRight {
       border-right: none;

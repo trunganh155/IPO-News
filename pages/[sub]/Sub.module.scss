@@ -1,6 +1,6 @@
 .sub {
-  padding: 70px 0 50px 0;
-  margin-top: -90px;
+  padding: 0 0 50px 0;
+  margin-top: -130px;
 
   &_header {
     position: relative;
@@ -70,7 +70,8 @@
 
 @media all and (max-width: 992px) {
   .sub {
-    padding: 50px 0 25px 0;
+    padding: 0 0 25px 0;
+    margin-top: -140px;
 
     &_header {
       position: relative;
@@ -96,7 +97,8 @@
 
 @media all and (max-width: 576px) {
   .sub {
-    padding: 50px 0 10px 0;
+    padding: 0 0 10px 0;
+    margin-top: -140px;
 
     &_header {
       position: relative;
