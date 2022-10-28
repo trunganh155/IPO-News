@@ -52,7 +52,6 @@ function IntroMagazine() {
 										</div>
 										<hr
 											style={{
-												background: "while",
 												margin: "35px 10px",
 											}}
 										/>
@@ -74,13 +73,12 @@ function IntroMagazine() {
 												></input>
 											</div>
 											<div className="col">
-												<span>Standar</span>
+												<span>Standard</span>
 												<h5>200.000/Năm</h5>
 											</div>
 										</div>
 										<hr
 											style={{
-												background: "while",
 												margin: "35px 10px",
 											}}
 										/>
@@ -108,7 +106,6 @@ function IntroMagazine() {
 										</div>
 										<hr
 											style={{
-												background: "while",
 												margin: "35px 10px",
 											}}
 										/>
@@ -230,7 +227,9 @@ function IntroMagazine() {
 							</div>
 						</div>
 						<div className="col-10 col-sm-5 p-0">
-							<button onClick={() => router.push("/sign-up")}>Đăng kí ngay</button>
+							<button onClick={() => router.push("/sign-up")}>
+								Đăng kí ngay
+							</button>
 						</div>
 					</div>
 				</div>
