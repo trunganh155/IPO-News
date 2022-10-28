@@ -43,8 +43,8 @@ export const HeaderData = [
     id: 5,
     title: "CHUYÊN GIA IPO",
     listTag: [
-      { tag: "Phỏng vấn chuyên gia", link: "/expert" },
-      { tag: "Chân dung nhân vật", link: "#" },
+      { tag: "Phỏng vấn chuyên gia", link: "#" },
+      { tag: "Chân dung nhân vật", link: "/expert" },
     ],
     link: "#",
     tag:"expert"
