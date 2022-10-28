@@ -54,8 +54,13 @@
 				}
 			}
 		}
+		.padding_w {
+			padding: 10px 0px 10px 38px !important;
+		}
+		.padding_b {
+			padding: 10px 16px 10px 38px !important;
+		}
 		.header_mid {
-			padding: 10px 38px !important;
 			.text_logo {
 				width: calc(100%);
 				align-items: center;
@@ -80,6 +85,14 @@
 					height: 52px;
 					font-size: 18px;
 				}
+			}
+			button {
+				background: #ffffff;
+				box-shadow: inset 0px -2px 6px rgb(0 0 0 / 25%);
+				border-radius: 50%;
+				border: none;
+				width: 52px;
+				height: 52px;
 			}
 		}
 	}
