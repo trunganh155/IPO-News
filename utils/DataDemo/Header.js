@@ -4,7 +4,7 @@ export const HeaderData = [
     title: "TRANG CHỦ",
     // listTag: [""],
     link: "/",
-    tag:"/"
+    tag: "/",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const HeaderData = [
       { tag: "Thuật Ngữ", link: "/knowledge/dictionary" },
     ],
     link: "#",
-    tag:"knowledge"
+    tag: "knowledge",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const HeaderData = [
       { tag: "Hồ sơ thương hiệu", link: "#" },
     ],
     link: "#",
-    tag:"pre"
+    tag: "pre",
   },
   {
     id: 4,
@@ -37,30 +37,30 @@ export const HeaderData = [
       { tag: "Theo dòng sự kiện", link: "#" },
     ],
     link: "#",
-    tag:"running"
+    tag: "running",
   },
   {
     id: 5,
     title: "CHUYÊN GIA IPO",
     listTag: [
       { tag: "Phỏng vấn chuyên gia", link: "#" },
-      { tag: "Chân dung nhân vật", link: "/expert" },
+      { tag: "Chân dung nhân vật", link: "/expert/portrait" },
     ],
     link: "#",
-    tag:"expert"
+    tag: "expert",
   },
   {
     id: 6,
     title: "TIN TỨC IPO",
     listTag: [
-      { tag: "Thế Giới", link: "/news" },
+      { tag: "Thế Giới", link: "#" },
       { tag: "Trong Nước", link: "#" },
       { tag: "Sự Kiện", link: "#" },
       { tag: "Thông Tin Thị Trường", link: "#" },
       { tag: "Thông Tin Doanh nghiệp", link: "#" },
     ],
     link: "#",
-    tag:"news"
+    tag: "news",
   },
   {
     id: 7,
@@ -71,13 +71,13 @@ export const HeaderData = [
       { tag: "Aura Capital", link: "#" },
     ],
     link: "#",
-    tag:"library"
+    tag: "library",
   },
   {
     id: 8,
     title: "LIÊN HỆ",
     // listTag: [""],
     link: "/contact",
-    tag:"contact"
+    tag: "contact",
   },
 ];
