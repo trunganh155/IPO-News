@@ -123,6 +123,7 @@ function HomePage(props) {
 								}}
 							>
 								<span
+									style={{ cursor: "pointer" }}
 									onClick={() =>
 										router.push(
 											`/${removeAccents(
@@ -144,6 +145,7 @@ function HomePage(props) {
 							{news.slice(1, 5).map((item, index) => (
 								<div key={index}>
 									<h4
+										style={{ cursor: "pointer" }}
 										className="mb-2"
 										onClick={() =>
 											router.push(
@@ -185,7 +187,17 @@ function HomePage(props) {
 										width={357}
 									/>
 								</div>
-								<span style={{ fontSize: "16px" }}>
+								<span
+									style={{
+										fontSize: "16px",
+										cursor: "pointer",
+									}}
+									onClick={() =>
+										router.push(
+											`/${removeAccents(item._id || "")}`
+										)
+									}
+								>
 									{item.title}
 								</span>
 							</div>
@@ -228,6 +240,7 @@ function HomePage(props) {
 								<div className={styles.bg}></div>
 								<div className={styles.content}>
 									<span
+										style={{ cursor: "pointer" }}
 										onClick={() =>
 											router.push(
 												`/${removeAccents(
@@ -288,7 +301,10 @@ function HomePage(props) {
 												}
 											>
 												<h4
-													style={{ fontSize: "20px" }}
+													style={{
+														fontSize: "20px",
+														cursor: "pointer",
+													}}
 													className="mb-2"
 													onClick={() =>
 														router.push(
@@ -376,6 +392,12 @@ function HomePage(props) {
 								<div
 									key={index}
 									className="col-12 col-md-8 col-lg-4 d-flex flex-column align-items-center"
+									style={{ cursor: "pointer" }}
+									onClick={() =>
+										router.push(
+											`/${removeAccents(item._id || "")}`
+										)
+									}
 								>
 									<div className="d-flex flex-column align-items-center">
 										<span>CASE STUDY AURA CAPITAL</span>
@@ -542,7 +564,16 @@ function HomePage(props) {
 													<h6
 														style={{
 															fontSize: "18px",
+															cursor: "pointer",
 														}}
+														onClick={() =>
+															router.push(
+																`/${removeAccents(
+																	item._id ||
+																		""
+																)}`
+															)
+														}
 													>
 														{item.title}
 													</h6>
@@ -652,7 +683,15 @@ function HomePage(props) {
 													slideIndex === index
 														? "visible"
 														: "hidden",
+												cursor: "pointer",
 											}}
+											onClick={() =>
+												router.push(
+													`/${removeAccents(
+														item._id || ""
+													)}`
+												)
+											}
 										>
 											<p
 												className={
