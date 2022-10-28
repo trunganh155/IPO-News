@@ -570,9 +570,13 @@ button.slick-arrow.slick-next {
 		}
 	}
 
-	.slick-prev,
+	.slick-prev {
+		top: 31%;
+		left: -6%;
+	}
 	.slick-next {
 		top: 31%;
+		right: -6%;
 	}
 }
 
@@ -594,9 +598,13 @@ button.slick-arrow.slick-next {
 		}
 	}
 
-	.slick-prev,
+	.slick-prev {
+		top: 30%;
+		left: -10%;
+	}
 	.slick-next {
 		top: 30%;
+		right: -10%;
 	}
 
 	// Pagination Start
