@@ -216,7 +216,7 @@ export default function Gallery(props) {
       </section>
 
       <section>
-        <div className="col-12 my-5">
+        <div className="col-12 my-5 px-3">
           <div className={styles.slide_bottom}>
             <Slider {...settings}>
               {news.slice(1, 8).map((item, index) => (

@@ -326,9 +326,13 @@ p {
 // }
 // Slider CSS End
 
-.slick-prev,
+.slick-prev {
+	top: 35%;
+	left: -3%;
+}
 .slick-next {
 	top: 35%;
+	right: -3%;
 }
 
 // Pagination Start
@@ -358,8 +362,7 @@ p {
 	}
 
 	.page-btn {
-		// display: flex;
-		display: none;
+		display: flex;
 		justify-content: center;
 		align-items: center;
 		position: relative;
@@ -595,4 +598,27 @@ button.slick-arrow.slick-next {
 	.slick-next {
 		top: 30%;
 	}
+
+	// Pagination Start
+	.pagination {
+		.page-num {
+			font-size: 18px;
+		}
+
+		.page-btn {
+			height: 11px;
+			width: 11px;
+		}
+	}
+
+	li.previous {
+		width: 11px;
+		height: 11px;
+	}
+
+	li.next {
+		width: 11px;
+		height: 11px;
+	}
+	// Pagination End
 }

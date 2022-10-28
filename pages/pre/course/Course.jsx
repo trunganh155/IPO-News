@@ -9,7 +9,7 @@ import styles from "./Course.module.scss";
 import ReactPaginate from "react-paginate";
 
 export default function Course(props) {
-  const limit = 30;
+  const limit = 40;
   const itemsPerPage = 6;
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
