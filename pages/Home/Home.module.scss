@@ -96,7 +96,7 @@
 	}
 	.knowledge {
 		margin-bottom: 20px;
-		.box_slide{
+		.box_slide {
 			margin-left: 35px;
 		}
 		span {
@@ -341,47 +341,40 @@
 				font-size: 25px;
 			}
 		}
-		.box_video {
-			padding-left: 45px !important;
-		}
-		@media all and (max-width: 992px) {
+		.box_content {
+			height: 720px;
 			.box_video {
-				padding-left: 0px !important;
+				padding-left: 45px !important;
+				height: 100%;
 			}
-		}
-		.box_media {
-			.list_library {
-				overflow-y: auto;
-				overflow-x: hidden;
-				height: 670px;
-				.item_library {
-					margin-bottom: 20px;
-					h6 {
-						font-weight: 700;
-						font-size: 15px;
-						color: #000000;
+			.box_content_media {
+				height: 100%;
+				.box_media {
+					.list_library {
+						height: 100%;
+						.item_library {
+							margin-bottom: 15px;
+							h6 {
+								font-weight: 700;
+								font-size: 15px;
+								color: #000000;
+							}
+						}
+					}
+				}
+				@media all and (max-width: 1440px) {
+					.box_media .list_library {
+						height: 100%;
 					}
 				}
 			}
-		}
-		@media all and (max-width: 1440px) {
-			.box_media .list_library {
-				height: 500px;
-			}
-		}
-		@media all and (max-width: 1025px) {
-			.box_media .list_library {
-				height: 360px;
-			}
-		}
-		@media all and (max-width: 425px) {
-			.box_media .list_library .item_library {
-				display: block;
-				.video {
-					width: 100%;
+			@media all and (max-width: 992px) {
+				.box_video {
+					padding-left: 0px !important;
+					height: 50%;
 				}
-				.title {
-					width: 100%;
+				.box_content_media{
+					height: 50%;
 				}
 			}
 		}
@@ -522,7 +515,7 @@
 
 		.content_active {
 			transition: all 0.09s ease-in-out;
-			.homepage_title_slider{
+			.homepage_title_slider {
 				margin: 12px 0 10px;
 			}
 		}
