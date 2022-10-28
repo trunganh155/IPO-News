@@ -20,7 +20,9 @@ export default function Dictionary(props) {
   return (
     <div className={styles.dictionary}>
       <div className="heading">
-        <p className="text">FINANCIAL DICTIONARY</p>
+        <p className="text" style={{ marginBottom: "0px" }}>
+          FINANCIAL DICTIONARY
+        </p>
         <p className="col decor"></p>
       </div>
 

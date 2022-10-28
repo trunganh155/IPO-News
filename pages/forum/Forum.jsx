@@ -21,7 +21,7 @@ export default function Forum(props) {
           .map((item, index) => {
             return (
               <div key={index}>
-                <div className="d-flex flex-row mb-4">
+                <div className="d-flex flex-row mb-3">
                   <div className="col-4">
                     <Image
                       alt="forum_image"
@@ -56,7 +56,7 @@ export default function Forum(props) {
                       <div className="d-flex flex-column ps-3">
                         <p className={styles.forum_text}>Tên tác giả</p>
                         <p className={styles.forum_text}>
-                          Tên tác giả Lượt xem: 17 - Bình Luận: 5
+                          Lượt xem: 17 - Bình Luận: 5
                         </p>
                       </div>
                     </div>

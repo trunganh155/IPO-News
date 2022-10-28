@@ -29,7 +29,7 @@ export default function Expert(props) {
               alt="chuyen_gia"
               src={expert[2]?.image}
               width={492}
-              height={806}
+              height={666}
             />
 
             {/* <div className="height_expert">

@@ -15,12 +15,14 @@ export default function SubPartner(props) {
           <Image
             alt="subPartner_image"
             src="/images/grey.png"
-            width={1429}
+            width={1459}
             height={752}
           />
         </div>
 
-        <div className={styles.text + " " + "col-9 col-lg-8"}>
+        <div
+          className={styles.text + " " + "col-12 col-lg-8 px-0 px-lg-5 py-2"}
+        >
           <p className={styles.subPartner_title_lg}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>

@@ -220,7 +220,7 @@ export default function Course(props) {
         </div>
       </section> */}
 
-      <section className="mb-4">
+      <section className="mb-3 mb-sm-4 pt-3 pt-sm-5">
         {/* {news.slice(0, 6).map((item, index) => {
           return (
             <div className="col-12 col-sm-6 d-flex flex-wrap pe-5">
