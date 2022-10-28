@@ -186,7 +186,7 @@ export default function Mechanism(props) {
           />
         </div>
       </section> */}
-      <hr />
+      <div className="line"></div>
 
       <section className="d-flex flex-row mb-4">
         <div className="col-12 col-sm-9 col-lg-10">
@@ -337,7 +337,7 @@ export default function Mechanism(props) {
           </Slider>
         </div> */}
 
-        <div className="col col-sm-3 col-lg-2 d-none d-sm-block ps-3">
+        <div className="col col-sm-3 col-lg-2 d-none d-sm-block ps-4">
           {/* <Image
             alt="co_che_von"
             src="/images/mechanism/banner.png"

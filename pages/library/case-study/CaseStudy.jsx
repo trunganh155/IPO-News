@@ -18,12 +18,8 @@ const filter = [
 ];
 
 export default function CaseStudy(props) {
-  const limit = 300;
-  const limit2 = 100;
   const router = useRouter();
-  const [checkedList, setCheckedList] = useState();
-  const [indeterminate, setIndeterminate] = useState(true);
-  const [checkAll, setCheckAll] = useState(false);
+  const [showFilter, setShowFilter] = useState(true);
   const dispatch = useDispatch();
   const { news } = useSelector((state) => state.NewsReducer);
 
@@ -31,22 +27,22 @@ export default function CaseStudy(props) {
     dispatch(getNews());
   }, [dispatch]);
 
-  const onChange = (list) => {
-    setCheckedList(list);
-    setIndeterminate(!!list.length && list.length < plainOptions.length);
-    setCheckAll(list.length === plainOptions.length);
-  };
-
-  const onCheckAllChange = (e) => {
-    setCheckedList(e.target.checked ? plainOptions : []);
-    setIndeterminate(false);
-    setCheckAll(e.target.checked);
-  };
-
   return (
     <div className={styles.caseStudy}>
-      <div className="d-flex flex-row">
-        <div className="col-3 pe-4 d-flex flex-column">
+      <div className="d-flex flex-wrap">
+        {/* <div className={styles.btnFilter + " " + "col-1"}>
+          <button
+            onClick={() => {
+              setShowFilter(!showFilter);
+            }}
+          >
+            Filter
+          </button>
+        </div> */}
+
+        <div
+          className={styles.modalFilter + " " + "col-3 pe-4 d-flex flex-column"}
+        >
           {/* {Array(2)
             .fill()
             .map((item, index) => {
