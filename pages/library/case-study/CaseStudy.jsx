@@ -41,7 +41,9 @@ export default function CaseStudy(props) {
         </div> */}
 
         <div
-          className={styles.modalFilter + " " + "col-3 pe-4 d-flex flex-column"}
+          className={
+            styles.modalFilter + " " + "col-3 pe-4 d-flex flex-column"
+          }
         >
           {/* {Array(2)
             .fill()

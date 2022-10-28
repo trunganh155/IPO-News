@@ -358,7 +358,8 @@ p {
 	}
 
 	.page-btn {
-		display: flex;
+		// display: flex;
+		display: none;
 		justify-content: center;
 		align-items: center;
 		position: relative;
@@ -396,6 +397,7 @@ li.previous {
 		opacity: 1;
 	}
 }
+
 li.next {
 	width: 12px;
 	height: 12px;

@@ -63,7 +63,7 @@ export default function Forum(props) {
                   </div>
                 </div>
 
-                <div className="line"></div>
+                {index < 2 ? <div className="line"></div> : null}
               </div>
             );
           })}
