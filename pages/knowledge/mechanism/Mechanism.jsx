@@ -14,7 +14,7 @@ import "slick-carousel/slick/slick.css";
 
 export default function Mechanism(props) {
   const limit = 40;
-  const itemsPerPage = 1;
+  const itemsPerPage = 6;
   const router = useRouter();
   const dispatch = useDispatch();
   const { news } = useSelector((state) => state.NewsReducer);

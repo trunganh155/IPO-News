@@ -13,7 +13,7 @@
 		align-content: center;
 		.w_box {
 			width: 50%;
-			background: #F3EEE1;
+			background: #f3eee1;
 			border-radius: 30px;
 			padding: 20px 50px 70px;
 			.group_button {
@@ -34,7 +34,7 @@
 					color: #9e9e9e;
 					font-size: 20px;
 				}
-				.border_bottom_n{
+				.border_bottom_n {
 					height: 2px;
 					background: transparent;
 					border-radius: 5px 5px 0px 0px;
@@ -68,7 +68,7 @@
 						margin-bottom: 10px;
 						.box_input_text {
 							input {
-								background: #F3EEE1;
+								background: #f3eee1;
 								height: 60px;
 								width: 100%;
 								font-weight: 400;
@@ -94,7 +94,7 @@
 							border: 1px solid #c1c1c1;
 							border-radius: 10px;
 							input {
-								background: #F3EEE1;
+								background: #f3eee1;
 								height: 60px;
 								width: 90%;
 								font-weight: 400;
@@ -112,6 +112,11 @@
 							}
 							&:focus {
 								border: 1px solid black;
+							}
+							div {
+								span {
+									height: fit-content !important;
+								}
 							}
 						}
 						h6 {
