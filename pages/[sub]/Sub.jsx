@@ -36,8 +36,8 @@ export default function Sub(props) {
             }
             alt="sub_image"
             src={newsDetail?.picture}
-            width={1459}
-            height={752}
+            width={1389}
+            height={652}
           />
         </div>
 
@@ -85,8 +85,8 @@ export default function Sub(props) {
                     }
                     alt="sub_image"
                     src={item.picture}
-                    width={374}
-                    height={219}
+                    width={315}
+                    height={169}
                   />
 
                   <p className={styles.sub_title_sm}>{item.title}</p>
@@ -131,8 +131,8 @@ export default function Sub(props) {
                   }
                   alt="sub_image"
                   src={item.picture}
-                  width={422}
-                  height={230}
+                  width={312}
+                  height={158}
                 />
               </div>
 

@@ -25,7 +25,7 @@ export default function Dictionary(props) {
       </div>
 
       <Tabs
-        defaultActiveKey="1"
+        defaultActiveKey="0"
         centered
         items={fakeDictionary.map((item, index) => {
           const id = String(index);
