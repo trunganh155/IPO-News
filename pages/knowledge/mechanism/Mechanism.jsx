@@ -75,8 +75,8 @@ export default function Mechanism(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={490}
-                height={290}
+                width={390}
+                height={190}
               />
             </div>
 
@@ -125,8 +125,8 @@ export default function Mechanism(props) {
             }
             alt="co_che_von"
             src={news[0]?.picture}
-            width={1850}
-            height={1150}
+            width={1374}
+            height={478}
           />
         </div>
 

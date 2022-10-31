@@ -48,8 +48,8 @@ export default function Course(props) {
                 }
                 alt="khoa_hoc"
                 src={item.picture}
-                width={362}
-                height={290}
+                width={312}
+                height={240}
               />
             </div>
             <div className="col-6 px-3 pe-0 pe-sm-3">
@@ -94,8 +94,8 @@ export default function Course(props) {
                 }
                 alt="khoa_hoc"
                 src={news[0]?.picture}
-                width={1071}
-                height={578}
+                width={871}
+                height={378}
               />
             </div>
 
@@ -114,7 +114,7 @@ export default function Course(props) {
           </div>
         </div>
 
-        <div className="col-12 col-sm-4 ps-0 ps-sm-4 pb-4">
+        <div className="col-12 col-sm-4 px-0 px-sm-4 pb-4">
           {news.slice(1, 3).map((item, index) => {
             return (
               <div className="col-12 d-flex flex-column" key={index}>
@@ -125,8 +125,8 @@ export default function Course(props) {
                     }
                     alt="khoa_hoc"
                     src={item.picture}
-                    width={490}
-                    height={280}
+                    width={408}
+                    height={190}
                   />
                 </div>
 
@@ -275,7 +275,7 @@ export default function Course(props) {
 
       <section className="d-flex flex-row mb-4 px-0 px-sm-3">
         <div
-          className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
+          className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-5 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
           <div className="heading_white px-3">
@@ -291,8 +291,8 @@ export default function Course(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={436}
-                height={281}
+                width={385}
+                height={221}
               />
               <p
                 className={styles.course_title_white}
@@ -325,8 +325,8 @@ export default function Course(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={436}
-                height={281}
+                width={385}
+                height={221}
               />
               <p
                 className={styles.course_title_white}
@@ -359,8 +359,8 @@ export default function Course(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={436}
-                height={281}
+                width={385}
+                height={221}
               />
               <p
                 className={styles.course_title_white}
@@ -379,8 +379,8 @@ export default function Course(props) {
         <Image
           alt="khoa_hoc"
           src="/images/course/banner.png"
-          width={1850}
-          height={420}
+          width={1385}
+          height={270}
         />
       </section>
     </div>

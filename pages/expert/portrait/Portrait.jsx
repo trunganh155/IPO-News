@@ -28,21 +28,9 @@ export default function Portrait(props) {
               }
               alt="chuyen_gia"
               src={expert[2]?.image}
-              width={492}
+              width={462}
               height={666}
             />
-
-            {/* <div className="height_expert">
-              <Image
-                loader={({ src }) =>
-                  `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-                }
-                alt="chuyen_gia"
-                src={expert[2]?.image}
-                layout="fill"
-                objectFit="cover"
-              />
-            </div> */}
           </div>
 
           <div className="col-6 d-none d-sm-block d-lg-none text-dark ps-3">
