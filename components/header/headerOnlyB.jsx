@@ -118,8 +118,8 @@ function HeaderOnlyB(props) {
 								<Image
 									src="/images/logo_white.png"
 									alt="logo"
-									width={460}
-									height={92}
+									width={319}
+									height={64}
 								/>
 							</div>
 						</div>
