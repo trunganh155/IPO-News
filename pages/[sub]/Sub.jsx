@@ -60,6 +60,7 @@ export default function Sub(props) {
               <i className="fab fa-linkedin "></i>
               <i className="fab fa-instagram "></i>
               <i className="far fa-link "></i>
+              <i className="far fa-bookmark"></i>
             </div>
 
             <p className={styles.timeCreate}>
