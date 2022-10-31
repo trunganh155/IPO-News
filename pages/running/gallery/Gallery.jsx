@@ -52,6 +52,7 @@ export default function Gallery(props) {
     dots: false,
     centerMode: true,
     centerPadding: "0px",
+    pauseOnHover: false,
     prevArrow: (
       <button type="button" class="slick-prev">
         <SlickArrowLeft />

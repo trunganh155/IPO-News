@@ -67,8 +67,8 @@ export const HeaderData = [
     title: "THƯ VIỆN IPO",
     listTag: [
       { tag: "Case Study Doanh Nghiệp", link: "/library/case-study" },
-      { tag: "Case Study", link: "#" },
-      { tag: "Aura Capital", link: "#" },
+      { tag: "Case Study Aura Capital", link: "#" },
+      { tag: "Tài liệu IPO", link: "#" },
     ],
     link: "#",
     tag: "library",
