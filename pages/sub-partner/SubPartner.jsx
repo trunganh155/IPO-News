@@ -15,8 +15,8 @@ export default function SubPartner(props) {
           <Image
             alt="subPartner_image"
             src="/images/grey.png"
-            width={1459}
-            height={752}
+            width={1389}
+            height={652}
           />
         </div>
 
@@ -61,8 +61,8 @@ export default function SubPartner(props) {
             <Image
               alt="subPartner_image"
               src="/images/grey.png"
-              width={466}
-              height={490}
+              width={346}
+              height={365}
             />
           </div>
 
