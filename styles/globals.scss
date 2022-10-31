@@ -234,10 +234,6 @@ p {
 	height: 55px;
 }
 
-.ant-tabs-tab + .ant-tabs-tab {
-	margin: 0 10px !important;
-}
-
 .ant-tabs-tab-btn {
 	color: #000 !important;
 	opacity: 0.5;
@@ -265,8 +261,12 @@ p {
 	top: 42px;
 }
 
+.ant-tabs-tab + .ant-tabs-tab {
+	margin: 0 12px !important;
+}
+
 .ant-tabs-tab {
-	padding: 0 10px !important;
+	padding: 0 6px !important;
 }
 
 // OVERRIDE CSS TAB END
@@ -419,6 +419,10 @@ li.next {
 
 .rounded_20 {
 	border-radius: 20px;
+}
+
+.text-grey {
+	color: #9a9a9a;
 }
 
 .ticket_standard {

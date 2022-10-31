@@ -13,7 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 export default function Mechanism(props) {
-  const limit = 40;
+  const limit = 30;
   const itemsPerPage = 6;
   const router = useRouter();
   const dispatch = useDispatch();
