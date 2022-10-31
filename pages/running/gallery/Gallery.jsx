@@ -45,7 +45,7 @@ export default function Gallery(props) {
 	const settings = {
 		slidesToShow: 3,
 		slidesToScroll: 1,
-		autoplay: false,
+		autoplay: true,
 		speed: 800,
 		arrows: true,
 		infinite: true,
