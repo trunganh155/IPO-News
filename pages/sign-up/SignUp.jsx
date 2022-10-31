@@ -30,27 +30,6 @@ function SignUp() {
 			rePassword: "",
 		},
 	});
-
-	function showPassword() {
-		var x = document.getElementById("password");
-		if (x.type === "password") {
-			x.type = "text";
-			setIsShowPassword(true);
-		} else {
-			x.type = "password";
-			setIsShowPassword(false);
-		}
-	}
-	function showRePassword() {
-		var x = document.getElementById("repassword");
-		if (x.type === "password") {
-			x.type = "text";
-			setIsShowRePassword(true);
-		} else {
-			x.type = "password";
-			setIsShowRePassword(false);
-		}
-	}
 	const onSubmit = async (data) => {
 		try {
 			const dataSignUp = await dispatch(registerUserAction(data));
@@ -145,7 +124,7 @@ function SignUp() {
 									</div>
 								</div>
 								<div className={styles.box_input}>
-									<h6>Email</h6>
+									<h6>Email/Số điện thoại</h6>
 									<div className={styles.box_input_text}>
 										<input
 											type="email"
@@ -176,7 +155,11 @@ function SignUp() {
 									>
 										<input
 											id="password"
-											type="password"
+											type={
+												isShowPassword
+													? "text"
+													: "password"
+											}
 											aria-label="Password"
 											aria-describedby="basic-addon1"
 											{...register("password", {
@@ -186,9 +169,11 @@ function SignUp() {
 										<div className="d-flex align-self-center">
 											<Image
 												style={{ cursor: "pointer" }}
-												onClick={() => {
-													showPassword();
-												}}
+												onClick={() =>
+													setIsShowPassword(
+														!isShowPassword
+													)
+												}
 												src={
 													isShowPassword
 														? EyeShow
@@ -212,7 +197,11 @@ function SignUp() {
 									>
 										<input
 											id="repassword"
-											type="password"
+											type={
+												isShowRePassword
+													? "text"
+													: "password"
+											}
 											aria-label="RePassword"
 											aria-describedby="basic-addon1"
 											{...register("rePassword", {
@@ -230,7 +219,9 @@ function SignUp() {
 											<Image
 												style={{ cursor: "pointer" }}
 												onClick={() => {
-													showRePassword();
+													setIsShowRePassword(
+														!isShowRePassword
+													);
 												}}
 												src={
 													isShowRePassword

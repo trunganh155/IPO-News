@@ -39,15 +39,11 @@ function HeaderOnlyW(props) {
 								<Image
 									src="/images/logo_black.png"
 									alt="logo"
-									width={460}
-									height={92}
+									width={319}
+									height={64}
 								/>
 							</div>
-							<div
-								className={
-									"col-1 col-md-2 col-xl-4"
-								}
-							></div>
+							<div className={"col-1 col-md-2 col-xl-4"}></div>
 							<div
 								className={
 									styles.search +

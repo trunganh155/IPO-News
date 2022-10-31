@@ -48,16 +48,6 @@ function SignIn() {
 			console.log(err);
 		}
 	};
-	function showPassword() {
-		var x = document.getElementById("password");
-		if (x.type === "password") {
-			setIsShowPassword(true);
-			x.type = "text";
-		} else {
-			x.type = "password";
-			setIsShowPassword(false);
-		}
-	}
 	return (
 		<div className={styles.sign_in + " " + "container"}>
 			<div className={styles.center_box}>
@@ -103,7 +93,7 @@ function SignIn() {
 						}
 					>
 						<div className={styles.w_box_content}>
-							<span>Đăng nhập với email</span>
+							<span>Đăng nhập với Email/Số điện thoại</span>
 							<form
 								style={{ marginTop: "28px" }}
 								onSubmit={handleSubmit(onSubmit)}
@@ -136,7 +126,7 @@ function SignIn() {
 											)}
 									</div>
 								</div>
-								<div className={styles.box_input}>
+								<div className={styles.box_input} style={{ marginTop: "28px" }}>
 									<div
 										className={
 											styles.box_input_pass +
@@ -146,7 +136,11 @@ function SignIn() {
 									>
 										<input
 											id="password"
-											type="password"
+											type={
+												isShowPassword
+													? "text"
+													: "password"
+											}
 											placeholder="Mật khẩu"
 											aria-label="Password"
 											aria-describedby="basic-addon1"
@@ -158,7 +152,9 @@ function SignIn() {
 											<Image
 												style={{ cursor: "pointer" }}
 												onClick={() => {
-													showPassword();
+													setIsShowPassword(
+														!isShowPassword
+													);
 												}}
 												src={
 													isShowPassword

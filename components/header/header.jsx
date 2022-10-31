@@ -153,8 +153,8 @@ function Header(props) {
 							<Image
 								src="/images/logo_black.png"
 								alt="logo"
-								width={556}
-								height={111}
+								width={422}
+								height={85}
 							/>
 						</div>
 						<div className="col-2 d-md-none"></div>

@@ -67,6 +67,12 @@
 					}
 					.box_input {
 						margin-bottom: 10px;
+						&:focus-within h6 {
+							color: black;
+						}
+						h6 {
+							color: #c1c1c1;
+						}
 						.box_input_text {
 							input {
 								background: #f3eee1;
@@ -111,7 +117,7 @@
 									border: none;
 								}
 							}
-							&:focus {
+							&:focus-within {
 								border: 1px solid black;
 							}
 							div {
@@ -193,9 +199,14 @@
 		display: none;
 	}
 }
+@media all and (max-width: 1440px) {
+	.sign_up .center_box .w_box {
+		width: 75%;
+	}
+}
 @media all and (max-width: 1024px) {
 	.sign_up .center_box .w_box {
-		width: 70%;
+		width: 80%;
 	}
 }
 
