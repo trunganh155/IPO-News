@@ -7,15 +7,13 @@ import styles from "./Dictionary.module.scss";
 import { Tabs } from "antd";
 
 export default function Dictionary(props) {
-  const limit = 300;
-  const limit2 = 100;
   const router = useRouter();
   const dispatch = useDispatch();
-  const { news } = useSelector((state) => state.NewsReducer);
+  // const { news } = useSelector((state) => state.NewsReducer);
 
-  useEffect(() => {
-    dispatch(getNews());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getNews());
+  // }, [dispatch]);
 
   return (
     <div className={styles.dictionary}>
@@ -30,14 +28,15 @@ export default function Dictionary(props) {
         defaultActiveKey="1"
         centered
         items={fakeDictionary.map((item, index) => {
+          const id = String(index);
           return {
             label: `${item.character}`,
-            key: index,
+            key: id,
             children: (
               <div className="d-flex flex-wrap col-8 mx-auto">
-                {item.words.map((word, index) => {
+                {item.words.map((word, id) => {
                   return (
-                    <div className="col-4 px-3" key={index}>
+                    <div className="col-4 px-3" key={id}>
                       <p
                         className={styles.word}
                         onClick={() =>
