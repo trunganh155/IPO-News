@@ -61,9 +61,11 @@ export default function SubPartner(props) {
             className={styles.extend + " " + "col-12 d-flex flex-column mt-5"}
           >
             <div className="d-flex flex-row justify-content-between">
-              <p>Trọng khang và 22 người khác đã thích</p>
+              <p className={styles.amount}>
+                Trọng khang và 22 người khác đã thích
+              </p>
 
-              <p>4 bình luận</p>
+              <p className={styles.amount}>4 bình luận</p>
             </div>
 
             <div
