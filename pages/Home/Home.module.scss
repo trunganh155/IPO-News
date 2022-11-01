@@ -7,22 +7,30 @@
 	background-color: #f4ecdb;
 	font-style: normal;
 	padding: 0 130px;
+	@media all and (max-width: 1440px) {
+		padding: 0 100px;
+	}
 	.banner {
 		color: white;
 		margin: 0 -35px;
 		margin-bottom: 27px;
-		padding-top: 35px;
+		@media all and (max-width: 1440px) {
+			padding: 0 30px;
+		}
+		span{
+			width: 100%;
+		}
 		@media all and (max-width: 1024px) {
-			padding-top: 20px;
+			// padding-top: 20px;
 		}
 		@media all and (max-width: 991px) {
-			padding-top: 30px;
+			// padding-top: 30px;
 		}
 		@media all and (max-width: 767px) {
-			padding-top: 55px;
+			// padding-top: 55px;
 		}
 		@media all and (max-width: 425px) {
-			padding-top: 30px;
+			// padding-top: 30px;
 		}
 		.slide {
 			opacity: 0.5;
