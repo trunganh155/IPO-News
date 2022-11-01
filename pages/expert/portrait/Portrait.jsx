@@ -20,8 +20,8 @@ export default function Portrait(props) {
   return (
     <div className={styles.expert}>
       <div className="d-flex flex-wrap align-items-center">
-        <div className="col-12 col-lg-4 d-flex mx-auto h-100">
-          <div className="col-12 col-sm-6 col-lg-12">
+        <div className="col-12 col-lg-4 d-flex mx-auto h-100 mb-3 mb-lg-0" >
+          <div className="col-10 col-sm-4 col-lg-12 mx-auto">
             <Image
               loader={({ src }) =>
                 `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
@@ -33,7 +33,7 @@ export default function Portrait(props) {
             />
           </div>
 
-          <div className="col-6 d-none d-sm-block d-lg-none text-dark ps-3">
+          <div className="col-8 d-none d-sm-block d-lg-none text-dark ps-3">
             <p className={styles.expert_name}>{expert[2]?.name}</p>
             <p className={styles.expert_company}>{expert[2]?.company}</p>
 
