@@ -6,12 +6,12 @@
 	font-family: "Times New Roman";
 	background-color: #f4ecdb;
 	font-style: normal;
+	padding: 0 130px;
 	.banner {
-		background-color: rgb(240, 238, 232);
 		color: white;
 		margin: 0 -35px;
-		margin-bottom: 40px;
-		padding-top: 60px;
+		margin-bottom: 27px;
+		padding-top: 35px;
 		@media all and (max-width: 1024px) {
 			padding-top: 20px;
 		}
@@ -96,14 +96,15 @@
 	}
 	.knowledge {
 		margin-bottom: 20px;
+		// padding: 0 130px;
 		.box_slide {
-			margin-left: 35px;
 		}
-		span {
+		h3 {
 			font-weight: 400;
 			font-size: 22px;
 			font-weight: 700;
 			color: black;
+			margin-bottom: 10px !important;
 		}
 		h1 {
 			font-family: "UTM Cafeta";
@@ -117,7 +118,7 @@
 		}
 		h4 {
 			font-weight: 400;
-			font-size: 22px;
+			font-size: 16px;
 			font-weight: 700;
 			color: black;
 		}
@@ -128,8 +129,8 @@
 		}
 	}
 	.news_ipo {
+		// padding: 0 130px;
 		.box_content_news {
-			padding: 37px 10px 10px 75px;
 			@media all and (max-width: 768px) {
 				padding: 37px 10px 10px 10px;
 			}
@@ -162,7 +163,7 @@
 				bottom: 5%;
 				left: 5%;
 				color: #fff;
-				width: 80%;
+				width: 90%;
 				span {
 					font-weight: 700;
 					font-size: 22px;
@@ -185,12 +186,6 @@
 				height: 100% !important;
 			}
 		}
-		// .box_image_right {
-		// 	margin-bottom: 15px;
-		// 	span {
-		// 		height: 100% !important;
-		// 	}
-		// }
 		h1 {
 			font-family: "UTM Cafeta";
 			font-weight: 400;
@@ -213,11 +208,15 @@
 
 			color: #939393;
 		}
-		.box_image_right {
-			height: fit-content;
+		.box_banner_right {
+			padding: 0 15px 0 25px !important;
+			.box_image_right {
+				height: fit-content;
+			}
 		}
 	}
 	.library {
+		// padding: 0 130px;
 		margin-bottom: -20px;
 		h1 {
 			font-family: "UTM Cafeta";
@@ -232,7 +231,7 @@
 		.item_libary {
 			background-color: white;
 			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-			padding: 20px;
+			padding: 12px;
 			margin-top: 10px;
 			min-height: 421px;
 			.box_image {
@@ -241,8 +240,8 @@
 				}
 			}
 			h3 {
-				font-weight: 600;
-				font-size: 22px;
+				font-weight: 700;
+				font-size: 15px;
 				color: #000000;
 			}
 			h5 {
@@ -286,10 +285,12 @@
 		}
 	}
 	.experts {
+		// padding: 0 130px;
 		.list_expert {
+			padding: 0;
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
-			grid-gap: 16px 15px;
+			// grid-gap: 16px 15px;
 			.item_expert {
 				h5,
 				h6 {
@@ -330,6 +331,7 @@
 		}
 	}
 	.library_ipo {
+		// padding: 0 130px;
 		padding-bottom: 14px;
 		h1 {
 			font-family: "UTM Cafeta";
@@ -344,7 +346,7 @@
 		.box_content {
 			height: 445px;
 			.box_video {
-				padding-left: 45px !important;
+				// padding-left: 45px !important;
 				height: 100%;
 			}
 			.box_content_media {
@@ -373,7 +375,7 @@
 					padding-left: 0px !important;
 					height: 50%;
 				}
-				.box_content_media{
+				.box_content_media {
 					height: 50%;
 				}
 			}
@@ -477,18 +479,19 @@
 	&_title_slider {
 		font-size: 20px;
 		font-weight: 700;
-		text-align: center;
+		text-align: left;
 	}
 
 	&_content_slider {
 		font-size: 15px;
 		font-weight: 400;
-		text-align: center;
+		text-align: left;
 		color: #939393;
 	}
 
 	.slide_bottom {
 		padding-top: 10px;
+		// padding: 0 130px;
 		@media all and (max-width: 1024px) {
 			padding-top: 40px;
 		}
