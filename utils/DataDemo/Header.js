@@ -75,6 +75,13 @@ export const HeaderData = [
   },
   {
     id: 8,
+    title: "DIỄN ĐÀN",
+    // listTag: [""],
+    link: "/forum",
+    tag: "forum",
+  },
+  {
+    id: 9,
     title: "LIÊN HỆ",
     // listTag: [""],
     link: "/contact",
