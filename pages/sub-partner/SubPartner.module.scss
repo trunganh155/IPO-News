@@ -25,12 +25,23 @@
     font-size: 15px;
     font-weight: 400;
 
+    .amount {
+      color: #636363;
+      font-size: 15px;
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+
     .interactive {
       font-size: 13px;
 
       i {
         font-size: 13px;
         margin-right: 5px !important;
+        cursor: pointer;
+      }
+
+      div {
         cursor: pointer;
       }
 

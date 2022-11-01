@@ -309,7 +309,7 @@ export default function Course(props) {
 
       <section className="d-flex flex-row mb-4 px-0 px-sm-3">
         <div
-          className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
+          className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-5 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
           <div className="heading_white px-3">
@@ -343,7 +343,7 @@ export default function Course(props) {
 
       <section className="d-flex flex-row mb-4 px-0 px-sm-3">
         <div
-          className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
+          className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-5 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
           <div className="heading_white px-3">
