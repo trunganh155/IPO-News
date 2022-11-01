@@ -81,7 +81,7 @@ function ListTag(props) {
 									{item.title}
 									<i className="fa fa-chevron-down d-flex align-items-center"></i>
 								</span>
-								{item.id < 8 && (
+								{item.id < 9 && (
 									<div className={styles.line_left}></div>
 								)}
 								<div
