@@ -1,5 +1,5 @@
 .gallery {
-  padding: 80px 0 50px 0;
+  padding: 10px 0 50px 0;
 
   &_title {
     font-size: 18px;
@@ -57,8 +57,8 @@
     .content_active {
       transition: all 0.09s ease-in-out;
       .gallery_title_slider {
-				margin: 12px 0 10px;
-			}
+        margin: 12px 0 10px;
+      }
     }
   }
 
@@ -82,7 +82,7 @@
 
 @media all and (max-width: 992px) {
   .gallery {
-    padding: 30px 0 25px 0;
+    padding: 0px 0 25px 0;
 
     .slide_bottom {
       .active {
@@ -98,13 +98,13 @@
 
 @media all and (min-width: 576px) and (max-width: 768px) {
   .gallery {
-    padding: 70px 0 25px 0;
+    padding: 110px 0 25px 0;
   }
 }
 
 @media all and (max-width: 576px) {
   .gallery {
-    padding: 80px 0 10px 0;
+    padding: 120px 0 10px 0;
 
     .slide_bottom {
       .active {

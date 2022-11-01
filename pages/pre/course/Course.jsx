@@ -34,7 +34,7 @@ export default function Course(props) {
       <div className="d-flex flex-wrap">
         {currentItems?.map((item, index) => (
           <div
-            className="col-12 col-sm-6 d-flex flex-wrap ps-0 ps-sm-3 pe-0 pe-sm-5 pb-3"
+            className="col-12 col-sm-6 d-flex flex-wrap ps-0 ps-sm-2 ps-lg-3 pe-0 pe-sm-3 pe-lg-5 pb-3"
             key={index}
           >
             <div className="col-12 d-block d-sm-none">
