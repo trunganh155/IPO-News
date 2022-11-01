@@ -17,7 +17,7 @@
 		@media all and (max-width: 1440px) {
 			padding: 0 30px;
 		}
-		span{
+		span {
 			width: 100%;
 		}
 		@media all and (max-width: 1024px) {
@@ -354,6 +354,9 @@
 		}
 		.box_content {
 			height: 445px;
+			@media all and (max-width: 1220px) {
+				height: 345px;
+			}
 			.box_video {
 				// padding-left: 45px !important;
 				height: 100%;
