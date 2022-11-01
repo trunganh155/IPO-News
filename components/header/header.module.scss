@@ -3,7 +3,6 @@
 	background-color: #f4ecdb;
 	color: black;
 	padding: 10px 35px !important;
-
 	.wrapper {
 		.header_top {
 			.search {
@@ -58,6 +57,7 @@
 			}
 		}
 		.header_mid {
+			margin-top: -15px;
 			.text_logo {
 				width: calc(100%);
 				align-items: center;

@@ -75,7 +75,7 @@ function Header(props) {
 		>
 			<Container fluid className={styles.wrapper + " " + "p-0"}>
 				<div className="w-100">
-					<div className={styles.header_top + " " + "row px-2 my-3"}>
+					<div className={styles.header_top + " " + "row px-2 mt-3 mb-1"}>
 						<div
 							className={
 								styles.box_bottom +
@@ -144,7 +144,7 @@ function Header(props) {
 						className={
 							styles.header_mid +
 							" " +
-							"row px-2 my-2 my-md-5" +
+							"row pb-1" +
 							`${showLogo ? " " : " d-none"}`
 						}
 					>
