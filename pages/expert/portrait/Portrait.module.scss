@@ -16,7 +16,7 @@
   }
 
   &_company {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     text-align: justify;
   }
@@ -61,7 +61,7 @@
     }
 
     &_company {
-      font-size: 16px;
+      font-size: 18px;
     }
 
     &_title_sm {
@@ -90,7 +90,7 @@
     }
 
     &_company {
-      font-size: 15px;
+      font-size: 16px;
     }
 
     &_title_sm {
@@ -99,6 +99,10 @@
 
     &_content {
       font-size: 13px;
+    }
+
+    &_black {
+      padding: 15px 20px;
     }
   }
 }
