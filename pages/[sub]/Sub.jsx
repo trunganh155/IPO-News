@@ -53,7 +53,7 @@ export default function Sub(props) {
       <div className="line"></div>
 
       <section className="d-flex flex-row">
-        <div className="col-12 col-sm-9 d-flex flex-column pe-2 pe-sm-5 ps-2 px-sm-0">
+        <div className="col-12 col-sm-9 d-flex flex-column pe-2 pe-sm-0 ps-2 px-sm-0">
           <div className="col-12 d-flex flex-column my-3">
             <div className="d-flex flex-row mb-2">
               <i className="fab fa-facebook "></i>
@@ -97,7 +97,7 @@ export default function Sub(props) {
           </div>
         </div>
 
-        <div className="col-3 d-none d-sm-block">
+        <div className="col-3 d-none d-sm-block ps-5">
           <div className="height_100">
             <Image
               alt="sub_image"
