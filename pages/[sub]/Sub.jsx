@@ -42,7 +42,7 @@ export default function Sub(props) {
         </div>
 
         <div
-          className={styles.text + " " + "col-12 col-lg-8 px-0 px-lg-5 py-2"}
+          className={styles.text + " " + "col-12 col-lg-9 px-0 px-lg-5 py-2"}
         >
           <p className={styles.sub_title_lg}>{newsDetail?.title}</p>
 
@@ -118,7 +118,7 @@ export default function Sub(props) {
         {news.slice(1, 5).map((item, index) => {
           return (
             <div
-              className="col-12 col-sm-6 d-flex flex-wrap ps-0 ps-sm-3 pe-0 pe-sm-4 mb-4 "
+              className="col-12 col-sm-6 d-flex flex-wrap ps-0 pe-0 pe-sm-4 mb-4 "
               key={index}
             >
               <div className="col-12 d-block d-sm-none">
