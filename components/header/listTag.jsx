@@ -79,7 +79,7 @@ function ListTag(props) {
 										</div>
 									)}
 									{item.title}
-									<i className="fa fa-chevron-down d-flex align-items-center"></i>
+									<i style={{fontSize:"10px"}} className="fa fa-chevron-down d-flex align-items-center"></i>
 								</span>
 								{item.id < 9 && (
 									<div className={styles.line_left}></div>
@@ -119,7 +119,7 @@ function ListTag(props) {
 													>
 														{subItem.tag}
 														{subItem.tag && (
-															<i class="fa fa-chevron-right d-flex align-items-center"></i>
+															<i style={{fontSize:"10px"}} className="fa fa-chevron-right d-flex align-items-center"></i>
 														)}
 													</li>
 												);
