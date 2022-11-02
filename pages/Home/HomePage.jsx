@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import { removeAccents } from "../../utils/Function";
 import MainLayout from "../../components/layout/mainLayout";
 import BannerRight from "../../public/images/home/banner_right.png";
-import BannerTop from "../../public/images/home/banner_home_1.png";
+import BannerTop from "../../public/images/home/banner_home_1_1.png";
 import ArrowLeft from "../../public/images/icons/arrow_left.svg";
 import ArrowRight from "../../public/images/icons/arrow_right.svg";
 import { getExpert } from "../../store/redux/ExpertReducer/expert.action";
@@ -42,8 +42,7 @@ function HomePage(props) {
 		dispatch(getNews());
 		dispatch(getGallery());
 	}, [dispatch]);
-
-	var x = window.matchMedia("(max-width: 980px)");
+	var x = window.matchMedia("(max-width: 992px)");
 	const [slideIndex, setSlideIndex] = useState(0);
 	const settingsNew = {
 		dots: false,
@@ -111,7 +110,9 @@ function HomePage(props) {
 							// className="col-12 col-lg-7 p-1 p-md-4 ps-lg-5 mb-3 d-flex flex-column mb-lg-0 flex-lg-none"
 							className="col-12 col-lg-7 mb-3 d-flex flex-column mb-lg-0 flex-lg-none"
 							style={{
-								borderRight: "0.5px solid #000000",
+								borderRight: x.matches
+									? "none"
+									: "0.5px solid #000000",
 							}}
 						>
 							<Image
@@ -144,7 +145,7 @@ function HomePage(props) {
 						</div>
 
 						<div
-							className="col-12 col-lg-5 p-md-4 p-1 pt-md-0"
+							className="col-12 col-lg-5 p-lg-4 p-1 pt-md-0"
 							style={{ paddingLeft: "30px !important" }}
 						>
 							{news.slice(1, 5).map((item, index) => (
@@ -247,7 +248,7 @@ function HomePage(props) {
 							className={
 								styles.box_image +
 								" " +
-								"col-3 d-md-flex d-none align-items-center"
+								"col-3 d-lg-flex d-none align-items-center"
 							}
 						>
 							<div
@@ -299,20 +300,47 @@ function HomePage(props) {
 												>
 													{item.title}
 												</h4>
-												<h5>{item.mieu_ta_ngan}</h5>
+												<h5
+													className={
+														x.matches
+															? "d-none"
+															: "d-block"
+													}
+												>
+													{item.mieu_ta_ngan}
+												</h5>
 											</div>
 										</div>
 										<div className="col-12 col-lg-6 d-flex flex-md-row flex-column align-items-center mb-3 mb-lg-0 flex-lg-none justify-content-end p-0">
-											<div className="d-flex">
-												<Image
-													width={418}
-													height={229}
-													loader={({ src }) =>
-														`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+											<div
+												className={
+													x.matches ? "row px-2" : "d-flex"
+												}
+											>
+												<div
+													className={
+														x.matches ? "col-6" : ""
 													}
-													src={item.picture}
-													alt={item.cate_name}
-												/>
+												>
+													<Image
+														width={418}
+														height={229}
+														loader={({ src }) =>
+															`https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+														}
+														src={item.picture}
+														alt={item.cate_name}
+													/>
+												</div>
+												<h5
+													className={
+														x.matches
+															? "col-6"
+															: "d-none"
+													}
+												>
+													{item.mieu_ta_ngan}
+												</h5>
 											</div>
 										</div>
 										{index < 5 && (
@@ -331,7 +359,7 @@ function HomePage(props) {
 							className={
 								styles.box_banner_right +
 								" " +
-								"col-3 d-none d-md-block"
+								"col-3 d-none d-lg-block"
 							}
 						>
 							<div
