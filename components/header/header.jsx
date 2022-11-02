@@ -80,7 +80,7 @@ function Header(props) {
 							className={
 								styles.box_bottom +
 								" " +
-								"justify-content-start p-0 mt-0 col-10 col-md-5 col-xl-3 d-flex justify-content-md-start gap-3"
+								"justify-content-start p-0 mt-0 col-10 col-md-4 col-xl-3 d-flex justify-content-md-start gap-3"
 							}
 						>
 							<Link href="/sign-in">
@@ -107,7 +107,7 @@ function Header(props) {
 							className={
 								styles.box_center +
 								" " +
-								"justify-content-end col-2 col-md-2 col-xl-6 d-flex justify-content-md-center align-items-center"
+								"justify-content-end col-2 col-md-4 col-xl-6 d-flex justify-content-md-center align-items-center"
 							}
 						>
 							<div
@@ -126,7 +126,7 @@ function Header(props) {
 							className={
 								styles.search +
 								" " +
-								"col-10 col-sm-7 col-md-5 col-xl-3 d-flex justify-content-end mt-3 mt-md-0"
+								"col-10 col-sm-7 col-md-4 col-xl-3 d-flex justify-content-end mt-3 mt-md-0"
 							}
 						>
 							<Form className="d-flex justify-content-center align-items-center w-100">

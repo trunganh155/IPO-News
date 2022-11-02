@@ -219,7 +219,10 @@
 		.box_banner_right {
 			padding: 0 15px 0 25px !important;
 			.box_image_right {
-				height: fit-content;
+				height: calc(100% / 2 - 18px);
+				span{
+					height: 100% !important;
+				}
 			}
 		}
 	}
@@ -286,6 +289,9 @@
 				color: #a31925;
 				transition: all 0.3s ease;
 			}
+			@media all and (max-width: 992px) {
+				margin-bottom: 30px;
+			}
 			@media all and (max-width: 768px) {
 				font-size: 16px;
 				padding: 10px;
@@ -314,7 +320,7 @@
 					color: #a31925;
 				}
 			}
-			@media screen and (max-width: 425px) {
+			@media screen and (max-width: 992px) {
 				grid-template-columns: repeat(1, 1fr);
 				grid-gap: 20px;
 			}
@@ -354,7 +360,7 @@
 		}
 		.box_content {
 			height: 445px;
-			@media all and (max-width: 1220px) {
+			@media all and (max-width: 1220px) and (min-width: 992px) {
 				height: 345px;
 			}
 			.box_video {
@@ -383,6 +389,7 @@
 				}
 			}
 			@media all and (max-width: 992px) {
+				height: 890px;
 				.box_video {
 					padding-left: 0px !important;
 					height: 50%;
