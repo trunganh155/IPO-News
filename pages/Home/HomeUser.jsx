@@ -7,6 +7,7 @@ import MainLayout from "../../components/layout/mainLayout";
 import { getExpert } from "../../store/redux/ExpertReducer/expert.action";
 import { getGallery } from "../../store/redux/GalleryReducer/gallery.action";
 import { getNews } from "../../store/redux/NewsReducer/news.action";
+import { getDetailUserAction } from "../../store/redux/AccountReducer/account.action";
 import styles from "./HomeUser.module.scss";
 import HomeUserView2 from "./HomeUserView2";
 
@@ -33,11 +34,15 @@ function HomeUser(props) {
 	const expert = useSelector((state) => state.ExpertReducer.expert);
 	const news = useSelector((state) => state.NewsReducer.news);
 	const gallery = useSelector((state) => state.GalleryReducer.gallery);
+	const { detailUser } = useSelector((state) => state.AccountReducer);
+
+	console.log(detailUser);
 
 	useEffect(() => {
 		dispatch(getExpert());
 		dispatch(getNews());
 		dispatch(getGallery());
+		dispatch(getDetailUserAction());
 	}, [dispatch]);
 
 	return (
@@ -106,7 +111,7 @@ function HomeUser(props) {
 						>
 							<h3>
 								Thông tin thành viên:{" "}
-								<span>VÕ TRỌNG KHANG</span>
+								<span>{detailUser.name}</span>
 							</h3>
 							<h3>
 								Tên TK: <span>TRONGKHANG97</span>
