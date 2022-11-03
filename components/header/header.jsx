@@ -28,39 +28,48 @@ function Header(props) {
     dispatch(getDetailUserAction());
   }, [dispatch]);
 
-  useEffect(() => {
-    if (detailUser) {
-      setIsLogin(true);
-    } else {
-      setIsLogin(false);
-    }
-  }, [detailUser]);
+	useEffect(() => {
+		const cookie = Cookies.get("access_token");
+		if (cookie) {
+			setIsLogin(true);
+		} else {
+			setIsLogin(false);
+		}
+	}, [detailUser]);
 
-  const onLogout = async () => {
-    try {
-      const dataSignIn = await dispatch(logoutUserAction());
-      if (dataSignIn) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Đăng xuất thành công",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        router.push("/");
-      } else {
-        Swal.fire({
-          position: "center",
-          icon: "error",
-          title: "Đăng xuất thất bại",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
+	// useEffect(() => {
+	// 	if (detailUser) {
+	// 		setIsLogin(true);
+	// 	} else {
+	// 		setIsLogin(false);
+	// 	}
+	// }, [detailUser]);
+
+	const onLogout = async () => {
+		try {
+			const dataSignIn = await dispatch(logoutUserAction());
+			if (dataSignIn) {
+				Swal.fire({
+					position: "center",
+					icon: "success",
+					title: "Đăng xuất thành công",
+					showConfirmButton: false,
+					timer: 1500,
+				});
+				router.push("/");
+			} else {
+				Swal.fire({
+					position: "center",
+					icon: "error",
+					title: "Đăng xuất thất bại",
+					showConfirmButton: false,
+					timer: 1500,
+				});
+			}
+		} catch (err) {
+			console.log(err);
+		}
+	};
 
   useEffect(() => {
     const day = [
