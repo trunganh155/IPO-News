@@ -19,7 +19,7 @@ export const getTokenUserAction = (data) => {
 				}
 			);
 			if (res.data) {
-        Cookies.set("token", res.data.token);
+				Cookies.set("access_token", res.data.token);
 				await dispatch(getTokenUser(res.data.token));
 				const detailUser = await callApi(
 					`api/profile?access_token=${res.data.token}`,
@@ -50,7 +50,8 @@ export const saveTokenToReduxAction = (token) => {
 	return add;
 };
 
-export const getDetailUserAction = (token) => {
+export const getDetailUserAction = () => {
+	const token = Cookies.get("access_token");
 	const add = async (dispatch) => {
 		try {
 			const res = await callApi(
@@ -61,6 +62,20 @@ export const getDetailUserAction = (token) => {
 				await dispatch(getDetailUser(res.data));
 			}
 			return res;
+		} catch (err) {
+			console.log(err);
+		}
+	};
+	return add;
+};
+
+export const logoutUserAction = () => {
+	const add = async (dispatch) => {
+		try {
+			Cookies.remove("access_token");
+			await dispatch(getTokenUser(""));
+			await dispatch(getDetailUser({}));
+			return true;
 		} catch (err) {
 			console.log(err);
 		}

@@ -1,23 +1,67 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { Form } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import { BiSearch } from "react-icons/bi";
 import styles from "./header.module.scss";
 import ListTag from "./listTag";
+import {
+	logoutUserAction,
+	getDetailUserAction,
+} from "../../store/redux/AccountReducer/account.action";
 import Cookies from "js-cookie";
+import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
 function Header(props) {
+	const dispatch = useDispatch();
 	const [isDate, setIsDate] = useState("");
 	const [isTime, setIsTime] = useState("");
 	const [isLoop, setIsLoop] = useState(1);
 	const [isLogin, setIsLogin] = useState(false);
+	const router = useRouter();
+	const { detailUser } = useSelector((state) => state.AccountReducer);
 
 	useEffect(() => {
-		Cookies.get("token") && setIsLogin(true);
-	}, []);
-	
+		dispatch(getDetailUserAction());
+	}, [dispatch]);
+
+	useEffect(() => {
+		if (detailUser.length === 0) {
+			setIsLogin(false);
+		} else {
+			setIsLogin(true);
+		}
+	}, [detailUser]);
+
+	const onLogout = async () => {
+		try {
+			const dataSignIn = await dispatch(logoutUserAction());
+			if (dataSignIn) {
+				Swal.fire({
+					position: "center",
+					icon: "success",
+					title: "Đăng xuất thành công",
+					showConfirmButton: false,
+					timer: 1500,
+				});
+				router.push("/");
+			} else {
+				Swal.fire({
+					position: "center",
+					icon: "error",
+					title: "Đăng xuất thất bại",
+					showConfirmButton: false,
+					timer: 1500,
+				});
+			}
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
 	useEffect(() => {
 		const day = [
 			"Thứ hai",
@@ -95,11 +139,28 @@ function Header(props) {
 							}
 						>
 							{isLogin ? (
-								<button className={styles.btn_signin_up}>
-									<span style={{ fontSize: "18px" }}>
-										Trang cá nhân
-									</span>
-								</button>
+								<>
+									<button
+										onClick={() => {
+											onLogout();
+										}}
+										className={styles.btn_signin_up}
+									>
+										<span style={{ fontSize: "18px" }}>
+											Đăng xuất
+										</span>
+									</button>
+									<button
+										className={[
+											styles.btn_signin_up,
+											styles.active_button,
+										].join(" ")}
+									>
+										<span style={{ fontSize: "18px" }}>
+											Trang cá nhân
+										</span>
+									</button>
+								</>
 							) : (
 								<>
 									<Link href="/sign-in">
