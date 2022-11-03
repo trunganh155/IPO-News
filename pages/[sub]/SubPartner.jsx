@@ -114,8 +114,24 @@ export default function SubPartner(props) {
               </div>
 
               <div className="d-flex flex-row">
-                <i class="fab fa-facebook"></i>
-                Chia sẻ lên Facebook
+                {/* <i class="fab fa-facebook"></i>
+                Chia sẻ lên Facebook */}
+                <div id="fb-root"></div>
+                <div
+                  className="fb-share-button"
+                  data-href="https://developers.facebook.com/docs/plugins/"
+                  data-layout="button_count"
+                  data-size="small"
+                >
+                  <a
+                    target="popup"
+                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                    className="fb-xfbml-parse-ignore"
+                  >
+                    <i class="fab fa-facebook"></i>
+                    Chia sẻ lên Facebook
+                  </a>
+                </div>
               </div>
             </div>
 

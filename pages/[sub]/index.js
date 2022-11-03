@@ -20,7 +20,7 @@ function Index(props) {
     checkLogin();
   }, []);
 
-  return <MainLayout>{isLogin ? <Sub /> : <SubPartner />}</MainLayout>;
+  return <MainLayout>{isLogin ? <SubPartner /> : <Sub />}</MainLayout>;
 }
 
 export default Index;

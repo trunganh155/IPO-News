@@ -70,7 +70,6 @@ export const logoutUserAction = () => {
   const add = async (dispatch) => {
     try {
       Cookies.remove("access_token");
-      //   Cookies.set("access_token", "");
       await dispatch(getTokenUser(""));
       await dispatch(getDetailUser({}));
       return true;
