@@ -81,6 +81,9 @@
 				&:hover {
 					color: #000000;
 				}
+				&:last-child {
+					border-right: none;
+				}
 			}
 			.active {
 				color: #000000;
@@ -224,6 +227,9 @@
 				color: #aeaeae;
 				&:hover {
 					color: #000000;
+				}
+				&:last-child {
+					border-right: none;
 				}
 			}
 			.active {

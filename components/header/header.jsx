@@ -37,14 +37,6 @@ function Header(props) {
 		}
 	}, [detailUser]);
 
-	// useEffect(() => {
-	// 	if (detailUser) {
-	// 		setIsLogin(true);
-	// 	} else {
-	// 		setIsLogin(false);
-	// 	}
-	// }, [detailUser]);
-
 	const onLogout = async () => {
 		try {
 			const dataSignIn = await dispatch(logoutUserAction());
