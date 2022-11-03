@@ -51,6 +51,7 @@ export default function Mechanism(props) {
 
   useEffect(() => {
     dispatch(getNews());
+    console.log("RENDER-----------------");
   }, [dispatch]);
 
   useEffect(() => {

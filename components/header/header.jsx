@@ -15,7 +15,7 @@ function Header(props) {
 	const [isLogin, setIsLogin] = useState(false);
 
 	useEffect(() => {
-		Cookies.get("token") && setIsLogin(true);
+		Cookies.get("access_token") && setIsLogin(true);
 	}, []);
 	
 	useEffect(() => {
