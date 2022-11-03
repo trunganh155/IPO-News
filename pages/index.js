@@ -18,7 +18,12 @@ export default function Home() {
 	}, [dispatch]);
 
 	useEffect(() => {
-		detailUser.length === 0 ? setIsLogin(false) : setIsLogin(true);
+		const cookie = Cookies.get("access_token");
+		if (cookie) {
+			setIsLogin(true);
+		} else {
+			setIsLogin(false);
+		}
 	}, [detailUser]);
 
 	return <>{isLogin ? <HomeUser /> : <HomePage />}</>;

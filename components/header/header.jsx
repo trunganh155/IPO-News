@@ -29,12 +29,21 @@ function Header(props) {
 	}, [dispatch]);
 
 	useEffect(() => {
-		if (detailUser.length === 0) {
-			setIsLogin(false);
-		} else {
+		const cookie = Cookies.get("access_token");
+		if (cookie) {
 			setIsLogin(true);
+		} else {
+			setIsLogin(false);
 		}
 	}, [detailUser]);
+
+	// useEffect(() => {
+	// 	if (detailUser) {
+	// 		setIsLogin(true);
+	// 	} else {
+	// 		setIsLogin(false);
+	// 	}
+	// }, [detailUser]);
 
 	const onLogout = async () => {
 		try {
