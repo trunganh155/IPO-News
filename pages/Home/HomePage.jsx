@@ -434,7 +434,17 @@ function HomePage(props) {
 											/>
 										</div>
 										<h6>#AuraCaseStudy 36:</h6>
-										<h3>{item.cate_name}</h3>
+										<h3
+											onClick={() =>
+												router.push(
+													`/${removeAccents(
+														item?._id || ""
+													)}`
+												)
+											}
+										>
+											{item.cate_name}
+										</h3>
 										<h5>{item.mieu_ta_ngan}</h5>
 									</div>
 								</div>
@@ -681,6 +691,13 @@ function HomePage(props) {
 											}}
 										>
 											<p
+												onClick={() =>
+													router.push(
+														`/${removeAccents(
+															item?._id || ""
+														)}`
+													)
+												}
 												className={
 													styles.homepage_title_slider
 												}
