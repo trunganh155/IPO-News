@@ -46,7 +46,7 @@ export default function SubPartner(props) {
         </div>
 
         <div
-          className={styles.text + " " + "col-12 col-lg-8 px-0 px-lg-5 py-2"}
+          className={styles.text + " " + "col-12 col-lg-9 px-0 px-lg-5 py-2"}
         >
           <p className={styles.subPartner_title_lg}>{newsDetail?.title}</p>
 
@@ -128,12 +128,12 @@ export default function SubPartner(props) {
                       href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
                       className="fb-xfbml-parse-ignore"
                     >
-                      share
+                      Chia sẻ lên Facebook
                     </a>
                   </div>
                 </div>
 
-                <div className={styles.my_shareFB}>
+                <div>
                   <i class="fab fa-facebook"></i>
                   Chia sẻ lên Facebook
                 </div>

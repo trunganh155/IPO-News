@@ -161,7 +161,7 @@ export default function Mechanism(props) {
       <div className="line"></div>
 
       <section className="d-flex flex-row mb-4">
-        <div className="col-12 col-sm-9 col-lg-10">
+        <div className="col-12 col-sm-9">
           <div className="position-relative h-100">
             <Items currentItems={currentItems} />
 
@@ -184,7 +184,7 @@ export default function Mechanism(props) {
         </div>
 
         <div
-          className="col col-sm-3 col-lg-2 d-flex flex-column justify-content-between"
+          className="col col-sm-3 d-flex flex-column justify-content-between"
           style={{ gap: "20px" }}
         >
           <div className={styles.bdLeft + " " + "ps-4 h-100"}>
@@ -212,17 +212,17 @@ export default function Mechanism(props) {
 
       <section className="d-flex flex-row">
         <div
-          className="col-12 col-sm-9 col-lg-10 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 h-100"
+          className="col-12 col-sm-9 d-flex flex-wrap justify-content-around px-3 pt-5 pt-sm-3 py-3 py-lg-4 h-100"
           style={{ backgroundColor: "#606060" }}
         >
-          <div className="heading_white px-2 px-lg-4">
+          <div className="heading_white px-2 px-lg-2">
             <p className="text">quỹ đầu tư</p>
             <p className="col decor"></p>
           </div>
 
           {news.slice(0, 3).map((item, index) => (
             <div
-              className="col-12 col-sm-4 px-2 px-lg-4 mb-3 mb-sm-0"
+              className="col-12 col-sm-4 px-2 px-lg-2 mb-3 mb-sm-0"
               key={index}
             >
               <Image
@@ -231,8 +231,8 @@ export default function Mechanism(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={363}
-                height={281}
+                width={273}
+                height={221}
               />
               <p
                 className={styles.mechanism_title_white}
@@ -275,7 +275,7 @@ export default function Mechanism(props) {
           </Slider>
         </div> */}
 
-        <div className="col col-sm-3 col-lg-2 d-none d-sm-block ps-4">
+        <div className="col col-sm-3 d-none d-sm-block ps-4">
           <div className="height_100">
             <Image
               alt="co_che_von"
