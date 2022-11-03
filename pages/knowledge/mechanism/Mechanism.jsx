@@ -13,7 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 export default function Mechanism(props) {
-  const limit = 30;
+  const limit = 40;
   const itemsPerPage = 6;
   const router = useRouter();
   const dispatch = useDispatch();
@@ -51,6 +51,7 @@ export default function Mechanism(props) {
 
   useEffect(() => {
     dispatch(getNews());
+    console.log("RENDER-----------------");
   }, [dispatch]);
 
   useEffect(() => {
@@ -92,6 +93,7 @@ export default function Mechanism(props) {
 
               <p className={styles.mechanism_content}>
                 <section
+                  className="text-truncate text-truncate--4"
                   dangerouslySetInnerHTML={{
                     __html: limitWord(item?.content, limit),
                   }}
@@ -229,7 +231,7 @@ export default function Mechanism(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={343}
+                width={363}
                 height={281}
               />
               <p

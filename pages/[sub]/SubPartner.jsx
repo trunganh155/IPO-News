@@ -1,21 +1,45 @@
+import Cookies from "js-cookie";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
-import { post } from "../../utils/PostDemo/Post";
-import { removeAccents } from "../../utils/Function";
-import styles from "./SubPartner.module.scss";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Comment from "../../components/comment/Comment";
+import { getDetailUserAction } from "../../store/redux/AccountReducer/account.action";
+import { getNews } from "../../store/redux/NewsReducer/news.action";
+import styles from "./SubPartner.module.scss";
 
 export default function SubPartner(props) {
+  const limit = 40;
   const router = useRouter();
+  const dispatch = useDispatch();
+  const { news } = useSelector((state) => state.NewsReducer);
+  const { detailUser } = useSelector((state) => state.AccountReducer);
+  const newsDetail = news.find(({ _id }) => _id === router.query.sub);
+
+  const convertDateCreate = (str) => {
+    const d = new Date(str);
+
+    return (
+      `Ngày ${d.getDate()}/${d.getMonth()}/${d.getFullYear()} - ${d.getHours()}h` +
+      (d.getMinutes() < 10 ? `0${d.getMinutes()}` : `${d.getMinutes()}`)
+    );
+  };
+
+  useEffect(() => {
+    dispatch(getNews());
+    dispatch(getDetailUserAction(Cookies.get("access_token")));
+  }, [dispatch]);
 
   return (
     <div className={styles.subPartner}>
       <section className={styles.subPartner_header + " " + "mb-4"}>
         <div className={styles.background + " " + "col-12"}>
           <Image
+            loader={({ src }) =>
+              `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+            }
             alt="subPartner_image"
-            src="/images/grey.png"
+            src={newsDetail?.picture}
             width={1389}
             height={652}
           />
@@ -24,13 +48,10 @@ export default function SubPartner(props) {
         <div
           className={styles.text + " " + "col-12 col-lg-8 px-0 px-lg-5 py-2"}
         >
-          <p className={styles.subPartner_title_lg}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
+          <p className={styles.subPartner_title_lg}>{newsDetail?.title}</p>
 
           <p className={styles.subPartner_content_lg}>
-            Senectus et netus et malesuada. Nunc pulvinar sapien et ligula
-            ullamcorper malesuada proin. Neque convallis a cras semper auctor.
+            {newsDetail?.mieu_ta_ngan}
           </p>
         </div>
       </section>
@@ -48,12 +69,14 @@ export default function SubPartner(props) {
               <i className="far fa-bookmark"></i>
             </div>
 
-            <p className={styles.timeCreate}>Ngày 29/08/2022 - 13h50 </p>
+            <p className={styles.timeCreate}>
+              {convertDateCreate(newsDetail?.date_created)}
+            </p>
           </div>
 
           <div
             dangerouslySetInnerHTML={{
-              __html: post.content,
+              __html: newsDetail?.content,
             }}
           ></div>
 
@@ -91,8 +114,24 @@ export default function SubPartner(props) {
               </div>
 
               <div className="d-flex flex-row">
-                <i class="fab fa-facebook"></i>
-                Chia sẻ lên Facebook
+                {/* <i class="fab fa-facebook"></i>
+                Chia sẻ lên Facebook */}
+                <div id="fb-root"></div>
+                <div
+                  className="fb-share-button"
+                  data-href="https://developers.facebook.com/docs/plugins/"
+                  data-layout="button_count"
+                  data-size="small"
+                >
+                  <a
+                    target="popup"
+                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                    className="fb-xfbml-parse-ignore"
+                  >
+                    <i class="fab fa-facebook"></i>
+                    Chia sẻ lên Facebook
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -142,7 +181,7 @@ export default function SubPartner(props) {
 
           <div className="px-3">
             <div className={styles.box + " " + "d-flex flex-column"}>
-              <p className={styles.user}>tên tài khoản</p>
+              <p className={styles.user}>{detailUser.name}</p>
 
               <div className="d-flex flex-row">
                 <div
