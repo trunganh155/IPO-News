@@ -6,9 +6,9 @@ const initialState = {
 	checkRegister: "",
 };
 
-export const UserReducer = createSlice({
+export const AccountReducer = createSlice({
 	name: "user",
-	initialState,
+	initialState: initialState,
 	reducers: {
 		getTokenUser: (state, action) => {
 			state.tokenUser = action.payload;
@@ -25,7 +25,7 @@ export const UserReducer = createSlice({
 	},
 });
 
-export const { getTokenUser, getDetailUser, registerUser, deleteDetailUser } =
-	UserReducer.actions;
+export default AccountReducer.reducer;
 
-export default UserReducer.reducer;
+export const { getTokenUser, getDetailUser, registerUser, deleteDetailUser } =
+	AccountReducer.actions;
