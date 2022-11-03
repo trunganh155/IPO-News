@@ -59,6 +59,19 @@
       }
     }
 
+    .boxShare {
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+      overflow: hidden;
+
+      .shareFB {
+        position: absolute;
+        transform: scale(2);
+        opacity: 0.00001;
+      }
+    }
+
     .account_cmt {
       font-size: 13px;
       line-height: 15px;
