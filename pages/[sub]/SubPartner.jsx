@@ -13,7 +13,7 @@ export default function SubPartner(props) {
   const router = useRouter();
   const dispatch = useDispatch();
   const { news } = useSelector((state) => state.NewsReducer);
-  // const { detailUser } = useSelector((state) => state.AccountReducer);
+  const { detailUser } = useSelector((state) => state.AccountReducer);
   const newsDetail = news.find(({ _id }) => _id === router.query.sub);
 
   const convertDateCreate = (str) => {
@@ -165,7 +165,7 @@ export default function SubPartner(props) {
 
           <div className="px-3">
             <div className={styles.box + " " + "d-flex flex-column"}>
-              <p className={styles.user}>tên tài khoản</p>
+              <p className={styles.user}>{detailUser.name}</p>
 
               <div className="d-flex flex-row">
                 <div

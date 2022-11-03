@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MainLayout from "../../components/layout/mainLayout";
 import Sub from "./Sub";
 import SubPartner from "./SubPartner";
@@ -15,6 +15,10 @@ function Index(props) {
       setIsLogin(false);
     }
   };
+
+  useEffect(() => {
+    checkLogin();
+  }, []);
 
   return <MainLayout>{isLogin ? <Sub /> : <SubPartner />}</MainLayout>;
 }

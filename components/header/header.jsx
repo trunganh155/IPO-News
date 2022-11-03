@@ -29,10 +29,10 @@ function Header(props) {
   }, [dispatch]);
 
   useEffect(() => {
-    if (detailUser.length === 0) {
-      setIsLogin(false);
-    } else {
+    if (detailUser) {
       setIsLogin(true);
+    } else {
+      setIsLogin(false);
     }
   }, [detailUser]);
 
