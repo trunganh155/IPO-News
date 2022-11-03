@@ -6,9 +6,9 @@
 	font-family: "Times New Roman";
 	background-color: #f4ecdb;
 	font-style: normal;
-	padding: 0 130px;
+	padding: 30px 130px;
 	@media all and (max-width: 1440px) {
-		padding: 0 100px;
+		padding: 30px 100px;
 	}
 	.banner {
 		color: white;
@@ -105,8 +105,15 @@
 	.knowledge {
 		margin-bottom: 20px;
 		// padding: 0 130px;
-		.box_slide {
+		// .box_slide {
+		// }
+		.box_image {
+			border-right: 0.5px solid #000000;
+			@media all and (max-width: 992px) {
+				border-right: none;
+			}
 		}
+
 		h3 {
 			font-weight: 400;
 			font-size: 22px;
@@ -220,7 +227,7 @@
 			padding: 0 15px 0 25px !important;
 			.box_image_right {
 				height: calc(100% / 2 - 18px);
-				span{
+				span {
 					height: 100% !important;
 				}
 			}

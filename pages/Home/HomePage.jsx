@@ -108,12 +108,11 @@ function HomePage(props) {
 					<div className="row">
 						<div
 							// className="col-12 col-lg-7 p-1 p-md-4 ps-lg-5 mb-3 d-flex flex-column mb-lg-0 flex-lg-none"
-							className="col-12 col-lg-7 mb-3 d-flex flex-column mb-lg-0 flex-lg-none"
-							style={{
-								borderRight: x.matches
-									? "none"
-									: "0.5px solid #000000",
-							}}
+							className={
+								styles.box_image +
+								" " +
+								"col-12 col-lg-7 mb-3 d-flex flex-column mb-lg-0 flex-lg-none"
+							}
 						>
 							<Image
 								height={345}
@@ -145,7 +144,7 @@ function HomePage(props) {
 						</div>
 
 						<div
-							className="col-12 col-lg-5 p-lg-4 p-1 pt-md-0"
+							className="col-12 col-lg-5 p-lg-4 p-2 pt-md-1"
 							style={{ paddingLeft: "30px !important" }}
 						>
 							{news.slice(1, 5).map((item, index) => (
@@ -302,9 +301,7 @@ function HomePage(props) {
 												</h4>
 												<h5
 													className={
-														x.matches
-															? "d-none"
-															: "d-block"
+														"d-none d-lg-block"
 													}
 												>
 													{item.mieu_ta_ngan}
@@ -314,12 +311,12 @@ function HomePage(props) {
 										<div className="col-12 col-lg-6 d-flex flex-md-row flex-column align-items-center mb-3 mb-lg-0 flex-lg-none justify-content-end p-0">
 											<div
 												className={
-													x.matches ? "row px-2" : "d-flex"
+													"row px-lg-0 d-lg-flex px-2"
 												}
 											>
 												<div
 													className={
-														x.matches ? "col-6" : ""
+														"col-6 col-lg-12"
 													}
 												>
 													<Image
@@ -334,9 +331,7 @@ function HomePage(props) {
 												</div>
 												<h5
 													className={
-														x.matches
-															? "col-6"
-															: "d-none"
+														"col-6 d-lg-none"
 													}
 												>
 													{item.mieu_ta_ngan}

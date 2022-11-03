@@ -7,10 +7,17 @@ import Navbar from "react-bootstrap/Navbar";
 import { BiSearch } from "react-icons/bi";
 import styles from "./header.module.scss";
 import ListTag from "./listTag";
+import Cookies from "js-cookie";
 function Header(props) {
 	const [isDate, setIsDate] = useState("");
 	const [isTime, setIsTime] = useState("");
 	const [isLoop, setIsLoop] = useState(1);
+	const [isLogin, setIsLogin] = useState(false);
+
+	useEffect(() => {
+		Cookies.get("token") && setIsLogin(true);
+	}, []);
+	
 	useEffect(() => {
 		const day = [
 			"Thứ hai",
@@ -75,7 +82,11 @@ function Header(props) {
 		>
 			<Container fluid className={styles.wrapper + " " + "p-0"}>
 				<div className="w-100">
-					<div className={styles.header_top + " " + "row px-2 mt-3 mb-1"}>
+					<div
+						className={
+							styles.header_top + " " + "row px-2 mt-3 mb-1"
+						}
+					>
 						<div
 							className={
 								styles.box_bottom +
@@ -83,25 +94,37 @@ function Header(props) {
 								"justify-content-start p-0 mt-0 col-10 col-md-4 col-xl-3 d-flex justify-content-md-start gap-3"
 							}
 						>
-							<Link href="/sign-in">
-								<button
-									className={[
-										styles.btn_signin_up,
-										styles.active_button,
-									].join(" ")}
-								>
-									<span style={{ fontSize: "18px" }}>
-										Đăng nhập
-									</span>
-								</button>
-							</Link>
-							<Link href="/sign-up">
+							{isLogin ? (
 								<button className={styles.btn_signin_up}>
 									<span style={{ fontSize: "18px" }}>
-										Đăng kí tài khoản
+										Trang cá nhân
 									</span>
 								</button>
-							</Link>
+							) : (
+								<>
+									<Link href="/sign-in">
+										<button
+											className={[
+												styles.btn_signin_up,
+												styles.active_button,
+											].join(" ")}
+										>
+											<span style={{ fontSize: "18px" }}>
+												Đăng nhập
+											</span>
+										</button>
+									</Link>
+									<Link href="/sign-up">
+										<button
+											className={styles.btn_signin_up}
+										>
+											<span style={{ fontSize: "18px" }}>
+												Đăng kí tài khoản
+											</span>
+										</button>
+									</Link>
+								</>
+							)}
 						</div>
 						<div
 							className={
