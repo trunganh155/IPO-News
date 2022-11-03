@@ -1,12 +1,12 @@
 .item_list {
-	padding: 0px 130px;
+	padding: 0px 0px;
 	display: flex;
 	justify-content: end;
 	@media all and (max-width: 1440px) {
-		padding: 0px 100px;
+		padding: 0px 0px;
 	}
 	@media all and (max-width: 1240px) {
-		padding: 0 30px;
+		padding: 0 0px;
 	}
 	div {
 		i {
@@ -21,9 +21,9 @@
 	font-family: "Times New Roman";
 	background-color: #f4ecdb;
 	font-style: normal;
-	padding: 22px 130px 31px;
+	padding: 22px 0px 31px;
 	@media all and (max-width: 1440px) {
-		padding: 22px 100px 31px;
+		padding: 22px 0px 31px;
 	}
 	.box_profile {
 		margin-bottom: 32px;
@@ -80,6 +80,9 @@
 				color: #aeaeae;
 				&:hover {
 					color: #000000;
+				}
+				&:last-child {
+					border-right: none;
 				}
 			}
 			.active {
@@ -155,10 +158,10 @@
 	font-family: "Times New Roman";
 	background-color: #f4ecdb;
 	font-style: normal;
-	padding: 22px 130px 31px;
+	padding: 22px 0px 31px;
 	display: flex;
 	@media all and (max-width: 1440px) {
-		padding: 22px 100px 31px;
+		padding: 22px 0px 31px;
 	}
 	@media all and (max-width: 1240px) {
 		padding: 22px 30px 31px;
@@ -224,6 +227,9 @@
 				color: #aeaeae;
 				&:hover {
 					color: #000000;
+				}
+				&:last-child {
+					border-right: none;
 				}
 			}
 			.active {
