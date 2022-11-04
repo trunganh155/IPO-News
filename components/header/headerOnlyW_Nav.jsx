@@ -16,7 +16,9 @@ function HeaderOnlyW(props) {
 			<Navbar
 				expand="lg"
 				className={
-					styles.header + "  " + "d-flex flex-column justify-content-between mx-auto"
+					styles.header +
+					"  " +
+					"d-flex flex-column justify-content-between mx-auto"
 				}
 				fixed="top"
 				style={{ backgroundColor: "#F4ECDB" }}
@@ -41,6 +43,7 @@ function HeaderOnlyW(props) {
 							>
 								<div className="col-5 col-md-5 col-xl-4 d-flex justify-content-between align-self-center">
 									<Image
+										onClick={() => router.push("/")}
 										src="/images/logo_black.png"
 										alt="logo"
 										width={319}

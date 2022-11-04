@@ -109,13 +109,10 @@ function HeaderOnlyB(props) {
 									<BiSearch size={35} color={"#B5B5B5"} />
 								</Form>
 							</div>
-							<div
-								className={
-									"col-1 col-md-2 col-xl-4"
-								}
-							></div>
+							<div className={"col-1 col-md-2 col-xl-4"}></div>
 							<div className="col-5 col-xl-4 d-flex justify-content-between">
 								<Image
+									onClick={() => router.push("/")}
 									src="/images/logo_white.png"
 									alt="logo"
 									width={319}
