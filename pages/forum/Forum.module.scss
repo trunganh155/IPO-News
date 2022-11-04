@@ -1,6 +1,6 @@
 .forum {
   padding: 0 0 50px 0;
-  margin-top: -50px;
+  margin-top: -10px;
 
   &_title {
     font-size: 40px;
@@ -33,7 +33,7 @@
 @media all and (max-width: 992px) {
   .forum {
     padding: 0 0 25px 0;
-    margin-top: -50px;
+    margin-top: -20px;
 
     &_title {
       font-size: 32px;
@@ -61,14 +61,14 @@
 @media all and (min-width: 576px) and (max-width: 768px) {
   .forum {
     padding: 0 0 10px 0;
-    margin-top: -20px;
+    margin-top: 10px;
   }
 }
 
 @media all and (max-width: 576px) {
   .forum {
     padding: 0 0 10px 0;
-    margin-top: 20px;
+    margin-top: 40px;
 
     &_title {
       font-size: 25px;
