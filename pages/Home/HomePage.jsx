@@ -400,8 +400,46 @@ function HomePage(props) {
 									className="col-12 col-md-8 col-lg-4 d-flex flex-column align-items-center"
 									style={{ padding: "0 7px" }}
 								>
-									<div className="d-flex flex-column align-items-center">
-										<span>CASE STUDY AURA CAPITAL</span>
+									<div
+										className={
+											styles.box_tag +
+											" " +
+											"d-flex flex-column align-items-center"
+										}
+									>
+										{index === 0 && (
+											<span
+												onClick={() =>
+													router.push(
+														"/library/case-study"
+													)
+												}
+											>
+												CASE STUDY DOANH NGHIỆP
+											</span>
+										)}
+										{index === 1 && (
+											<span
+												onClick={() =>
+													router.push(
+														"/library/case-study"
+													)
+												}
+											>
+												CASE STUDY AURA CAPITAL
+											</span>
+										)}
+										{index === 2 && (
+											<span
+												onClick={() =>
+													router.push(
+														"/library/case-study"
+													)
+												}
+											>
+												TÀI LIỆU IPO
+											</span>
+										)}
 										<div
 											style={{
 												borderBottom: "1px solid black",

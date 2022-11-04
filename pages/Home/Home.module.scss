@@ -122,7 +122,7 @@
 			margin-bottom: 10px !important;
 			cursor: pointer;
 			&:hover {
-				color: blue;
+				color: #920000;
 			}
 		}
 		h1 {
@@ -142,7 +142,7 @@
 			color: black;
 			cursor: pointer;
 			&:hover {
-				color: blue;
+				color: #920000;
 			}
 		}
 		h5 {
@@ -192,7 +192,7 @@
 					font-size: 22px;
 					cursor: pointer;
 					&:hover {
-						color: blue;
+						color: #920000;
 					}
 				}
 				h5 {
@@ -229,7 +229,7 @@
 			color: #000000;
 			cursor: pointer;
 			&:hover {
-				color: blue;
+				color: #920000;
 			}
 		}
 		h5 {
@@ -251,6 +251,14 @@
 	.library {
 		// padding: 0 130px;
 		margin-bottom: -20px;
+		.box_tag {
+			span {
+				cursor: pointer;
+				&:hover {
+					color: #920000;
+				}
+			}
+		}
 		h1 {
 			font-family: "UTM Cafeta";
 			font-weight: 400;
@@ -278,7 +286,7 @@
 				color: #000000;
 				cursor: pointer;
 				&:hover {
-					color: blue;
+					color: #920000;
 				}
 			}
 			h5 {
@@ -567,7 +575,7 @@
 				margin: 12px 0 10px;
 				cursor: pointer;
 				&:hover {
-					color: blue;
+					color: #920000;
 				}
 			}
 		}
