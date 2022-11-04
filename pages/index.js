@@ -11,8 +11,6 @@ export default function Home() {
 	const [isLogin, setIsLogin] = useState(false);
 	const { detailUser } = useSelector((state) => state.AccountReducer);
 
-	console.log(detailUser);
-
 	useEffect(() => {
 		dispatch(getDetailUserAction());
 	}, [dispatch]);

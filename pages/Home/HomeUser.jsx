@@ -36,8 +36,6 @@ function HomeUser(props) {
 	const gallery = useSelector((state) => state.GalleryReducer.gallery);
 	const { detailUser } = useSelector((state) => state.AccountReducer);
 
-	console.log(detailUser);
-
 	useEffect(() => {
 		dispatch(getExpert());
 		dispatch(getNews());

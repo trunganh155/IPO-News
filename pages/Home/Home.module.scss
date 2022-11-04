@@ -120,6 +120,10 @@
 			font-weight: 700;
 			color: black;
 			margin-bottom: 10px !important;
+			cursor: pointer;
+			&:hover {
+				color: blue;
+			}
 		}
 		h1 {
 			font-family: "UTM Cafeta";
@@ -136,6 +140,10 @@
 			font-size: 16px;
 			font-weight: 700;
 			color: black;
+			cursor: pointer;
+			&:hover {
+				color: blue;
+			}
 		}
 		h5 {
 			font-weight: 400;
@@ -182,12 +190,16 @@
 				span {
 					font-weight: 700;
 					font-size: 22px;
+					cursor: pointer;
+					&:hover {
+						color: blue;
+					}
 				}
 				h5 {
 					font-weight: 400;
 					font-size: 15px;
-
 					color: #939393;
+					margin-top: 15px !important;
 				}
 				@media all and (max-width: 768px) {
 					span {
@@ -214,8 +226,11 @@
 		h4 {
 			font-weight: 700;
 			font-size: 18px;
-
 			color: #000000;
+			cursor: pointer;
+			&:hover {
+				color: blue;
+			}
 		}
 		h5 {
 			font-weight: 400;
@@ -261,6 +276,10 @@
 				font-weight: 700;
 				font-size: 15px;
 				color: #000000;
+				cursor: pointer;
+				&:hover {
+					color: blue;
+				}
 			}
 			h5 {
 				font-weight: 400;
@@ -546,6 +565,10 @@
 			transition: all 0.09s ease-in-out;
 			.homepage_title_slider {
 				margin: 12px 0 10px;
+				cursor: pointer;
+				&:hover {
+					color: blue;
+				}
 			}
 		}
 	}
