@@ -161,7 +161,7 @@ export default function Mechanism(props) {
       <div className="line"></div>
 
       <section className="d-flex flex-row mb-4">
-        <div className="col-12 col-sm-9">
+        <div className={styles.bdRight + " " + "col-12 col-sm-9"}>
           <div className="position-relative h-100">
             <Items currentItems={currentItems} />
 
@@ -187,7 +187,7 @@ export default function Mechanism(props) {
           className="col col-sm-3 d-flex flex-column justify-content-between"
           style={{ gap: "20px" }}
         >
-          <div className={styles.bdLeft + " " + "ps-4 h-100"}>
+          <div className="ps-4 h-100">
             <div className="height_100">
               <Image
                 alt="co_che_von"
