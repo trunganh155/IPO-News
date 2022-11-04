@@ -72,6 +72,16 @@ function MyApp({ Component, pageProps }) {
             integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
             crossOrigin="anonymous"
           />
+
+          {/* share fb */}
+          <script
+            async
+            defer
+            crossorigin="anonymous"
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0&appId=1469067150250502&autoLogAppEvents=1"
+            nonce="zFVpqIza"
+          ></script>
+          {/* share fb */}
         </Head>
         <Component {...pageProps} />
       </Provider>

@@ -7,14 +7,14 @@
 	background-color: #f4ecdb;
 
 	.children {
-		padding: 110px 35px 0px 35px;
+		padding: 110px 130px 0px 130px;
 	}
 }
 
 @media all and (max-width: 992px) {
 	.mainLayout {
 		.children {
-			padding: 100px 25px 0px 25px;
+			padding: 100px 60px 0px 60px;
 		}
 	}
 }
@@ -22,15 +22,8 @@
 @media all and (max-width: 576px) {
 	.mainLayout {
 		.children {
-			padding: 80px 15px 0px 15px;
+			padding: 80px 20px 0px 20px;
 		}
 	}
 }
 
-// @media all and (max-width: 480px) {
-//   .mainLayout {
-//     .children {
-//       padding: 180px 15px 0px 15px;
-//     }
-//   }
-// }

@@ -1,5 +1,5 @@
 .mechanism {
-  padding: 80px 0 50px 0;
+  padding: 10px 0 50px 0;
 
   .bdLeft {
     border-left: 0.3px solid #000;
@@ -12,8 +12,6 @@
       position: absolute;
       bottom: 0;
       left: 0;
-
-      // background-color: rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -26,7 +24,7 @@
 
     &:hover {
       cursor: pointer;
-      color: rgb(14, 14, 239);
+      color: #a31925 !important;
     }
   }
 
@@ -44,7 +42,7 @@
 
     &:hover {
       cursor: pointer;
-      color: rgb(14, 14, 239);
+      color: #a31925 !important;
     }
   }
 
@@ -64,7 +62,7 @@
 
     &:hover {
       cursor: pointer;
-      color: rgb(14, 14, 239);
+      color: #a31925 !important;
     }
   }
 
@@ -75,7 +73,16 @@
 
 @media all and (max-width: 992px) {
   .mechanism {
-    padding: 30px 0 25px 0;
+    padding: 0px 0 25px 0;
+
+    &_title_lg {
+      font-size: 25px;
+      line-height: 30px;
+    }
+
+    &_content_lg {
+      font-size: 14px;
+    }
 
     &_title {
       font-size: 18px;
@@ -93,13 +100,13 @@
 
 @media all and (min-width: 576px) and (max-width: 768px) {
   .mechanism {
-    padding: 70px 0 25px 0;
+    padding: 110px 0 25px 0;
   }
 }
 
 @media all and (max-width: 576px) {
   .mechanism {
-    padding: 80px 0 25px 0;
+    padding: 120px 0 25px 0;
 
     &_header {
       position: relative;

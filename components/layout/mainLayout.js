@@ -4,7 +4,7 @@ import Footer from "../footer/footer";
 import FooterDark from "../footer/footer-dark";
 import Header from "../header/header";
 import HeaderOnlyB from "../header/headerOnlyB";
-import HeaderOnlyW from "../header/headerOnlyW";
+import HeaderOnlyW_Nav from "../header/headerOnlyW_Nav";
 import styles from "./mainLayout.module.scss";
 
 function MainLayout({ children }) {
@@ -16,7 +16,7 @@ function MainLayout({ children }) {
       router.pathname.includes("/sub-partner") ||
       router.pathname.includes("/forum")
     ) {
-      return <HeaderOnlyW />;
+      return <HeaderOnlyW_Nav />;
     }
 
     return <Header />;

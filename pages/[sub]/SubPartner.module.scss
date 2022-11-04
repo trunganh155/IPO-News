@@ -1,6 +1,6 @@
 .subPartner {
   padding: 0 0 50px 0;
-  margin-top: -130px;
+  margin-top: -50px;
 
   &_header {
     position: relative;
@@ -25,6 +25,13 @@
     font-size: 15px;
     font-weight: 400;
 
+    .amount {
+      color: #636363;
+      font-size: 15px;
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+
     .interactive {
       font-size: 13px;
 
@@ -34,17 +41,34 @@
         cursor: pointer;
       }
 
-      div:nth-child(4) {
+      div {
         cursor: pointer;
+      }
+
+      div:nth-child(4) {
+        cursor: pointer !important;
 
         i {
-          font-size: 12px;
+          font-size: 12px !important;
         }
 
-        background-color: #0969c9;
-        color: #fff;
-        border-radius: 2px;
-        padding: 4px;
+        background-color: #0969c9 !important;
+        color: #fff !important;
+        border-radius: 2px !important;
+        padding: 4px !important;
+      }
+    }
+
+    .boxShare {
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+      overflow: hidden;
+
+      .shareFB {
+        position: absolute;
+        transform: scale(2);
+        opacity: 0.00001;
       }
     }
 
@@ -128,7 +152,7 @@
 @media all and (max-width: 992px) {
   .subPartner {
     padding: 0 0 25px 0;
-    margin-top: -140px;
+    margin-top: -50px;
 
     &_header {
       position: relative;
@@ -152,10 +176,17 @@
   }
 }
 
+@media all and (min-width: 576px) and (max-width: 768px) {
+  .subPartner {
+    padding: 0 0 10px 0;
+    margin-top: -20px;
+  }
+}
+
 @media all and (max-width: 576px) {
   .subPartner {
     padding: 0 0 10px 0;
-    margin-top: -120px;
+    margin-top: 20px;
 
     &_header {
       position: relative;

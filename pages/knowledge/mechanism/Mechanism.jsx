@@ -13,7 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 export default function Mechanism(props) {
-  const limit = 30;
+  const limit = 40;
   const itemsPerPage = 6;
   const router = useRouter();
   const dispatch = useDispatch();
@@ -51,6 +51,7 @@ export default function Mechanism(props) {
 
   useEffect(() => {
     dispatch(getNews());
+    console.log("RENDER-----------------");
   }, [dispatch]);
 
   useEffect(() => {
@@ -92,6 +93,7 @@ export default function Mechanism(props) {
 
               <p className={styles.mechanism_content}>
                 <section
+                  className="text-truncate text-truncate--4"
                   dangerouslySetInnerHTML={{
                     __html: limitWord(item?.content, limit),
                   }}
@@ -137,7 +139,7 @@ export default function Mechanism(props) {
             "col-12 d-flex flex-wrap px-1 px-sm-4 py-1 py-sm-3"
           }
         >
-          <div className="col-12 col-sm-7">
+          <div className="col-12 col-lg-7">
             <p
               className={styles.mechanism_title_lg}
               onClick={() =>
@@ -156,75 +158,10 @@ export default function Mechanism(props) {
         </div>
       </section>
 
-      {/* <section className="d-flex flex-column-reverse flex-sm-row align-items-center">
-        <div className="col-12 col-sm-5">
-          <p
-            className={styles.mechanism_title}
-            onClick={() => router.push(`/${removeAccents(news[0]?._id || "")}`)}
-          >
-            {news[0]?.title}
-          </p>
-
-          <p className={styles.mechanism_content}>
-            <section
-              dangerouslySetInnerHTML={{
-                __html: news[0]?.mieu_ta_ngan.slice(0, limWord),
-              }}
-            />
-          </p>
-        </div>
-
-        <div className="col-12 col-sm-7 ps-0 ps-sm-4">
-          <Image
-            loader={({ src }) =>
-              `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-            }
-            alt="co_che_von"
-            src={news[0]?.picture}
-            width={781}
-            height={498}
-          />
-        </div>
-      </section> */}
       <div className="line"></div>
 
       <section className="d-flex flex-row mb-4">
-        <div className="col-12 col-sm-9 col-lg-10">
-          {/* {news.slice(1, 7).map((item, index) => (
-            <div className="d-flex flex-row mb-3" key={index}>
-              <div className="col-5 col-sm-4">
-                <Image
-                  loader={({ src }) =>
-                    `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-                  }
-                  alt="co_che_von"
-                  src={item.picture}
-                  width={490}
-                  height={290}
-                />
-              </div>
-
-              <div className="col-7 col-sm-8 ps-3 ps-sm-4 pe-0 pe-sm-4">
-                <a
-                  className={styles.mechanism_title}
-                  onClick={() =>
-                    router.push(`/${removeAccents(item?._id || "")}`)
-                  }
-                >
-                  {item?.title}
-                </a>
-
-                <p className={styles.mechanism_content}>
-                  <section
-                    dangerouslySetInnerHTML={{
-                      __html: item?.content.slice(0, limWord),
-                    }}
-                  />
-                </p>
-              </div>
-            </div>
-          ))} */}
-
+        <div className="col-12 col-sm-9">
           <div className="position-relative h-100">
             <Items currentItems={currentItems} />
 
@@ -247,7 +184,7 @@ export default function Mechanism(props) {
         </div>
 
         <div
-          className="col col-sm-3 col-lg-2 d-flex flex-column justify-content-between"
+          className="col col-sm-3 d-flex flex-column justify-content-between"
           style={{ gap: "20px" }}
         >
           <div className={styles.bdLeft + " " + "ps-4 h-100"}>
@@ -275,17 +212,17 @@ export default function Mechanism(props) {
 
       <section className="d-flex flex-row">
         <div
-          className="col-12 col-sm-9 col-lg-10 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 h-100"
+          className="col-12 col-sm-9 d-flex flex-wrap justify-content-around px-3 pt-5 pt-sm-3 py-3 py-lg-4 h-100"
           style={{ backgroundColor: "#606060" }}
         >
-          <div className="heading_white px-2 px-lg-4">
+          <div className="heading_white px-2 px-lg-2">
             <p className="text">quỹ đầu tư</p>
             <p className="col decor"></p>
           </div>
 
           {news.slice(0, 3).map((item, index) => (
             <div
-              className="col-12 col-sm-4 px-2 px-lg-4 mb-3 mb-sm-0"
+              className="col-12 col-sm-4 px-2 px-lg-2 mb-3 mb-sm-0"
               key={index}
             >
               <Image
@@ -294,8 +231,8 @@ export default function Mechanism(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={343}
-                height={281}
+                width={273}
+                height={221}
               />
               <p
                 className={styles.mechanism_title_white}
@@ -338,14 +275,7 @@ export default function Mechanism(props) {
           </Slider>
         </div> */}
 
-        <div className="col col-sm-3 col-lg-2 d-none d-sm-block ps-4">
-          {/* <Image
-            alt="co_che_von"
-            src="/images/mechanism/banner.png"
-            width={244}
-            height={504}
-          /> */}
-
+        <div className="col col-sm-3 d-none d-sm-block ps-4">
           <div className="height_100">
             <Image
               alt="co_che_von"

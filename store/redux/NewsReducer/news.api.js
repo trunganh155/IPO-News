@@ -5,6 +5,7 @@ const getNews = async () => {
     const resApi = await clientAxios.get(
       `/news?access_token=${process.env.ACCESS_TOKEN}`
     );
+
     if (resApi)
       return {
         success: true,

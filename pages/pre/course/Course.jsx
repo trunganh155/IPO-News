@@ -34,7 +34,7 @@ export default function Course(props) {
       <div className="d-flex flex-wrap">
         {currentItems?.map((item, index) => (
           <div
-            className="col-12 col-sm-6 d-flex flex-wrap ps-0 ps-sm-3 pe-0 pe-sm-5 pb-3"
+            className="col-12 col-sm-6 d-flex flex-wrap ps-0 ps-sm-2 ps-lg-3 pe-0 pe-sm-3 pe-lg-5 pb-3"
             key={index}
           >
             <div className="col-12 d-block d-sm-none">
@@ -275,23 +275,23 @@ export default function Course(props) {
 
       <section className="d-flex flex-row mb-4 px-0 px-sm-3">
         <div
-          className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-5 pt-5 pt-sm-3 py-3 py-lg-4 "
+          className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-3 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
-          <div className="heading_white px-3">
+          <div className="heading_white px-2">
             <p className="text">phương thức</p>
             <p className="col decor"></p>
           </div>
 
           {news.slice(0, 3).map((item, index) => (
-            <div className="col-12 col-sm-4 px-3 mb-3 mb-sm-0" key={index}>
+            <div className="col-12 col-sm-4 px-2 mb-3 mb-sm-0" key={index}>
               <Image
                 loader={({ src }) =>
                   `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={385}
+                width={357}
                 height={221}
               />
               <p
@@ -309,23 +309,23 @@ export default function Course(props) {
 
       <section className="d-flex flex-row mb-4 px-0 px-sm-3">
         <div
-          className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
+          className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-3 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
-          <div className="heading_white px-3">
+          <div className="heading_white px-2">
             <p className="text">HỒ SƠ GỌI VỐN</p>
             <p className="col decor"></p>
           </div>
 
           {news.slice(0, 3).map((item, index) => (
-            <div className="col-12 col-sm-4 px-3 mb-3 mb-sm-0" key={index}>
+            <div className="col-12 col-sm-4 px-2 mb-3 mb-sm-0" key={index}>
               <Image
                 loader={({ src }) =>
                   `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={385}
+                width={357}
                 height={221}
               />
               <p
@@ -343,23 +343,23 @@ export default function Course(props) {
 
       <section className="d-flex flex-row mb-4 px-0 px-sm-3">
         <div
-          className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-4 pt-5 pt-sm-3 py-3 py-lg-4 "
+          className="col-12 d-flex flex-wrap justify-content-around px-2 px-lg-3 pt-5 pt-sm-3 py-3 py-lg-4 "
           style={{ backgroundColor: "#606060" }}
         >
-          <div className="heading_white px-3">
+          <div className="heading_white px-2">
             <p className="text">HỒ SƠ THƯƠNG HIỆU</p>
             <p className="col decor"></p>
           </div>
 
           {news.slice(0, 3).map((item, index) => (
-            <div className="col-12 col-sm-4 px-3 mb-3 mb-sm-0" key={index}>
+            <div className="col-12 col-sm-4 px-2 mb-3 mb-sm-0" key={index}>
               <Image
                 loader={({ src }) =>
                   `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={385}
+                width={357}
                 height={221}
               />
               <p
