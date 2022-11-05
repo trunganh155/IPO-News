@@ -25,19 +25,37 @@ function Footer(props) {
 									{item.title}
 								</span>
 								<div>
-									{item.listTag && item.listTag.map((subItem, subIndex) => {
-										return (
-											<div
-												onClick={() =>
-													router.push(subItem.link)
-												}
-												className={styles.tagList}
-												key={subIndex}
-											>
-												{subItem.tag}
-											</div>
-										);
-									})}
+									{item.listTag &&
+										item.listTag.map(
+											(subItem, subIndex) => {
+												return (
+													<div
+														onClick={() =>
+															router.push(
+																subItem.link
+															)
+														}
+														style={{
+															width:
+																subItem.tag ===
+																	"Hồ sơ thương hiệu" ||
+																subItem.tag ===
+																	"Theo dòng sự kiện" ||
+																subItem.tag ===
+																	"Thông Tin Thị Trường"
+																	? "60px"
+																	: "75px",
+														}}
+														className={
+															styles.tagList
+														}
+														key={subIndex}
+													>
+														{subItem.tag}
+													</div>
+												);
+											}
+										)}
 								</div>
 							</div>
 						);
@@ -58,19 +76,37 @@ function Footer(props) {
 									{item.title}
 								</span>
 								<div>
-									{item.listTag && item.listTag.map((subItem, subIndex) => {
-										return (
-											<div
-												onClick={() =>
-													router.push(subItem.link)
-												}
-												className={styles.tagList}
-												key={subIndex}
-											>
-												{subItem.tag}
-											</div>
-										);
-									})}
+									{item.listTag &&
+										item.listTag.map(
+											(subItem, subIndex) => {
+												return (
+													<div
+														onClick={() =>
+															router.push(
+																subItem.link
+															)
+														}
+														style={{
+															width:
+																subItem.tag ===
+																	"Hồ sơ thương hiệu" ||
+																subItem.tag ===
+																	"Theo dòng sự kiện" ||
+																subItem.tag ===
+																	"Thông Tin Thị Trường"
+																	? "60px"
+																	: "75px",
+														}}
+														className={
+															styles.tagList
+														}
+														key={subIndex}
+													>
+														{subItem.tag}
+													</div>
+												);
+											}
+										)}
 								</div>
 							</div>
 						);
@@ -128,7 +164,9 @@ function Footer(props) {
 									placeholder="Your Email (required )"
 								/>
 							</div>
-							<button onClick={() => router.push("/sign-up")}>sign up</button>
+							<button onClick={() => router.push("/sign-up")}>
+								sign up
+							</button>
 						</div>
 					</div>
 				</div>

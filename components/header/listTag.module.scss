@@ -61,6 +61,10 @@
 			width: 85px;
 			display: flex;
 			justify-content: space-between;
+			div {
+				font-family: "UTM Cafeta";
+				font-style: normal;
+			}
 		}
 		li:hover {
 			color: black;
