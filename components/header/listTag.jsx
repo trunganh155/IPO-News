@@ -45,10 +45,14 @@ function ListTag(props) {
 							<li
 								key={index}
 								onMouseEnter={() => {
-									setShowMenu(
-										item.listTag &&  true 
+									setShowMenu(item.listTag && true);
+									setIsHeightHeader(
+										item.listTag === undefined
+											? 0
+											: item.listTag.length > 3
+											? item.listTag.length * 60
+											: item.listTag.length * 80
 									);
-									setIsHeightHeader(item.listTag === undefined ? 0 : item.listTag.length > 3 ? item.listTag.length * 60 : item.listTag.length * 80);
 									// && item.listTag.length > 2 ?  item.listTag.length * 60 : item.listTag.length * 80
 								}}
 								className="p-0"
@@ -79,7 +83,10 @@ function ListTag(props) {
 										</div>
 									)}
 									{item.title}
-									<i style={{fontSize:"10px"}} className="fa fa-chevron-down d-flex align-items-center"></i>
+									<i
+										style={{ fontSize: "10px" }}
+										className="fa fa-chevron-down d-flex align-items-center"
+									></i>
 								</span>
 								{item.id < 9 && (
 									<div className={styles.line_left}></div>
@@ -92,39 +99,62 @@ function ListTag(props) {
 									}}
 								>
 									<ul className="text-left">
-										{item.listTag && item.listTag.map(
-											(subItem, subIndex) => {
-												return (
-													<li
-														key={subIndex}
-														className={
-															isAsPath.includes(
-																checkActive(
-																	subItem.link
+										{item.listTag &&
+											item.listTag.map(
+												(subItem, subIndex) => {
+													return (
+														<li
+															key={subIndex}
+															className={
+																isAsPath.includes(
+																	checkActive(
+																		subItem.link
+																	)
 																)
-															)
-																? [
-																		styles.active1,
-																		styles.dropdown_item_1,
-																  ].join(" ") +
-																  " " +
-																  "gap-1 p-0"
-																: "gap-1 p-0"
-														}
-														onClick={() => {
-															router.push(
-																subItem.link
-															);
-														}}
-													>
-														{subItem.tag}
-														{subItem.tag && (
-															<i style={{fontSize:"10px"}} className="fa fa-chevron-right d-flex align-items-center"></i>
-														)}
-													</li>
-												);
-											}
-										)}
+																	? [
+																			styles.active1,
+																			styles.dropdown_item_1,
+																	  ].join(
+																			" "
+																	  ) +
+																	  " " +
+																	  "gap-1 p-0"
+																	: "gap-1 p-0"
+															}
+															onClick={() => {
+																router.push(
+																	subItem.link
+																);
+															}}
+														>
+															<div
+																style={{
+																	width:
+																		subItem.tag ===
+																			"Hồ sơ thương hiệu" ||
+																		subItem.tag ===
+																			"Theo dòng sự kiện" ||
+																		subItem.tag ===
+																			"Thông Tin Thị Trường"
+																			? "60px"
+																			: "80px",
+																}}
+															>
+																{subItem.tag}
+															</div>
+															{subItem.tag && (
+																<i
+																	style={{
+																		fontSize:
+																			"10px",
+																	}}
+																	className="fa fa-chevron-right d-flex align-items-center"
+																></i>
+															)}
+														</li>
+													);
+												}
+											)}
 									</ul>
 								</div>
 							</li>

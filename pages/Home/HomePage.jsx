@@ -556,12 +556,27 @@ function HomePage(props) {
 								"col-12 mb-3 mb-lg-0 col-lg-8 pe-md-2"
 							}
 						>
-							<div className="h-100">
-								<iframe
+							<div
+								className="h-100"
+								style={{ background: "gray" }}
+							>
+								{/* <iframe
 									width="100%"
 									height="100%"
 									src={gallery[0]?.url}
-								></iframe>
+								></iframe> */}
+								<video
+									width="100%"
+									height="100%"
+									controls
+									poster="https://api.fostech.vn/api/60939744ac969b4078488026/file/download/634f699804d76f369bb2ad4f?access_token=f2ff5f0947d68f32d344142f38a2094b"
+								>
+									<source
+										src="https://api.fostech.vn/getfile/anytype/6281eb1d900bb51266dee8a9_1666147327971_f1.mp4?access_token=08e7053b9472cd9a981907f915742c79"
+										type="video/mp4"
+									/>
+									<source src="movie.ogg" type="video/ogg" />
+								</video>
 							</div>
 						</div>
 						<div
@@ -590,11 +605,26 @@ function HomePage(props) {
 														"p-0 col-6"
 													}
 												>
-													<div class="ratio ratio-16x9">
-														<iframe
+													<div>
+														{/* <iframe
 															className="w-100 h-100 w-lg-100 h-lg-80"
 															src={item.url}
-														></iframe>
+														></iframe> */}
+														<video
+															width="100%"
+															height="100%"
+															controls
+															poster="https://api.fostech.vn/api/60939744ac969b4078488026/file/download/634f699804d76f369bb2ad4f?access_token=f2ff5f0947d68f32d344142f38a2094b"
+														>
+															<source
+																src="https://api.fostech.vn/getfile/anytype/6281eb1d900bb51266dee8a9_1666147327971_f1.mp4?access_token=08e7053b9472cd9a981907f915742c79"
+																type="video/mp4"
+															/>
+															<source
+																src="movie.ogg"
+																type="video/ogg"
+															/>
+														</video>
 													</div>
 												</div>
 												<div
