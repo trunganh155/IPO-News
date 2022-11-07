@@ -115,7 +115,7 @@ function HeaderOnlyB(props) {
 								</Form>
 							</div>
 							<div className={"col-1 col-md-2 col-xl-4"}></div>
-							<div className="col-5 col-xl-4 d-flex justify-content-between">
+							<div className="col-5 col-xl-4 d-flex justify-content-between" style={{cursor:"pointer"}}>
 								<Image
 									onClick={() => router.push("/")}
 									src="/images/logo_white.png"

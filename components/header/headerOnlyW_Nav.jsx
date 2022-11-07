@@ -41,7 +41,7 @@ function HeaderOnlyW(props) {
 									"row px-2 d-flex justify-content-center align-items-end"
 								}
 							>
-								<div className="col-5 col-md-5 col-xl-4 d-flex justify-content-between align-self-center">
+								<div className="col-5 col-md-5 col-xl-4 d-flex justify-content-between align-self-center" style={{cursor:"pointer"}}>
 									<Image
 										onClick={() => router.push("/")}
 										src="/images/logo_black.png"

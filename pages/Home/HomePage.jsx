@@ -89,7 +89,7 @@ function HomePage(props) {
 						src={BannerTop}
 						alt="banner"
 						height={452}
-						width={1111}
+						width={1115}
 					/>
 				</div>
 				<div className={styles.knowledge}>
