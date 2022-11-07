@@ -73,12 +73,13 @@
     padding: 20px 12px !important;
 
     &::-webkit-scrollbar {
-      width: 5px;
+      width: 6px;
       background-color: #ccc;
     }
 
     &::-webkit-scrollbar-thumb {
       background-color: #000;
+      border-radius: 10px;
     }
   }
 }

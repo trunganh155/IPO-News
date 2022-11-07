@@ -11,8 +11,11 @@ import { useForm } from "react-hook-form";
 import { getTokenUserAction } from "../../store/redux/AccountReducer/account.action";
 import Swal from "sweetalert2";
 import { useDispatch, useSelector } from "react-redux";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { Callbacks } from "jquery";
 
 function SignIn() {
+  const { data: session } = useSession();
   const dispatch = useDispatch();
   const [isShowPassword, setIsShowPassword] = useState(false);
   const router = useRouter();
@@ -49,7 +52,7 @@ function SignIn() {
       console.log(err);
     }
   };
-  return (
+  return !session ? (
     <div className={styles.sign_in + " " + "container"}>
       <div className={styles.center_box}>
         <div className={styles.w_box}>
@@ -193,7 +196,7 @@ function SignIn() {
                 />
               </div>
               <div className={styles.button_facebook + " " + "col-12"}>
-                <button>
+                <button onClick={() => signIn("facebook")}>
                   <div className="me-2 d-flex align-items-center">
                     <Image
                       style={{ marginRight: "10px" }}
@@ -205,7 +208,7 @@ function SignIn() {
                 </button>
               </div>
               <div className={styles.button_google + " " + "col-12"}>
-                <button>
+                <button onClick={() => signIn("google")}>
                   <div className="me-2 d-flex align-items-center">
                     <Image
                       style={{ marginRight: "10px" }}
@@ -233,7 +236,7 @@ function SignIn() {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 }
 
 export default SignIn;

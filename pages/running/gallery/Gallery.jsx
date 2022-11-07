@@ -270,7 +270,6 @@ export default function Gallery(props) {
           src="/images/course/banner.png"
           width={1385}
           height={270}
-         
         />
       </section>
     </div>
