@@ -239,7 +239,7 @@ function Header(props) {
 						</div>
 						<div className={styles.header_mid + " " + "row pb-1"}>
 							<div className="col-2 col-md-3"></div>
-							<div className="col-8 col-md-6 d-flex justify-content-center">
+							<div className="col-8 col-md-6 d-flex justify-content-center" style={{cursor:"pointer"}}>
 								<Image
 									onClick={() => router.push("/")}
 									src="/images/logo_black.png"
