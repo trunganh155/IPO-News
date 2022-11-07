@@ -136,8 +136,8 @@ function ListTag(props) {
 																			"Theo dòng sự kiện" ||
 																		subItem.tag ===
 																			"Thông Tin Thị Trường"
-																			? "60px"
-																			: "80px",
+																			? "70px"
+																			: "90px",
 																}}
 															>
 																{subItem.tag}
