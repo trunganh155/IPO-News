@@ -255,7 +255,7 @@ function SignIn() {
 									Đăng nhập với Google
 								</button>
 							</div>
-							{/* <div className={styles.button_linkin + " " + "col-12"}>
+							<div className={styles.button_linkin + " " + "col-12"}>
                 <button>
                   <div className="me-2 d-flex align-items-center">
                     <Image
@@ -266,7 +266,7 @@ function SignIn() {
                   </div>
                   Đăng nhập với Linkedin
                 </button>
-              </div> */}
+              </div>
 						</div>
 					</div>
 				</div>
