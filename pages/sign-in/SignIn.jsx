@@ -1,18 +1,17 @@
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
-import React, { useState } from "react";
-import styles from "./SignIn.module.scss";
 import { useRouter } from "next/router";
-import EyeShow from "../../public/images/icons/eyeShow.png";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import Swal from "sweetalert2";
 import EyeHidden from "../../public/images/icons/eyeHidden.png";
+import EyeShow from "../../public/images/icons/eyeShow.png";
 import FaceBook from "../../public/images/icons/facebook.svg";
 import Google from "../../public/images/icons/google.svg";
 import Linkin from "../../public/images/icons/linkin.svg";
-import { useForm } from "react-hook-form";
 import { getTokenUserAction } from "../../store/redux/AccountReducer/account.action";
-import Swal from "sweetalert2";
-import { useDispatch, useSelector } from "react-redux";
-import { useSession, signIn, signOut } from "next-auth/react";
-import { Callbacks } from "jquery";
+import styles from "./SignIn.module.scss";
 
 function SignIn() {
   const { data: session } = useSession();
@@ -219,7 +218,7 @@ function SignIn() {
                   Đăng nhập với Google
                 </button>
               </div>
-              <div className={styles.button_linkin + " " + "col-12"}>
+              {/* <div className={styles.button_linkin + " " + "col-12"}>
                 <button>
                   <div className="me-2 d-flex align-items-center">
                     <Image
@@ -230,7 +229,7 @@ function SignIn() {
                   </div>
                   Đăng nhập với Linkedin
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
