@@ -11,6 +11,8 @@ function Contact() {
 				<div className={styles.title_box + " " + "row"}>
 					<div className="col-4 d-flex justify-content-start">
 						<Image
+							style={{ cursor: "pointer" }}
+							onClick={() => router.push("/")}
 							src="/images/logo_white.png"
 							alt="logo"
 							width={400}
@@ -81,7 +83,11 @@ function Contact() {
 											/>
 										</div>
 									</div>
-									<button onClick={() => router.push("/sign-up")}>sign up</button>
+									<button
+										onClick={() => router.push("/sign-up")}
+									>
+										sign up
+									</button>
 								</div>
 							</div>
 						</div>
