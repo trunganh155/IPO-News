@@ -1,10 +1,12 @@
+import Cookies from "js-cookie";
+import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import MainLayout from "../../components/layout/mainLayout";
 import Sub from "./Sub";
 import SubPartner from "./SubPartner";
-import Cookies from "js-cookie";
 
 function Index(props) {
+  const { data: session } = useSession();
   const [isLogin, setIsLogin] = useState(false);
   const token = Cookies.get("access_token");
 
@@ -20,7 +22,9 @@ function Index(props) {
     checkLogin();
   }, []);
 
-  return <MainLayout>{isLogin ? <SubPartner /> : <Sub />}</MainLayout>;
+  return (
+    <MainLayout>{isLogin || session ? <SubPartner /> : <Sub />}</MainLayout>
+  );
 }
 
 export default Index;
