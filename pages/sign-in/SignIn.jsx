@@ -14,28 +14,28 @@ import { getTokenUserAction } from "../../store/redux/AccountReducer/account.act
 import styles from "./SignIn.module.scss";
 
 function SignIn() {
-  const { data: session } = useSession();
-  const dispatch = useDispatch();
-  const [isShowPassword, setIsShowPassword] = useState(false);
-  const router = useRouter();
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = async (data) => {
-    try {
-      const dataSignIn = await dispatch(getTokenUserAction(data));
-      // console.log(dataSignIn);
-      if (dataSignIn.token) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Đăng nhập thành công",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+	const { data: session } = useSession();
+	const dispatch = useDispatch();
+	const [isShowPassword, setIsShowPassword] = useState(false);
+	const router = useRouter();
+	const {
+		register,
+		handleSubmit,
+		watch,
+		formState: { errors },
+	} = useForm();
+	const onSubmit = async (data) => {
+		try {
+			const dataSignIn = await dispatch(getTokenUserAction(data));
+			// console.log(dataSignIn);
+			if (dataSignIn.token) {
+				Swal.fire({
+					position: "center",
+					icon: "success",
+					title: "Đăng nhập thành công",
+					showConfirmButton: false,
+					timer: 1500,
+				});
 
         router.push("/");
       } else {
