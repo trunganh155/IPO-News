@@ -86,6 +86,8 @@ function SignUp() {
 						}
 					>
 						<Image
+							style={{ cursor: "pointer" }}
+							onClick={() => router.push("/")}
 							src="/images/logo_black.png"
 							alt="logo"
 							width={318}

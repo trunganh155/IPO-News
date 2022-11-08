@@ -34,19 +34,19 @@ function Code() {
 					</div>
 					<div
 						className={
-							styles.title +
-							" " +
-							"d-flex justify-content-center"
+							styles.title + " " + "d-flex justify-content-center"
 						}
 					>
 						<Image
+							style={{ cursor: "pointer" }}
+							onClick={() => router.push("/")}
 							src="/images/logo_black.png"
 							alt="logo"
 							width={318}
 							height={63}
 						/>
 					</div>
-					<hr style={{margin:"20px 0 26px 0"}}/>
+					<hr style={{ margin: "20px 0 26px 0" }} />
 					<div
 						className={
 							styles.box_content +
