@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
+import LinkedInProvider from "next-auth/providers/linkedin";
 
 export default NextAuth({
   providers: [
