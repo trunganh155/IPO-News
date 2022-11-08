@@ -60,7 +60,7 @@ function HomeUserView2(props) {
             <span>{session.user.name || "VÕ TRỌNG KHANG"}</span>
           </h3>
           <h3>
-            Tên TK: <span>{session.user.email || TRONGKHANG97}</span>
+            Tên TK: <span>{session.user.email || "TRONGKHANG97"}</span>
           </h3>
           <h3>
             Cấp thành viên:<span>VIP1</span>

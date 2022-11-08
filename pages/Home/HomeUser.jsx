@@ -111,7 +111,7 @@ function HomeUser(props) {
                 <span>{detailUser.name || session.user.name}</span>
               </h3>
               <h3>
-                Tên TK: <span>{session.user.email || TRONGKHANG97}</span>
+                Tên TK: <span>{session.user.email || "TRONGKHANG97"}</span>
               </h3>
               <h3>
                 Cấp thành viên:<span>VIP1</span>
