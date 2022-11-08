@@ -36,8 +36,8 @@ export default function Sub(props) {
             }
             alt="sub_image"
             src={newsDetail?.picture}
-            width={1389}
-            height={652}
+            width={1280}
+            height={550}
           />
         </div>
 

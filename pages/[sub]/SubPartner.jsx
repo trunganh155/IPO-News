@@ -40,7 +40,7 @@ export default function SubPartner(props) {
             }
             alt="subPartner_image"
             src={newsDetail?.picture}
-            width={1389}
+            width={1380}
             height={652}
           />
         </div>

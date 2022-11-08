@@ -231,7 +231,7 @@ export default function Mechanism(props) {
                 }
                 alt="co_che_von"
                 src={item.picture}
-                width={273}
+                width={300}
                 height={221}
               />
               <p
