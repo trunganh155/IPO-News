@@ -18,11 +18,18 @@ export default NextAuth({
     FacebookProvider({
       clientId: process.env.FACEBOOK_ID,
       clientSecret: process.env.FACEBOOK_SECRET,
+      // authorization: {
+      //   url: "https://www.facebook.com/v11.0/dialog/oauth",
+      //   params: {
+      //     client_id: process.env.FACEBOOK_ID,
+      //     scope: "openid email",
+      //     response_type: "code",
+      //   },
+      // },
       authorization: {
-        url: "https://www.facebook.com/v11.0/dialog/oauth",
         params: {
-          client_id: process.env.FACEBOOK_ID,
-          scope: "openid email",
+          prompt: "consent",
+          access_type: "offline",
           response_type: "code",
         },
       },
