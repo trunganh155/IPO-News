@@ -15,10 +15,10 @@
 		position: relative;
 	}
 	span {
-		font-family: "UTM Cafeta";
+		// font-family: "UTM Cafeta";
 		font-style: normal;
 		font-weight: 700;
-		font-size: 20px;
+		font-size: 12px;
 		line-height: 25px;
 		cursor: pointer;
 		color: #aeaeae;
@@ -50,19 +50,19 @@
 		min-height: 250px;
 		li {
 			margin-bottom: 15px;
-			font-size: 16px;
+			font-size: 14px;
 			z-index: 99;
 			color: #939393;
-			font-family: "UTM Cafeta";
+			// font-family: "UTM Cafeta";
 			font-style: normal;
 			font-weight: 400;
 			line-height: 25px;
 			cursor: pointer;
-			width: 85px;
+			width: 100px;
 			display: flex;
 			justify-content: space-between;
 			div {
-				font-family: "UTM Cafeta";
+				// font-family: "UTM Cafeta";
 				font-style: normal;
 			}
 		}
@@ -110,7 +110,7 @@
 			margin: 0 15px;
 		}
 		span {
-			font-size: 18px;
+			font-size: 11px;
 			line-height: 20px;
 		}
 	}
@@ -121,7 +121,7 @@
 			margin: 0 10px;
 		}
 		span {
-			font-size: 16px;
+			font-size: 10px;
 			line-height: 15px;
 		}
 	}
@@ -132,7 +132,7 @@
 			margin: 0 5px;
 		}
 		span {
-			font-size: 15px;
+			font-size: 9px;
 			line-height: 15px;
 		}
 	}
