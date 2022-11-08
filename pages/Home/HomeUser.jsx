@@ -86,12 +86,13 @@ function HomeUser(props) {
             >
               <Image
                 loader={({ src }) =>
+                  `${session?.user.image}` ||
                   `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
                 }
-                src={expert[0]?.image}
+                src={expert[0]?.image || session?.user.image}
                 height={305}
                 width={305}
-                alt={expert[0]?.name}
+                alt="avatar"
               />
             </div>
             <div

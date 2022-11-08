@@ -1,4 +1,5 @@
 import Cookies from "js-cookie";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
@@ -10,6 +11,7 @@ import styles from "./SubPartner.module.scss";
 
 export default function SubPartner(props) {
   const limit = 40;
+  const { data: session } = useSession();
   const router = useRouter();
   const dispatch = useDispatch();
   const { news } = useSelector((state) => state.NewsReducer);
@@ -177,16 +179,22 @@ export default function SubPartner(props) {
         <div className="col-10 col-sm-3 d-flex flex-column mx-auto">
           <div>
             <Image
-              alt="subPartner_image"
-              src="/images/grey.png"
+              loader={({ src }) =>
+                // `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                `${session?.user.image}`
+              }
+              src={session?.user.image}
               width={356}
               height={385}
+              alt="subPartner_image"
             />
           </div>
 
           <div className="px-3">
             <div className={styles.box + " " + "d-flex flex-column"}>
-              <p className={styles.user}>{detailUser.name}</p>
+              <p className={styles.user}>
+                {session.user.name || detailUser.name}
+              </p>
 
               <div className="d-flex flex-row">
                 <div
