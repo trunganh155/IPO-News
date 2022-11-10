@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
+import LinkedInProvider from "next-auth/providers/linkedin";
 
 export default NextAuth({
   providers: [
@@ -18,14 +19,17 @@ export default NextAuth({
     FacebookProvider({
       clientId: process.env.FACEBOOK_ID,
       clientSecret: process.env.FACEBOOK_SECRET,
-      // authorization: {
-      //   url: "https://www.facebook.com/v11.0/dialog/oauth",
-      //   params: {
-      //     client_id: process.env.FACEBOOK_ID,
-      //     scope: "openid email",
-      //     response_type: "code",
-      //   },
-      // },
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code",
+        },
+      },
+    }),
+    LinkedInProvider({
+      clientId: process.env.LINKEDIN_ID,
+      clientSecret: process.env.LINKEDIN_SECRET,
       authorization: {
         params: {
           prompt: "consent",

@@ -43,6 +43,7 @@ function HomeUser(props) {
     dispatch(getNews());
     dispatch(getGallery());
     dispatch(getDetailUserAction());
+    console.log("AVT: " + session?.user.image);
   }, [dispatch]);
 
   return (
@@ -84,16 +85,25 @@ function HomeUser(props) {
                 `${isList ? "col-auto pe-2" : "col-auto p-0"}`
               }
             >
-              <Image
-                loader={({ src }) =>
-                  `${session?.user.image}` ||
-                  `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-                }
-                src={expert[0]?.image || session?.user.image}
-                height={305}
-                width={305}
-                alt="avatar"
-              />
+              {session ? (
+                <Image
+                  loader={() => `${session?.user.image}`}
+                  src={session?.user.image}
+                  height={305}
+                  width={305}
+                  alt="avatar"
+                />
+              ) : (
+                <Image
+                  loader={({ src }) =>
+                    `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                  }
+                  src={expert[0]?.image}
+                  height={305}
+                  width={305}
+                  alt="avatar"
+                />
+              )}
             </div>
             <div
               className={
@@ -108,10 +118,10 @@ function HomeUser(props) {
             >
               <h3>
                 Thông tin thành viên:{" "}
-                <span>{detailUser.name || session.user.name}</span>
+                <span>{detailUser.name || session?.user.name}</span>
               </h3>
               <h3>
-                Tên TK: <span>{session.user.email || "TRONGKHANG97"}</span>
+                Tên TK: <span>{session?.user.email || "TRONGKHANG97"}</span>
               </h3>
               <h3>
                 Cấp thành viên:<span>VIP1</span>

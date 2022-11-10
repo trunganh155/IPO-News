@@ -38,29 +38,40 @@ function HomeUserView2(props) {
     dispatch(getExpert());
     dispatch(getNews());
     dispatch(getGallery());
+    console.log("AVT: " + session?.user.image);
   }, [dispatch]);
 
   return (
     <div className={styles.homeuser_view2 + " " + "row"}>
       <div className={styles.box_profile + " " + "p-0 pe-2"}>
         <div className={styles.avatar + " " + "col-auto p-0"}>
-          <Image
-            loader={({ src }) =>
-              `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-            }
-            src={expert[0]?.image}
-            height={305}
-            width={305}
-            alt={expert[0]?.name}
-          />
+          {session ? (
+            <Image
+              loader={() => `${session?.user.image}`}
+              src={session?.user.image}
+              height={305}
+              width={305}
+              alt="avatar"
+            />
+          ) : (
+            <Image
+              loader={({ src }) =>
+                `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+              }
+              src={expert[0]?.image}
+              height={305}
+              width={305}
+              alt="avatar"
+            />
+          )}
         </div>
         <div className={styles.profile_detail + " " + "col-12 text-center"}>
           <h3>
             Thông tin thành viên:{" "}
-            <span>{session.user.name || "VÕ TRỌNG KHANG"}</span>
+            <span>{session?.user.name || "VÕ TRỌNG KHANG"}</span>
           </h3>
           <h3>
-            Tên TK: <span>{session.user.email || "TRONGKHANG97"}</span>
+            Tên TK: <span>{session?.user.email || "TRONGKHANG97"}</span>
           </h3>
           <h3>
             Cấp thành viên:<span>VIP1</span>
