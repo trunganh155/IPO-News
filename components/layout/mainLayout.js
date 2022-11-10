@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
+import Interview from "../../pages/expert/interview/Interview";
 import Footer from "../footer/footer";
 import FooterDark from "../footer/footer-dark";
 import Header from "../header/header";
@@ -26,8 +27,13 @@ function MainLayout({ children }) {
     <>
       <div className={styles.mainLayout}>
         {renderHeader()}
-        <div className={styles.children}>{children}</div>
-        {/* {router.pathname === "/" ? <Footer /> : <FooterDark />} */}
+
+        {router.pathname === "/expert/interview" ? (
+          <div>{children}</div>
+        ) : (
+          <div className={styles.children}>{children}</div>
+        )}
+
         <Footer />
       </div>
     </>
