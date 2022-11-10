@@ -1,0 +1,59 @@
+.interview {
+  padding: 130px 90px 50px 90px;
+  color: #000;
+
+  p {
+    font-size: 30px;
+    line-height: 45px;
+    font-weight: 400;
+    text-align: justify;
+  }
+
+  &_decor {
+    width: 170%;
+    height: fit-content;
+    padding: 50px 30px;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+  }
+
+  .mr {
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  .name {
+    font-size: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .position {
+    background-color: #a8915b;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .interview {
+    padding: 50px 0 25px 0;
+  }
+}
+
+@media all and (min-width: 576px) and (max-width: 768px) {
+  .interview {
+    padding: 130px 0 25px 0;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .interview {
+    padding: 140px 0 15px 0;
+  }
+}
