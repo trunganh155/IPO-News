@@ -37,7 +37,9 @@ function SignIn() {
 					timer: 1500,
 				});
 
-				router.push("/");
+				setTimeout(() => {
+					router.push("/");
+				}, 1500);
 			} else {
 				Swal.fire({
 					position: "center",
