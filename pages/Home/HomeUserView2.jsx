@@ -57,10 +57,10 @@ function HomeUserView2(props) {
         <div className={styles.profile_detail + " " + "col-12 text-center"}>
           <h3>
             Thông tin thành viên:{" "}
-            <span>{session.user.name || "VÕ TRỌNG KHANG"}</span>
+            <span>{session?.user.name || "VÕ TRỌNG KHANG"}</span>
           </h3>
           <h3>
-            Tên TK: <span>{session.user.email || "TRONGKHANG97"}</span>
+            Tên TK: <span>{session?.user.email || "TRONGKHANG97"}</span>
           </h3>
           <h3>
             Cấp thành viên:<span>VIP1</span>

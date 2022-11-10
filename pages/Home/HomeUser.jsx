@@ -89,7 +89,7 @@ function HomeUser(props) {
                   `${session?.user.image}` ||
                   `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
                 }
-                src={expert[0]?.image || session?.user.image}
+                src={session?.user.image || expert[0]?.image}
                 height={305}
                 width={305}
                 alt="avatar"
@@ -108,10 +108,10 @@ function HomeUser(props) {
             >
               <h3>
                 Thông tin thành viên:{" "}
-                <span>{detailUser.name || session.user.name}</span>
+                <span>{detailUser.name || session?.user.name}</span>
               </h3>
               <h3>
-                Tên TK: <span>{session.user.email || "TRONGKHANG97"}</span>
+                Tên TK: <span>{session?.user.email || "TRONGKHANG97"}</span>
               </h3>
               <h3>
                 Cấp thành viên:<span>VIP1</span>
