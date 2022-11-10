@@ -38,21 +38,32 @@ function HomeUserView2(props) {
     dispatch(getExpert());
     dispatch(getNews());
     dispatch(getGallery());
+    console.log("AVT: " + session?.user.image);
   }, [dispatch]);
 
   return (
     <div className={styles.homeuser_view2 + " " + "row"}>
       <div className={styles.box_profile + " " + "p-0 pe-2"}>
         <div className={styles.avatar + " " + "col-auto p-0"}>
-          <Image
-            loader={({ src }) =>
-              `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-            }
-            src={expert[0]?.image}
-            height={305}
-            width={305}
-            alt={expert[0]?.name}
-          />
+          {session ? (
+            <Image
+              loader={() => `${session?.user.image}`}
+              src={session?.user.image}
+              height={305}
+              width={305}
+              alt="avatar"
+            />
+          ) : (
+            <Image
+              loader={({ src }) =>
+                `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+              }
+              src={expert[0]?.image}
+              height={305}
+              width={305}
+              alt="avatar"
+            />
+          )}
         </div>
         <div className={styles.profile_detail + " " + "col-12 text-center"}>
           <h3>
