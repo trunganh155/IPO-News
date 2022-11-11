@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import styles from "./IntroMagazine.module.scss";
 import { useRouter } from "next/router";
+import IconTick from "../../public/images/icons/icon_tick.svg";
+import IconClose from "../../public/images/icons/icon_close.svg";
 
 function IntroMagazine() {
 	const router = useRouter();
@@ -152,7 +154,7 @@ function IntroMagazine() {
 										<div className="row mb-3">
 											<div className="col-2 d-flex justify-content-center align-items-center p-0">
 												<Image
-													src="/images/Icons/icon_tick.svg"
+													src={IconTick}
 													alt="tick"
 													width={30}
 													height={30}
@@ -167,7 +169,7 @@ function IntroMagazine() {
 										<div className="row mb-3">
 											<div className="col-2 d-flex justify-content-center align-items-center p-0">
 												<Image
-													src="/images/Icons/icon_tick.svg"
+													src={IconTick}
 													alt="tick"
 													width={30}
 													height={30}
@@ -182,7 +184,7 @@ function IntroMagazine() {
 										<div className="row mb-3">
 											<div className="col-2 d-flex justify-content-center align-items-center p-0">
 												<Image
-													src="/images/Icons/icon_tick.svg"
+													src={IconTick}
 													alt="tick"
 													width={30}
 													height={30}
@@ -197,7 +199,7 @@ function IntroMagazine() {
 										<div className="row mb-3">
 											<div className="col-2 d-flex justify-content-center align-items-center p-0">
 												<Image
-													src="/images/Icons/icon_tick.svg"
+													src={IconTick}
 													alt="tick"
 													width={30}
 													height={30}
@@ -212,7 +214,7 @@ function IntroMagazine() {
 										<div className="row mb-3">
 											<div className="col-2 d-flex justify-content-center align-items-center p-0">
 												<Image
-													src="/images/Icons/icon_close.svg"
+													src={IconClose}
 													alt="tick"
 													width={30}
 													height={30}
