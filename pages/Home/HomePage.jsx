@@ -7,6 +7,8 @@ import { removeAccents } from "../../utils/Function";
 import MainLayout from "../../components/layout/mainLayout";
 import BannerRight from "../../public/images/home/banner_right.png";
 import BannerTop from "../../public/images/home/banner_home_1_1.png";
+import BannerLeft1 from "../../public/images/home/BANNER-QC-[-244wx470h-].jpg";
+import BannerLeft2 from "../../public/images/home/BANNER-QC-[-244wx769h-].jpg";
 import ArrowLeft from "../../public/images/icons/arrow_left.svg";
 import ArrowRight from "../../public/images/icons/arrow_right.svg";
 import { getExpert } from "../../store/redux/ExpertReducer/expert.action";
@@ -261,7 +263,7 @@ function HomePage(props) {
 							<Image
 								width={244}
 								height={470}
-								src={BannerRight}
+								src={BannerLeft1}
 								alt="banner"
 							/>
 						</div>
@@ -364,7 +366,7 @@ function HomePage(props) {
 								<Image
 									width={244}
 									height={759}
-									src={BannerRight}
+									src={BannerLeft2}
 									alt="banner"
 								/>
 							</div>
@@ -372,7 +374,7 @@ function HomePage(props) {
 								<Image
 									width={244}
 									height={759}
-									src={BannerRight}
+									src={BannerLeft2}
 									alt="banner"
 								/>
 							</div>

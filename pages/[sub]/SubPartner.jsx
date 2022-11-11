@@ -193,7 +193,7 @@ export default function SubPartner(props) {
           <div className="px-3">
             <div className={styles.box + " " + "d-flex flex-column"}>
               <p className={styles.user}>
-                {session.user.name || detailUser.name}
+                {session?.user.name || detailUser.name}
               </p>
 
               <div className="d-flex flex-row">

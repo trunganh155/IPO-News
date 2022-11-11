@@ -328,7 +328,7 @@ export default function Gallery(props) {
 			<section className="mt-2 mt-md-4">
 				<Image
 					alt="khoa_hoc"
-					src="/images/course/banner.png"
+					src="/images/course/RTI-[-LANDING-PAGE-]-[1385wx270h].jpg"
 					width={1385}
 					height={270}
 				/>
