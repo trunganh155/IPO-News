@@ -103,7 +103,7 @@ export default function Mechanism(props) {
 								<section
 									className="text-truncate text-truncate--4"
 									dangerouslySetInnerHTML={{
-										__html: limitWord(item?.content, limit),
+										__html: limitWord(item?.mieu_ta_ngan, limit),
 									}}
 								/>
 							</p>
