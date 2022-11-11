@@ -188,10 +188,7 @@ export default function SubPartner(props) {
               />
             ) : (
               <Image
-                loader={({ src }) =>
-                  `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-                }
-                src={detailUser?.image}
+                src="/images/grey.png"
                 width={356}
                 height={385}
                 alt="avatar"
