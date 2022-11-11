@@ -101,7 +101,7 @@ export default function Sub(props) {
           <div className="height_100">
             <Image
               alt="sub_image"
-              src="/images/mechanism/banner.png"
+              src="/images/mechanism/BANNER-QC-[-273wx700h-].jpg"
               layout="fill"
               objectFit="cover"
             />
