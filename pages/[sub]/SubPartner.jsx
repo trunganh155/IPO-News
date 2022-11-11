@@ -178,22 +178,31 @@ export default function SubPartner(props) {
 
         <div className="col-10 col-sm-3 d-flex flex-column mx-auto">
           <div>
-            <Image
-              loader={({ src }) =>
-                // `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
-                `${session?.user.image}`
-              }
-              src={session?.user.image}
-              width={356}
-              height={385}
-              alt="subPartner_image"
-            />
+            {session ? (
+              <Image
+                loader={() => `${session?.user.image}`}
+                src={session?.user.image}
+                width={356}
+                height={385}
+                alt="avatar"
+              />
+            ) : (
+              <Image
+                loader={({ src }) =>
+                  `https://api.fostech.vn${src}?access_token=${process.env.ACCESS_TOKEN}`
+                }
+                src={detailUser?.image}
+                width={356}
+                height={385}
+                alt="avatar"
+              />
+            )}
           </div>
 
           <div className="px-3">
             <div className={styles.box + " " + "d-flex flex-column"}>
               <p className={styles.user}>
-                {session.user.name || detailUser.name}
+                {session?.user.name || detailUser?.name}
               </p>
 
               <div className="d-flex flex-row">

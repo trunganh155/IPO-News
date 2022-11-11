@@ -43,7 +43,6 @@ function HomeUser(props) {
     dispatch(getNews());
     dispatch(getGallery());
     dispatch(getDetailUserAction());
-    console.log("AVT: " + session?.user.image);
   }, [dispatch]);
 
   return (

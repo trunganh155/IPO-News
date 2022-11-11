@@ -68,7 +68,7 @@ export default function Sub(props) {
             </p>
           </div>
 
-          <div className="col-12">
+          <div className="col-12 mb-5">
             <div
               dangerouslySetInnerHTML={{
                 __html: newsDetail?.content,

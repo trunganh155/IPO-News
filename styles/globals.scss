@@ -583,6 +583,14 @@ button.slick-arrow.slick-next {
 	padding: 0px 50px !important;
 }
 
+.swal2-container {
+	.swal2-center {
+		.swal2-backdrop-show {
+			overflow-y: scroll;
+		}
+	}
+}
+
 @media all and (max-width: 992px) {
 	.heading {
 		.text {

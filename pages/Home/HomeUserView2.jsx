@@ -38,7 +38,6 @@ function HomeUserView2(props) {
     dispatch(getExpert());
     dispatch(getNews());
     dispatch(getGallery());
-    console.log("AVT: " + session?.user.image);
   }, [dispatch]);
 
   return (
