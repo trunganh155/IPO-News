@@ -108,7 +108,7 @@ export default function Interview(props) {
                 <p>
                   Ông <span className={styles.text_special}>Minh Nhật</span> tại
                   một sự kiện do
-                  <span className={styles.text_special}>Aura Capital</span> tổ
+                  <span className={styles.text_special}> Aura Capital</span> tổ
                   chức.
                 </p>
               </div>
