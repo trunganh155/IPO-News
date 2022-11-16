@@ -9,6 +9,11 @@
     text-align: justify;
   }
 
+  .text_special {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
   &_decor {
     width: 170%;
     height: fit-content;
@@ -22,7 +27,11 @@
 
   &_decor_2 {
     width: 121%;
-    height: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
 
     position: absolute;
     top: 50%;
@@ -30,9 +39,11 @@
     transform: translateY(-50%);
 
     .box {
-      padding: 40px;
+      margin-top: -30%;
+      padding: 50px 130px 50px 50px;
       background-color: #a8915b;
       color: #fff;
+      z-index: 1000;
     }
   }
 

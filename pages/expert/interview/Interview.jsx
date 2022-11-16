@@ -93,7 +93,7 @@ export default function Interview(props) {
             </p>
           </div>
 
-          <div className="col-6 position-relative d-flex flex-wrap justify-content-center">
+          <div className="col-6 position-relative">
             <div className={styles.interview_decor_2}>
               <div className="pe-5">
                 <Image
@@ -105,9 +105,68 @@ export default function Interview(props) {
               </div>
 
               <div className={styles.box}>
-                <p>Ông Minh Nhật tại một sự kiện do Aura Capital tổ chức.</p>
+                <p>
+                  Ông <span className={styles.text_special}>Minh Nhật</span> tại
+                  một sự kiện do{" "}
+                  <span className={styles.text_special}>Aura Capital</span> tổ
+                  chức.
+                </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mt-5">
+          <p className="fw-bold">
+            Ông vừa nhắc đến phương pháp cơ chế vốn, ông có thể chia sẻ rõ hơn
+            về điều này?
+          </p>
+
+          <p>
+            - Cơ chế vốn dựa trên nguyên lý sở hữu nguồn lực vô hạn của xã hội,
+            giúp các doanh nghiệp thu hút mọi nguồn vốn, sau đó IPO giúp công ty
+            phát triển nhanh chóng. Thời điểm ban đầu tôi gặp một số khó khăn
+            khi mang phương pháp này ứng dụng vào thị trường Việt Nam. Bởi những
+            gì mà tôi tiếp nhận là theo luật chứng khoán Mỹ, tiêu chuẩn thế
+            giới, khi ứng dụng vào thị trường Việt Nam thì không phù hợp. Sau
+            đó, tôi quyết định thử nghiệm phương pháp cho chính doanh nghiệp của
+            mình là Aura Capital. Khi đã thành công, tôi hệ thống hoá phương
+            pháp cơ chế vốn, cấu trúc lại mô hình này một cách đơn giản hơn để
+            giúp các SMEs dễ dàng áp dụng.
+          </p>
+
+          <p className="fw-bold">
+            Theo ông phương pháp cơ chế vốn phù hợp với các SMEs Việt như thế
+            nào?
+          </p>
+
+          <p>
+            - Trong quá trình nghiên cứu và tìm hiểu, tôi thấy khi nhắc đến
+            thuật ngữ IPO, các SMEs Việt Nam vẫn còn khá mơ hồ và lo sợ bởi vì
+            họ nghĩ IPO là mục tiêu của các tập đoàn lớn, không phù hợp đối với
+            SMEs. Đó là lý do thôi thúc Aura Capital tìm cách hỗ trợ cho các
+            SMEs Việt. Thực tế, các SMEs chỉ cần nắm nguyên lý và ứng dụng
+            phương pháp cơ chế vốn vào chiến lược tài chính sẽ tạo sự thuận lợi
+            rất lớn để gia tăng giá trị doanh nghiệp của họ.
+          </p>
+        </section>
+
+        <section className="d-flex flex-wrap">
+          <div className="col-6 d-flex flex-column justify-content-center pe-5">
+            <p>
+              Ông. <span className={styles.text_special}>Đậu Minh Nhật </span>
+              chia sẻ kinh nghiệm IPO cho các doanh nghiệp SMEs tại sự kiện
+              kick-off <span className="fw-bold">"Running to IPO"</span>
+            </p>
+          </div>
+
+          <div className="col-6">
+            <Image
+              alt="banner"
+              src="/images/interview/3.png"
+              width={576}
+              height={680}
+            />
           </div>
         </section>
       </div>
