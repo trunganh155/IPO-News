@@ -107,7 +107,7 @@ export default function Interview(props) {
               <div className={styles.box}>
                 <p>
                   Ông <span className={styles.text_special}>Minh Nhật</span> tại
-                  một sự kiện do{" "}
+                  một sự kiện do
                   <span className={styles.text_special}>Aura Capital</span> tổ
                   chức.
                 </p>
@@ -156,7 +156,7 @@ export default function Interview(props) {
             <p>
               Ông. <span className={styles.text_special}>Đậu Minh Nhật </span>
               chia sẻ kinh nghiệm IPO cho các doanh nghiệp SMEs tại sự kiện
-              kick-off <span className="fw-bold">"Running to IPO"</span>
+              kick-off <span className="fw-bold">Running to IPO</span>
             </p>
           </div>
 
