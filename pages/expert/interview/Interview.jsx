@@ -152,11 +152,24 @@ export default function Interview(props) {
         </section>
 
         <section className="d-flex flex-wrap">
-          <div className="col-6 d-flex flex-column justify-content-center pe-5">
-            <p>
-              Ông. <span className={styles.text_special}>Đậu Minh Nhật </span>
+          <div className="col-6 d-flex flex-column justify-content-center align-items-end pe-5">
+            <p
+              style={{ fontSize: "40px", textAlign: "end", lineHeight: "60px" }}
+            >
+              Ông. <span className={styles.text_special}>Đậu Minh Nhật</span>
+            </p>
+
+            <p
+              style={{ fontSize: "40px", textAlign: "end", lineHeight: "60px" }}
+            >
               chia sẻ kinh nghiệm IPO cho các doanh nghiệp SMEs tại sự kiện
-              kick-off <span className="fw-bold">Running to IPO</span>
+              kick-off
+            </p>
+
+            <p
+              style={{ fontSize: "40px", textAlign: "end", lineHeight: "60px" }}
+            >
+              <span className="fw-bold">{`"Running to IPO"`}</span>
             </p>
           </div>
 
