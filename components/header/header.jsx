@@ -9,7 +9,7 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import { BiSearch } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
-import Swal from "sweetalert2";
+import swal from 'sweetalert';
 import {
 	getDetailUserAction, logoutUserAction
 } from "../../store/redux/AccountReducer/account.action";
@@ -44,19 +44,17 @@ function Header(props) {
     try {
       const dataSignIn = await dispatch(logoutUserAction());
       if (dataSignIn) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
+        swal({
           title: "Đăng xuất thành công",
+          icon: "success",
           showConfirmButton: false,
           timer: 1500,
         });
         router.push("/");
       } else {
-        Swal.fire({
-          position: "center",
-          icon: "error",
+        swal({
           title: "Đăng xuất thất bại",
+          icon: "error",
           showConfirmButton: false,
           timer: 1500,
         });
