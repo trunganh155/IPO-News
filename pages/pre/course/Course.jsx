@@ -38,7 +38,14 @@ export default function Course(props) {
             key={index}
           >
             <div className="col-12 d-block d-sm-none">
-              <p className={styles.course_title}>{item.title}</p>
+              <p
+                className={styles.course_title}
+                onClick={() =>
+                  router.push(`/${removeAccents(item?._id || "")}`)
+                }
+              >
+                {item.title}
+              </p>
             </div>
 
             <div className="col-6">
