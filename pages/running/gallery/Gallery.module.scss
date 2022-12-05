@@ -1,0 +1,120 @@
+.gallery {
+  padding: 10px 0 50px 0;
+
+  &_title {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: justify;
+  }
+
+  &_title_sm {
+    font-size: 15px;
+    font-weight: 700;
+    text-align: justify;
+  }
+
+  &_title_slider {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &_content_slider {
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    color: #939393;
+  }
+
+  .slide_bottom {
+    padding-top: 10px;
+    @media all and (max-width: 1024px) {
+      padding-top: 40px;
+    }
+    @media all and (max-width: 991px) {
+      padding-top: 110px;
+    }
+    @media all and (max-width: 767px) {
+      padding-top: 30px;
+    }
+    @media all and (max-width: 425px) {
+      padding-top: 10px;
+    }
+
+    .active {
+      // opacity: 1;
+      transform: scale(1);
+      margin: 0 auto;
+    }
+
+    .slide {
+      // opacity: 0.5;
+      margin: 0 auto;
+      transform: scale(0.88);
+      transition: all 0.5s ease;
+    }
+
+    .content_active {
+      transition: all 0.09s ease-in-out;
+      .gallery_title_slider {
+        margin: 12px 0 10px;
+      }
+    }
+  }
+
+  .scroll {
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: auto;
+
+    // border: 1px solid #000;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+      background-color: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #000;
+      border-radius: 10px;
+    }
+  }
+}
+
+@media all and (max-width: 992px) {
+  .gallery {
+    padding: 0px 0 25px 0;
+
+    .slide_bottom {
+      .active {
+        transform: scale(0.8);
+      }
+
+      .slide {
+        transform: scale(0.8);
+      }
+    }
+  }
+}
+
+@media all and (min-width: 576px) and (max-width: 768px) {
+  .gallery {
+    padding: 110px 0 25px 0;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .gallery {
+    padding: 120px 0 10px 0;
+
+    .slide_bottom {
+      .active {
+        transform: scale(0.8);
+      }
+
+      .slide {
+        transform: scale(0.8);
+      }
+    }
+  }
+}
