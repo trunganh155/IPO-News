@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
   const [showChild, setShowChild] = useState(false);
   useEffect(() => {
     setShowChild(true);
-    import("bootstrap/dist/js/bootstrap");
+    import("bootstrap/dist/js/bootstrap");  
     AOS.init();
     AOS.init({
       duration: 800,
