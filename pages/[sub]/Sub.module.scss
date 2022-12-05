@@ -1,0 +1,173 @@
+.sub {
+  padding: 0 0 50px 0;
+  margin-top: -50px;
+
+  &_header {
+    position: relative;
+
+    .text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  i {
+    font-size: 20px;
+    margin-right: 14px !important;
+    cursor: pointer;
+  }
+
+  .timeCreate {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6f6f6f;
+  }
+
+  &_content {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: justify;
+  }
+
+  &_title_lg {
+    color: #fff;
+    font-size: 40px;
+    line-height: 46px;
+    font-weight: 700;
+  }
+
+  &_content_lg {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  &_title_md {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  &_content_md {
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+    color: #939393;
+  }
+
+  &_title_sm {
+    font-size: 15px;
+    font-weight: 700;
+    text-align: justify;
+  }
+
+  &_content_sm {
+    font-size: 13px;
+    font-weight: 400;
+    text-align: justify;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .sub {
+    padding: 0 60px 25px 60px;
+    margin-top: -50px;
+
+    &_header {
+      position: relative;
+
+      .text {
+        position: relative;
+      }
+    }
+
+    &_title_lg {
+      color: #000;
+      font-size: 25px;
+      line-height: 30px;
+    }
+
+    &_content_lg {
+      color: #929292;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+}
+
+@media all and (min-width: 576px) and (max-width: 768px) {
+  .sub {
+    padding: 0 0 10px 0;
+    margin-top: -20px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .sub {
+    padding: 0 0 10px 0;
+    margin-top: 20px;
+
+    &_header {
+      position: relative;
+
+      .text {
+        position: relative;
+      }
+    }
+
+    i {
+      font-size: 18px;
+      margin-right: 10px !important;
+    }
+
+    .timeCreate {
+      font-size: 14px;
+      font-weight: 400;
+      color: #6f6f6f;
+    }
+
+    &_content {
+      font-size: 20px;
+      font-weight: 400;
+      text-align: justify;
+    }
+
+    &_title_lg {
+      color: #000;
+      font-size: 25px;
+      line-height: 30px;
+    }
+
+    &_content_lg {
+      color: #929292;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    &_title_md {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: justify;
+    }
+
+    &_content_md {
+      font-size: 15px;
+      font-weight: 400;
+      text-align: justify;
+      color: #939393;
+    }
+
+    &_title_sm {
+      font-size: 15px;
+      font-weight: 700;
+      text-align: justify;
+    }
+
+    &_content_sm {
+      font-size: 13px;
+      font-weight: 400;
+      text-align: justify;
+    }
+  }
+}
