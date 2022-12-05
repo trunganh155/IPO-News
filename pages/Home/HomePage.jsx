@@ -88,8 +88,10 @@ function HomePage(props) {
         <div className={styles.knowledge}>
           <div className="d-flex justify-content-between align-items-baseline">
             <div className="heading">
+
               <p className="text">KIẾN THỨC IPO</p>
               <p className="col decor"></p>
+
             </div>
           </div>
           <div className="row">
@@ -175,8 +177,10 @@ function HomePage(props) {
         <div className={styles.news_ipo}>
           <div className="d-flex justify-content-between align-items-baseline">
             <div className="heading">
+
               <p className="text">TIN TỨC IPO</p>
               <p className="col decor"></p>
+
             </div>
           </div>
           <div className="row" style={{ marginTop: "20px" }}>
@@ -316,8 +320,10 @@ function HomePage(props) {
         <div className={styles.library}>
           <div className="d-flex justify-content-between mb-3 align-items-baseline">
             <div className="heading">
+
               <p className="text">THƯ VIỆN</p>
               <p className="col decor"></p>
+
             </div>
           </div>
           <div className="row justify-content-center justify-content-lg-space-around">
@@ -403,10 +409,12 @@ function HomePage(props) {
             className="d-flex justify-content-between align-items-baseline"
             style={{ marginBottom: "16px" }}
           >
+
              <div className="heading">
         <p className="text">CHUYÊN GIA IPO</p>
         <p className="col decor"></p>
       </div>
+
           </div>
           <div className="row justify-content-center justify-content-lg-space-around">
             <div className={styles.list_expert}>
@@ -435,10 +443,12 @@ function HomePage(props) {
         </div>
         <div className={styles.library_ipo}>
           <div className="d-flex justify-content-between mb-4 align-items-baseline">
+
 		  <div className="heading">
         <p className="text">THƯ VIỆN IPO</p>
         <p className="col decor"></p>
       </div>
+
           </div>
           <div className={styles.box_content + " " + "row"}>
             <div
