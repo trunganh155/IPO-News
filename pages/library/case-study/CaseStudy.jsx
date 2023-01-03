@@ -68,10 +68,14 @@ export default function CaseStudy(props) {
               );
             })} */}
           <div className="mb-4">
-            <p className={styles.caseStudy_filter}>Case Study Doanh Nghiệp</p>
+            <p className={styles.caseStudy_filter}>
+              Case Study
+              <br />
+              Doanh Nghiệp
+            </p>
             {filter.map((item, index) => {
               return (
-                <div key={index}>
+                <div key={index} className="mb-2">
                   <label className={styles.check_label}>
                     <input
                       className={styles.check_input}
@@ -86,10 +90,14 @@ export default function CaseStudy(props) {
           </div>
 
           <div className="mb-4">
-            <p className={styles.caseStudy_filter}>Case Study Aura Capital</p>
+            <p className={styles.caseStudy_filter}>
+              Case Study
+              <br />
+              Aura Capital
+            </p>
             {filter.map((item, index) => {
               return (
-                <div key={index}>
+                <div key={index} className="mb-2">
                   <label className={styles.check_label}>
                     <input
                       className={styles.check_input}
@@ -107,7 +115,7 @@ export default function CaseStudy(props) {
             <p className={styles.caseStudy_filter}>Tài Liệu IPO</p>
             {filter.map((item, index) => {
               return (
-                <div key={index}>
+                <div key={index} className="mb-2">
                   <label className={styles.check_label}>
                     <input
                       className={styles.check_input}
